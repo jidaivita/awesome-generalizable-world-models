@@ -23,7 +23,7 @@ Each protocol specifies what the model observes, what changes at test time, and 
 <a id="paper-physical-law-perspective"></a>
 ### How Far Is Video Generation from World Model: A Physical Law Perspective
 
-[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/kang25g.html)
+[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/kang25g.html) [![arXiv: 2411.02385](https://img.shields.io/badge/arXiv-2411.02385-b31b1b?style=flat-square)](https://arxiv.org/abs/2411.02385) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/phyworld/phyworld) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://phyworld.github.io/)
 
 Bingyi Kang et al.
 
@@ -34,7 +34,7 @@ Bingyi Kang et al.
 <a id="paper-svib"></a>
 ### Imagine the Unseen World: A Benchmark for Systematic Generalization in Visual World Models
 
-[![NeurIPS: 2023 Datasets & Benchmarks](https://img.shields.io/badge/NeurIPS-2023%20Datasets%20%26%20Benchmarks-526d82?style=flat-square)](https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html) [![arXiv: 2311.09064](https://img.shields.io/badge/arXiv-2311.09064-b31b1b?style=flat-square)](https://arxiv.org/abs/2311.09064) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://systematic-visual-imagination.github.io/)
+[![NeurIPS: 2023 Datasets & Benchmarks](https://img.shields.io/badge/NeurIPS-2023%20Datasets%20%26%20Benchmarks-526d82?style=flat-square)](https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html) [![arXiv: 2311.09064](https://img.shields.io/badge/arXiv-2311.09064-b31b1b?style=flat-square)](https://arxiv.org/abs/2311.09064) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/systematic-visual-imagination/svib) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://systematic-visual-imagination.github.io/)
 
 Yeongbin Kim et al.
 
@@ -47,7 +47,7 @@ Yeongbin Kim et al.
 <a id="paper-physion"></a>
 ### Physion: Evaluating Physical Prediction from Vision in Humans and Machines
 
-[![NeurIPS: 2021 Datasets & Benchmarks](https://img.shields.io/badge/NeurIPS-2021%20Datasets%20%26%20Benchmarks-526d82?style=flat-square)](https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/d09bf41544a3365a46c9077ebb5e35c3-Abstract-round1.html) [![arXiv: 2106.08261](https://img.shields.io/badge/arXiv-2106.08261-b31b1b?style=flat-square)](https://arxiv.org/abs/2106.08261) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://physion-benchmark.github.io/)
+[![NeurIPS: 2021 Datasets & Benchmarks](https://img.shields.io/badge/NeurIPS-2021%20Datasets%20%26%20Benchmarks-526d82?style=flat-square)](https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/d09bf41544a3365a46c9077ebb5e35c3-Abstract-round1.html) [![arXiv: 2106.08261](https://img.shields.io/badge/arXiv-2106.08261-b31b1b?style=flat-square)](https://arxiv.org/abs/2106.08261) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/cogtoolslab/physics-benchmarking-neurips2021) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://physion-benchmark.github.io/)
 
 Daniel Bear et al.
 
@@ -71,7 +71,7 @@ Hsiao-Yu Tung et al.
 <a id="paper-world-in-world"></a>
 ### World-In-World: World Models in a Closed-Loop World
 
-[![ICLR: 2026](https://img.shields.io/badge/ICLR-2026-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html)
+[![ICLR: 2026](https://img.shields.io/badge/ICLR-2026-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html) [![arXiv: 2510.18135](https://img.shields.io/badge/arXiv-2510.18135-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.18135) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/World-In-World/world-in-world) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://world-in-world.github.io/)
 
 Jiahan Zhang et al.
 
@@ -82,7 +82,7 @@ Jiahan Zhang et al.
 <a id="paper-worldgym"></a>
 ### WorldGym: World Model as An Environment for Policy Evaluation
 
-[![ICLR: 2026](https://img.shields.io/badge/ICLR-2026-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://world-model-eval.github.io/)
+[![ICLR: 2026](https://img.shields.io/badge/ICLR-2026-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html) [![arXiv: 2506.00613](https://img.shields.io/badge/arXiv-2506.00613-b31b1b?style=flat-square)](https://arxiv.org/abs/2506.00613) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/world-model-eval/world-model-eval) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://world-model-eval.github.io/abstract.html)
 
 Julian Quevedo et al.
 

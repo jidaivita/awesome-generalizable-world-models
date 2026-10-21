@@ -13,7 +13,7 @@ The evaluation target can be goal-reaching, reward, or the quantities needed for
 <a id="paper-dino-wm"></a>
 ### DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning
 
-[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/zhou25t.html)
+[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/zhou25t.html) [![arXiv: 2411.04983](https://img.shields.io/badge/arXiv-2411.04983-b31b1b?style=flat-square)](https://arxiv.org/abs/2411.04983) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/gaoyuezhou/dino_wm) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://dino-wm.github.io/)
 
 Gaoyue Zhou et al.
 
@@ -23,7 +23,7 @@ Gaoyue Zhou et al.
 <a id="paper-vjepa2"></a>
 ### V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning
 
-[![arXiv: 2506.09985](https://img.shields.io/badge/arXiv-2506.09985-b31b1b?style=flat-square)](https://arxiv.org/abs/2506.09985)
+[![arXiv: 2506.09985](https://img.shields.io/badge/arXiv-2506.09985-b31b1b?style=flat-square)](https://arxiv.org/abs/2506.09985) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/facebookresearch/vjepa2) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://ai.meta.com/research/vjepa/)
 
 Mido Assran et al.
 
@@ -34,7 +34,7 @@ Mido Assran et al.
 <a id="paper-jepa-wms"></a>
 ### What Drives Success in Physical Planning with Joint-Embedding Predictive World Models?
 
-[![TMLR: 2026](https://img.shields.io/badge/TMLR-2026-526d82?style=flat-square)](https://arxiv.org/abs/2512.24497) [![arXiv: 2512.24497](https://img.shields.io/badge/arXiv-2512.24497-b31b1b?style=flat-square)](https://arxiv.org/abs/2512.24497) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/facebookresearch/jepa-wms)
+[![TMLR: 2026](https://img.shields.io/badge/TMLR-2026-526d82?style=flat-square)](https://openreview.net/forum?id=cHZn5Gdh8e) [![arXiv: 2512.24497](https://img.shields.io/badge/arXiv-2512.24497-b31b1b?style=flat-square)](https://arxiv.org/abs/2512.24497) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/facebookresearch/jepa-wms)
 
 Basile Terver et al.
 
@@ -47,7 +47,7 @@ Basile Terver et al.
 <a id="paper-denoised-mdps"></a>
 ### Denoised MDPs: Learning World Models Better Than the World Itself
 
-[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/wang22c.html)
+[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/wang22c.html) [![arXiv: 2206.15477](https://img.shields.io/badge/arXiv-2206.15477-b31b1b?style=flat-square)](https://arxiv.org/abs/2206.15477) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/facebookresearch/denoised_mdp) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://www.tongzhouwang.info/denoised_mdp/)
 
 Tongzhou Wang et al.
 
@@ -71,7 +71,7 @@ Christopher Grimm et al.
 <a id="paper-plan2explore"></a>
 ### Planning to Explore via Self-Supervised World Models
 
-[![ICML: 2020](https://img.shields.io/badge/ICML-2020-526d82?style=flat-square)](https://proceedings.mlr.press/v119/sekar20a.html)
+[![ICML: 2020](https://img.shields.io/badge/ICML-2020-526d82?style=flat-square)](https://proceedings.mlr.press/v119/sekar20a.html) [![arXiv: 2005.05960](https://img.shields.io/badge/arXiv-2005.05960-b31b1b?style=flat-square)](https://arxiv.org/abs/2005.05960) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/ramanans1/plan2explore) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://ramanans1.github.io/plan2explore/)
 
 Ramanan Sekar et al.
 

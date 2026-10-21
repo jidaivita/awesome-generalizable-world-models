@@ -9,7 +9,7 @@ These papers are listed separately from the main catalog and are excluded from i
 <a id="paper-jepa-bisim"></a>
 ## JEPA-Bisim: Learning Robust Visual Representations for Planning with Joint-Embedding Predictive World Models
 
-[![arXiv: 2602.18639](https://img.shields.io/badge/arXiv-2602.18639-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.18639)
+[![arXiv: 2602.18639](https://img.shields.io/badge/arXiv-2602.18639-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.18639) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/jd-anderson/dino_bsmpc)
 
 Leonardo F. Toso et al.
 

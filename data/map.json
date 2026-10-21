@@ -611,6 +611,16 @@
       "source_review": {
         "date": "2026-10-21",
         "depth": "metadata_abstract"
+      },
+      "code_url": "https://github.com/jd-anderson/dino_bsmpc",
+      "project_url": null,
+      "resource_review": {
+        "date": "2026-10-21",
+        "code_evidence_urls": [
+          "https://arxiv.org/html/2602.18639v2",
+          "https://github.com/jd-anderson/dino_bsmpc"
+        ],
+        "note": "Code linked from the paper and matched against the author repository. Candidate status is unchanged."
       }
     }
   ],

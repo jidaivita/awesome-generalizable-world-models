@@ -13,9 +13,11 @@ The comparisons distinguish supplied symmetry priors, learned observation mappin
 <a id="paper-group-structure"></a>
 ### Learning Disentangled Representations and Group Structure of Dynamical Environments
 
-[![NeurIPS: 2020](https://img.shields.io/badge/NeurIPS-2020-526d82?style=flat-square)](https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/IndustAI/learning-group-structure)
+[![NeurIPS: 2020](https://img.shields.io/badge/NeurIPS-2020-526d82?style=flat-square)](https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html) [![arXiv: 2002.06991](https://img.shields.io/badge/arXiv-2002.06991-b31b1b?style=flat-square)](https://arxiv.org/abs/2002.06991) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/IndustAI/learning-group-structure)
 
 Robin Quessard et al.
+
+Earlier titles / aliases: Learning Group Structure and Disentangled Representations of Dynamical Environments.
 
 - **Method:** An encoder maps observations to a spherical latent space, and learned rotation matrices represent the effects of interactions. A regularizer encourages each transformation to act on a small subset of latent dimensions, separating factors of change.
 - **Evaluation:** Experiments use explicitly symmetric environments and evaluate long-horizon prediction and latent disentanglement. The method learns the transformation parameters from interaction sequences under an orthogonal latent-transition parameterization.
@@ -24,7 +26,7 @@ Robin Quessard et al.
 <a id="paper-sen"></a>
 ### Learning Symmetric Embeddings for Equivariant World Models
 
-[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/park22a.html) [![arXiv: 2204.11371](https://img.shields.io/badge/arXiv-2204.11371-b31b1b?style=flat-square)](https://arxiv.org/abs/2204.11371)
+[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/park22a.html) [![arXiv: 2204.11371](https://img.shields.io/badge/arXiv-2204.11371-b31b1b?style=flat-square)](https://arxiv.org/abs/2204.11371) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/jypark0/sen)
 
 Jung Yeon Park et al.
 
@@ -48,7 +50,7 @@ Thomas Delliaux et al.
 <a id="paper-grwm"></a>
 ### Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models
 
-[![CVPR: 2026](https://img.shields.io/badge/CVPR-2026-526d82?style=flat-square)](https://arxiv.org/abs/2510.26782) [![arXiv: 2510.26782](https://img.shields.io/badge/arXiv-2510.26782-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.26782) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/XiaFire/Clone_Deterministic_Environment) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://xiafire.github.io/grwm-project-page/)
+[![CVPR: 2026](https://img.shields.io/badge/CVPR-2026-526d82?style=flat-square)](https://openaccess.thecvf.com/content/CVPR2026/html/Xia_Cloning_Deterministic_Worlds_The_Critical_Role_of_Latent_Geometry_in_CVPR_2026_paper.html) [![arXiv: 2510.26782](https://img.shields.io/badge/arXiv-2510.26782-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.26782) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/XiaFire/Clone_Deterministic_Environment) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://xiafire.github.io/grwm-project-page/)
 
 Zaishuo Xia et al.
 
@@ -61,7 +63,7 @@ Earlier titles / aliases: Clone Deterministic 3D Worlds with Geometrically-Regul
 <a id="paper-flowm"></a>
 ### Flow Equivariant World Models: Structured Memory for Dynamic Environments
 
-[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/lillemark26a.html) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://flowequivariantworldmodels.github.io/)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/lillemark26a.html) [![arXiv: 2601.01075](https://img.shields.io/badge/arXiv-2601.01075-b31b1b?style=flat-square)](https://arxiv.org/abs/2601.01075) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/hlillemark/flowm) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://flowequivariantworldmodels.github.io/)
 
 Hansen Lillemark et al.
 

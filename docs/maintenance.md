@@ -33,7 +33,7 @@ Validation covers stable IDs, duplicate titles and aliases, arXiv identity, topi
 
 Use stable IDs even when titles change. Store earlier titles in `aliases` and arXiv identifiers without version suffixes. Distinguish preprints, workshop papers, conference publications, and journal articles. Conference year and proceedings year may differ.
 
-`source_review` records the date and depth of a source check. A successful HTTP request is not a content review. `reproduction` records execution evidence separately; a code link does not establish reproducibility.
+`source_review` records the date and depth of a source check. A successful HTTP request is not a content review. `resource_review` stores separate evidence for publication identity, official code, project pages, and arXiv records. Unlocated and unavailable resources remain distinct from verified author releases. `reproduction` records execution evidence separately; a code link does not establish reproducibility.
 
 The catalog retains all 30 original records alongside subsequent additions. Each paper has one primary topic or a supplementary assignment. Topic groups are validated against those assignments. Original IDs and previous topic-page anchors remain available after reclassification.
 

@@ -75,6 +75,15 @@ def validate_data(root=ROOT):
         for key in ['why','focus','boundary']:require(bool(p['annotation'][key].strip()),f'Missing annotation: {key}')
         require(re.fullmatch(r'\d{4}-\d{2}-\d{2}',p['source_review']['date']), 'Invalid source date')
         for value in [*p['links'].values(),p['publication']['source_url'],p['code']['url'],p['public_note']]:valid_url(value)
+        review=p.get('resource_review')
+        require(review is not None and re.fullmatch(r'\d{4}-\d{2}-\d{2}',review['date']), 'Missing resource review')
+        require(review['publication']['status']=='verified', 'Publication requires source verification')
+        for kind in ['publication','code','project','arxiv']:
+            require(bool(review[kind]['evidence_urls']), 'Missing resource evidence')
+            for url in review[kind]['evidence_urls']:valid_url(url)
+        require((review['code']['status']=='verified_official')==bool(p['code']['url']), 'Official code status disagrees with URL')
+        require((review['project']['status']=='verified_official')==bool(p['links']['project']), 'Official project status disagrees with URL')
+        require((review['arxiv']['status']=='verified')==bool(p['arxiv_id']), 'arXiv review disagrees with identity')
     for m in cfg['modules']:
         require(set(m['start'])<=set(ids),'Invalid module starting paper')
         require(set(m['related'])<=mods,'Invalid related module')
@@ -85,6 +94,10 @@ def validate_data(root=ROOT):
         require(c['module'] in mods, 'Invalid candidate topic')
         require(bool(c['authors']) and all(c[k].strip() for k in ['title','publication','method','evaluation']), 'Incomplete candidate')
         valid_url(c['url'])
+        for value in [c.get('code_url'),c.get('project_url')]:valid_url(value)
+        if c.get('code_url'):
+            require(bool(c.get('resource_review',{}).get('code_evidence_urls')), 'Candidate code requires source evidence')
+            for value in c['resource_review']['code_evidence_urls']:valid_url(value)
         require(c['arxiv_id'] not in seen_arxiv, 'Candidate arXiv identity overlaps catalog')
         for title in [c['title']]+c['aliases']:
             key=re.sub(r'\W','',title.casefold())

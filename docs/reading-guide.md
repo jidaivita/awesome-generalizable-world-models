@@ -14,7 +14,7 @@ Physical-variable probes, interventions on learned simulators, and behavioral te
 
 **[Interpreting Physics in Video World Models](https://proceedings.mlr.press/v306/joseph26a.html)**
 
-[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/joseph26a.html) [![arXiv: 2602.07050](https://img.shields.io/badge/arXiv-2602.07050-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.07050)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/joseph26a.html) [![arXiv: 2602.07050](https://img.shields.io/badge/arXiv-2602.07050-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.07050) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://www.soniajoseph.ai/interpreting-ph/)
 
 Sonia Joseph et al.
 
@@ -28,9 +28,9 @@ Sonia Joseph et al.
 
 ### 02 · Probing RL World Models
 
-**[What Do World Models Learn in RL? Probing Latent Representations in Learned Environment Simulators](https://arxiv.org/abs/2603.21546)**
+**[What Do World Models Learn in RL? Probing Latent Representations in Learned Environment Simulators](https://openreview.net/forum?id=VE7JJLVKG1)**
 
-[![ICLR: 2026 World Models Workshop](https://img.shields.io/badge/ICLR-2026%20World%20Models%20Workshop-7657a3?style=flat-square)](https://arxiv.org/abs/2603.21546) [![arXiv: 2603.21546](https://img.shields.io/badge/arXiv-2603.21546-b31b1b?style=flat-square)](https://arxiv.org/abs/2603.21546)
+[![ICLR: 2026 World Models Workshop](https://img.shields.io/badge/ICLR-2026%20World%20Models%20Workshop-7657a3?style=flat-square)](https://openreview.net/forum?id=VE7JJLVKG1) [![arXiv: 2603.21546](https://img.shields.io/badge/arXiv-2603.21546-b31b1b?style=flat-square)](https://arxiv.org/abs/2603.21546)
 
 Xinyu Zhang
 
@@ -46,7 +46,7 @@ Xinyu Zhang
 
 **[What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models](https://proceedings.mlr.press/v267/vafa25a.html)**
 
-[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/vafa25a.html)
+[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/vafa25a.html) [![arXiv: 2507.06952](https://img.shields.io/badge/arXiv-2507.06952-b31b1b?style=flat-square)](https://arxiv.org/abs/2507.06952) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/keyonvafa/inductive-bias-probes)
 
 Keyon Vafa et al.
 
@@ -66,7 +66,7 @@ Object composition, causal components, and known symmetries as ways to constrain
 
 **[Toward Compositional Generalization in Object-Oriented World Modeling](https://proceedings.mlr.press/v162/zhao22b.html)**
 
-[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/zhao22b.html)
+[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/zhao22b.html) [![arXiv: 2204.13661](https://img.shields.io/badge/arXiv-2204.13661-b31b1b?style=flat-square)](https://arxiv.org/abs/2204.13661) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/linfeng-z/HOWM)
 
 Linfeng Zhao et al.
 
@@ -82,7 +82,7 @@ Linfeng Zhao et al.
 
 **[Modeling Unseen Environments with Language-guided Composable Causal Components in Reinforcement Learning](https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html)**
 
-[![ICLR: 2025](https://img.shields.io/badge/ICLR-2025-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html)
+[![ICLR: 2025](https://img.shields.io/badge/ICLR-2025-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html) [![arXiv: 2505.08361](https://img.shields.io/badge/arXiv-2505.08361-b31b1b?style=flat-square)](https://arxiv.org/abs/2505.08361)
 
 Xinyue Wang et al.
 
@@ -98,7 +98,7 @@ Xinyue Wang et al.
 
 **[Learning Symmetric Embeddings for Equivariant World Models](https://proceedings.mlr.press/v162/park22a.html)**
 
-[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/park22a.html) [![arXiv: 2204.11371](https://img.shields.io/badge/arXiv-2204.11371-b31b1b?style=flat-square)](https://arxiv.org/abs/2204.11371)
+[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/park22a.html) [![arXiv: 2204.11371](https://img.shields.io/badge/arXiv-2204.11371-b31b1b?style=flat-square)](https://arxiv.org/abs/2204.11371) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/jypark0/sen)
 
 Jung Yeon Park et al.
 
@@ -116,9 +116,9 @@ Geometric regularization, inference from context, and representations of changin
 
 ### 07 · GRWM
 
-**[Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models](https://arxiv.org/abs/2510.26782)**
+**[Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models](https://openaccess.thecvf.com/content/CVPR2026/html/Xia_Cloning_Deterministic_Worlds_The_Critical_Role_of_Latent_Geometry_in_CVPR_2026_paper.html)**
 
-[![CVPR: 2026](https://img.shields.io/badge/CVPR-2026-526d82?style=flat-square)](https://arxiv.org/abs/2510.26782) [![arXiv: 2510.26782](https://img.shields.io/badge/arXiv-2510.26782-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.26782) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/XiaFire/Clone_Deterministic_Environment) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://xiafire.github.io/grwm-project-page/)
+[![CVPR: 2026](https://img.shields.io/badge/CVPR-2026-526d82?style=flat-square)](https://openaccess.thecvf.com/content/CVPR2026/html/Xia_Cloning_Deterministic_Worlds_The_Critical_Role_of_Latent_Geometry_in_CVPR_2026_paper.html) [![arXiv: 2510.26782](https://img.shields.io/badge/arXiv-2510.26782-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.26782) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/XiaFire/Clone_Deterministic_Environment) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://xiafire.github.io/grwm-project-page/)
 
 Zaishuo Xia et al.
 
@@ -150,7 +150,7 @@ Fan Wang et al.
 
 **[Dynamics Are Learned, Not Told: Semi-Supervised Discovery of Latent Dynamics Geometries For Zero-Shot Policy Adaptation](https://proceedings.mlr.press/v306/xu26cq.html)**
 
-[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/xu26cq.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/xu26cq.html) [![arXiv: 2606.02280](https://img.shields.io/badge/arXiv-2606.02280-b31b1b?style=flat-square)](https://arxiv.org/abs/2606.02280) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries)
 
 Zhiming Xu et al.
 
@@ -170,7 +170,7 @@ Latent-space planning, held-out factor combinations, and physical predictions re
 
 **[DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning](https://proceedings.mlr.press/v267/zhou25t.html)**
 
-[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/zhou25t.html)
+[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/zhou25t.html) [![arXiv: 2411.04983](https://img.shields.io/badge/arXiv-2411.04983-b31b1b?style=flat-square)](https://arxiv.org/abs/2411.04983) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/gaoyuezhou/dino_wm) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://dino-wm.github.io/)
 
 Gaoyue Zhou et al.
 
@@ -186,7 +186,7 @@ Gaoyue Zhou et al.
 
 **[Imagine the Unseen World: A Benchmark for Systematic Generalization in Visual World Models](https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html)**
 
-[![NeurIPS: 2023 Datasets & Benchmarks](https://img.shields.io/badge/NeurIPS-2023%20Datasets%20%26%20Benchmarks-526d82?style=flat-square)](https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html) [![arXiv: 2311.09064](https://img.shields.io/badge/arXiv-2311.09064-b31b1b?style=flat-square)](https://arxiv.org/abs/2311.09064) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://systematic-visual-imagination.github.io/)
+[![NeurIPS: 2023 Datasets & Benchmarks](https://img.shields.io/badge/NeurIPS-2023%20Datasets%20%26%20Benchmarks-526d82?style=flat-square)](https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html) [![arXiv: 2311.09064](https://img.shields.io/badge/arXiv-2311.09064-b31b1b?style=flat-square)](https://arxiv.org/abs/2311.09064) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/systematic-visual-imagination/svib) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://systematic-visual-imagination.github.io/)
 
 Yeongbin Kim et al.
 

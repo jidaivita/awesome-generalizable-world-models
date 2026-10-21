@@ -30,6 +30,7 @@ if __name__=='__main__':
     urls={u for p in papers for u in [*p['links'].values(),p['publication']['source_url'],p['code']['url'],p['public_note']] if u}
     urls.update(r['url'] for r in cfg['resources'])
     urls.update(c['url'] for c in cfg['candidates'])
+    urls.update(u for c in cfg['candidates'] for u in [c.get('code_url'),c.get('project_url')] if u)
     for body in render().values():
         urls.update(u for u in re.findall(r'\]\(([^\s)]+)\)',body) if u.startswith(('https://','http://')))
     urls=sorted(urls)

@@ -3,8 +3,8 @@
     "id": "nri",
     "canonical_title": "Neural Relational Inference for Interacting Systems",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "1802.04687",
+    "first_public_year": 2018,
     "publication": {
       "label": "ICML 2018",
       "source_url": "https://proceedings.mlr.press/v80/kipf18a.html"
@@ -30,7 +30,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/ethanfetaya/NRI",
       "status": "not_run"
     },
     "reproduction": {
@@ -52,6 +52,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "2688--2697"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v80/kipf18a.html",
+          "https://proceedings.mlr.press/v80/kipf18a/kipf18a.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "http://proceedings.mlr.press/v80/kipf18a/kipf18a.pdf",
+          "https://github.com/ethanfetaya/NRI"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v80/kipf18a.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/1802.04687"
+        ]
+      }
     }
   },
   {
@@ -85,7 +114,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/tkipf/c-swm",
       "status": "not_run"
     },
     "reproduction": {
@@ -98,19 +127,52 @@
         "van der Pol, Elise",
         "Welling, Max"
       ],
-      "year": 2019,
+      "year": 2020,
       "source_url": "https://arxiv.org/abs/1911.12247",
       "verified_on": "2026-10-21",
-      "entry_type": "misc",
-      "eprint": "1911.12247"
+      "entry_type": "inproceedings",
+      "eprint": "1911.12247",
+      "booktitle": "International Conference on Learning Representations"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/1911.12247",
+          "https://arxiv.org/pdf/1911.12247"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/1911.12247",
+          "https://github.com/tkipf/c-swm"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/abs/1911.12247"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/1911.12247"
+        ]
+      }
     }
   },
   {
     "id": "spartan",
     "canonical_title": "SPARTAN: A Sparse Transformer World Model Attending to What Matters",
-    "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "aliases": [
+      "SPARTAN: A Sparse Transformer Learning Local Causation",
+      "SPARTAN: A Sparse Transformer World Model"
+    ],
+    "arxiv_id": "2411.06890",
+    "first_public_year": 2024,
     "publication": {
       "label": "NeurIPS 2025",
       "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2c33c1753e1f1924f5560b11fc4444f-Abstract-Conference.html"
@@ -157,14 +219,45 @@
       "doi": "10.52202/085713-5154",
       "volume": "38",
       "pages": "154089--154114"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2c33c1753e1f1924f5560b11fc4444f-Abstract-Conference.html",
+          "https://proceedings.neurips.cc/paper_files/paper/2025/file/e2c33c1753e1f1924f5560b11fc4444f-Paper-Conference.pdf"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper_files/paper/2025/file/e2c33c1753e1f1924f5560b11fc4444f-Paper-Conference.pdf"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2c33c1753e1f1924f5560b11fc4444f-Abstract-Conference.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2411.06890"
+        ]
+      },
+      "note": "The paper describes code in supplementary materials; a standalone official repository was not located."
     }
   },
   {
     "id": "causal-jepa",
     "canonical_title": "Causal-JEPA: Learning World Models through Object-Level Latent Masking",
-    "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "aliases": [
+      "Causal-JEPA: Learning World Models through Object-Level Latent Interventions"
+    ],
+    "arxiv_id": "2602.11389",
+    "first_public_year": 2026,
     "publication": {
       "label": "ICML 2026",
       "source_url": "https://proceedings.mlr.press/v306/nam26c.html"
@@ -212,6 +305,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "91808--91832"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v306/nam26c.html",
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/nam26c/nam26c.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/nam26c/nam26c.pdf",
+          "https://github.com/galilai-group/cjepa"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v306/nam26c.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2602.11389"
+        ]
+      }
     }
   },
   {
@@ -233,7 +355,7 @@
     "priority": "anchor",
     "links": {
       "paper": "https://proceedings.mlr.press/v306/joseph26a.html",
-      "project": null,
+      "project": "https://www.soniajoseph.ai/interpreting-ph/",
       "full_text": "https://arxiv.org/html/2602.07050"
     },
     "annotation": {
@@ -271,6 +393,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "54687--54724"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v306/joseph26a.html",
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/joseph26a/joseph26a.pdf"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/joseph26a/joseph26a.pdf"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://www.soniajoseph.ai/interpreting-ph/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2602.07050"
+        ]
+      },
+      "note": "Author paper page located. Third-party reproductions and Kubric dependencies are not the paper's official implementation."
     }
   },
   {
@@ -284,7 +435,7 @@
     "first_public_year": null,
     "publication": {
       "label": "TMLR 2026",
-      "source_url": "https://arxiv.org/abs/2510.01025"
+      "source_url": "https://openreview.net/forum?id=vCKZ40YYPr"
     },
     "primary_module": "S1",
     "secondary_modules": [
@@ -294,7 +445,7 @@
     "collection": "seed_v0_2",
     "priority": "core",
     "links": {
-      "paper": "https://arxiv.org/abs/2510.01025",
+      "paper": "https://openreview.net/forum?id=vCKZ40YYPr",
       "project": null,
       "full_text": "https://arxiv.org/html/2510.01025v2"
     },
@@ -323,15 +474,48 @@
         "Balloccu, Simone",
         "Gurevych, Iryna"
       ],
-      "year": 2025,
-      "source_url": "https://arxiv.org/abs/2510.01025",
+      "year": 2026,
+      "source_url": "https://openreview.net/forum?id=vCKZ40YYPr",
       "verified_on": "2026-10-21",
-      "entry_type": "misc",
-      "eprint": "2510.01025"
+      "entry_type": "article",
+      "eprint": "2510.01025",
+      "journal": "Transactions on Machine Learning Research"
     },
     "domain_label": "LLM analysis",
     "supplement_group": "analysis",
-    "supplement_reason": "Geometric hypothesis testing in language models provides analysis methods for representation studies; the reported experiments do not test physical world models."
+    "supplement_reason": "Geometric hypothesis testing in language models provides analysis methods for representation studies; the reported experiments do not test physical world models.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://openreview.net/forum?id=vCKZ40YYPr",
+          "https://arxiv.org/abs/2510.01025",
+          "https://arxiv.org/pdf/2510.01025",
+          "https://openreview.net/pdf?id=vCKZ40YYPr"
+        ],
+        "browser_verified": true
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://openreview.net/pdf?id=vCKZ40YYPr",
+          "https://github.com/UKPLab/tmlr2026-manifold-analysis"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2510.01025"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2510.01025"
+        ]
+      }
+    }
   },
   {
     "id": "grwm",
@@ -344,7 +528,7 @@
     "first_public_year": null,
     "publication": {
       "label": "CVPR 2026",
-      "source_url": "https://arxiv.org/abs/2510.26782"
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xia_Cloning_Deterministic_Worlds_The_Critical_Role_of_Latent_Geometry_in_CVPR_2026_paper.html"
     },
     "primary_module": "M2",
     "secondary_modules": [
@@ -354,7 +538,7 @@
     "collection": "seed_v0_2",
     "priority": "core",
     "links": {
-      "paper": "https://arxiv.org/abs/2510.26782",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2026/html/Xia_Cloning_Deterministic_Worlds_The_Critical_Role_of_Latent_Geometry_in_CVPR_2026_paper.html",
       "project": "https://xiafire.github.io/grwm-project-page/",
       "full_text": "https://arxiv.org/html/2510.26782v3"
     },
@@ -383,11 +567,42 @@
         "Xu, Yifan",
         "Chen, Yubei"
       ],
-      "year": 2025,
-      "source_url": "https://arxiv.org/abs/2510.26782",
+      "year": 2026,
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Xia_Cloning_Deterministic_Worlds_The_Critical_Role_of_Latent_Geometry_in_CVPR_2026_paper.html",
       "verified_on": "2026-10-21",
-      "entry_type": "misc",
-      "eprint": "2510.26782"
+      "entry_type": "inproceedings",
+      "eprint": "2510.26782",
+      "booktitle": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "pages": "32602--32612"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://openaccess.thecvf.com/content/CVPR2026/html/Xia_Cloning_Deterministic_Worlds_The_Critical_Role_of_Latent_Geometry_in_CVPR_2026_paper.html",
+          "https://arxiv.org/pdf/2510.26782"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2510.26782",
+          "https://github.com/XiaFire/Clone_Deterministic_Environment"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://xiafire.github.io/grwm-project-page/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2510.26782"
+        ]
+      }
     }
   },
   {
@@ -441,6 +656,35 @@
       "verified_on": "2026-10-21",
       "entry_type": "misc",
       "eprint": "2506.01529"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2506.01529",
+          "https://arxiv.org/pdf/2506.01529"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2506.01529",
+          "https://github.com/khanhvu207/world-models-group-latents"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2506.01529"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2506.01529"
+        ]
+      }
     }
   },
   {
@@ -474,7 +718,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/alexandermodell/Representation-Manifolds",
       "status": "not_run"
     },
     "reproduction": {
@@ -495,7 +739,34 @@
     },
     "domain_label": "LLM analysis",
     "supplement_group": "analysis",
-    "supplement_reason": "A theoretical account of representation geometry in language models provides background for geometric analysis."
+    "supplement_reason": "A theoretical account of representation geometry in language models provides background for geometric analysis.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2505.18235"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://github.com/alexandermodell/Representation-Manifolds"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2505.18235"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2505.18235"
+        ]
+      }
+    }
   },
   {
     "id": "geoworld",
@@ -505,7 +776,7 @@
     "first_public_year": null,
     "publication": {
       "label": "CVPR 2026",
-      "source_url": "https://arxiv.org/abs/2602.23058"
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_GeoWorld_Geometric_World_Models_CVPR_2026_paper.html"
     },
     "primary_module": "S1",
     "secondary_modules": [
@@ -515,7 +786,7 @@
     "collection": "seed_v0_2",
     "priority": "reference",
     "links": {
-      "paper": "https://arxiv.org/abs/2602.23058",
+      "paper": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_GeoWorld_Geometric_World_Models_CVPR_2026_paper.html",
       "project": "https://steve-zeyu-zhang.github.io/GeoWorld/",
       "full_text": "https://arxiv.org/html/2602.23058v1"
     },
@@ -544,14 +815,45 @@
         "Hartley, Richard"
       ],
       "year": 2026,
-      "source_url": "https://arxiv.org/abs/2602.23058",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_GeoWorld_Geometric_World_Models_CVPR_2026_paper.html",
       "verified_on": "2026-10-21",
-      "entry_type": "misc",
-      "eprint": "2602.23058"
+      "entry_type": "inproceedings",
+      "eprint": "2602.23058",
+      "booktitle": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition",
+      "pages": "30952--30963"
     },
     "domain_label": "Procedural planning",
     "supplement_group": "analysis",
-    "supplement_reason": "Hyperbolic representations support procedural planning on instructional videos; the evaluation differs from physical dynamics prediction."
+    "supplement_reason": "Hyperbolic representations support procedural planning on instructional videos; the evaluation differs from physical dynamics prediction.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_GeoWorld_Geometric_World_Models_CVPR_2026_paper.html",
+          "https://arxiv.org/pdf/2602.23058"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2602.23058"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://steve-zeyu-zhang.github.io/GeoWorld/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2602.23058"
+        ]
+      },
+      "note": "The author project page was verified; no official implementation link was located."
+    }
   },
   {
     "id": "cadm",
@@ -569,7 +871,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://proceedings.mlr.press/v119/lee20g.html",
-      "project": null,
+      "project": "https://sites.google.com/view/cadm",
       "full_text": null
     },
     "annotation": {
@@ -604,6 +906,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "5757--5766"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v119/lee20g.html",
+          "https://proceedings.mlr.press/v119/lee20g/lee20g.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v119/lee20g/lee20g.pdf",
+          "https://github.com/younggyoseo/CaDM"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://sites.google.com/view/cadm"
+        ]
+      },
+      "arxiv": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v119/lee20g.html"
+        ]
+      }
     }
   },
   {
@@ -664,14 +995,43 @@
       "entry_type": "inproceedings",
       "pages": "100857--100880",
       "booktitle": "International Conference on Learning Representations"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a46b9dcef23e9160f46d800a49a931d0-Abstract-Conference.html",
+          "https://proceedings.iclr.cc/paper_files/paper/2026/file/a46b9dcef23e9160f46d800a49a931d0-Paper-Conference.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2026/file/a46b9dcef23e9160f46d800a49a931d0-Paper-Conference.pdf",
+          "https://github.com/airs-cuhk/airsoul/tree/main/projects/MazeWorld"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a46b9dcef23e9160f46d800a49a931d0-Abstract-Conference.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2509.22353"
+        ]
+      }
     }
   },
   {
     "id": "dreamweaver",
     "canonical_title": "Dreamweaver: Learning Compositional World Models from Pixels",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2501.14174",
+    "first_public_year": 2025,
     "publication": {
       "label": "ICLR 2025",
       "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html"
@@ -684,7 +1044,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html",
-      "project": null,
+      "project": "https://dion-jy.github.io/dreamweaver-website/",
       "full_text": null
     },
     "annotation": {
@@ -697,7 +1057,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/ahn-ml/dreamweaver-release",
       "status": "not_run"
     },
     "reproduction": {
@@ -717,14 +1077,43 @@
       "entry_type": "inproceedings",
       "pages": "69902--69926",
       "booktitle": "International Conference on Learning Representations"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html",
+          "https://proceedings.iclr.cc/paper_files/paper/2025/file/ae82a60c5ce50b5c4d18cfe3214eb684-Paper-Conference.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://dion-jy.github.io/dreamweaver-website/",
+          "https://github.com/ahn-ml/dreamweaver-release"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://dion-jy.github.io/dreamweaver-website/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2501.14174"
+        ]
+      }
     }
   },
   {
     "id": "dynamics-geometries",
     "canonical_title": "Dynamics Are Learned, Not Told: Semi-Supervised Discovery of Latent Dynamics Geometries For Zero-Shot Policy Adaptation",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2606.02280",
+    "first_public_year": 2026,
     "publication": {
       "label": "ICML 2026",
       "source_url": "https://proceedings.mlr.press/v306/xu26cq.html"
@@ -774,14 +1163,43 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "142962--142988"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v306/xu26cq.html",
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/xu26cq/xu26cq.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/xu26cq/xu26cq.pdf",
+          "https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v306/xu26cq.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2606.02280"
+        ]
+      }
     }
   },
   {
     "id": "dino-wm",
     "canonical_title": "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2411.04983",
+    "first_public_year": 2024,
     "publication": {
       "label": "ICML 2025",
       "source_url": "https://proceedings.mlr.press/v267/zhou25t.html"
@@ -792,7 +1210,7 @@
     "priority": "core",
     "links": {
       "paper": "https://proceedings.mlr.press/v267/zhou25t.html",
-      "project": null,
+      "project": "https://dino-wm.github.io/",
       "full_text": null
     },
     "annotation": {
@@ -805,7 +1223,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/gaoyuezhou/dino_wm",
       "status": "not_run"
     },
     "reproduction": {
@@ -826,14 +1244,43 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "79115--79135"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v267/zhou25t.html",
+          "https://raw.githubusercontent.com/mlresearch/v267/main/assets/zhou25t/zhou25t.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://dino-wm.github.io/",
+          "https://github.com/gaoyuezhou/dino_wm"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://dino-wm.github.io/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2411.04983"
+        ]
+      }
     }
   },
   {
     "id": "denoised-mdps",
     "canonical_title": "Denoised MDPs: Learning World Models Better Than the World Itself",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2206.15477",
+    "first_public_year": 2022,
     "publication": {
       "label": "ICML 2022",
       "source_url": "https://proceedings.mlr.press/v162/wang22c.html"
@@ -846,7 +1293,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://proceedings.mlr.press/v162/wang22c.html",
-      "project": null,
+      "project": "https://www.tongzhouwang.info/denoised_mdp/",
       "full_text": null
     },
     "annotation": {
@@ -859,7 +1306,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/facebookresearch/denoised_mdp",
       "status": "not_run"
     },
     "reproduction": {
@@ -882,6 +1329,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "22591--22612"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v162/wang22c.html",
+          "https://proceedings.mlr.press/v162/wang22c/wang22c.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v162/wang22c/wang22c.pdf",
+          "https://github.com/facebookresearch/denoised_mdp"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://www.tongzhouwang.info/denoised_mdp/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2206.15477"
+        ]
+      }
     }
   },
   {
@@ -936,14 +1412,43 @@
       "booktitle": "Advances in Neural Information Processing Systems",
       "volume": "33",
       "pages": "5541--5552"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper/2020/hash/3bb585ea00014b0e3ebe4c6dd165a358-Abstract.html",
+          "https://proceedings.neurips.cc/paper_files/paper/2020/file/3bb585ea00014b0e3ebe4c6dd165a358-Paper.pdf"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper_files/paper/2020/file/3bb585ea00014b0e3ebe4c6dd165a358-Paper.pdf"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper/2020/hash/3bb585ea00014b0e3ebe4c6dd165a358-Abstract.html"
+        ]
+      },
+      "arxiv": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper/2020/hash/3bb585ea00014b0e3ebe4c6dd165a358-Abstract.html"
+        ]
+      },
+      "note": "A reproducibility-challenge implementation was found, but an original-author code release was not confirmed."
     }
   },
   {
     "id": "what-found",
     "canonical_title": "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2507.06952",
+    "first_public_year": 2025,
     "publication": {
       "label": "ICML 2025",
       "source_url": "https://proceedings.mlr.press/v267/vafa25a.html"
@@ -969,7 +1474,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/keyonvafa/inductive-bias-probes",
       "status": "not_run"
     },
     "reproduction": {
@@ -990,6 +1495,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "60727--60747"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v267/vafa25a.html",
+          "https://raw.githubusercontent.com/mlresearch/v267/main/assets/vafa25a/vafa25a.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v267/main/assets/vafa25a/vafa25a.pdf",
+          "https://github.com/keyonvafa/inductive-bias-probes"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v267/vafa25a.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2507.06952"
+        ]
+      }
     }
   },
   {
@@ -998,8 +1532,8 @@
     "aliases": [
       "SIMPLER"
     ],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2405.05941",
+    "first_public_year": 2024,
     "publication": {
       "label": "CoRL 2024 (proceedings 2025)",
       "source_url": "https://proceedings.mlr.press/v270/li25c.html"
@@ -1012,7 +1546,7 @@
     "priority": "core",
     "links": {
       "paper": "https://proceedings.mlr.press/v270/li25c.html",
-      "project": null,
+      "project": "https://simpler-env.github.io/",
       "full_text": null
     },
     "annotation": {
@@ -1025,7 +1559,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/simpler-env/SimplerEnv",
       "status": "not_run"
     },
     "reproduction": {
@@ -1060,14 +1594,43 @@
       "pages": "3705--3728"
     },
     "supplement_group": "transfer",
-    "supplement_reason": "Simulation-based policy ranking provides evaluation context; the paper does not evaluate generalization of a learned world model."
+    "supplement_reason": "Simulation-based policy ranking provides evaluation context; the paper does not evaluate generalization of a learned world model.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v270/li25c.html",
+          "https://raw.githubusercontent.com/mlresearch/v270/main/assets/li25c/li25c.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v270/li25c.html",
+          "https://github.com/simpler-env/SimplerEnv"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://simpler-env.github.io/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2405.05941"
+        ]
+      }
+    }
   },
   {
     "id": "rethinking-sim2real",
     "canonical_title": "Rethinking Sim2Real: Lower Fidelity Simulation Leads to Higher Sim2Real Transfer in Navigation",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2207.10821",
+    "first_public_year": 2022,
     "publication": {
       "label": "CoRL 2022 (proceedings 2023)",
       "source_url": "https://proceedings.mlr.press/v205/truong23a.html"
@@ -1080,7 +1643,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://proceedings.mlr.press/v205/truong23a.html",
-      "project": null,
+      "project": "https://joannetruong.com/projects/kin2dyn.html",
       "full_text": null
     },
     "annotation": {
@@ -1093,7 +1656,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/joannetruong/habitat-lab/tree/kin2dyn",
       "status": "not_run"
     },
     "reproduction": {
@@ -1118,14 +1681,43 @@
       "pages": "859--870"
     },
     "supplement_group": "transfer",
-    "supplement_reason": "A navigation study isolates simulation-fidelity effects on policy transfer, providing context for evaluation design."
+    "supplement_reason": "A navigation study isolates simulation-fidelity effects on policy transfer, providing context for evaluation design.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v205/truong23a.html",
+          "https://proceedings.mlr.press/v205/truong23a/truong23a.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://joannetruong.com/projects/kin2dyn.html",
+          "https://github.com/joannetruong/habitat-lab/tree/kin2dyn"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://joannetruong.com/projects/kin2dyn.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2207.10821"
+        ]
+      }
+    }
   },
   {
     "id": "physical-law-perspective",
     "canonical_title": "How Far Is Video Generation from World Model: A Physical Law Perspective",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2411.02385",
+    "first_public_year": 2024,
     "publication": {
       "label": "ICML 2025",
       "source_url": "https://proceedings.mlr.press/v267/kang25g.html"
@@ -1138,7 +1730,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://proceedings.mlr.press/v267/kang25g.html",
-      "project": null,
+      "project": "https://phyworld.github.io/",
       "full_text": null
     },
     "annotation": {
@@ -1151,7 +1743,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/phyworld/phyworld",
       "status": "not_run"
     },
     "reproduction": {
@@ -1176,14 +1768,43 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "28991--29017"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v267/kang25g.html",
+          "https://raw.githubusercontent.com/mlresearch/v267/main/assets/kang25g/kang25g.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://phyworld.github.io/",
+          "https://github.com/phyworld/phyworld"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://phyworld.github.io/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2411.02385"
+        ]
+      }
     }
   },
   {
     "id": "world-in-world",
     "canonical_title": "World-In-World: World Models in a Closed-Loop World",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2510.18135",
+    "first_public_year": 2025,
     "publication": {
       "label": "ICLR 2026",
       "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html"
@@ -1196,7 +1817,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html",
-      "project": null,
+      "project": "https://world-in-world.github.io/",
       "full_text": null
     },
     "annotation": {
@@ -1209,7 +1830,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/World-In-World/world-in-world",
       "status": "not_run"
     },
     "reproduction": {
@@ -1242,14 +1863,43 @@
       "entry_type": "inproceedings",
       "pages": "55660--55699",
       "booktitle": "International Conference on Learning Representations"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html",
+          "https://proceedings.iclr.cc/paper_files/paper/2026/file/5b4263be85820683d78675cc18d2efc7-Paper-Conference.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://world-in-world.github.io/",
+          "https://github.com/World-In-World/world-in-world"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://world-in-world.github.io/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2510.18135"
+        ]
+      }
     }
   },
   {
     "id": "plan2explore",
     "canonical_title": "Planning to Explore via Self-Supervised World Models",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2005.05960",
+    "first_public_year": 2020,
     "publication": {
       "label": "ICML 2020",
       "source_url": "https://proceedings.mlr.press/v119/sekar20a.html"
@@ -1262,7 +1912,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://proceedings.mlr.press/v119/sekar20a.html",
-      "project": null,
+      "project": "https://ramanans1.github.io/plan2explore/",
       "full_text": null
     },
     "annotation": {
@@ -1275,7 +1925,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/ramanans1/plan2explore",
       "status": "not_run"
     },
     "reproduction": {
@@ -1298,14 +1948,43 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "8583--8592"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v119/sekar20a.html",
+          "https://proceedings.mlr.press/v119/sekar20a/sekar20a.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://ramanans1.github.io/plan2explore/",
+          "https://github.com/ramanans1/plan2explore"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://ramanans1.github.io/plan2explore/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2005.05960"
+        ]
+      }
     }
   },
   {
     "id": "asid",
     "canonical_title": "ASID: Active Exploration for System Identification in Robotic Manipulation",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2404.12308",
+    "first_public_year": 2024,
     "publication": {
       "label": "ICLR 2024",
       "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html"
@@ -1318,7 +1997,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html",
-      "project": null,
+      "project": "https://weirdlabuw.github.io/asid/",
       "full_text": null
     },
     "annotation": {
@@ -1331,7 +2010,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/WEIRDLabUW/asid",
       "status": "not_run"
     },
     "reproduction": {
@@ -1354,14 +2033,43 @@
       "booktitle": "International Conference on Learning Representations"
     },
     "supplement_group": "transfer",
-    "supplement_reason": "Active system identification connects information gathering to simulator calibration, providing a related approach to dynamics adaptation."
+    "supplement_reason": "Active system identification connects information gathering to simulator calibration, providing a related approach to dynamics adaptation.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html",
+          "https://proceedings.iclr.cc/paper_files/paper/2024/file/ae8afec5dabb07091d8f85128250f2ff-Paper-Conference.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://weirdlabuw.github.io/asid/",
+          "https://github.com/WEIRDLabUW/asid"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://weirdlabuw.github.io/asid/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2404.12308"
+        ]
+      }
+    }
   },
   {
     "id": "poke-strike",
     "canonical_title": "Poke and Strike: Learning Task-Informed Exploration Policies",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2509.00178",
+    "first_public_year": 2025,
     "publication": {
       "label": "CoRL 2025",
       "source_url": "https://proceedings.mlr.press/v305/aoyama25a.html"
@@ -1375,7 +2083,7 @@
     "priority": "core",
     "links": {
       "paper": "https://proceedings.mlr.press/v305/aoyama25a.html",
-      "project": null,
+      "project": "https://marina-aoyama.github.io/poke-and-strike/",
       "full_text": null
     },
     "annotation": {
@@ -1411,14 +2119,43 @@
       "pages": "3008--3034"
     },
     "supplement_group": "transfer",
-    "supplement_reason": "Task-informed interaction links physical-property identification to manipulation, providing background on acquiring useful adaptation data."
+    "supplement_reason": "Task-informed interaction links physical-property identification to manipulation, providing background on acquiring useful adaptation data.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v305/aoyama25a.html",
+          "https://raw.githubusercontent.com/mlresearch/v305/main/assets/aoyama25a/aoyama25a.pdf"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v305/main/assets/aoyama25a/aoyama25a.pdf"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://marina-aoyama.github.io/poke-and-strike/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2509.00178"
+        ]
+      },
+      "note": "Author project page verified; no implementation link was located there."
+    }
   },
   {
     "id": "curious-replay",
     "canonical_title": "Curious Replay for Model-based Adaptation",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2306.15934",
+    "first_public_year": 2023,
     "publication": {
       "label": "ICML 2023",
       "source_url": "https://proceedings.mlr.press/v202/kauvar23a.html"
@@ -1444,7 +2181,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/AutonomousAgentsLab/curiousreplay",
       "status": "not_run"
     },
     "reproduction": {
@@ -1465,6 +2202,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "16018--16048"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v202/kauvar23a.html",
+          "https://proceedings.mlr.press/v202/kauvar23a/kauvar23a.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v202/kauvar23a/kauvar23a.pdf",
+          "https://github.com/AutonomousAgentsLab/curiousreplay"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v202/kauvar23a.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2306.15934"
+        ]
+      }
     }
   },
   {
@@ -1485,7 +2251,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://arxiv.org/abs/2506.09985",
-      "project": null,
+      "project": "https://ai.meta.com/research/vjepa/",
       "full_text": null
     },
     "annotation": {
@@ -1498,7 +2264,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/facebookresearch/vjepa2",
       "status": "not_run"
     },
     "reproduction": {
@@ -1543,6 +2309,35 @@
       "verified_on": "2026-10-21",
       "entry_type": "misc",
       "eprint": "2506.09985"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2506.09985",
+          "https://arxiv.org/pdf/2506.09985"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2506.09985",
+          "https://github.com/facebookresearch/vjepa2"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://ai.meta.com/research/vjepa/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2506.09985"
+        ]
+      }
     }
   },
   {
@@ -1601,7 +2396,36 @@
       "eprint": "2603.19312"
     },
     "supplement_group": "foundations",
-    "supplement_reason": "An end-to-end predictive architecture provides a compact baseline for representation and planning studies."
+    "supplement_reason": "An end-to-end predictive architecture provides a compact baseline for representation and planning studies.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2603.19312",
+          "https://arxiv.org/pdf/2603.19312"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2603.19312",
+          "https://github.com/lucas-maes/le-wm"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://le-wm.github.io/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2603.19312"
+        ]
+      }
+    }
   },
   {
     "id": "jepa-wms",
@@ -1611,7 +2435,7 @@
     "first_public_year": null,
     "publication": {
       "label": "TMLR 2026",
-      "source_url": "https://arxiv.org/abs/2512.24497"
+      "source_url": "https://openreview.net/forum?id=cHZn5Gdh8e"
     },
     "primary_module": "M4",
     "secondary_modules": [
@@ -1621,7 +2445,7 @@
     "collection": "seed_v0_2",
     "priority": "core",
     "links": {
-      "paper": "https://arxiv.org/abs/2512.24497",
+      "paper": "https://openreview.net/forum?id=cHZn5Gdh8e",
       "project": null,
       "full_text": null
     },
@@ -1650,21 +2474,55 @@
         "Bardes, Adrien",
         "LeCun, Yann"
       ],
-      "year": 2025,
-      "source_url": "https://arxiv.org/abs/2512.24497",
+      "year": 2026,
+      "source_url": "https://openreview.net/forum?id=cHZn5Gdh8e",
       "verified_on": "2026-10-21",
-      "entry_type": "misc",
-      "eprint": "2512.24497"
+      "entry_type": "article",
+      "eprint": "2512.24497",
+      "journal": "Transactions on Machine Learning Research"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://openreview.net/forum?id=cHZn5Gdh8e",
+          "https://arxiv.org/abs/2512.24497",
+          "https://arxiv.org/pdf/2512.24497",
+          "https://openreview.net/pdf?id=cHZn5Gdh8e"
+        ],
+        "browser_verified": true
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://openreview.net/pdf?id=cHZn5Gdh8e",
+          "https://github.com/facebookresearch/jepa-wms"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2512.24497"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2512.24497"
+        ]
+      }
     }
   },
   {
     "id": "dreamerv3",
     "canonical_title": "Mastering diverse control tasks through world models",
     "aliases": [
-      "DreamerV3"
+      "DreamerV3",
+      "Mastering Diverse Domains through World Models"
     ],
-    "arxiv_id": null,
-    "first_public_year": null,
+    "arxiv_id": "2301.04104",
+    "first_public_year": 2023,
     "publication": {
       "label": "Nature 2025",
       "source_url": "https://www.nature.com/articles/s41586-025-08744-2"
@@ -1677,7 +2535,7 @@
     "priority": "reference",
     "links": {
       "paper": "https://www.nature.com/articles/s41586-025-08744-2",
-      "project": null,
+      "project": "https://danijar.com/project/dreamerv3/",
       "full_text": null
     },
     "annotation": {
@@ -1690,7 +2548,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/danijar/dreamerv3",
       "status": "not_run"
     },
     "reproduction": {
@@ -1715,7 +2573,36 @@
       "pages": "647--653"
     },
     "supplement_group": "foundations",
-    "supplement_reason": "A broadly applicable model-based RL algorithm provides a control baseline; shared hyperparameters across tasks are distinct from transferring a trained model."
+    "supplement_reason": "A broadly applicable model-based RL algorithm provides a control baseline; shared hyperparameters across tasks are distinct from transferring a trained model.",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://www.nature.com/articles/s41586-025-08744-2",
+          "https://www.nature.com/articles/s41586-025-08744-2.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://www.nature.com/articles/s41586-025-08744-2",
+          "https://github.com/danijar/dreamerv3"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://danijar.com/project/dreamerv3/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2301.04104"
+        ]
+      }
+    }
   },
   {
     "id": "howm",
@@ -1723,7 +2610,7 @@
     "aliases": [
       "HOWM"
     ],
-    "arxiv_id": null,
+    "arxiv_id": "2204.13661",
     "first_public_year": 2022,
     "publication": {
       "label": "ICML 2022",
@@ -1750,7 +2637,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/linfeng-z/HOWM",
       "status": "not_run"
     },
     "reproduction": {
@@ -1771,6 +2658,34 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "26841--26864"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v162/zhao22b.html",
+          "https://proceedings.mlr.press/v162/zhao22b/zhao22b.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://github.com/linfeng-z/HOWM"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v162/zhao22b.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2204.13661"
+        ]
+      }
     }
   },
   {
@@ -1779,7 +2694,7 @@
     "aliases": [
       "WM3C"
     ],
-    "arxiv_id": null,
+    "arxiv_id": "2505.08361",
     "first_public_year": 2025,
     "publication": {
       "label": "ICLR 2025",
@@ -1824,13 +2739,43 @@
       "verified_on": "2026-10-21",
       "entry_type": "inproceedings",
       "booktitle": "International Conference on Learning Representations"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html",
+          "https://proceedings.iclr.cc/paper_files/paper/2025/file/79d86433c2acd12b6fa98553435d226e-Paper-Conference.pdf"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2025/file/79d86433c2acd12b6fa98553435d226e-Paper-Conference.pdf"
+        ]
+      },
+      "project": {
+        "status": "unavailable",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html",
+          "https://www.charonwangg.com/project/wm3c"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2505.08361"
+        ]
+      },
+      "note": "The paper-linked author project page failed to display. Baseline repositories cited in the appendix were not assigned as the paper's code."
     }
   },
   {
     "id": "behavior-invariant-wm",
     "canonical_title": "Behavior-Invariant Task Representation Learning with Transformer-based World Models for Offline Meta-Reinforcement Learning",
     "aliases": [],
-    "arxiv_id": null,
+    "arxiv_id": "2606.00780",
     "first_public_year": 2026,
     "publication": {
       "label": "ICML 2026",
@@ -1857,7 +2802,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/QianFY/MetaSTAR",
       "status": "not_run"
     },
     "reproduction": {
@@ -1878,13 +2823,42 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "101134--101160"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v306/qian26o.html",
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/qian26o/qian26o.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/qian26o/qian26o.pdf",
+          "https://github.com/QianFY/MetaSTAR"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v306/qian26o.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2606.00780"
+        ]
+      }
     }
   },
   {
     "id": "wombet",
     "canonical_title": "WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning",
     "aliases": [],
-    "arxiv_id": null,
+    "arxiv_id": "2604.08958",
     "first_public_year": 2026,
     "publication": {
       "label": "L4DC 2026",
@@ -1930,6 +2904,35 @@
       "booktitle": "Learning for Dynamics and Control Conference",
       "publisher": "PMLR",
       "pages": "1121--1133"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v331/kim26a.html",
+          "https://raw.githubusercontent.com/mlresearch/v331/main/assets/kim26a/kim26a.pdf"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v331/main/assets/kim26a/kim26a.pdf"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v331/kim26a.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2604.08958"
+        ]
+      },
+      "note": "No official code repository or project homepage was located in the reviewed primary sources."
     }
   },
   {
@@ -1983,6 +2986,35 @@
       "verified_on": "2026-10-21",
       "entry_type": "misc",
       "eprint": "2610.06651"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2610.06651",
+          "https://arxiv.org/pdf/2610.06651"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/pdf/2610.06651"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2610.06651"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2610.06651"
+        ]
+      },
+      "note": "No official code repository or project homepage was located in the reviewed primary sources."
     }
   },
   {
@@ -2037,7 +3069,36 @@
       "publisher": "PMLR",
       "pages": "51659--51687"
     },
-    "domain_label": "Theory"
+    "domain_label": "Theory",
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v267/richens25a.html",
+          "https://raw.githubusercontent.com/mlresearch/v267/main/assets/richens25a/richens25a.pdf"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v267/main/assets/richens25a/richens25a.pdf"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v267/richens25a.html"
+        ]
+      },
+      "arxiv": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v267/richens25a.html"
+        ]
+      },
+      "note": "No official code repository or project homepage was located in the reviewed primary sources."
+    }
   },
   {
     "id": "probing-rl-world-models",
@@ -2047,7 +3108,7 @@
     "first_public_year": 2026,
     "publication": {
       "label": "ICLR 2026 World Models Workshop",
-      "source_url": "https://arxiv.org/abs/2603.21546"
+      "source_url": "https://openreview.net/forum?id=VE7JJLVKG1"
     },
     "primary_module": "M8",
     "secondary_modules": [
@@ -2056,7 +3117,7 @@
     "collection": "additions_2026_10_21",
     "priority": "core",
     "links": {
-      "paper": "https://arxiv.org/abs/2603.21546",
+      "paper": "https://openreview.net/forum?id=VE7JJLVKG1",
       "project": null,
       "full_text": null
     },
@@ -2082,17 +3143,49 @@
         "Xinyu Zhang"
       ],
       "year": 2026,
-      "source_url": "https://arxiv.org/abs/2603.21546",
+      "source_url": "https://openreview.net/forum?id=VE7JJLVKG1",
       "verified_on": "2026-10-21",
       "entry_type": "misc",
       "eprint": "2603.21546"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://openreview.net/forum?id=VE7JJLVKG1",
+          "https://arxiv.org/abs/2603.21546",
+          "https://arxiv.org/pdf/2603.21546",
+          "https://openreview.net/pdf?id=VE7JJLVKG1"
+        ],
+        "browser_verified": true
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://openreview.net/pdf?id=VE7JJLVKG1"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2603.21546"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2603.21546"
+        ]
+      },
+      "note": "Workshop status was verified from the paper header; no official code repository was located."
     }
   },
   {
     "id": "physically-interpretable",
     "canonical_title": "Four Principles for Physically Interpretable World Models",
     "aliases": [],
-    "arxiv_id": null,
+    "arxiv_id": "2503.02143",
     "first_public_year": 2025,
     "publication": {
       "label": "NeuS 2025",
@@ -2120,7 +3213,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/Trustworthy-Engineered-Autonomy-Lab/piwm-principles",
       "status": "not_run"
     },
     "reproduction": {
@@ -2142,13 +3235,44 @@
       "booktitle": "International Conference on Neuro-symbolic Systems",
       "publisher": "PMLR",
       "pages": "66--89"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v288/peper25a.html",
+          "https://raw.githubusercontent.com/mlresearch/v288/main/assets/peper25a/peper25a.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://raw.githubusercontent.com/mlresearch/v288/main/assets/peper25a/peper25a.pdf",
+          "https://github.com/Trustworthy-Engineered-Autonomy-Lab/piwm-principles"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v288/peper25a.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2503.02143"
+        ]
+      }
     }
   },
   {
     "id": "group-structure",
     "canonical_title": "Learning Disentangled Representations and Group Structure of Dynamical Environments",
-    "aliases": [],
-    "arxiv_id": null,
+    "aliases": [
+      "Learning Group Structure and Disentangled Representations of Dynamical Environments"
+    ],
+    "arxiv_id": "2002.06991",
     "first_public_year": 2020,
     "publication": {
       "label": "NeurIPS 2020",
@@ -2196,6 +3320,35 @@
       "booktitle": "Advances in Neural Information Processing Systems",
       "volume": "33",
       "pages": "19727--19737"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html",
+          "https://proceedings.neurips.cc/paper_files/paper/2020/file/e449b9317dad920c0dd5ad0a2a2d5e49-Paper.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper_files/paper/2020/file/e449b9317dad920c0dd5ad0a2a2d5e49-Paper.pdf",
+          "https://github.com/IndustAI/learning-group-structure"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2002.06991"
+        ]
+      }
     }
   },
   {
@@ -2229,7 +3382,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/jypark0/sen",
       "status": "not_run"
     },
     "reproduction": {
@@ -2251,6 +3404,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "17372--17389"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v162/park22a.html",
+          "https://proceedings.mlr.press/v162/park22a/park22a.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v162/park22a/park22a.pdf",
+          "https://github.com/jypark0/sen"
+        ]
+      },
+      "project": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v162/park22a.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2204.11371"
+        ]
+      }
     }
   },
   {
@@ -2259,7 +3441,7 @@
     "aliases": [
       "Flow Equivariant World Models: Memory for Partially Observed Dynamic Environments"
     ],
-    "arxiv_id": null,
+    "arxiv_id": "2601.01075",
     "first_public_year": 2026,
     "publication": {
       "label": "ICML 2026",
@@ -2287,7 +3469,7 @@
       "depth": "metadata_abstract_project"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/hlillemark/flowm",
       "status": "not_run"
     },
     "reproduction": {
@@ -2309,6 +3491,35 @@
       "booktitle": "International Conference on Machine Learning",
       "publisher": "PMLR",
       "pages": "73968--74002"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.mlr.press/v306/lillemark26a.html",
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/lillemark26a/lillemark26a.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://flowequivariantworldmodels.github.io/",
+          "https://github.com/hlillemark/flowm"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://flowequivariantworldmodels.github.io/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2601.01075"
+        ]
+      }
     }
   },
   {
@@ -2343,7 +3554,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/systematic-visual-imagination/svib",
       "status": "not_run"
     },
     "reproduction": {
@@ -2366,6 +3577,35 @@
       "volume": "36",
       "doi": "10.52202/075280-1210",
       "pages": "27880--27896"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html",
+          "https://proceedings.neurips.cc/paper_files/paper/2023/file/58af908d6293810f1a29e69bf723dc48-Paper-Datasets_and_Benchmarks.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://systematic-visual-imagination.github.io/",
+          "https://github.com/systematic-visual-imagination/svib"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://systematic-visual-imagination.github.io/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2311.09064"
+        ]
+      }
     }
   },
   {
@@ -2400,7 +3640,7 @@
       "depth": "metadata_abstract_project"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/cogtoolslab/physics-benchmarking-neurips2021",
       "status": "not_run"
     },
     "reproduction": {
@@ -2431,6 +3671,35 @@
       "entry_type": "inproceedings",
       "booktitle": "Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks",
       "volume": "1"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/d09bf41544a3365a46c9077ebb5e35c3-Abstract-round1.html",
+          "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/file/d09bf41544a3365a46c9077ebb5e35c3-Paper-round1.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://physion-benchmark.github.io/",
+          "https://github.com/cogtoolslab/physics-benchmarking-neurips2021"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://physion-benchmark.github.io/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2106.08261"
+        ]
+      }
     }
   },
   {
@@ -2492,14 +3761,43 @@
       "volume": "36",
       "doi": "10.52202/075280-2929",
       "pages": "67048--67068"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.nips.cc/paper_files/paper/2023/hash/d3e8011c912e651ab2a76e7935a1e464-Abstract-Datasets_and_Benchmarks.html",
+          "https://proceedings.neurips.cc/paper_files/paper/2023/file/d3e8011c912e651ab2a76e7935a1e464-Paper-Datasets_and_Benchmarks.pdf"
+        ]
+      },
+      "code": {
+        "status": "not_located",
+        "evidence_urls": [
+          "https://proceedings.neurips.cc/paper_files/paper/2023/file/d3e8011c912e651ab2a76e7935a1e464-Paper-Datasets_and_Benchmarks.pdf"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://dingmyu.github.io/physion_v2/"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2306.15668"
+        ]
+      },
+      "note": "The project page releases datasets and human data; template repository links are not implementation links."
     }
   },
   {
     "id": "worldgym",
     "canonical_title": "WorldGym: World Model as An Environment for Policy Evaluation",
     "aliases": [],
-    "arxiv_id": null,
-    "first_public_year": 2026,
+    "arxiv_id": "2506.00613",
+    "first_public_year": 2025,
     "publication": {
       "label": "ICLR 2026",
       "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html"
@@ -2513,7 +3811,7 @@
     "priority": "core",
     "links": {
       "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html",
-      "project": "https://world-model-eval.github.io/",
+      "project": "https://world-model-eval.github.io/abstract.html",
       "full_text": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7f5e909ac0324db03506b380c695ffaf-Paper-Conference.pdf"
     },
     "annotation": {
@@ -2526,7 +3824,7 @@
       "depth": "metadata_abstract"
     },
     "code": {
-      "url": null,
+      "url": "https://github.com/world-model-eval/world-model-eval",
       "status": "not_run"
     },
     "reproduction": {
@@ -2549,6 +3847,35 @@
       "booktitle": "International Conference on Learning Representations",
       "volume": "2026",
       "pages": "78932--78957"
+    },
+    "resource_review": {
+      "date": "2026-10-21",
+      "publication": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html",
+          "https://proceedings.iclr.cc/paper_files/paper/2026/file/7f5e909ac0324db03506b380c695ffaf-Paper-Conference.pdf"
+        ]
+      },
+      "code": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://world-model-eval.github.io/abstract.html",
+          "https://github.com/world-model-eval/world-model-eval"
+        ]
+      },
+      "project": {
+        "status": "verified_official",
+        "evidence_urls": [
+          "https://world-model-eval.github.io/abstract.html"
+        ]
+      },
+      "arxiv": {
+        "status": "verified",
+        "evidence_urls": [
+          "https://arxiv.org/abs/2506.00613"
+        ]
+      }
     }
   }
 ]

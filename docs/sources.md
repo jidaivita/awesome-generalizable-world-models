@@ -20,6 +20,6 @@ Entries describe contributions, methods, and evaluation scope. Background papers
 
 ## Visual assets
 
-The [cover illustration](../assets/world-models-cover.png) depicts physical environments, shared latent dynamics, and representation analysis. The README layout and resource badges were informed by [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models). See the [asset notes](../assets/README.md) for image provenance and the earlier vector illustration.
+The [cover illustration](../assets/world-models-cover.png) illustrates observation, prediction, generalization, and interpretation through a tabletop pushing example. The README layout and resource badges were informed by [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models). See the [asset notes](../assets/README.md) for image provenance and the earlier vector illustration.
 
 <!-- END GENERATED RESEARCH MAP -->

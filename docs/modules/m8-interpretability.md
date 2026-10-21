@@ -24,7 +24,7 @@ A probe's accuracy alone does not establish that the native predictor or planner
 <a id="paper-interpreting-physics"></a>
 ### Interpreting Physics in Video World Models
 
-[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/joseph26a.html) [![arXiv: 2602.07050](https://img.shields.io/badge/arXiv-2602.07050-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.07050)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/joseph26a.html) [![arXiv: 2602.07050](https://img.shields.io/badge/arXiv-2602.07050-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.07050) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://www.soniajoseph.ai/interpreting-ph/)
 
 Sonia Joseph et al.
 
@@ -35,7 +35,7 @@ Sonia Joseph et al.
 <a id="paper-probing-rl-world-models"></a>
 ### What Do World Models Learn in RL? Probing Latent Representations in Learned Environment Simulators
 
-[![ICLR: 2026 World Models Workshop](https://img.shields.io/badge/ICLR-2026%20World%20Models%20Workshop-7657a3?style=flat-square)](https://arxiv.org/abs/2603.21546) [![arXiv: 2603.21546](https://img.shields.io/badge/arXiv-2603.21546-b31b1b?style=flat-square)](https://arxiv.org/abs/2603.21546)
+[![ICLR: 2026 World Models Workshop](https://img.shields.io/badge/ICLR-2026%20World%20Models%20Workshop-7657a3?style=flat-square)](https://openreview.net/forum?id=VE7JJLVKG1) [![arXiv: 2603.21546](https://img.shields.io/badge/arXiv-2603.21546-b31b1b?style=flat-square)](https://arxiv.org/abs/2603.21546)
 
 Xinyu Zhang
 
@@ -48,7 +48,7 @@ Xinyu Zhang
 <a id="paper-what-found"></a>
 ### What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models
 
-[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/vafa25a.html)
+[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/vafa25a.html) [![arXiv: 2507.06952](https://img.shields.io/badge/arXiv-2507.06952-b31b1b?style=flat-square)](https://arxiv.org/abs/2507.06952) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/keyonvafa/inductive-bias-probes)
 
 Keyon Vafa et al.
 
@@ -61,7 +61,7 @@ Keyon Vafa et al.
 <a id="paper-physically-interpretable"></a>
 ### Four Principles for Physically Interpretable World Models
 
-[![NeuS: 2025](https://img.shields.io/badge/NeuS-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v288/peper25a.html)
+[![NeuS: 2025](https://img.shields.io/badge/NeuS-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v288/peper25a.html) [![arXiv: 2503.02143](https://img.shields.io/badge/arXiv-2503.02143-b31b1b?style=flat-square)](https://arxiv.org/abs/2503.02143) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/Trustworthy-Engineered-Autonomy-Lab/piwm-principles)
 
 Jordan Peper et al.
 

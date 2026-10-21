@@ -166,7 +166,7 @@ def render(root=ROOT):
 
 Representation structure, latent dynamics, physical inference, and planning.
 
-<img src="assets/world-models-cover.png" width="100%" alt="Conceptual illustration of shared latent dynamics across physical environments, with probes and interventions into the representation">
+<img src="assets/world-models-cover.png" width="100%" alt="Observe, predict, generalize, and interpret: a tabletop pushing example with images, actions, future states, new objects, and representation interventions">
 
 [Research Map](#research-map) · [Reading Guide](docs/reading-guide.md) · [BibTeX](references.bib) · [Related Resources](#related-resources) · [Contributing](CONTRIBUTING.md)
 
@@ -330,7 +330,12 @@ Twelve papers connect evidence about learned world structure to composition, geo
 
     candidates = '[← Paper index](../README.md#research-map) · [Reading guide](reading-guide.md)\n\n# Candidate Papers\n\nThese papers are listed separately from the main catalog and are excluded from its counts and bibliography.\n\n'
     for c in cfg['candidates']:
-        candidates += f"<a id=\"paper-{c['id']}\"></a>\n## {c['title']}\n\n{publication_badge(c['publication'], c['url'], c['arxiv_id'])}\n\n{author_label({'bibliography': {'authors': c['authors']}})}\n\n"
+        candidate_badges = publication_badge(c['publication'], c['url'], c['arxiv_id'])
+        if c.get('code_url'):
+            candidate_badges += ' ' + badge('Code', 'GitHub', '2e8b57', c['code_url'])
+        if c.get('project_url'):
+            candidate_badges += ' ' + badge('Project', 'Website', '2679b5', c['project_url'])
+        candidates += f"<a id=\"paper-{c['id']}\"></a>\n## {c['title']}\n\n{candidate_badges}\n\n{author_label({'bibliography': {'authors': c['authors']}})}\n\n"
         if c['aliases']:
             candidates += 'Earlier titles: ' + '; '.join(c['aliases']) + '.\n\n'
         candidates += f"- **Method:** {c['method']}\n- **Evaluation:** {c['evaluation']}\n- **Related topic:** [{bymod[c['module']]['title']}]({relative(module_path(bymod[c['module']]), 'docs/candidates.md')})\n\n"
@@ -351,7 +356,7 @@ Entries describe contributions, methods, and evaluation scope. Background papers
 
 ## Visual assets
 
-The [cover illustration](../assets/world-models-cover.png) depicts physical environments, shared latent dynamics, and representation analysis. The README layout and resource badges were informed by [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models). See the [asset notes](../assets/README.md) for image provenance and the earlier vector illustration.
+The [cover illustration](../assets/world-models-cover.png) illustrates observation, prediction, generalization, and interpretation through a tabletop pushing example. The README layout and resource badges were informed by [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models). See the [asset notes](../assets/README.md) for image provenance and the earlier vector illustration.
 '''
     out['references.bib'] = bibliography(papers)
     return out

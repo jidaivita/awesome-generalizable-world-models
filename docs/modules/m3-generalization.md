@@ -24,7 +24,7 @@ Zero-shot transfer, inference from interaction history, and parameter-updating a
 <a id="paper-dreamweaver"></a>
 ### Dreamweaver: Learning Compositional World Models from Pixels
 
-[![ICLR: 2025](https://img.shields.io/badge/ICLR-2025-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html)
+[![ICLR: 2025](https://img.shields.io/badge/ICLR-2025-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html) [![arXiv: 2501.14174](https://img.shields.io/badge/arXiv-2501.14174-b31b1b?style=flat-square)](https://arxiv.org/abs/2501.14174) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/ahn-ml/dreamweaver-release) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://dion-jy.github.io/dreamweaver-website/)
 
 Junyeob Baek et al.
 
@@ -35,7 +35,7 @@ Junyeob Baek et al.
 <a id="paper-wm3c"></a>
 ### Modeling Unseen Environments with Language-guided Composable Causal Components in Reinforcement Learning
 
-[![ICLR: 2025](https://img.shields.io/badge/ICLR-2025-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html)
+[![ICLR: 2025](https://img.shields.io/badge/ICLR-2025-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html) [![arXiv: 2505.08361](https://img.shields.io/badge/arXiv-2505.08361-b31b1b?style=flat-square)](https://arxiv.org/abs/2505.08361)
 
 Xinyue Wang et al.
 
@@ -48,7 +48,7 @@ Earlier titles / aliases: WM3C.
 <a id="paper-howm"></a>
 ### Toward Compositional Generalization in Object-Oriented World Modeling
 
-[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/zhao22b.html)
+[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/zhao22b.html) [![arXiv: 2204.13661](https://img.shields.io/badge/arXiv-2204.13661-b31b1b?style=flat-square)](https://arxiv.org/abs/2204.13661) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/linfeng-z/HOWM)
 
 Linfeng Zhao et al.
 
@@ -85,7 +85,7 @@ Fan Wang et al.
 <a id="paper-cadm"></a>
 ### Context-aware Dynamics Model for Generalization in Model-Based Reinforcement Learning
 
-[![ICML: 2020](https://img.shields.io/badge/ICML-2020-526d82?style=flat-square)](https://proceedings.mlr.press/v119/lee20g.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/younggyoseo/CaDM)
+[![ICML: 2020](https://img.shields.io/badge/ICML-2020-526d82?style=flat-square)](https://proceedings.mlr.press/v119/lee20g.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/younggyoseo/CaDM) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://sites.google.com/view/cadm)
 
 Kimin Lee et al.
 
@@ -95,7 +95,7 @@ Kimin Lee et al.
 <a id="paper-curious-replay"></a>
 ### Curious Replay for Model-based Adaptation
 
-[![ICML: 2023](https://img.shields.io/badge/ICML-2023-526d82?style=flat-square)](https://proceedings.mlr.press/v202/kauvar23a.html)
+[![ICML: 2023](https://img.shields.io/badge/ICML-2023-526d82?style=flat-square)](https://proceedings.mlr.press/v202/kauvar23a.html) [![arXiv: 2306.15934](https://img.shields.io/badge/arXiv-2306.15934-b31b1b?style=flat-square)](https://arxiv.org/abs/2306.15934) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/AutonomousAgentsLab/curiousreplay)
 
 Isaac Kauvar et al.
 
@@ -106,7 +106,7 @@ Isaac Kauvar et al.
 <a id="paper-dynamics-geometries"></a>
 ### Dynamics Are Learned, Not Told: Semi-Supervised Discovery of Latent Dynamics Geometries For Zero-Shot Policy Adaptation
 
-[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/xu26cq.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/xu26cq.html) [![arXiv: 2606.02280](https://img.shields.io/badge/arXiv-2606.02280-b31b1b?style=flat-square)](https://arxiv.org/abs/2606.02280) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries)
 
 Zhiming Xu et al.
 
@@ -119,7 +119,7 @@ Zhiming Xu et al.
 <a id="paper-behavior-invariant-wm"></a>
 ### Behavior-Invariant Task Representation Learning with Transformer-based World Models for Offline Meta-Reinforcement Learning
 
-[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/qian26o.html)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/qian26o.html) [![arXiv: 2606.00780](https://img.shields.io/badge/arXiv-2606.00780-b31b1b?style=flat-square)](https://arxiv.org/abs/2606.00780) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/QianFY/MetaSTAR)
 
 Fuyuan Qian et al.
 
@@ -130,7 +130,7 @@ Fuyuan Qian et al.
 <a id="paper-wombet"></a>
 ### WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning
 
-[![L4DC: 2026](https://img.shields.io/badge/L4DC-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v331/kim26a.html)
+[![L4DC: 2026](https://img.shields.io/badge/L4DC-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v331/kim26a.html) [![arXiv: 2604.08958](https://img.shields.io/badge/arXiv-2604.08958-b31b1b?style=flat-square)](https://arxiv.org/abs/2604.08958)
 
 Mintae Kim et al.
 

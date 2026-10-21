@@ -27,11 +27,11 @@ Earlier titles / aliases: LeWM.
 <a id="paper-dreamerv3"></a>
 ### Mastering diverse control tasks through world models
 
-[![Nature: 2025](https://img.shields.io/badge/Nature-2025-526d82?style=flat-square)](https://www.nature.com/articles/s41586-025-08744-2)
+[![Nature: 2025](https://img.shields.io/badge/Nature-2025-526d82?style=flat-square)](https://www.nature.com/articles/s41586-025-08744-2) [![arXiv: 2301.04104](https://img.shields.io/badge/arXiv-2301.04104-b31b1b?style=flat-square)](https://arxiv.org/abs/2301.04104) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/danijar/dreamerv3) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://danijar.com/project/dreamerv3/)
 
 Danijar Hafner et al.
 
-Earlier titles / aliases: DreamerV3.
+Earlier titles / aliases: DreamerV3; Mastering Diverse Domains through World Models.
 
 - **Method:** A recurrent latent world model generates imagined trajectories for actor-critic learning. Normalization, loss balancing, and value transformations stabilize optimization across domains.
 - **Evaluation:** More than 150 tasks test a shared algorithm configuration, including Minecraft learning from scratch. Model and policy parameters are learned in each environment; the shared component is the algorithm and its hyperparameters.
@@ -45,7 +45,7 @@ Geometry and analysis methods from language modeling and procedural planning, wi
 <a id="paper-geoworld"></a>
 ### GeoWorld: Geometric World Models
 
-[![CVPR: 2026](https://img.shields.io/badge/CVPR-2026-526d82?style=flat-square)](https://arxiv.org/abs/2602.23058) [![arXiv: 2602.23058](https://img.shields.io/badge/arXiv-2602.23058-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.23058) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://steve-zeyu-zhang.github.io/GeoWorld/)
+[![CVPR: 2026](https://img.shields.io/badge/CVPR-2026-526d82?style=flat-square)](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_GeoWorld_Geometric_World_Models_CVPR_2026_paper.html) [![arXiv: 2602.23058](https://img.shields.io/badge/arXiv-2602.23058-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.23058) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://steve-zeyu-zhang.github.io/GeoWorld/)
 
 Zeyu Zhang et al. · `Procedural planning`
 
@@ -57,7 +57,7 @@ Zeyu Zhang et al. · `Procedural planning`
 <a id="paper-smds"></a>
 ### Hypothesis-Driven Feature Manifold Analysis in LLMs via Supervised Multi-Dimensional Scaling
 
-[![TMLR: 2026](https://img.shields.io/badge/TMLR-2026-526d82?style=flat-square)](https://arxiv.org/abs/2510.01025) [![arXiv: 2510.01025](https://img.shields.io/badge/arXiv-2510.01025-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.01025) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/UKPLab/tmlr2026-manifold-analysis)
+[![TMLR: 2026](https://img.shields.io/badge/TMLR-2026-526d82?style=flat-square)](https://openreview.net/forum?id=vCKZ40YYPr) [![arXiv: 2510.01025](https://img.shields.io/badge/arXiv-2510.01025-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.01025) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/UKPLab/tmlr2026-manifold-analysis)
 
 Federico Tiblias et al. · `LLM analysis`
 
@@ -71,7 +71,7 @@ Earlier titles / aliases: Shape Happens: Automatic Feature Manifold Discovery in
 <a id="paper-origins-manifolds"></a>
 ### The Origins of Representation Manifolds in Large Language Models
 
-[![arXiv: 2505.18235](https://img.shields.io/badge/arXiv-2505.18235-b31b1b?style=flat-square)](https://arxiv.org/abs/2505.18235)
+[![arXiv: 2505.18235](https://img.shields.io/badge/arXiv-2505.18235-b31b1b?style=flat-square)](https://arxiv.org/abs/2505.18235) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/alexandermodell/Representation-Manifolds)
 
 Alexander Modell et al. · `LLM analysis`
 
@@ -87,7 +87,7 @@ Adjacent studies of policy evaluation, simulator calibration, and task-informed 
 <a id="paper-asid"></a>
 ### ASID: Active Exploration for System Identification in Robotic Manipulation
 
-[![ICLR: 2024](https://img.shields.io/badge/ICLR-2024-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html)
+[![ICLR: 2024](https://img.shields.io/badge/ICLR-2024-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html) [![arXiv: 2404.12308](https://img.shields.io/badge/arXiv-2404.12308-b31b1b?style=flat-square)](https://arxiv.org/abs/2404.12308) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/WEIRDLabUW/asid) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://weirdlabuw.github.io/asid/)
 
 Marius Memmel et al.
 
@@ -99,7 +99,7 @@ Marius Memmel et al.
 <a id="paper-simpler"></a>
 ### Evaluating Real-World Robot Manipulation Policies in Simulation
 
-[![CoRL: 2024 (proceedings 2025)](https://img.shields.io/badge/CoRL-2024%20%28proceedings%202025%29-526d82?style=flat-square)](https://proceedings.mlr.press/v270/li25c.html)
+[![CoRL: 2024 (proceedings 2025)](https://img.shields.io/badge/CoRL-2024%20%28proceedings%202025%29-526d82?style=flat-square)](https://proceedings.mlr.press/v270/li25c.html) [![arXiv: 2405.05941](https://img.shields.io/badge/arXiv-2405.05941-b31b1b?style=flat-square)](https://arxiv.org/abs/2405.05941) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/simpler-env/SimplerEnv) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://simpler-env.github.io/)
 
 Xuanlin Li et al.
 
@@ -113,7 +113,7 @@ Earlier titles / aliases: SIMPLER.
 <a id="paper-poke-strike"></a>
 ### Poke and Strike: Learning Task-Informed Exploration Policies
 
-[![CoRL: 2025](https://img.shields.io/badge/CoRL-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v305/aoyama25a.html)
+[![CoRL: 2025](https://img.shields.io/badge/CoRL-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v305/aoyama25a.html) [![arXiv: 2509.00178](https://img.shields.io/badge/arXiv-2509.00178-b31b1b?style=flat-square)](https://arxiv.org/abs/2509.00178) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://marina-aoyama.github.io/poke-and-strike/)
 
 Marina Y. Aoyama et al.
 
@@ -125,7 +125,7 @@ Marina Y. Aoyama et al.
 <a id="paper-rethinking-sim2real"></a>
 ### Rethinking Sim2Real: Lower Fidelity Simulation Leads to Higher Sim2Real Transfer in Navigation
 
-[![CoRL: 2022 (proceedings 2023)](https://img.shields.io/badge/CoRL-2022%20%28proceedings%202023%29-526d82?style=flat-square)](https://proceedings.mlr.press/v205/truong23a.html)
+[![CoRL: 2022 (proceedings 2023)](https://img.shields.io/badge/CoRL-2022%20%28proceedings%202023%29-526d82?style=flat-square)](https://proceedings.mlr.press/v205/truong23a.html) [![arXiv: 2207.10821](https://img.shields.io/badge/arXiv-2207.10821-b31b1b?style=flat-square)](https://arxiv.org/abs/2207.10821) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/joannetruong/habitat-lab/tree/kin2dyn) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://joannetruong.com/projects/kin2dyn.html)
 
 Joanne Truong et al.
 

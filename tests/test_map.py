@@ -151,5 +151,17 @@ class ResearchMapTests(unittest.TestCase):
         path.write_text(path.read_text()+'\n[![badge](https://img.shields.io/badge/test-ok-green)](missing-page.md)\n')
         with self.assertRaisesRegex(ValueError,'Missing local link'):validate_links(self.root)
 
+    def test_official_code_requires_resource_evidence(self):
+        self.edit(lambda papers:papers[0]['resource_review']['code'].update(evidence_urls=[]))
+        with self.assertRaisesRegex(ValueError,'Missing resource evidence'):validate_data(self.root)
+
+    def test_missing_code_is_not_presented_as_official(self):
+        papers,_,_=read_sources(self.root)
+        for p in papers:
+            self.assertEqual(bool(p['code']['url']),p['resource_review']['code']['status']=='verified_official')
+        from build import resources
+        p=next(p for p in papers if p['id']=='value-equivalence')
+        self.assertNotIn('Code: GitHub',resources(p))
+
 
 if __name__=='__main__':unittest.main()

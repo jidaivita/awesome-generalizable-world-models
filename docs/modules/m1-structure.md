@@ -13,9 +13,11 @@ Structure may be supplied by the input, learned from observations, or encouraged
 <a id="paper-causal-jepa"></a>
 ### Causal-JEPA: Learning World Models through Object-Level Latent Masking
 
-[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/nam26c.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/galilai-group/cjepa)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/nam26c.html) [![arXiv: 2602.11389](https://img.shields.io/badge/arXiv-2602.11389-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.11389) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/galilai-group/cjepa)
 
 Heejeong Nam et al.
+
+Earlier titles / aliases: Causal-JEPA: Learning World Models through Object-Level Latent Interventions.
 
 - **Method:** The predictor reconstructs masked object embeddings from the remaining object context. This training objective limits direct access to the target object and makes relational information useful for prediction.
 - **Evaluation:** Visual question answering tests counterfactual reasoning, while control experiments compare planning with object-level and patch-level latent inputs. The structured partial observability comes from training-time masking.
@@ -24,7 +26,7 @@ Heejeong Nam et al.
 <a id="paper-cswm"></a>
 ### Contrastive Learning of Structured World Models
 
-[![ICLR: 2020](https://img.shields.io/badge/ICLR-2020-526d82?style=flat-square)](https://arxiv.org/abs/1911.12247) [![arXiv: 1911.12247](https://img.shields.io/badge/arXiv-1911.12247-b31b1b?style=flat-square)](https://arxiv.org/abs/1911.12247)
+[![ICLR: 2020](https://img.shields.io/badge/ICLR-2020-526d82?style=flat-square)](https://arxiv.org/abs/1911.12247) [![arXiv: 1911.12247](https://img.shields.io/badge/arXiv-1911.12247-b31b1b?style=flat-square)](https://arxiv.org/abs/1911.12247) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/tkipf/c-swm)
 
 Thomas Kipf et al.
 
@@ -35,7 +37,7 @@ Thomas Kipf et al.
 <a id="paper-nri"></a>
 ### Neural Relational Inference for Interacting Systems
 
-[![ICML: 2018](https://img.shields.io/badge/ICML-2018-526d82?style=flat-square)](https://proceedings.mlr.press/v80/kipf18a.html)
+[![ICML: 2018](https://img.shields.io/badge/ICML-2018-526d82?style=flat-square)](https://proceedings.mlr.press/v80/kipf18a.html) [![arXiv: 1802.04687](https://img.shields.io/badge/arXiv-1802.04687-b31b1b?style=flat-square)](https://arxiv.org/abs/1802.04687) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/ethanfetaya/NRI)
 
 Thomas Kipf et al.
 
@@ -46,9 +48,11 @@ Thomas Kipf et al.
 <a id="paper-spartan"></a>
 ### SPARTAN: A Sparse Transformer World Model Attending to What Matters
 
-[![NeurIPS: 2025](https://img.shields.io/badge/NeurIPS-2025-526d82?style=flat-square)](https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2c33c1753e1f1924f5560b11fc4444f-Abstract-Conference.html)
+[![NeurIPS: 2025](https://img.shields.io/badge/NeurIPS-2025-526d82?style=flat-square)](https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2c33c1753e1f1924f5560b11fc4444f-Abstract-Conference.html) [![arXiv: 2411.06890](https://img.shields.io/badge/arXiv-2411.06890-b31b1b?style=flat-square)](https://arxiv.org/abs/2411.06890)
 
 Anson Lei et al.
+
+Earlier titles / aliases: SPARTAN: A Sparse Transformer Learning Local Causation; SPARTAN: A Sparse Transformer World Model.
 
 - **Method:** Sparsity regularization on attention between object-factored tokens produces context-dependent interaction graphs. An adaptation procedure updates the model after sparse changes to environmental mechanisms with unknown intervention targets.
 - **Evaluation:** Observation-based environments test interaction-graph recovery, few-shot adaptation to dynamics changes, and robustness to distractors under the object-centric modeling setup.
