@@ -9,7 +9,7 @@
 
 ![A research map connecting representation geometry, generalization, and knowledge use](assets/research-map.svg)
 
-![Papers](https://img.shields.io/badge/Papers-30-2563eb?style=flat-square) ![Reading route](https://img.shields.io/badge/Reading_route-12-0f766e?style=flat-square) ![Research modules](https://img.shields.io/badge/Modules-7-7c3aed?style=flat-square)
+![Papers](https://img.shields.io/badge/Papers-30-2563eb?style=flat-square) ![Reading path](https://img.shields.io/badge/Reading_path-12-0f766e?style=flat-square) ![Research modules](https://img.shields.io/badge/Modules-7-7c3aed?style=flat-square)
 
 [Start Here](#start-here) · [Contents](#research-map) · [Reading Path](#reading-route) · [Paper List](#papers) · [Contribute](CONTRIBUTING.md)
 
@@ -17,9 +17,7 @@
 
 ---
 
-**How do models learn transferable world knowledge from limited experience—and how is that knowledge organized, used, and revised?**
-
-Papers on learned world representations, dynamics, generalization, and planning. The list covers how models organize physical information, adapt to unfamiliar environments, and use learned knowledge for prediction and decisions.
+Papers and reading guides on world-model representations, generalization, adaptation, and planning.
 
 <a id="research-map"></a>
 ## Contents
@@ -39,7 +37,7 @@ Papers are listed alphabetically within each topic. The guides link related work
 <a id="start-here"></a>
 ## Start Here
 
-Two complementary entry points into the central questions:
+Two papers on representation and adaptation:
 
 | 01 · How is knowledge organized? | 02 · What does new experience change? |
 | :--- | :--- |
@@ -50,13 +48,13 @@ Two complementary entry points into the central questions:
 <a id="reading-route"></a>
 ## Reading Path
 
-**Mechanisms → geometry → planning → adaptation.** The [reading guide](docs/reading-guide.md) connects 12 papers across these topics.
+The [12-paper reading path](docs/reading-guide.md) covers model mechanisms, representation geometry, planning, and adaptation.
 
 <details>
 <summary>View the 12-paper reading path</summary>
 
 
-| # | Paper | Question to take away |
+| # | Paper | Research question |
 | :---: | :--- | :--- |
 | 01 | [Interpreting Physics](#paper-interpreting-physics) | What distinguishes independent physical variables from distributed encoding? |
 | 02 | [Context and Diversity Matter](#paper-context-diversity) | How can environment recognition, dynamics learning, and state estimation be distinguished? |

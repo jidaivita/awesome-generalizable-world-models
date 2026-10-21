@@ -1,12 +1,12 @@
 <!-- BEGIN GENERATED RESEARCH MAP -->
 
-[← Research map](../../README.md#research-map) · [Reading route](../reading-guide.md)
+[← Research map](../../README.md#research-map) · [Reading path](../reading-guide.md)
 
 # M3 · Generalization & In-Context Learning
 
 > Does success in a new environment come from knowledge reuse or learning new dynamics?
 
-Understand reuse and adaptation by specifying what changes: object combinations, hidden environment parameters, dynamics rules, or observability. Then ask what information the context provides.
+Generalization can involve new object combinations, hidden environment parameters, or changes in dynamics. The papers examine what information context provides and how models use it to adapt.
 
 Environment recognition, dynamics learning, and state estimation can all affect performance. Benefits from a longer context do not alone identify the mechanism.
 
@@ -26,7 +26,7 @@ Distinguishes recognizing familiar environments from learning dynamics through c
 
 - **Read for:** Definitions and assumptions behind environment recognition and environment learning; environment diversity, context length, and controls for familiar-environment matching.
 - **Scope:** The framework is not an exhaustive classification of all neural algorithms. State estimation and memory may also explain improvements.
-- **Connect to:** [M2 · Representation Geometry & Manifolds](m2-geometry.md) · [M6 · Exploration & Efficient Adaptation](m6-adaptation.md)
+- **Related topics:** [M2 · Representation Geometry & Manifolds](m2-geometry.md) · [M6 · Exploration & Efficient Adaptation](m6-adaptation.md)
 
 <a id="paper-cadm"></a>
 ### Context-aware Dynamics Model for Generalization in Model-Based Reinforcement Learning
@@ -37,7 +37,7 @@ Infers environment context from interaction history to model changing dynamics.
 
 - **Read for:** History encoding, forward and backward prediction objectives, and the training and test dynamics distributions.
 - **Scope:** Useful context representations alone do not demonstrate learning new laws. Distinguish hidden-parameter inference from directly supplied parameters.
-- **Connect to:** [M6 · Exploration & Efficient Adaptation](m6-adaptation.md)
+- **Related topics:** [M6 · Exploration & Efficient Adaptation](m6-adaptation.md)
 
 <a id="paper-dreamweaver"></a>
 ### Dreamweaver: Learning Compositional World Models from Pixels
@@ -48,7 +48,7 @@ Learns object and attribute representations for combinations beyond training con
 
 - **Read for:** Which factors are decomposed and how unseen combinations are defined in training and evaluation.
 - **Scope:** Generating unseen combinations does not by itself establish closed-loop planning, adaptation to unknown physical mechanisms, or real-world transfer.
-- **Connect to:** [M1 · Structure & Invariance](m1-structure.md)
+- **Related topics:** [M1 · Structure & Invariance](m1-structure.md)
 
 <a id="paper-dynamics-geometries"></a>
 ### Dynamics Are Learned, Not Told: Semi-Supervised Discovery of Latent Dynamics Geometries For Zero-Shot Policy Adaptation
@@ -59,13 +59,13 @@ Connects trajectory geometry with policy adaptation under changing dynamics.
 
 - **Read for:** Trajectory dynamics encoders, Lipschitz assumptions, multi-positive contrastive learning, and tests of unmodeled dynamics changes.
 - **Scope:** This work studies reinforcement-learning policy adaptation; its theory is not automatically a theorem about general video world models.
-- **Connect to:** [M2 · Representation Geometry & Manifolds](m2-geometry.md) · [M6 · Exploration & Efficient Adaptation](m6-adaptation.md)
+- **Related topics:** [M2 · Representation Geometry & Manifolds](m2-geometry.md) · [M6 · Exploration & Efficient Adaptation](m6-adaptation.md)
 
 ## Read together
 
 CaDM provides background on history-based context encoding. Context and Diversity distinguishes environment recognition from environment learning; Dynamics Are Learned connects trajectory geometry to policy adaptation. Dreamweaver adds a view of object and attribute composition.
 
-## Continue exploring
+## Related topics
 
 - [M1 · Structure & Invariance](m1-structure.md) — Which objects, relations, and stable structures should a model represent?
 - [M2 · Representation Geometry & Manifolds](m2-geometry.md) — How is knowledge organized in latent space, and what does that organization do?

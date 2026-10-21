@@ -1,12 +1,12 @@
 <!-- BEGIN GENERATED RESEARCH MAP -->
 
-[← Research map](../../README.md#research-map) · [Reading route](../reading-guide.md)
+[← Research map](../../README.md#research-map) · [Reading path](../reading-guide.md)
 
 # M1 · Structure & Invariance
 
 > Which objects, relations, and stable structures should a model represent?
 
-Start with objects and relations: how can a model turn complex observations into structure useful for dynamics prediction? Ask whether that structure comes from architecture, learning objectives, or data, and under which changes it remains useful.
+Object-centric representations and interaction graphs encode structure for dynamics prediction. The papers examine how this structure is learned and which architectural or training assumptions support it.
 
 This module studies representational content and inductive biases. M2 examines its latent organization; M4 examines its actual use.
 
@@ -26,7 +26,7 @@ Combines object-level latent masking with joint-embedding predictive learning.
 
 - **Read for:** How object-level latent masking creates structured partial observability and affects the use of relational information.
 - **Scope:** Latent masking is not automatically an intervention on a real physical causal mechanism.
-- **Connect to:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
 
 <a id="paper-cswm"></a>
 ### Contrastive Learning of Structured World Models
@@ -37,7 +37,7 @@ Learns object-centric representations and relational dynamics with a contrastive
 
 - **Read for:** The distinct roles of object representations, relational dynamics, and the contrastive objective.
 - **Scope:** Success on structured benchmarks does not establish open-world compositional generalization.
-- **Connect to:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
 
 <a id="paper-nri"></a>
 ### Neural Relational Inference for Interacting Systems
@@ -48,7 +48,7 @@ Infers latent interaction graphs from trajectories with a graph-based dynamics d
 
 - **Read for:** The latent graph, the graph-based dynamics decoder, and whether relation recovery agrees with predictive performance.
 - **Scope:** Recovering relations from observations does not establish causal identification under arbitrary conditions.
-- **Connect to:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
 
 <a id="paper-spartan"></a>
 ### SPARTAN: A Sparse Transformer World Model Attending to What Matters
@@ -59,13 +59,13 @@ Uses sparse, context-dependent interactions to adapt to changes in mechanisms.
 
 - **Read for:** Sparse attention, intervention settings, few-shot adaptation, and the priors available to the model.
 - **Scope:** Interpret generalization results in the context of sparse mechanism changes and object-centric assumptions.
-- **Connect to:** [M3 · Generalization & In-Context Learning](m3-generalization.md)
+- **Related topics:** [M3 · Generalization & In-Context Learning](m3-generalization.md)
 
 ## Read together
 
-NRI and C-SWM offer entry points through interaction graphs and object representations. SPARTAN and Causal-JEPA connect structural choices to adaptation or latent prediction. Compare how object information is obtained, whether structure changes with context, and whether recovered relations improve prediction.
+NRI and C-SWM offer entry points through interaction graphs and object representations. SPARTAN and Causal-JEPA connect structural choices to adaptation or latent prediction. They differ in how object information is obtained, how structure changes with context, and how relations support prediction.
 
-## Continue exploring
+## Related topics
 
 - [M2 · Representation Geometry & Manifolds](m2-geometry.md) — How is knowledge organized in latent space, and what does that organization do?
 - [M3 · Generalization & In-Context Learning](m3-generalization.md) — Does success in a new environment come from knowledge reuse or learning new dynamics?

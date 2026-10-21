@@ -59,7 +59,7 @@ def render(root=ROOT):
 ![A research map connecting representation geometry, generalization, and knowledge use](assets/research-map.svg)
 
 '''
-    intro += f'![Papers](https://img.shields.io/badge/Papers-{total}-2563eb?style=flat-square) ![Reading route](https://img.shields.io/badge/Reading_route-{len(cfg["route"])}-0f766e?style=flat-square) ![Research modules](https://img.shields.io/badge/Modules-{len(modules)}-7c3aed?style=flat-square)\n'
+    intro += f'![Papers](https://img.shields.io/badge/Papers-{total}-2563eb?style=flat-square) ![Reading path](https://img.shields.io/badge/Reading_path-{len(cfg["route"])}-0f766e?style=flat-square) ![Research modules](https://img.shields.io/badge/Modules-{len(modules)}-7c3aed?style=flat-square)\n'
     intro += '''
 [Start Here](#start-here) · [Contents](#research-map) · [Reading Path](#reading-route) · [Paper List](#papers) · [Contribute](CONTRIBUTING.md)
 
@@ -67,14 +67,12 @@ def render(root=ROOT):
 
 ---
 
-**How do models learn transferable world knowledge from limited experience—and how is that knowledge organized, used, and revised?**
-
-Papers on learned world representations, dynamics, generalization, and planning. The list covers how models organize physical information, adapt to unfamiliar environments, and use learned knowledge for prediction and decisions.
+Papers and reading guides on world-model representations, generalization, adaptation, and planning.
 
 <a id="start-here"></a>
 ## Start Here
 
-Two complementary entry points into the central questions:
+Two papers on representation and adaptation:
 
 | 01 · How is knowledge organized? | 02 · What does new experience change? |
 | :--- | :--- |
@@ -96,13 +94,13 @@ Two complementary entry points into the central questions:
     intro += '''<a id="reading-route"></a>
 ## Reading Path
 
-**Mechanisms → geometry → planning → adaptation.** The [reading guide](docs/reading-guide.md) connects 12 papers across these topics.
+The [12-paper reading path](docs/reading-guide.md) covers model mechanisms, representation geometry, planning, and adaptation.
 
 <details>
 <summary>View the 12-paper reading path</summary>
 
 
-| # | Paper | Question to take away |
+| # | Paper | Research question |
 | :---: | :--- | :--- |
 '''
     for i,r in enumerate(cfg['route'],1):intro += f"| {i:02d} | [{r['label']}](#paper-{r['id']}) | {r['question']} |\n"
@@ -130,7 +128,7 @@ To suggest a paper or correct an entry, open an issue or pull request. See the [
     intro = intro[:first] + intro[contents:route_start] + intro[first:contents] + intro[route_start:]
     out['README.md'] = intro
     for m in modules:
-        prefix=f"[← Research map](../../README.md#research-map) · [Reading route](../reading-guide.md)\n\n# {m['id']} · {m['title']}\n\n> {m['question']}\n\n{m['intro']}\n\n{m['scope']}\n\n## Where to start\n\n"
+        prefix=f"[← Research map](../../README.md#research-map) · [Reading path](../reading-guide.md)\n\n# {m['id']} · {m['title']}\n\n> {m['question']}\n\n{m['intro']}\n\n{m['scope']}\n\n## Where to start\n\n"
         for i,id in enumerate(m['start'],1):
             p=byid[id];target=f"#paper-{id}" if p['primary_module']==m['id'] else f"../../README.md#paper-{id}"
             prefix+=f"{i}. **[{next((r['label'] for r in cfg['route'] if r['id']==id), p['canonical_title'])}]({target})** — {p['annotation']['why']}\n"
@@ -153,9 +151,9 @@ For example, `z(θ) = (cos θ, sin θ, cos 2θ, sin 2θ, …)` has one underlyin
             prefix+=f"<a id=\"paper-{p['id']}\"></a>\n### {p['canonical_title']}\n\n**{p['publication']['label']}** · {resources(p)}\n\n"
             if p['aliases']:prefix+='Earlier titles / aliases: '+ '; '.join(p['aliases'])+'.\n\n'
             prefix+=f"{p['annotation']['why']}\n\n- **Read for:** {p['annotation']['focus']}\n- **Scope:** {p['annotation']['boundary']}\n"
-            if p['secondary_modules']:prefix+='- **Connect to:** '+' · '.join(f"[{mid} · {bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in p['secondary_modules'])+'\n'
+            if p['secondary_modules']:prefix+='- **Related topics:** '+' · '.join(f"[{mid} · {bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in p['secondary_modules'])+'\n'
             prefix+='\n'
-        prefix+=f"## Read together\n\n{m['connections']}\n\n## Continue exploring\n\n"
+        prefix+=f"## Read together\n\n{m['connections']}\n\n## Related topics\n\n"
         prefix+='\n'.join(f"- [{mid} · {bymod[mid]['title']}]({Path(module_path(bymod[mid])).name}) — {bymod[mid]['question']}" for mid in m['related'])
         prefix+='\n\n[Paper-note template](../../templates/paper-note.md) · [Comparison template](../../templates/comparison-note.md) · [Back to overview ↑](../../README.md)\n'
         out[module_path(m)] = prefix
@@ -163,17 +161,17 @@ For example, `z(θ) = (cos θ, sin θ, cos 2θ, sin 2θ, …)` has one underlyin
 
 # Reading Path
 
-This path connects studies of model mechanisms with geometric analysis, planning, and adaptation. Each stage introduces a question and points to papers that approach it from different angles.
+Twelve papers on model mechanisms, representation geometry, planning, and adaptation, grouped by research question.
 
-## 01–03 · Frame the questions
+## 01–03 · Representations and adaptation
 
-Study how knowledge is organized, how new experience changes behavior, and how learned world structure can be tested.
+These papers examine physical information in representations, learning from context, and tests of learned world structure.
 
 '''
     for i,r in enumerate(cfg['route'],1):
-        if i==4:route+='## 04–05 · Connect analysis to modeling\n\nCompare geometric hypotheses, then study how diagnosis informs long-horizon prediction.\n\n'
-        if i==6:route+='## 06–08 · Connect representations to prediction and planning\n\nUnderstand interfaces before separating the contributions of architecture, objectives, and planners.\n\n'
-        if i==9:route+='## 09–12 · Explore priors, adaptation, reliability, and information gathering\n\nExtend the questions to changing environments and the information decisions actually require.\n\n'
+        if i==4:route+='## 04–05 · Geometry and prediction\n\nSMDS compares geometric hypotheses; GRWM studies latent geometry and long-horizon prediction.\n\n'
+        if i==6:route+='## 06–08 · World-model architectures and planning\n\nDINO-WM, LeWorldModel, and JEPA-WMs examine visual encoders, predictive objectives, and planning algorithms.\n\n'
+        if i==9:route+='## 09–12 · Transfer and information gathering\n\nThese papers cover symmetry priors, changing dynamics, simulation-based policy evaluation, and task-informed exploration.\n\n'
         p=byid[r['id']]
         route+=f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n- **Question:** {r['question']}\n- **Reading pointers:** [{bymod[p['primary_module']]['title']}]({module_path(bymod[p['primary_module']]).removeprefix('docs/')}#paper-{p['id']})\n\n"
     route+='''## Comparing papers
@@ -184,7 +182,7 @@ When reading across these topics, distinguish three questions:
 - **Function:** What changes when that information is manipulated or removed?
 - **Transfer:** Which results hold under new tasks, environments, or dynamics?
 
-Useful comparisons also track the supervision available to each model, whether the encoder and predictor are fixed or updated, and how evaluation conditions differ.
+Comparisons depend on the supervision available to each model, whether the encoder and predictor are fixed or updated, and the evaluation conditions.
 
 [Paper-note template](../templates/paper-note.md) · [Comparison template](../templates/comparison-note.md) · [Back to papers](../README.md#papers)
 '''

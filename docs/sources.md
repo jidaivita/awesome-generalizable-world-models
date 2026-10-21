@@ -6,7 +6,7 @@
 
 Each record links to a formal publication page or author preprint. Where available, entries also include official code and project pages. Earlier titles are retained as aliases.
 
-The list includes descriptions of contributions and scope, rather than a ranking of paper quality. Geometric methods developed for language models are identified as such; their findings are not attributed to world models without evidence.
+Entries describe contributions, methods, and evaluation scope. Papers from adjacent fields are included when they provide relevant analysis methods.
 
 ## Related resources
 

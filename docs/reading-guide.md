@@ -4,11 +4,11 @@
 
 # Reading Path
 
-This path connects studies of model mechanisms with geometric analysis, planning, and adaptation. Each stage introduces a question and points to papers that approach it from different angles.
+Twelve papers on model mechanisms, representation geometry, planning, and adaptation, grouped by research question.
 
-## 01–03 · Frame the questions
+## 01–03 · Representations and adaptation
 
-Study how knowledge is organized, how new experience changes behavior, and how learned world structure can be tested.
+These papers examine physical information in representations, learning from context, and tests of learned world structure.
 
 ### 01 · Interpreting Physics
 
@@ -31,9 +31,9 @@ Study how knowledge is organized, how new experience changes behavior, and how l
 - **Question:** Why can strong task performance be insufficient evidence of learned world structure?
 - **Reading pointers:** [Knowledge Use & Task Abstraction](modules/m4-knowledge-use.md#paper-what-found)
 
-## 04–05 · Connect analysis to modeling
+## 04–05 · Geometry and prediction
 
-Compare geometric hypotheses, then study how diagnosis informs long-horizon prediction.
+SMDS compares geometric hypotheses; GRWM studies latent geometry and long-horizon prediction.
 
 ### 04 · SMDS / Shape Happens
 
@@ -49,9 +49,9 @@ Compare geometric hypotheses, then study how diagnosis informs long-horizon pred
 - **Question:** How can geometric diagnosis become a method for better long-horizon prediction?
 - **Reading pointers:** [Representation Geometry & Manifolds](modules/m2-geometry.md#paper-grwm)
 
-## 06–08 · Connect representations to prediction and planning
+## 06–08 · World-model architectures and planning
 
-Understand interfaces before separating the contributions of architecture, objectives, and planners.
+DINO-WM, LeWorldModel, and JEPA-WMs examine visual encoders, predictive objectives, and planning algorithms.
 
 ### 06 · DINO-WM
 
@@ -74,9 +74,9 @@ Understand interfaces before separating the contributions of architecture, objec
 - **Question:** How can architecture, objective, and planner effects be separated?
 - **Reading pointers:** [Pretraining & Scaling](modules/m7-scaling.md#paper-jepa-wms)
 
-## 09–12 · Explore priors, adaptation, reliability, and information gathering
+## 09–12 · Transfer and information gathering
 
-Extend the questions to changing environments and the information decisions actually require.
+These papers cover symmetry priors, changing dynamics, simulation-based policy evaluation, and task-informed exploration.
 
 ### 09 · Group-Structured Latent Space
 
@@ -114,7 +114,7 @@ When reading across these topics, distinguish three questions:
 - **Function:** What changes when that information is manipulated or removed?
 - **Transfer:** Which results hold under new tasks, environments, or dynamics?
 
-Useful comparisons also track the supervision available to each model, whether the encoder and predictor are fixed or updated, and how evaluation conditions differ.
+Comparisons depend on the supervision available to each model, whether the encoder and predictor are fixed or updated, and the evaluation conditions.
 
 [Paper-note template](../templates/paper-note.md) · [Comparison template](../templates/comparison-note.md) · [Back to papers](../README.md#papers)
 

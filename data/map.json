@@ -6,13 +6,13 @@
       "title": "Structure & Invariance",
       "english": "Structure & Invariance",
       "question": "Which objects, relations, and stable structures should a model represent?",
-      "intro": "Start with objects and relations: how can a model turn complex observations into structure useful for dynamics prediction? Ask whether that structure comes from architecture, learning objectives, or data, and under which changes it remains useful.",
+      "intro": "Object-centric representations and interaction graphs encode structure for dynamics prediction. The papers examine how this structure is learned and which architectural or training assumptions support it.",
       "scope": "This module studies representational content and inductive biases. M2 examines its latent organization; M4 examines its actual use.",
       "start": [
         "nri",
         "cswm"
       ],
-      "connections": "NRI and C-SWM offer entry points through interaction graphs and object representations. SPARTAN and Causal-JEPA connect structural choices to adaptation or latent prediction. Compare how object information is obtained, whether structure changes with context, and whether recovered relations improve prediction.",
+      "connections": "NRI and C-SWM offer entry points through interaction graphs and object representations. SPARTAN and Causal-JEPA connect structural choices to adaptation or latent prediction. They differ in how object information is obtained, how structure changes with context, and how relations support prediction.",
       "related": [
         "M2",
         "M3",
@@ -25,14 +25,14 @@
       "title": "Representation Geometry & Manifolds",
       "english": "Representation Geometry & Manifolds",
       "question": "How is knowledge organized in latent space, and what does that organization do?",
-      "intro": "Study both the geometry that trained models develop and the effects of deliberately imposing geometric structure. Identify which question a paper addresses before connecting a geometric observation to model behavior.",
+      "intro": "The papers examine geometry that emerges during training and geometry imposed through model design. They relate latent structure to physical variables, prediction error, and planning performance.",
       "scope": "Emergent geometry, imposed geometry, and task benefits are distinct claims. A projection can suggest a hypothesis; additional evidence is needed to establish its role.",
       "start": [
         "interpreting-physics",
         "smds",
         "grwm"
       ],
-      "connections": "Interpreting Physics provides an entry point into physical information in representations; SMDS offers a method for comparing geometric hypotheses; GRWM connects diagnosis to long-horizon prediction. Read them together while keeping their model families, supervision, and functional evidence distinct.",
+      "connections": "Interpreting Physics provides an entry point into physical information in representations; SMDS offers a method for comparing geometric hypotheses; GRWM connects diagnosis to long-horizon prediction. Their model families, supervision, and functional tests differ.",
       "related": [
         "M3",
         "M4",
@@ -45,7 +45,7 @@
       "title": "Generalization & In-Context Learning",
       "english": "Generalization & In-Context Learning",
       "question": "Does success in a new environment come from knowledge reuse or learning new dynamics?",
-      "intro": "Understand reuse and adaptation by specifying what changes: object combinations, hidden environment parameters, dynamics rules, or observability. Then ask what information the context provides.",
+      "intro": "Generalization can involve new object combinations, hidden environment parameters, or changes in dynamics. The papers examine what information context provides and how models use it to adapt.",
       "scope": "Environment recognition, dynamics learning, and state estimation can all affect performance. Benefits from a longer context do not alone identify the mechanism.",
       "start": [
         "context-diversity",
@@ -64,7 +64,7 @@
       "title": "Knowledge Use & Task Abstraction",
       "english": "Knowledge Use & Task Abstraction",
       "question": "Which information actually supports prediction, planning, and decisions?",
-      "intro": "Connect internal representations to behavior. Study what information a task needs and how predictions, plans, or learning tendencies reveal whether that information is being used.",
+      "intro": "The papers relate internal representations to prediction, planning, and task performance. They examine which information a task requires and how model behavior reveals its use.",
       "scope": "Decodability, use, and task value require separate evidence. Whether an abstraction transfers to a new task depends on what it preserves.",
       "start": [
         "what-found",
@@ -83,8 +83,8 @@
       "title": "Reliability & Sim2Real",
       "english": "Reliability & Sim2Real",
       "question": "Which model errors matter for decisions, and when is a model trustworthy?",
-      "intro": "Separate visual quality, physical prediction, and task performance. Physical extrapolation, closed-loop use, and paired real/simulated evaluations provide complementary views of reliability.",
-      "scope": "Performance within simulation, agreement in real-world policy rankings, and successful transfer are different forms of evidence. Identify the evaluation target and pairing protocol.",
+      "intro": "Visual quality, physical accuracy, and task performance measure different aspects of reliability. The papers study physical extrapolation, closed-loop evaluation, and paired real and simulated policy tests.",
+      "scope": "Performance within simulation, agreement in real-world policy rankings, and successful transfer are different forms of evidence.",
       "start": [
         "simpler",
         "physical-law-perspective"
@@ -102,13 +102,13 @@
       "title": "Exploration & Efficient Adaptation",
       "english": "Exploration & Efficient Adaptation",
       "question": "What experience should an agent acquire or reuse in an unfamiliar environment?",
-      "intro": "Study the selection and use of experience: which actions reveal useful information, when stored experience is worth replaying, and how those choices help subsequent tasks.",
+      "intro": "Exploration determines which experience to collect; replay determines which experience to reuse. The papers study information gain, system identification, task sensitivity, and replay selection.",
       "scope": "Parameter identification within a model class, learning missing mechanisms, active collection, and experience replay have different assumptions and costs.",
       "start": [
         "poke-strike",
         "plan2explore"
       ],
-      "connections": "Plan2Explore studies exploration before tasks are known; ASID connects interaction to identification; Poke and Strike focuses on task-relevant information; Curious Replay studies reuse. Compare the information each method values and the conditions under which it is useful.",
+      "connections": "Plan2Explore studies exploration before tasks are known; ASID connects interaction to identification; Poke and Strike focuses on task-relevant information; Curious Replay studies reuse. They use different criteria to value information and measure its benefit to a task.",
       "related": [
         "M3",
         "M4",
@@ -121,7 +121,7 @@
       "title": "Pretraining & Scaling",
       "english": "Pretraining & Scaling",
       "question": "How do controlled insights connect to stronger models and larger datasets?",
-      "intro": "Use pretrained video models, end-to-end JEPA, and broadly applicable world-model learning algorithms to understand representations, dynamics, action interfaces, and planners. These systems can also provide platforms for smaller mechanism studies.",
+      "intro": "The papers examine video pretraining, joint-embedding predictive learning, and world-model-based control at different data and model scales. Their architectures separate representation learning, dynamics prediction, and planning in different ways.",
       "scope": "Large-scale representation pretraining and executable planning involve different stages. A shared algorithm does not imply one checkpoint that works in every environment.",
       "start": [
         "leworldmodel",

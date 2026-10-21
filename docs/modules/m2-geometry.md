@@ -1,12 +1,12 @@
 <!-- BEGIN GENERATED RESEARCH MAP -->
 
-[← Research map](../../README.md#research-map) · [Reading route](../reading-guide.md)
+[← Research map](../../README.md#research-map) · [Reading path](../reading-guide.md)
 
 # M2 · Representation Geometry & Manifolds
 
 > How is knowledge organized in latent space, and what does that organization do?
 
-Study both the geometry that trained models develop and the effects of deliberately imposing geometric structure. Identify which question a paper addresses before connecting a geometric observation to model behavior.
+The papers examine geometry that emerges during training and geometry imposed through model design. They relate latent structure to physical variables, prediction error, and planning performance.
 
 Emergent geometry, imposed geometry, and task benefits are distinct claims. A projection can suggest a hypothesis; additional evidence is needed to establish its role.
 
@@ -41,7 +41,7 @@ Connects representation geometry and temporal context to long-horizon prediction
 
 - **Read for:** Ground-truth state oracle comparisons, temporal-context encoders, slowness and uniformity regularization, and the corresponding ablations.
 - **Scope:** The main evidence concerns deterministic environments with fixed rules. Separate geometric regularization from history-based disambiguation; neither establishes general open-world robustness.
-- **Connect to:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md) · [M5 · Reliability & Sim2Real](m5-reliability.md)
+- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md) · [M5 · Reliability & Sim2Real](m5-reliability.md)
 
 <a id="paper-geoworld"></a>
 ### GeoWorld: Geometric World Models
@@ -52,7 +52,7 @@ Studies non-Euclidean latent spaces and geometric optimization for procedural vi
 
 - **Read for:** The separate contributions of Hyperbolic JEPA and geometric optimization, including matched Euclidean comparisons.
 - **Scope:** The main tasks are multi-step procedural visual planning on CrossTask and COIN, rather than continuous physical dynamics or demonstrated real-robot transfer.
-- **Connect to:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
 
 <a id="paper-smds"></a>
 ### Hypothesis-Driven Feature Manifold Analysis in LLMs via Supervised Multi-Dimensional Scaling
@@ -65,7 +65,7 @@ Compares geometric hypotheses and their functional effects in language-model rep
 
 - **Read for:** How SMDS uses supervision to compare circular, linear, and clustered hypotheses; held-out evaluation and intervention evidence.
 - **Scope:** This is supervised, hypothesis-driven analysis, not discovery without priors. Its LLM results are not established findings about world models.
-- **Connect to:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
 
 <a id="paper-interpreting-physics"></a>
 ### Interpreting Physics in Video World Models
@@ -76,7 +76,7 @@ Analyzes the organization of physical information through layer-wise probes, sub
 
 - **Read for:** Layer-wise differences in speed and direction; circular population codes; what probes, attention ablations, and directional steering each establish.
 - **Scope:** Changing a decoded direction does not establish improved native prediction or planning. Linear subspace dimension and intrinsic manifold dimension are different quantities.
-- **Connect to:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
 
 <a id="paper-group-latents"></a>
 ### Learning Abstract World Models with a Group-Structured Latent Space
@@ -87,7 +87,7 @@ Encodes known symmetries, such as translation and rotation, as geometric inducti
 
 - **Read for:** How group actions correspond to latent transitions and how structured and unstructured information coexist.
 - **Scope:** Using known symmetries is different from discovering physical laws from data.
-- **Connect to:** [M1 · Structure & Invariance](m1-structure.md)
+- **Related topics:** [M1 · Structure & Invariance](m1-structure.md)
 
 <a id="paper-origins-manifolds"></a>
 ### The Origins of Representation Manifolds in Large Language Models
@@ -101,9 +101,9 @@ Relates similarities in learned representations to intrinsic conceptual geometry
 
 ## Read together
 
-Interpreting Physics provides an entry point into physical information in representations; SMDS offers a method for comparing geometric hypotheses; GRWM connects diagnosis to long-horizon prediction. Read them together while keeping their model families, supervision, and functional evidence distinct.
+Interpreting Physics provides an entry point into physical information in representations; SMDS offers a method for comparing geometric hypotheses; GRWM connects diagnosis to long-horizon prediction. Their model families, supervision, and functional tests differ.
 
-## Continue exploring
+## Related topics
 
 - [M3 · Generalization & In-Context Learning](m3-generalization.md) — Does success in a new environment come from knowledge reuse or learning new dynamics?
 - [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md) — Which information actually supports prediction, planning, and decisions?
