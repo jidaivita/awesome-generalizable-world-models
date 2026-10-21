@@ -17,7 +17,7 @@ def read_sources(root=ROOT):
 
 
 def module_path(m):
-    return f"docs/modules/{m['id'].lower()}-{m['slug']}.md"
+    return m["path"] if "path" in m else f"docs/modules/{m['id'].lower()}-{m['slug']}.md"
 
 
 def resources(p):
@@ -76,41 +76,88 @@ def public_note_paths(root, manifest):
 
 
 def render(root=ROOT):
+    import posixpath
     papers, cfg, manifest = read_sources(root)
-    modules = cfg['modules']; byid = {p['id']: p for p in papers}; bymod = {m['id']: m for m in modules}
+    modules = cfg['modules']; supplement = cfg['supplement']
+    byid = {p['id']: p for p in papers}
+    bymod = {m['id']: m for m in [*modules, supplement]}
     notes = public_note_paths(root, manifest)
-    def selected(mid):
-        return sorted((p for p in papers if p['primary_module'] == mid and p['collection'] == 'seed_v0_2'), key=lambda p: p['canonical_title'].casefold())
-    total = sum(p['collection'] == 'seed_v0_2' for p in papers)
     out = {}
+
+    def selected(mid):
+        return sorted((p for p in papers if p['primary_module'] == mid), key=lambda p: p['canonical_title'].casefold())
+
+    def relative(target, source):
+        return posixpath.relpath(target, posixpath.dirname(source) or '.')
+
+    def paper_location(p):
+        return module_path(bymod[p['primary_module']]) + '#paper-' + p['id']
+
+    def linked_paper(pid, source):
+        p = byid[pid]
+        return f"[{p['canonical_title']}]({relative(paper_location(p), source)})"
+
+    def entry(p, source, detailed=False):
+        tag = f" · `{p['domain_label']}`" if p.get('domain_label') else ''
+        text = f'<a id="paper-{p["id"]}"></a>\n'
+        if detailed:
+            text += f"### {p['canonical_title']}\n\n{author_label(p)} · **{p['publication']['label']}**{tag} · {resources(p)}\n\n"
+            if p['aliases']:
+                text += 'Earlier titles / aliases: ' + '; '.join(p['aliases']) + '.\n\n'
+            text += f"- **Method:** {p['annotation']['focus']}\n- **Evaluation:** {p['annotation']['boundary']}\n"
+            if p.get('supplement_reason'):
+                text += f"- **Relevance:** {p['supplement_reason']}\n"
+            if p['secondary_modules']:
+                text += '- **Related topics:** ' + ' · '.join(f"[{bymod[mid]['title']}]({relative(module_path(bymod[mid]), source)})" for mid in p['secondary_modules']) + '\n'
+        else:
+            text += f"- **{p['canonical_title']}**<br>\n  {author_label(p)} · **{p['publication']['label']}**{tag} · {resources(p)}<br>\n  {p['annotation']['why']}\n"
+        return text + '\n'
+
+    core_count = sum(p['primary_module'] != supplement['id'] for p in papers)
     intro = '''<a id="top"></a>
 
 # Awesome Generalizable World Models
 
-Papers on learned world models and their generalization across object configurations, environments, dynamics, and tasks. The list covers structured representations, latent geometry, context-based adaptation, planning, and evaluation, with related analysis methods from language models labeled separately.
+Papers on how learned world models represent reusable structure, generalize across environments and tasks, and support prediction and planning. Topics include adaptation, interpretability, structured representations, latent geometry, and evaluation.
 
-<p align="center"><img src="assets/research-map.svg" width="620" alt="Representation geometry, transfer across environments, and planning"></p>
+<p align="center"><img src="assets/research-map.svg" width="620" alt="Latent representations, transfer across environments, and planning"></p>
 
-[Topics](#research-map) · [Reading Guide](docs/reading-guide.md) · [BibTeX](references.bib) · [Contributing](CONTRIBUTING.md)
+[Topics](#research-map) · [Reading Guide](docs/reading-guide.md) · [Supplementary Reading](docs/supplementary.md) · [BibTeX](references.bib) · [Contributing](CONTRIBUTING.md)
 
 <a id="start-here"></a>
 <a id="research-map"></a>
 ## Contents
 
+| Topic | Coverage | Papers |
+| :--- | :--- | ---: |
 '''
     for m in modules:
-        intro += f"- [{m['title']}](#{m['id'].lower()})\n"
-    intro += f"\n{total} papers · {len(modules)} topics · Listed alphabetically within each topic.\n\n<a id=\"papers\"></a>\n## Papers\n\n"
+        intro += f"| [{m['title']}](#{m['id'].lower()}) | {m['summary']} | {len(selected(m['id']))} |\n"
+    intro += f"\n{core_count} papers across six topics · {len(selected(supplement['id']))} supplementary papers · {len(papers)} papers in total.\n\n"
+    intro += 'The catalog includes methods, theory, and empirical analyses of generalization and its limits. Papers are listed alphabetically within each topic.\n\n<a id="papers"></a>\n## Papers\n\n'
     for m in modules:
-        intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['title']}\n\n"
-        for p in selected(m['id']):
-            tag=f" · `{p['domain_label']}`" if p.get('domain_label') else ''
-            intro += f"<a id=\"paper-{p['id']}\"></a>\n- **{p['canonical_title']}**<br>\n  {author_label(p)} · **{p['publication']['label']}**{tag} · {resources(p)}<br>\n  {p['annotation']['why']}\n\n"
+        intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['title']}\n\n{m['summary']}\n\n"
+        intro += ''.join(entry(p, 'README.md') for p in selected(m['id']))
         intro += f"[Topic overview and comparisons]({module_path(m)}) · [Contents](#research-map)\n\n"
-    intro += '''<a id="reading-route"></a>
+    intro += '''<a id="m6"></a>
+<a id="m7"></a>
+## Supplementary Reading
+
+[Supplementary Reading](docs/supplementary.md) covers world-model foundations, related representation methods, and simulation or system-identification studies. Each entry states its connection to the main topics.
+
+<details>
+<summary>Browse supplementary papers</summary>
+
+'''
+    for p in selected(supplement['id']):
+        intro += f'<a id="paper-{p["id"]}"></a>\n- {linked_paper(p["id"], "README.md")} · {p["publication"]["label"]}\n'
+    intro += '''
+</details>
+
+<a id="reading-route"></a>
 ## Reading Guide
 
-The [12-paper reading path](docs/reading-guide.md) connects representation analysis, predictive architectures, planning, and adaptation. Each entry summarizes the method, evaluation setting, and connections to the other papers.
+The [12-paper reading path](docs/reading-guide.md) connects interpretability, composition, geometry, adaptation, planning, and evaluation. Each entry describes its method, evaluation setting, and connection to the surrounding papers.
 
 ## Related Resources
 
@@ -127,65 +174,95 @@ Paper suggestions and corrections are welcome through issues or pull requests. S
 Original catalog text and illustrations: [CC BY 4.0](LICENSES/CC-BY-4.0.txt). Maintenance code: [MIT](LICENSES/MIT.txt). Linked papers and external resources retain their respective licenses. See [license scope](LICENSE.md).
 '''
     if notes:
-        intro += '\n## Community Notes\n\n' + ''.join(f'- [{title}]({path})\n' for title,path,_ in notes)
+        intro += '\n## Community Notes\n\n' + ''.join(f'- [{title}]({path})\n' for title, path, _ in notes)
     out['README.md'] = intro
     for m in modules:
-        prefix=f"[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md)\n\n# {m['title']}\n\n{m['intro']}\n\n{m['scope']}\n"
-        if m['id']=='M2':
-            prefix+='''
-## Approaches to geometry
+        path = module_path(m)
+        body = f"[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md) · [Supplementary reading](../supplementary.md)\n\n# {m['title']}\n\n{m['intro']}\n\n{m['scope']}\n\n"
+        if m['id'] == 'M3':
+            body += '''## Evaluation settings
 
-| Approach | Papers | Evidence |
+| Change | Examples in this topic | Outcome to distinguish |
 | :--- | :--- | :--- |
-| Analyze learned representations | Interpreting Physics; SMDS; Origins of Representation Manifolds | Physical-variable probes, tests of geometric hypotheses, and theory of feature similarity; the latter two study language models |
-| Regularize the representation | GRWM | State-oracle comparisons and ablations of geometric regularization in long-horizon prediction |
-| Specify the latent manifold | Group-Structured Latent Space; GeoWorld | Symmetry-based transitions for control, and hyperbolic representations for procedural planning |
+| Object composition | HOWM; Dreamweaver; WM3C | Prediction on unseen combinations versus control in new tasks |
+| Dynamics or latent context | CaDM; Context and Diversity; Dynamics Are Learned; Considering Context | Context inference, prediction accuracy, and policy adaptation |
+| Data or task distribution | Curious Replay; Behavior-Invariant Task Representation Learning; WOMBET | Update efficiency and target-task performance |
+| Goals in a formal task family | General agents need world models | The predictive information required by the stated task assumptions |
 
-[Context and Diversity](m3-generalization.md#paper-context-diversity) and [Dynamics Are Learned](m3-generalization.md#paper-dynamics-geometries) connect representation structure to adaptation under environmental changes.
+Zero-shot transfer, inference from interaction history, and parameter-updating adaptation specify different deployment protocols. They are reported separately from the type of distribution shift.
+
 '''
-        prefix+='\n## Papers\n\n'
-        for p in selected(m['id']):
-            tag=f" · `{p['domain_label']}`" if p.get('domain_label') else ''
-            prefix+=f"<a id=\"paper-{p['id']}\"></a>\n### {p['canonical_title']}\n\n{author_label(p)} · **{p['publication']['label']}**{tag} · {resources(p)}\n\n"
-            if p['aliases']:prefix+='Earlier titles / aliases: '+ '; '.join(p['aliases'])+'.\n\n'
-            prefix+=f"- **Method:** {p['annotation']['focus']}\n- **Evaluation:** {p['annotation']['boundary']}\n"
-            if p['secondary_modules']:prefix+='- **Related topics:** '+' · '.join(f"[{bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in p['secondary_modules'])+'\n'
-            prefix+='\n'
-        prefix+=f"## Method comparisons\n\n{m['connections']}\n\n## Related topics\n\n"
-        prefix+='\n'.join(f"- [{bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in m['related'])
-        prefix+='\n\n[Paper-note template](../../templates/paper-note.md) · [Comparison template](../../templates/comparison-note.md) · [Back to overview ↑](../../README.md)\n'
-        out[module_path(m)] = prefix
-    route='''[← Paper index](../README.md#papers)
+        if m['id'] == 'M8':
+            body += '''## Forms of evidence
+
+| Approach | Evidence | Interpretation |
+| :--- | :--- | :--- |
+| Representation probing | A variable can be recovered from activations | The representation contains accessible information |
+| Interventions and ablations | Modifying a representation changes predictions | The modified computation influences the measured output |
+| Behavioral transfer tests | Adaptation favors or rejects a proposed world structure | Learning behavior reflects a particular inductive bias |
+| Interpretable model design | Latent variables are aligned with physical semantics | Interpretability is encouraged through model and supervision choices |
+
+A probe's accuracy alone does not establish that the native predictor or planner uses the decoded variable. Intervention studies specify the output affected and the controls used.
+
+'''
+        for group in m['groups']:
+            body += f"## {group['title']}\n\n"
+            body += ''.join(entry(byid[pid], path, True) for pid in sorted(group['ids'], key=lambda pid: byid[pid]['canonical_title'].casefold()))
+        body += f"## Method comparisons\n\n{m['connections']}\n\n## Related topics\n\n"
+        body += ''.join(f"- [{bymod[mid]['title']}]({relative(module_path(bymod[mid]), path)})\n" for mid in m['related'])
+        body += '\n[Back to paper index](../../README.md)\n'
+        out[path] = body
+    path = module_path(supplement)
+    body = '''[← Paper index](../README.md#research-map) · [Reading guide](reading-guide.md)
+
+# Supplementary Reading
+
+Background papers and methods from adjacent settings support the six main topics. Entries retain their original evaluation domains and explain their relevance to world-model research.
+
+'''
+    for group in supplement['groups']:
+        body += f"## {group['title']}\n\n{group['intro']}\n\n"
+        body += ''.join(entry(p, path, True) for p in selected(supplement['id']) if p['supplement_group'] == group['id'])
+    out[path] = body + '[Back to paper index](../README.md)\n'
+
+    # Keep previous topic URLs and paper anchors usable after reclassification.
+    for legacy in cfg['legacy_pages']:
+        path = legacy['path']
+        moved = [pid for pid in legacy['papers'] if paper_location(byid[pid]).split('#')[0] != path]
+        if not moved:
+            continue
+        if path not in out:
+            out[path] = f"[← Paper index](../../README.md#research-map)\n\n# {legacy['title']}\n\nThese papers are now organized by their contribution to adaptation, planning, or supplementary background.\n\n"
+        else:
+            out[path] += '\n## Entries in related sections\n\n'
+        for pid in moved:
+            out[path] += f'<a id="paper-{pid}"></a>\n- {linked_paper(pid, path)}\n'
+        out[path] += '\n'
+
+    path = 'docs/reading-guide.md'
+    route = '''[← Paper index](../README.md#papers) · [Supplementary reading](supplementary.md)
 
 # Reading Path
 
-A sequence of twelve papers connecting representation analysis, prediction, planning, and adaptation. The guide assumes familiarity with representation learning and model-based reinforcement learning; its four sections can also be read independently.
-
-## 01–03 · Representations and adaptation
-
-These papers examine physical information in representations, learning from context, and tests of learned world structure.
+Twelve papers connect evidence about learned world structure to composition, geometry, adaptation, and planning. The four sections can also be read independently; the guide assumes familiarity with representation learning and model-based reinforcement learning.
 
 '''
-    for i,r in enumerate(cfg['route'],1):
-        if i==4:route+='## 04–05 · Geometry and prediction\n\nSMDS compares geometric hypotheses; GRWM studies latent geometry and long-horizon prediction.\n\n'
-        if i==6:route+='## 06–08 · World-model architectures and planning\n\nDINO-WM, LeWorldModel, and JEPA-WMs examine visual encoders, predictive objectives, and planning algorithms.\n\n'
-        if i==9:route+='## 09–12 · Transfer and information gathering\n\nThese papers cover symmetry priors, changing dynamics, simulation-based policy evaluation, and task-informed exploration.\n\n'
-        p=byid[r['id']]
-        tag=f" · `{p['domain_label']}`" if p.get('domain_label') else ''
-        route+=f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n{author_label(p)} · **{p['publication']['label']}**{tag}\n\n{p['annotation']['focus']}\n\n{p['annotation']['boundary']}\n\n**Connection:** {r['connection']}\n\n[Topic overview: {bymod[p['primary_module']]['title']}]({module_path(bymod[p['primary_module']]).removeprefix('docs/')}#paper-{p['id']})\n\n"
-    route+='''## Cross-paper comparisons
+    sections = {s['start']: s for s in cfg['route_sections']}
+    for i, r in enumerate(cfg['route'], 1):
+        if i in sections:
+            s = sections[i]; route += f"## {s['title']}\n\n{s['intro']}\n\n"
+        p = byid[r['id']]
+        route += f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n{author_label(p)} · **{p['publication']['label']}**\n\n"
+        route += f"**Method:** {p['annotation']['focus']}\n\n**Evaluation:** {p['annotation']['boundary']}\n\n**Connection:** {r['connection']}\n\n"
+        route += f"[Topic: {bymod[p['primary_module']]['title']}]({relative(paper_location(p), path)})\n\n"
+    route += '''## Further reading
 
-| Comparison | Papers | What differs |
-| :--- | :--- | :--- |
-| Representation analysis and behavioral transfer | Interpreting Physics; SMDS; What Has a Foundation Model Found? | Decoding and intervention within a representation versus inductive bias on new tasks |
-| Learned and prescribed geometry | GRWM; Group-Structured Latent Space; Dynamics Are Learned | Regularizing an encoder, choosing a symmetry-based manifold, or shaping a trajectory embedding for adaptation |
-| Encoder, predictor, and planner | DINO-WM; LeWorldModel; JEPA-WMs | Frozen versus jointly trained visual features, predictive objectives, and action optimization |
-| Adaptation and evaluation | Context and Diversity; SIMPLER; Poke and Strike | Prediction from context, sim-real policy agreement, and task-sensitive information gathering |
-
-[Paper-note template](../templates/paper-note.md) · [Comparison template](../templates/comparison-note.md) · [Back to papers](../README.md#papers)
 '''
-    out['docs/reading-guide.md']=route
-    out['references.bib']=bibliography(papers)
+    for label, ids in [('Interpretable model design', ['physically-interpretable']), ('Context and data shifts', ['considering-context', 'behavior-invariant-wm']), ('Planning components', ['jepa-wms', 'vjepa2']), ('Foundations and analysis methods', ['leworldmodel', 'dreamerv3', 'smds', 'origins-manifolds']), ('Simulation and active identification', ['simpler', 'asid', 'poke-strike'])]:
+        route += f"- **{label}:** " + '; '.join(linked_paper(pid, path) for pid in ids) + '.\n'
+    route += '\n[All six topics](../README.md#research-map) · [Supplementary reading](supplementary.md)\n'
+    out[path] = route
+    out['references.bib'] = bibliography(papers)
     return out
 
 

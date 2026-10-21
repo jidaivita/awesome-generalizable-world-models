@@ -19,8 +19,32 @@ class ResearchMapTests(unittest.TestCase):
     def edit(self,fn):
         path=self.root/'data/papers.json';papers=json.loads(path.read_text());fn(papers);path.write_text(json.dumps(papers))
     def test_counts_and_references(self):
-        self.assertEqual(validate_data(self.root),30)
+        self.assertEqual(validate_data(self.root),38)
         self.assertGreater(validate_links(self.root),100)
+    def test_papers_survive_reclassification_and_links_remain(self):
+        from build import module_path
+        from validate import anchors
+        papers,cfg,_=read_sources(self.root)
+        pages=render(self.root)
+        byid={p['id']:p for p in papers}
+        self.assertEqual(len(cfg['original_paper_ids']),30)
+        self.assertTrue(set(cfg['original_paper_ids'])<=set(byid))
+        self.assertEqual(sum(p['primary_module']=='S1' for p in papers),9)
+        for pid in byid:
+            self.assertIn('paper-'+pid,anchors(pages['README.md']))
+        for old in cfg['legacy_pages']:
+            for pid in old['papers']:
+                self.assertIn('paper-'+pid,anchors(pages[old['path']]))
+        primary_pages=[module_path(m) for m in cfg['modules']]+['docs/supplementary.md']
+        for pid,p in byid.items():
+            title='### '+p['canonical_title']+'\n'
+            self.assertEqual(sum(pages[path].count(title) for path in primary_pages),1)
+    def test_missing_supplement_relevance_rejected(self):
+        self.edit(lambda papers:next(p for p in papers if p['primary_module']=='S1').pop('supplement_reason'))
+        with self.assertRaisesRegex(ValueError,'relevance'):validate_data(self.root)
+    def test_missing_original_paper_rejected(self):
+        self.edit(lambda papers:papers.pop(0))
+        with self.assertRaisesRegex(ValueError,'Original paper missing'):validate_data(self.root)
     def test_public_pages_are_english(self):
         for path, text in render(self.root).items():
             self.assertNotRegex(text, r'[\u3400-\u9fff]', path)
@@ -68,7 +92,7 @@ class ResearchMapTests(unittest.TestCase):
         (self.root/'private').mkdir(exist_ok=True);(self.root/'private/idea.md').write_text(secret)
         (self.root/'public_notes').mkdir(exist_ok=True);(self.root/'public_notes/unlisted.md').write_text(secret)
         out=Path(self.tmp.name)/'public';files=export(self.root,out)
-        self.assertEqual(len(files),21)
+        self.assertEqual(len(files),23)
         self.assertNotIn(secret,'\n'.join(p.read_text() for p in out.rglob('*') if p.is_file()))
         self.assertFalse((out/'data').exists())
     def test_manifest_rejects_path_escape(self):

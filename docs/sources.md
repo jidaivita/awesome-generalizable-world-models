@@ -6,7 +6,7 @@
 
 Each record links to a formal publication page or author preprint. Where available, entries also include official code and project pages. Earlier titles are retained as aliases.
 
-Entries describe contributions, methods, and evaluation scope. Papers from adjacent fields are included when they provide relevant analysis methods.
+Entries describe contributions, methods, and evaluation scope. Background papers and methods from adjacent fields are listed in [Supplementary Reading](supplementary.md), with their original evaluation domains and connection to the main topics stated explicitly.
 
 ## Related resources
 

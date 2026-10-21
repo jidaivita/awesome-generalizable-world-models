@@ -224,9 +224,10 @@
       "label": "ICML 2026",
       "source_url": "https://proceedings.mlr.press/v306/joseph26a.html"
     },
-    "primary_module": "M2",
+    "primary_module": "M8",
     "secondary_modules": [
-      "M4"
+      "M2",
+      "M3"
     ],
     "collection": "seed_v0_2",
     "priority": "anchor",
@@ -285,9 +286,10 @@
       "label": "TMLR 2026",
       "source_url": "https://arxiv.org/abs/2510.01025"
     },
-    "primary_module": "M2",
+    "primary_module": "S1",
     "secondary_modules": [
-      "M4"
+      "M2",
+      "M8"
     ],
     "collection": "seed_v0_2",
     "priority": "core",
@@ -327,7 +329,9 @@
       "entry_type": "misc",
       "eprint": "2510.01025"
     },
-    "domain_label": "LLM analysis"
+    "domain_label": "LLM analysis",
+    "supplement_group": "analysis",
+    "supplement_reason": "Geometric hypothesis testing in language models provides analysis methods for representation studies; the reported experiments do not test physical world models."
   },
   {
     "id": "grwm",
@@ -449,8 +453,10 @@
       "label": "arXiv 2025",
       "source_url": "https://arxiv.org/abs/2505.18235"
     },
-    "primary_module": "M2",
-    "secondary_modules": [],
+    "primary_module": "S1",
+    "secondary_modules": [
+      "M2"
+    ],
     "collection": "seed_v0_2",
     "priority": "reference",
     "links": {
@@ -487,7 +493,9 @@
       "entry_type": "misc",
       "eprint": "2505.18235"
     },
-    "domain_label": "LLM analysis"
+    "domain_label": "LLM analysis",
+    "supplement_group": "analysis",
+    "supplement_reason": "A theoretical account of representation geometry in language models provides background for geometric analysis."
   },
   {
     "id": "geoworld",
@@ -499,8 +507,9 @@
       "label": "CVPR 2026",
       "source_url": "https://arxiv.org/abs/2602.23058"
     },
-    "primary_module": "M2",
+    "primary_module": "S1",
     "secondary_modules": [
+      "M2",
       "M4"
     ],
     "collection": "seed_v0_2",
@@ -540,7 +549,9 @@
       "entry_type": "misc",
       "eprint": "2602.23058"
     },
-    "domain_label": "Procedural planning"
+    "domain_label": "Procedural planning",
+    "supplement_group": "analysis",
+    "supplement_reason": "Hyperbolic representations support procedural planning on instructional videos; the evaluation differs from physical dynamics prediction."
   },
   {
     "id": "cadm",
@@ -553,9 +564,7 @@
       "source_url": "https://proceedings.mlr.press/v119/lee20g.html"
     },
     "primary_module": "M3",
-    "secondary_modules": [
-      "M6"
-    ],
+    "secondary_modules": [],
     "collection": "seed_v0_2",
     "priority": "reference",
     "links": {
@@ -609,8 +618,7 @@
     },
     "primary_module": "M3",
     "secondary_modules": [
-      "M2",
-      "M6"
+      "M2"
     ],
     "collection": "seed_v0_2",
     "priority": "anchor",
@@ -723,8 +731,7 @@
     },
     "primary_module": "M3",
     "secondary_modules": [
-      "M2",
-      "M6"
+      "M2"
     ],
     "collection": "seed_v0_2",
     "priority": "core",
@@ -780,9 +787,7 @@
       "source_url": "https://proceedings.mlr.press/v267/zhou25t.html"
     },
     "primary_module": "M4",
-    "secondary_modules": [
-      "M7"
-    ],
+    "secondary_modules": [],
     "collection": "seed_v0_2",
     "priority": "core",
     "links": {
@@ -943,7 +948,7 @@
       "label": "ICML 2025",
       "source_url": "https://proceedings.mlr.press/v267/vafa25a.html"
     },
-    "primary_module": "M4",
+    "primary_module": "M8",
     "secondary_modules": [
       "M3"
     ],
@@ -999,9 +1004,9 @@
       "label": "CoRL 2024 (proceedings 2025)",
       "source_url": "https://proceedings.mlr.press/v270/li25c.html"
     },
-    "primary_module": "M5",
+    "primary_module": "S1",
     "secondary_modules": [
-      "M4"
+      "M5"
     ],
     "collection": "seed_v0_2",
     "priority": "core",
@@ -1053,7 +1058,9 @@
       "booktitle": "Conference on Robot Learning",
       "publisher": "PMLR",
       "pages": "3705--3728"
-    }
+    },
+    "supplement_group": "transfer",
+    "supplement_reason": "Simulation-based policy ranking provides evaluation context; the paper does not evaluate generalization of a learned world model."
   },
   {
     "id": "rethinking-sim2real",
@@ -1065,7 +1072,7 @@
       "label": "CoRL 2022 (proceedings 2023)",
       "source_url": "https://proceedings.mlr.press/v205/truong23a.html"
     },
-    "primary_module": "M5",
+    "primary_module": "S1",
     "secondary_modules": [
       "M3"
     ],
@@ -1109,7 +1116,9 @@
       "booktitle": "Conference on Robot Learning",
       "publisher": "PMLR",
       "pages": "859--870"
-    }
+    },
+    "supplement_group": "transfer",
+    "supplement_reason": "A navigation study isolates simulation-fidelity effects on policy transfer, providing context for evaluation design."
   },
   {
     "id": "physical-law-perspective",
@@ -1181,8 +1190,7 @@
     },
     "primary_module": "M5",
     "secondary_modules": [
-      "M4",
-      "M7"
+      "M4"
     ],
     "collection": "seed_v0_2",
     "priority": "reference",
@@ -1246,9 +1254,9 @@
       "label": "ICML 2020",
       "source_url": "https://proceedings.mlr.press/v119/sekar20a.html"
     },
-    "primary_module": "M6",
+    "primary_module": "M4",
     "secondary_modules": [
-      "M4"
+      "M3"
     ],
     "collection": "seed_v0_2",
     "priority": "reference",
@@ -1302,9 +1310,9 @@
       "label": "ICLR 2024",
       "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html"
     },
-    "primary_module": "M6",
+    "primary_module": "S1",
     "secondary_modules": [
-      "M5"
+      "M3"
     ],
     "collection": "seed_v0_2",
     "priority": "reference",
@@ -1344,7 +1352,9 @@
       "entry_type": "inproceedings",
       "pages": "39979--39997",
       "booktitle": "International Conference on Learning Representations"
-    }
+    },
+    "supplement_group": "transfer",
+    "supplement_reason": "Active system identification connects information gathering to simulator calibration, providing a related approach to dynamics adaptation."
   },
   {
     "id": "poke-strike",
@@ -1356,8 +1366,9 @@
       "label": "CoRL 2025",
       "source_url": "https://proceedings.mlr.press/v305/aoyama25a.html"
     },
-    "primary_module": "M6",
+    "primary_module": "S1",
     "secondary_modules": [
+      "M3",
       "M4"
     ],
     "collection": "seed_v0_2",
@@ -1398,7 +1409,9 @@
       "booktitle": "Conference on Robot Learning",
       "publisher": "PMLR",
       "pages": "3008--3034"
-    }
+    },
+    "supplement_group": "transfer",
+    "supplement_reason": "Task-informed interaction links physical-property identification to manipulation, providing background on acquiring useful adaptation data."
   },
   {
     "id": "curious-replay",
@@ -1410,9 +1423,9 @@
       "label": "ICML 2023",
       "source_url": "https://proceedings.mlr.press/v202/kauvar23a.html"
     },
-    "primary_module": "M6",
+    "primary_module": "M3",
     "secondary_modules": [
-      "M3"
+      "M4"
     ],
     "collection": "seed_v0_2",
     "priority": "reference",
@@ -1464,9 +1477,9 @@
       "label": "arXiv technical report 2025",
       "source_url": "https://arxiv.org/abs/2506.09985"
     },
-    "primary_module": "M7",
+    "primary_module": "M4",
     "secondary_modules": [
-      "M4"
+      "M3"
     ],
     "collection": "seed_v0_2",
     "priority": "reference",
@@ -1544,7 +1557,7 @@
       "label": "arXiv 2026",
       "source_url": "https://arxiv.org/abs/2603.19312"
     },
-    "primary_module": "M7",
+    "primary_module": "S1",
     "secondary_modules": [
       "M2",
       "M4"
@@ -1586,7 +1599,9 @@
       "verified_on": "2026-10-21",
       "entry_type": "misc",
       "eprint": "2603.19312"
-    }
+    },
+    "supplement_group": "foundations",
+    "supplement_reason": "An end-to-end predictive architecture provides a compact baseline for representation and planning studies."
   },
   {
     "id": "jepa-wms",
@@ -1598,9 +1613,10 @@
       "label": "TMLR 2026",
       "source_url": "https://arxiv.org/abs/2512.24497"
     },
-    "primary_module": "M7",
+    "primary_module": "M4",
     "secondary_modules": [
-      "M4"
+      "M2",
+      "M5"
     ],
     "collection": "seed_v0_2",
     "priority": "core",
@@ -1653,7 +1669,7 @@
       "label": "Nature 2025",
       "source_url": "https://www.nature.com/articles/s41586-025-08744-2"
     },
-    "primary_module": "M7",
+    "primary_module": "S1",
     "secondary_modules": [
       "M4"
     ],
@@ -1697,6 +1713,435 @@
       "volume": "640",
       "publisher": "Nature Publishing Group",
       "pages": "647--653"
+    },
+    "supplement_group": "foundations",
+    "supplement_reason": "A broadly applicable model-based RL algorithm provides a control baseline; shared hyperparameters across tasks are distinct from transferring a trained model."
+  },
+  {
+    "id": "howm",
+    "canonical_title": "Toward Compositional Generalization in Object-Oriented World Modeling",
+    "aliases": [
+      "HOWM"
+    ],
+    "arxiv_id": null,
+    "first_public_year": 2022,
+    "publication": {
+      "label": "ICML 2022",
+      "source_url": "https://proceedings.mlr.press/v162/zhao22b.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M1"
+    ],
+    "collection": "additions_2026_10_21",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v162/zhao22b.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "Formalizes object composition and learns a differentiable world model for unseen combinations.",
+      "focus": "An algebraic formulation defines compositional generalization in object-oriented environments. HOWM implements a differentiable, soft form of composition to share dynamics across object configurations.",
+      "boundary": "Two instances of the Object Library environment compare methods with exact, approximate, or absent compositional guarantees under a common evaluation pipeline."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Linfeng Zhao",
+        "Lingzhi Kong",
+        "Robin Walters",
+        "Lawson L.S. Wong"
+      ],
+      "year": 2022,
+      "source_url": "https://proceedings.mlr.press/v162/zhao22b.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "International Conference on Machine Learning",
+      "publisher": "PMLR",
+      "pages": "26841--26864"
+    }
+  },
+  {
+    "id": "wm3c",
+    "canonical_title": "Modeling Unseen Environments with Language-guided Composable Causal Components in Reinforcement Learning",
+    "aliases": [
+      "WM3C"
+    ],
+    "arxiv_id": null,
+    "first_public_year": 2025,
+    "publication": {
+      "label": "ICLR 2025",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M1",
+      "M8"
+    ],
+    "collection": "additions_2026_10_21",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "Uses language-guided causal components to model and adapt to unseen environments.",
+      "focus": "WM3C uses language to organize latent dynamics into composable components. A masked autoencoder, mutual-information constraints, and adaptive sparsity regularization separate transition mechanisms.",
+      "boundary": "Numerical simulations and robotic manipulation test latent-process identification, policy learning, and transfer to unseen tasks. Identifiability results depend on the stated modeling assumptions."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Xinyue Wang",
+        "Biwei Huang"
+      ],
+      "year": 2025,
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "International Conference on Learning Representations"
+    }
+  },
+  {
+    "id": "behavior-invariant-wm",
+    "canonical_title": "Behavior-Invariant Task Representation Learning with Transformer-based World Models for Offline Meta-Reinforcement Learning",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": 2026,
+    "publication": {
+      "label": "ICML 2026",
+      "source_url": "https://proceedings.mlr.press/v306/qian26o.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "additions_2026_10_21",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v306/qian26o.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "Learns task representations invariant to behavior policy for offline-to-online adaptation.",
+      "focus": "Information-theoretic task representation learning extracts latent variables that are invariant to behavior policy. A Transformer-based stochastic world model supplies imagined rollouts with conservative value penalties to limit exploitation of model errors.",
+      "boundary": "Offline meta-RL experiments evaluate adaptation under context and policy distribution shifts, including out-of-distribution and sparse-reward settings."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Fuyuan Qian",
+        "Menglong Zhang",
+        "Song Wang",
+        "Quanying Liu"
+      ],
+      "year": 2026,
+      "source_url": "https://proceedings.mlr.press/v306/qian26o.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "International Conference on Machine Learning",
+      "publisher": "PMLR",
+      "pages": "101134--101160"
+    }
+  },
+  {
+    "id": "wombet",
+    "canonical_title": "WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": 2026,
+    "publication": {
+      "label": "L4DC 2026",
+      "source_url": "https://proceedings.mlr.press/v331/kim26a.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "additions_2026_10_21",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v331/kim26a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "Transfers model-generated experience from a source task to target-task fine-tuning.",
+      "focus": "A source-task world model generates trajectories through uncertainty-penalized planning. Return and epistemic-uncertainty filters select offline experience, which is mixed adaptively with online data during target-task fine-tuning.",
+      "boundary": "Continuous-control benchmarks measure sample efficiency and final performance. The analysis bounds return and decomposes distribution-mismatch and approximation errors; the transfer procedure includes online updates."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Mintae Kim",
+        "Koushil Sreenath"
+      ],
+      "year": 2026,
+      "source_url": "https://proceedings.mlr.press/v331/kim26a.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "Learning for Dynamics and Control Conference",
+      "publisher": "PMLR",
+      "pages": "1121--1133"
+    }
+  },
+  {
+    "id": "considering-context",
+    "canonical_title": "Considering Context: When World Models Need Context Encoders",
+    "aliases": [],
+    "arxiv_id": "2610.06651",
+    "first_public_year": 2026,
+    "publication": {
+      "label": "arXiv 2026",
+      "source_url": "https://arxiv.org/abs/2610.06651"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M5"
+    ],
+    "collection": "additions_2026_10_21",
+    "priority": "core",
+    "links": {
+      "paper": "https://arxiv.org/abs/2610.06651",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "Measures the prediction information supplied by context beyond an agent's history.",
+      "focus": "Predictive sufficiency separates context-dependent prediction gains into information recoverable from history, residual information requiring true context, and error attributable to a finite model.",
+      "boundary": "Experiments vary identification difficulty and priors over environments. The same task can leave different prediction headroom depending on whether the agent's behavior already identifies its context."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Oleg Smirnov",
+        "Sofiane Ennadir",
+        "John Pertoft",
+        "Bjartur Hjaltason",
+        "Sara Karimi"
+      ],
+      "year": 2026,
+      "source_url": "https://arxiv.org/abs/2610.06651",
+      "verified_on": "2026-10-21",
+      "entry_type": "misc",
+      "eprint": "2610.06651"
+    }
+  },
+  {
+    "id": "general-agents",
+    "canonical_title": "General agents need world models",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": 2025,
+    "publication": {
+      "label": "ICML 2025",
+      "source_url": "https://proceedings.mlr.press/v267/richens25a.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "additions_2026_10_21",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v267/richens25a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "Relates generalization across goal-directed tasks to predictive models extractable from a policy.",
+      "focus": "A formal construction extracts an environment predictor from a policy capable of solving a specified class of multi-step goals. The required prediction accuracy increases with performance and goal complexity.",
+      "boundary": "The theoretical result connects goal generalization to extractable predictive information under the paper's formal task assumptions."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Jonathan Richens",
+        "Tom Everitt",
+        "David Abel"
+      ],
+      "year": 2025,
+      "source_url": "https://proceedings.mlr.press/v267/richens25a.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "International Conference on Machine Learning",
+      "publisher": "PMLR",
+      "pages": "51659--51687"
+    },
+    "domain_label": "Theory"
+  },
+  {
+    "id": "probing-rl-world-models",
+    "canonical_title": "What Do World Models Learn in RL? Probing Latent Representations in Learned Environment Simulators",
+    "aliases": [],
+    "arxiv_id": "2603.21546",
+    "first_public_year": 2026,
+    "publication": {
+      "label": "ICLR 2026 World Models Workshop",
+      "source_url": "https://arxiv.org/abs/2603.21546"
+    },
+    "primary_module": "M8",
+    "secondary_modules": [
+      "M1"
+    ],
+    "collection": "additions_2026_10_21",
+    "priority": "core",
+    "links": {
+      "paper": "https://arxiv.org/abs/2603.21546",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "Probes and intervenes on game-state representations in IRIS and DIAMOND.",
+      "focus": "Linear and nonlinear probes recover game-state variables. Hidden-state interventions along probe directions, attention analysis, and token ablations test whether those representations influence generated predictions.",
+      "boundary": "Experiments cover IRIS and DIAMOND on Atari Breakout and Pong, measuring game-state decoding and changes in model predictions after hidden-state interventions and token ablations."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Xinyu Zhang"
+      ],
+      "year": 2026,
+      "source_url": "https://arxiv.org/abs/2603.21546",
+      "verified_on": "2026-10-21",
+      "entry_type": "misc",
+      "eprint": "2603.21546"
+    }
+  },
+  {
+    "id": "physically-interpretable",
+    "canonical_title": "Four Principles for Physically Interpretable World Models",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": 2025,
+    "publication": {
+      "label": "NeuS 2025",
+      "source_url": "https://proceedings.mlr.press/v288/peper25a.html"
+    },
+    "primary_module": "M8",
+    "secondary_modules": [
+      "M1",
+      "M2"
+    ],
+    "collection": "additions_2026_10_21",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v288/peper25a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "Organizes latent representations and supervision around physical meaning.",
+      "focus": "Four design principles organize latents by physical function, align invariant and equivariant representations, combine supervision strengths, and partition generative outputs for verification.",
+      "boundary": "Experiments on two benchmarks examine the proposed design principles and their contribution to physically meaningful latent representations."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Jordan Peper",
+        "Zhenjiang Mao",
+        "Yuang Geng",
+        "Siyuan Pan",
+        "Ivan Ruchkin"
+      ],
+      "year": 2025,
+      "source_url": "https://proceedings.mlr.press/v288/peper25a.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "International Conference on Neuro-symbolic Systems",
+      "publisher": "PMLR",
+      "pages": "66--89"
     }
   }
 ]

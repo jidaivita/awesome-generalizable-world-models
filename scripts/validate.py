@@ -25,18 +25,28 @@ def valid_url(value):
 def validate_data(root=ROOT):
     papers,cfg,manifest=read_sources(root)
     mods={m['id'] for m in cfg['modules']}
-    require(mods=={f'M{i}' for i in range(1,8)}, 'Expected seven modules')
+    require(mods=={'M1','M2','M3','M4','M5','M8'} and len(cfg['modules'])==6, 'Expected six research topics')
+    supplement=cfg['supplement']['id']
+    all_sections=mods|{supplement}
     ids=[p['id'] for p in papers]
     require(len(ids)==len(set(ids)), 'Duplicate paper ID')
-    selected=[p for p in papers if p['collection']=='seed_v0_2']
-    require(len(selected)==30, 'Expected 30 papers')
-    require(Counter(p['primary_module'] for p in selected)==dict(zip(sorted(mods),[4,6,4,4,4,4,4])), 'Module counts changed')
+    require(set(cfg['original_paper_ids'])<=set(ids) and len(cfg['original_paper_ids'])==30, 'Original paper missing')
+    assigned=[pid for m in cfg['modules'] for g in m['groups'] for pid in g['ids']]
+    core={p['id'] for p in papers if p['primary_module'] in mods}
+    require(len(assigned)==len(set(assigned)) and set(assigned)==core, 'Incomplete or duplicated topic grouping')
+    byid={p['id']:p for p in papers}
+    for m in cfg['modules']:
+        require(all(byid[pid]['primary_module']==m['id'] for g in m['groups'] for pid in g['ids']), 'Topic grouping disagrees with paper assignment')
+    supplement_groups={g['id'] for g in cfg['supplement']['groups']}
+    for p in papers:
+        if p['primary_module']==supplement:
+            require(p.get('supplement_group') in supplement_groups and bool(p.get('supplement_reason')), 'Supplementary paper needs a group and relevance statement')
     route=[r['id'] for r in cfg['route']]
-    require(len(route)==len(set(route))==12 and set(route)<=set(ids),'Invalid reading route')
+    require(len(route)==len(set(route))==12 and set(route)<=core,'Invalid reading route')
     seen_titles={};seen_arxiv={}
     for p in papers:
         require(re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',p['id']), 'Invalid stable ID')
-        require(p['primary_module'] in mods,'Invalid primary module')
+        require(p['primary_module'] in all_sections,'Invalid primary module')
         secondary=p['secondary_modules']
         require(len(secondary)<=2 and len(set(secondary))==len(secondary) and set(secondary)<=mods and p['primary_module'] not in secondary,'Invalid cross references')
         for title in [p['canonical_title']]+p['aliases']:
@@ -67,6 +77,12 @@ def validate_data(root=ROOT):
     for m in cfg['modules']:
         require(set(m['start'])<=set(ids),'Invalid module starting paper')
         require(set(m['related'])<=mods,'Invalid related module')
+    for legacy in cfg['legacy_pages']:
+        require(set(legacy['papers'])<=set(ids), 'Invalid legacy paper reference')
+        rel=Path(legacy['path'])
+        require(not rel.is_absolute() and '..' not in rel.parts and rel.parent==Path('docs/modules') and rel.suffix=='.md', 'Invalid legacy path')
+    require(cfg['supplement']['path']=='docs/supplementary.md', 'Invalid supplementary path')
+    require([s['start'] for s in cfg['route_sections']]==[1,4,7,10], 'Invalid reading sections')
     public_note_paths(root,manifest)
     return len(papers)
 
@@ -104,4 +120,5 @@ def validate_links(root=ROOT):
 
 if __name__=='__main__':
     n=validate_data();links=validate_links()
-    print(f'OK: {n} papers; 7 modules; 12 route entries; {links} local links/anchors')
+    _,cfg,_=read_sources()
+    print(f"OK: {n} papers; {len(cfg['modules'])} topics; {len(cfg['route'])} route entries; {links} local links/anchors")

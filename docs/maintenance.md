@@ -15,7 +15,7 @@ The catalog uses Python 3.9 or later, JSON, and Markdown. No additional Python p
 | Public note manifest | `publish-manifest.json` |
 | Header illustration | `assets/research-map.svg` |
 
-The README, seven topic overviews, reading path, and BibTeX export share the same data source. Bibliographic records include the ordered author list, cited-edition year, source URL, and metadata verification date. The bibliography uses a generated-file header; unmarked files are not overwritten. The generator replaces only the region between its `BEGIN GENERATED RESEARCH MAP` and `END GENERATED RESEARCH MAP` markers. It preserves text outside the markers and refuses to overwrite an existing unmarked file.
+The README, six topic overviews, supplementary page, reading path, and BibTeX export share the same data source. Bibliographic records include the ordered author list, cited-edition year, source URL, and metadata verification date. The bibliography uses a generated-file header; unmarked files are not overwritten. The generator replaces only the region between its `BEGIN GENERATED RESEARCH MAP` and `END GENERATED RESEARCH MAP` markers. It preserves text outside the markers and refuses to overwrite an existing unmarked file.
 
 ## Build and validate
 
@@ -34,7 +34,9 @@ Use stable IDs even when titles change. Store earlier titles in `aliases` and ar
 
 `source_review` records the date and depth of a source check. A successful HTTP request is not a content review. `reproduction` records execution evidence separately; a code link does not establish reproducibility.
 
-The initial snapshot contains 30 papers and a 12-paper reading path. Update the corresponding validation expectations when revising the collection. Preserve existing records or document deliberate removals.
+The catalog retains all 30 original records alongside subsequent additions. Each paper has one primary topic or a supplementary assignment. Topic groups are validated against those assignments. Original IDs and previous topic-page anchors remain available after reclassification.
+
+The reading path contains 12 papers from the main topics. Update the route and section descriptions together. Supplementary records require a group and a relevance statement; they remain part of the bibliography and public export.
 
 ## Notes and exports
 

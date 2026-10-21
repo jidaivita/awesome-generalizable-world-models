@@ -1,23 +1,14 @@
 <!-- BEGIN GENERATED RESEARCH MAP -->
 
-[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md)
+[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md) · [Supplementary reading](../supplementary.md)
 
-# Planning & Task-Relevant Representations
+# Planning & Task-Relevant World Models
 
-World models support decisions by predicting goal-relevant futures or preserving the quantities required for value-based planning. These papers connect representation design to action optimization, reward-relevant abstraction, and tests of transferred structure.
+World models support action selection through predicted futures or representations that preserve decision-relevant quantities. These papers connect latent dynamics to planning, task abstraction, and task-agnostic experience collection.
 
-The section spans practical planners, formal model-equivalence criteria, and behavioral diagnostics of foundation models.
+The evaluation target can be goal-reaching, reward, or the quantities needed for policy evaluation. Task success is interpreted in the tested environment and transfer protocol.
 
-## Papers
-
-<a id="paper-denoised-mdps"></a>
-### Denoised MDPs: Learning World Models Better Than the World Itself
-
-Tongzhou Wang et al. · **ICML 2022** · [Paper](https://proceedings.mlr.press/v162/wang22c.html)
-
-- **Method:** The latent state is factored according to controllability and reward relevance. The control model retains the controllable, reward-relevant component while modeling nuisance variation separately.
-- **Evaluation:** DeepMind Control Suite variants and RoboDesk test policy learning under distractors; joint-position regression tests retained physical information. The abstraction is defined relative to the training reward.
-- **Related topics:** [Object-Centric & Relational Models](m1-structure.md)
+## Latent prediction and planning
 
 <a id="paper-dino-wm"></a>
 ### DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning
@@ -26,7 +17,35 @@ Gaoyue Zhou et al. · **ICML 2025** · [Paper](https://proceedings.mlr.press/v26
 
 - **Method:** A dynamics predictor learns to forecast frozen DINOv2 spatial patch features from offline state-action trajectories. At test time, action sequences are optimized to bring predicted features close to the features of an image goal.
 - **Evaluation:** Six environments include varied maze layouts, pushing with different object shapes, and multi-particle settings. Goal-directed planning uses neither a learned reward model nor an inverse-dynamics model.
-- **Related topics:** [Predictive Architectures & Pretraining](m7-scaling.md)
+
+<a id="paper-vjepa2"></a>
+### V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning
+
+Mido Assran et al. · **arXiv technical report 2025** · [Paper](https://arxiv.org/abs/2506.09985)
+
+- **Method:** Action-free joint-embedding prediction pretrains a video encoder on internet video. A subsequent action-conditioned model, V-JEPA 2-AC, is trained with robot trajectories and used to plan toward image goals.
+- **Evaluation:** Evaluation spans motion understanding, action anticipation, video question answering, and pick-and-place planning on Franka robots in two labs. Robot planning uses action-conditioned post-training on DROID data.
+- **Related topics:** [Generalization & Adaptation](m3-generalization.md)
+
+<a id="paper-jepa-wms"></a>
+### What Drives Success in Physical Planning with Joint-Embedding Predictive World Models?
+
+Basile Terver et al. · **TMLR 2026** · [Paper](https://arxiv.org/abs/2512.24497) · [Code](https://github.com/facebookresearch/jepa-wms)
+
+- **Method:** A component study varies world-model architecture, training objective, and planning algorithm within the joint-embedding predictive family. The resulting configuration combines the empirically favorable choices.
+- **Evaluation:** Simulated environments and real robotic data support navigation and manipulation comparisons with DINO-WM and V-JEPA 2-AC. The study attributes planning performance to specific modeling and optimization choices.
+- **Related topics:** [Representation Geometry & Symmetry](m2-geometry.md) · [Evaluation & Benchmarks](m5-reliability.md)
+
+## Task-relevant abstraction
+
+<a id="paper-denoised-mdps"></a>
+### Denoised MDPs: Learning World Models Better Than the World Itself
+
+Tongzhou Wang et al. · **ICML 2022** · [Paper](https://proceedings.mlr.press/v162/wang22c.html)
+
+- **Method:** The latent state is factored according to controllability and reward relevance. The control model retains the controllable, reward-relevant component while modeling nuisance variation separately.
+- **Evaluation:** DeepMind Control Suite variants and RoboDesk test policy learning under distractors; joint-position regression tests retained physical information. The abstraction is defined relative to the training reward.
+- **Related topics:** [Structured & Compositional Representations](m1-structure.md)
 
 <a id="paper-value-equivalence"></a>
 ### The Value Equivalence Principle for Model-Based Reinforcement Learning
@@ -35,27 +54,34 @@ Christopher Grimm et al. · **NeurIPS 2020** · [Paper](https://proceedings.neur
 
 - **Method:** Two models are value equivalent for a specified set of policies and functions when they produce the same Bellman updates. This defines model learning by the computations needed for value-based planning.
 - **Evaluation:** Theoretical results characterize how the equivalent-model class shrinks as policy and function sets expand. Experiments compare value-equivalent learning with maximum-likelihood modeling; equivalence is relative to those sets.
-- **Related topics:** [Evaluation & Sim-to-Real Transfer](m5-reliability.md)
+- **Related topics:** [Evaluation & Benchmarks](m5-reliability.md)
 
-<a id="paper-what-found"></a>
-### What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models
+## Experience collection for downstream tasks
 
-Keyon Vafa et al. · **ICML 2025** · [Paper](https://proceedings.mlr.press/v267/vafa25a.html)
+<a id="paper-plan2explore"></a>
+### Planning to Explore via Self-Supervised World Models
 
-- **Method:** Inductive-bias probes adapt a foundation model to synthetic tasks generated by a proposed world model. The adaptation behavior tests whether pretraining favors the hypothesized underlying structure.
-- **Evaluation:** Across several domains, strong training-task prediction can coexist with weak transfer of the proposed structure. Orbital-trajectory models provide a concrete test of transfer to new Newtonian-physics tasks.
-- **Related topics:** [Generalization & Context-Based Adaptation](m3-generalization.md)
+Ramanan Sekar et al. · **ICML 2020** · [Paper](https://proceedings.mlr.press/v119/sekar20a.html)
+
+- **Method:** An ensemble of latent predictors supplies a disagreement signal, and an exploration policy plans actions that seek expected future disagreement. Downstream task policies are then learned using the collected world model.
+- **Evaluation:** Visual control tasks evaluate reward-free exploration followed by zero- or few-shot task adaptation. Tasks can be specified after the exploration phase.
+- **Related topics:** [Generalization & Adaptation](m3-generalization.md)
 
 ## Method comparisons
 
-DINO-WM evaluates representations through optimized action sequences, while Denoised MDPs removes distractors relative to a control reward. Value Equivalence formalizes the planning computations that a model must preserve. Inductive-bias probes test a different consequence of representation learning: whether the proposed structure guides adaptation to new tasks.
+DINO-WM plans in frozen visual features; V-JEPA 2 connects video pretraining to action-conditioned prediction and robot planning. JEPA-WMs separates encoder, objective, and planner choices. Denoised MDPs isolates controllable and reward-relevant factors, while Value Equivalence formalizes the model information needed for Bellman updates. Plan2Explore collects experience through disagreement between predictors before downstream rewards are specified.
 
 ## Related topics
 
-- [Representation Geometry & Analysis](m2-geometry.md)
-- [Generalization & Context-Based Adaptation](m3-generalization.md)
-- [Evaluation & Sim-to-Real Transfer](m5-reliability.md)
+- [Generalization & Adaptation](m3-generalization.md)
+- [Representation Geometry & Symmetry](m2-geometry.md)
+- [Evaluation & Benchmarks](m5-reliability.md)
 
-[Paper-note template](../../templates/paper-note.md) · [Comparison template](../../templates/comparison-note.md) · [Back to overview ↑](../../README.md)
+[Back to paper index](../../README.md)
+
+## Entries in related sections
+
+<a id="paper-what-found"></a>
+- [What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models](m8-interpretability.md#paper-what-found)
 
 <!-- END GENERATED RESEARCH MAP -->

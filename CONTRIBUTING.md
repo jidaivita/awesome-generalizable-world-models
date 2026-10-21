@@ -4,11 +4,13 @@ Suggestions, corrections, and pull requests are welcome.
 
 ## Scope
 
-The list covers learned world models and their generalization across object configurations, environments, dynamics, and tasks. Entries may contribute a modeling method, representation analysis, theoretical result, or evaluation protocol. Each paper should have a clear connection to at least one of the seven topics.
+The list covers learned world models and their generalization across object configurations, environments, dynamics, and tasks. Entries may contribute a modeling method, representation analysis, theoretical result, or evaluation protocol. Each paper should have a clear connection to at least one of the six topics.
 
-The catalog is organized by research topic rather than citation count. Work on language-model geometry is labeled separately when its analysis methods are relevant to world-model representations.
+Papers should identify a reusable representation, a transfer or adaptation mechanism, evidence about what a world model learns, a connection to task performance, or an evaluation of generalization. Negative results and formal limits are within scope.
 
-Work from adjacent fields can be included when it provides a directly relevant method. Describe the connection and keep findings tied to the setting in which they were established.
+General-purpose architectures, language-model analysis methods, and policy-only simulation studies belong in [Supplementary Reading](docs/supplementary.md) when they provide useful background. State the connection and retain the original evaluation setting.
+
+Describe the distribution shift and evaluation outcome when available. Distinguish zero-shot transfer, adaptation from context, and parameter updates; distinguish prediction accuracy from downstream policy performance. A structured latent space or an accurate probe alone does not establish causal use of the represented information.
 
 ## Suggest a paper
 

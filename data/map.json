@@ -1,213 +1,437 @@
 {
   "modules": [
     {
+      "id": "M3",
+      "slug": "generalization",
+      "title": "Generalization & Adaptation",
+      "english": "Generalization & Adaptation",
+      "summary": "Unseen compositions, dynamics shifts, task transfer, and adaptation.",
+      "intro": "World models encounter changes in object configurations, transition dynamics, observations, and goals. These papers study how learned structure transfers and how interaction history or parameter updates support adaptation.",
+      "scope": "Each entry specifies the tested shift and outcome. Prediction transfer, policy transfer, adaptation from context, and fine-tuning are different evaluation settings.",
+      "connections": "HOWM and Dreamweaver study composition; WM3C uses language-guided causal components for unseen environments.\n\nCaDM conditions dynamics on history, while Context and Diversity and Considering Context examine what that history reveals. Dynamics Are Learned shapes a trajectory embedding for policy adaptation.\n\nCurious Replay changes the data used for updates; WOMBET generates source-task experience for target-task fine-tuning. Behavior-Invariant Task Representation Learning addresses changes in offline behavior and online interaction.\n\nGeneral agents need world models supplies a formal connection between goal generalization and prediction.",
+      "groups": [
+        {
+          "title": "Compositional generalization",
+          "ids": [
+            "howm",
+            "dreamweaver",
+            "wm3c"
+          ]
+        },
+        {
+          "title": "Dynamics shifts and context-based adaptation",
+          "ids": [
+            "cadm",
+            "context-diversity",
+            "dynamics-geometries",
+            "considering-context",
+            "curious-replay"
+          ]
+        },
+        {
+          "title": "Task and experience transfer",
+          "ids": [
+            "behavior-invariant-wm",
+            "wombet"
+          ]
+        },
+        {
+          "title": "Theory of goal generalization",
+          "ids": [
+            "general-agents"
+          ]
+        }
+      ],
+      "start": [
+        "howm",
+        "dreamweaver"
+      ],
+      "related": [
+        "M1",
+        "M8",
+        "M4",
+        "M5"
+      ]
+    },
+    {
+      "id": "M8",
+      "slug": "interpretability",
+      "title": "World Model Interpretability",
+      "english": "World Model Interpretability",
+      "summary": "Physical variables, causal interventions, and interpretable model design.",
+      "intro": "Interpretability studies identify the variables represented by a world model and examine their role in prediction. Related model designs give latent variables explicit physical meaning.",
+      "scope": "Representation probes, interventions on model computation, behavioral tests of learned structure, and physically interpretable architectures provide different forms of evidence.",
+      "connections": "Interpreting Physics analyzes physical information in video representations. What Do World Models Learn in RL? extends probing and interventions to learned Atari simulators. What Has a Foundation Model Found? tests learned structure through adaptation to synthetic tasks, without identifying internal circuits. Four Principles for Physically Interpretable World Models introduces design constraints that align latent variables with physical meaning.",
+      "groups": [
+        {
+          "title": "Representation probing and interventions",
+          "ids": [
+            "interpreting-physics",
+            "probing-rl-world-models"
+          ]
+        },
+        {
+          "title": "Behavioral tests of learned structure",
+          "ids": [
+            "what-found"
+          ]
+        },
+        {
+          "title": "Physically interpretable model design",
+          "ids": [
+            "physically-interpretable"
+          ]
+        }
+      ],
+      "start": [
+        "interpreting-physics",
+        "probing-rl-world-models"
+      ],
+      "related": [
+        "M2",
+        "M1",
+        "M3"
+      ]
+    },
+    {
       "id": "M1",
       "slug": "structure",
-      "title": "Object-Centric & Relational Models",
-      "english": "Object-Centric & Relational Models",
-      "question": "Which objects, relations, and stable structures should a model represent?",
-      "intro": "Objects and relations provide a structured state space for predicting interactions. This section covers latent interaction graphs, object-factorized visual representations, sparse attention, and object-level masking.",
-      "scope": "The methods differ in whether object structure is supplied, inferred from observations, or imposed by the prediction objective.",
+      "title": "Structured & Compositional Representations",
+      "english": "Structured & Compositional Representations",
+      "summary": "Objects, relations, and modular transition mechanisms.",
+      "intro": "Object and relation structure factorizes a world model into entities and interactions. These methods infer interaction graphs, learn object-specific visual features, or restrict which components participate in a transition.",
+      "scope": "Structure may be supplied by the input, learned from observations, or encouraged by a prediction objective. Relation recovery and compositional transfer are reported as separate outcomes.",
+      "connections": "NRI infers relations between observed entities. C-SWM learns object embeddings and relational transitions from pixels. SPARTAN sparsifies context-dependent interactions to adapt to mechanism changes. Causal-JEPA makes missing object-level information the prediction target. HOWM and WM3C, listed under Generalization & Adaptation, directly evaluate how composable dynamics support new configurations or environments.",
+      "groups": [
+        {
+          "title": "Objects and interaction mechanisms",
+          "ids": [
+            "nri",
+            "cswm",
+            "spartan",
+            "causal-jepa"
+          ]
+        }
+      ],
       "start": [
         "nri",
         "cswm"
       ],
-      "connections": "NRI learns a graph over observed entities; C-SWM jointly learns object embeddings from pixels and graph-based transitions. SPARTAN makes interactions sparse and context-dependent, whereas C-JEPA makes missing object information the prediction target. Their evidence therefore ranges from relation recovery to adaptation after mechanism changes and counterfactual reasoning.",
       "related": [
-        "M2",
         "M3",
-        "M4"
+        "M8",
+        "M2"
       ]
     },
     {
       "id": "M2",
       "slug": "geometry",
-      "title": "Representation Geometry & Analysis",
-      "english": "Representation Geometry & Analysis",
-      "question": "How is knowledge organized in latent space, and what does that organization do?",
-      "intro": "Latent geometry can be measured after training or imposed through the model architecture and objective. These papers connect geometric structure to physical variables, transition prediction, and procedural planning.",
-      "scope": "Language-model studies are included as analysis methods and labeled separately from physical world-model results.",
-      "start": [
-        "interpreting-physics",
-        "smds",
-        "grwm"
+      "title": "Representation Geometry & Symmetry",
+      "english": "Representation Geometry & Symmetry",
+      "summary": "Latent geometry, symmetry priors, and predictive dynamics.",
+      "intro": "Geometric structure determines how states and transitions are represented in latent space. These papers study regularization for long-horizon prediction and symmetry-based constraints on learned dynamics.",
+      "scope": "Observed geometry, imposed symmetry, and improved rollout accuracy are distinct claims. Physical-variable probing is covered under World Model Interpretability; language-model geometry and procedural planning appear in Supplementary Reading.",
+      "connections": "GRWM regularizes an encoder using geometric information and temporal context to improve deterministic rollouts. Group-Structured Latent Space specifies a symmetry-based latent manifold and transition operations. Dynamics Are Learned, listed under Generalization & Adaptation, instead shapes an inferred context embedding to support policies under dynamics shifts.",
+      "groups": [
+        {
+          "title": "Geometric regularization and symmetry priors",
+          "ids": [
+            "grwm",
+            "group-latents"
+          ]
+        }
       ],
-      "connections": "Interpreting Physics and SMDS measure structure in trained representations, while Origins of Representation Manifolds derives a model of feature similarity. GRWM changes the training objective to improve rollout accuracy; Group-Structured Latent Space and GeoWorld choose non-Euclidean structure before learning. These are different roles for geometry: an observed property, a regularizer, or an architectural constraint.",
+      "start": [
+        "grwm",
+        "group-latents"
+      ],
       "related": [
+        "M8",
         "M3",
-        "M4",
-        "M7"
-      ]
-    },
-    {
-      "id": "M3",
-      "slug": "generalization",
-      "title": "Generalization & Context-Based Adaptation",
-      "english": "Generalization & Context-Based Adaptation",
-      "question": "Does success in a new environment come from knowledge reuse or learning new dynamics?",
-      "intro": "A model deployed in a new environment may face different object combinations, hidden physical parameters, or changed transition rules. These papers study compositional representations and the use of interaction history to predict or control under those shifts.",
-      "scope": "The comparisons distinguish recognition of familiar environments, learning from new context, and adaptation through learned trajectory embeddings.",
-      "start": [
-        "context-diversity",
-        "dynamics-geometries"
-      ],
-      "connections": "CaDM conditions a predictor on recent history; Context and Diversity analyzes when context identifies a familiar environment and when it supports learning new dynamics. Dynamics Are Learned shapes the trajectory embedding used for policy adaptation. Dreamweaver addresses a separate axis of generalization: recombining object attributes to generate new futures.",
-      "related": [
-        "M1",
-        "M2",
-        "M6"
+        "M4"
       ]
     },
     {
       "id": "M4",
       "slug": "knowledge-use",
-      "title": "Planning & Task-Relevant Representations",
-      "english": "Planning & Task-Relevant Representations",
-      "question": "Which information actually supports prediction, planning, and decisions?",
-      "intro": "World models support decisions by predicting goal-relevant futures or preserving the quantities required for value-based planning. These papers connect representation design to action optimization, reward-relevant abstraction, and tests of transferred structure.",
-      "scope": "The section spans practical planners, formal model-equivalence criteria, and behavioral diagnostics of foundation models.",
-      "start": [
-        "what-found",
-        "dino-wm"
+      "title": "Planning & Task-Relevant World Models",
+      "english": "Planning & Task-Relevant World Models",
+      "summary": "Goal-directed prediction, task abstraction, and model-based action selection.",
+      "intro": "World models support action selection through predicted futures or representations that preserve decision-relevant quantities. These papers connect latent dynamics to planning, task abstraction, and task-agnostic experience collection.",
+      "scope": "The evaluation target can be goal-reaching, reward, or the quantities needed for policy evaluation. Task success is interpreted in the tested environment and transfer protocol.",
+      "connections": "DINO-WM plans in frozen visual features; V-JEPA 2 connects video pretraining to action-conditioned prediction and robot planning. JEPA-WMs separates encoder, objective, and planner choices. Denoised MDPs isolates controllable and reward-relevant factors, while Value Equivalence formalizes the model information needed for Bellman updates. Plan2Explore collects experience through disagreement between predictors before downstream rewards are specified.",
+      "groups": [
+        {
+          "title": "Latent prediction and planning",
+          "ids": [
+            "dino-wm",
+            "vjepa2",
+            "jepa-wms"
+          ]
+        },
+        {
+          "title": "Task-relevant abstraction",
+          "ids": [
+            "denoised-mdps",
+            "value-equivalence"
+          ]
+        },
+        {
+          "title": "Experience collection for downstream tasks",
+          "ids": [
+            "plan2explore"
+          ]
+        }
       ],
-      "connections": "DINO-WM evaluates representations through optimized action sequences, while Denoised MDPs removes distractors relative to a control reward. Value Equivalence formalizes the planning computations that a model must preserve. Inductive-bias probes test a different consequence of representation learning: whether the proposed structure guides adaptation to new tasks.",
+      "start": [
+        "dino-wm",
+        "vjepa2"
+      ],
       "related": [
-        "M2",
         "M3",
+        "M2",
         "M5"
       ]
     },
     {
       "id": "M5",
       "slug": "reliability",
-      "title": "Evaluation & Sim-to-Real Transfer",
-      "english": "Evaluation & Sim-to-Real Transfer",
-      "question": "Which model errors matter for decisions, and when is a model trustworthy?",
-      "intro": "Evaluation protocols determine whether a model supports reliable decisions beyond its training conditions. These papers test physical extrapolation, closed-loop task performance, and agreement between simulated and real policy outcomes.",
-      "scope": "The unit of evaluation ranges from a predicted trajectory to a complete policy; the comparisons make those differences explicit.",
-      "start": [
-        "simpler",
-        "physical-law-perspective"
+      "title": "Evaluation & Benchmarks",
+      "english": "Evaluation & Benchmarks",
+      "summary": "Physical extrapolation, compositional tests, and closed-loop evaluation.",
+      "intro": "Evaluation protocols expose failures that average prediction scores can hide. These papers test physical-law extrapolation, combinations absent from training, and action-conditioned world models used in closed-loop tasks.",
+      "scope": "Results depend on the training distribution, the tested change, the information available at deployment, and the measured outcome. Simulation-based policy evaluation is linked separately in Supplementary Reading.",
+      "connections": "A Physical Law Perspective isolates interpolation, extrapolation, and compositional physical prediction. World-In-World evaluates action-conditioned models in closed-loop tasks while varying post-training data and test-time computation. The former diagnoses prediction under distribution shift; the latter measures consequences for interaction.",
+      "groups": [
+        {
+          "title": "Physical prediction and closed-loop tasks",
+          "ids": [
+            "physical-law-perspective",
+            "world-in-world"
+          ]
+        }
       ],
-      "connections": "SIMPLER holds policies fixed and tests agreement between simulated and real evaluations; Rethinking Sim2Real changes the simulator used for policy training and measures transfer. Physical Law Perspective tests predicted motion on controlled distribution shifts. World-In-World evaluates the full model-and-planner loop through task success.",
+      "start": [
+        "physical-law-perspective",
+        "world-in-world"
+      ],
       "related": [
         "M3",
         "M4",
-        "M7"
-      ]
-    },
-    {
-      "id": "M6",
-      "slug": "adaptation",
-      "title": "Exploration & Experience Replay",
-      "english": "Exploration & Experience Replay",
-      "question": "What experience should an agent acquire or reuse in an unfamiliar environment?",
-      "intro": "Agents can improve their models by choosing informative interactions and by selecting which stored transitions to revisit. These papers cover anticipated novelty, simulator-parameter identification, task-sensitive probing, and prioritized replay.",
-      "scope": "The approaches value experience by different criteria: model disagreement, parameter information, sensitivity of task success, or prediction difficulty.",
-      "start": [
-        "poke-strike",
-        "plan2explore"
-      ],
-      "connections": "Plan2Explore chooses actions before a downstream reward is specified. ASID chooses interactions to refine a simulator, while Poke and Strike weights identification errors by their consequences for a particular task. Curious Replay operates on already collected experience, changing the data used to update the model rather than the actions used to collect it.",
-      "related": [
-        "M3",
-        "M4",
-        "M5"
-      ]
-    },
-    {
-      "id": "M7",
-      "slug": "scaling",
-      "title": "Predictive Architectures & Pretraining",
-      "english": "Predictive Architectures & Pretraining",
-      "question": "How do controlled insights connect to stronger models and larger datasets?",
-      "intro": "World-model architectures divide representation learning, dynamics prediction, and policy optimization in different ways. This section covers video pretraining, end-to-end joint-embedding prediction, component studies, and control learned through imagined trajectories.",
-      "scope": "The comparisons separate transferable pretrained encoders from environment-specific predictors and policies.",
-      "start": [
-        "leworldmodel",
-        "jepa-wms"
-      ],
-      "connections": "V-JEPA 2 separates broad video pretraining from action-conditioned robot modeling; LeWorldModel jointly learns its encoder and predictor from pixels. JEPA-WMs compares choices within this predictive family. DreamerV3 instead couples an environment-specific world model to actor-critic learning, sharing its algorithm configuration across tasks.",
-      "related": [
-        "M2",
-        "M4",
-        "M5"
+        "M8"
       ]
     }
   ],
+  "supplement": {
+    "id": "S1",
+    "title": "Supplementary Reading",
+    "path": "docs/supplementary.md",
+    "groups": [
+      {
+        "id": "foundations",
+        "title": "World-model foundations",
+        "intro": "Predictive architectures and model-based RL baselines for implementing representation and planning studies."
+      },
+      {
+        "id": "analysis",
+        "title": "Related representation methods",
+        "intro": "Geometry and analysis methods from language modeling and procedural planning, with their original evaluation domains retained."
+      },
+      {
+        "id": "transfer",
+        "title": "Simulation, transfer, and system identification",
+        "intro": "Adjacent studies of policy evaluation, simulator calibration, and task-informed interaction."
+      }
+    ]
+  },
   "route": [
     {
       "id": "interpreting-physics",
       "label": "Interpreting Physics",
-      "question": "What distinguishes independent physical variables from distributed encoding?",
-      "connection": "Connects to SMDS through geometric analysis, with video motion variables replacing temporal concepts in language models."
+      "connection": "Introduces probes and interventions for physical information in representations; the next paper applies related tools to learned environment simulators."
     },
     {
-      "id": "context-diversity",
-      "label": "Context and Diversity Matter",
-      "question": "How can environment recognition, dynamics learning, and state estimation be distinguished?",
-      "connection": "Complements the first paper by testing adaptation from experience rather than the accessibility of a fixed physical variable."
+      "id": "probing-rl-world-models",
+      "label": "Probing RL World Models",
+      "connection": "Connects decodable state variables to generated predictions through interventions, complementing the video-representation analysis in the first paper."
     },
     {
       "id": "what-found",
       "label": "What Has a Foundation Model Found?",
-      "question": "Why can strong task performance be insufficient evidence of learned world structure?",
-      "connection": "Provides a behavioral counterpart to representation probes: adaptation to new tasks tests whether the proposed structure influences learning."
+      "connection": "Tests learned structure through behavior on new tasks, providing a different form of evidence from inspecting internal activations."
     },
     {
-      "id": "smds",
-      "label": "SMDS / Shape Happens",
-      "question": "How can competing geometric hypotheses be compared beyond a projection plot?",
-      "connection": "Adds explicit comparisons between geometric hypotheses to the representation-analysis methods in the first section."
+      "id": "howm",
+      "label": "HOWM",
+      "connection": "Formalizes object composition as a generalization problem, giving an explicit target for reusable dynamics."
     },
     {
-      "id": "grwm",
-      "label": "GRWM",
-      "question": "How can geometric diagnosis become a method for better long-horizon prediction?",
-      "connection": "Moves from diagnosing geometry to modifying a representation so that a learned predictor remains accurate over longer rollouts."
-    },
-    {
-      "id": "dino-wm",
-      "label": "DINO-WM",
-      "question": "How does a latent representation support planning?",
-      "connection": "Establishes a planning interface in which an image goal becomes a target in a frozen visual feature space."
-    },
-    {
-      "id": "leworldmodel",
-      "label": "LeWorldModel",
-      "question": "How can end-to-end learning support prediction and planning with a compact model?",
-      "connection": "Contrasts with DINO-WM by learning the encoder jointly with the dynamics predictor instead of importing a frozen foundation encoder."
-    },
-    {
-      "id": "jepa-wms",
-      "label": "What Drives Success in JEPA-WMs?",
-      "question": "How can architecture, objective, and planner effects be separated?",
-      "connection": "Places DINO-WM and related systems in a common component study, separating modeling choices from the planner used at evaluation."
+      "id": "wm3c",
+      "label": "WM3C",
+      "connection": "Connects compositional modeling to language-guided causal factors and adaptation in unseen tasks."
     },
     {
       "id": "group-latents",
       "label": "Group-Structured Latent Space",
-      "question": "What is supplied as a symmetry prior, and what is learned from data?",
-      "connection": "Offers an architectural alternative to GRWM: symmetry determines the latent space and its transition operations."
+      "connection": "Introduces known symmetries as a structural prior, contrasting with factors inferred through object composition or language."
+    },
+    {
+      "id": "grwm",
+      "label": "GRWM",
+      "connection": "Examines geometric regularization and prediction error, complementing the explicit symmetry constraints in the preceding paper."
+    },
+    {
+      "id": "context-diversity",
+      "label": "Context and Diversity Matter",
+      "connection": "Shifts the focus from representation design to the information supplied by experience in a new environment."
     },
     {
       "id": "dynamics-geometries",
       "label": "Dynamics Are Learned, Not Told",
-      "question": "How does latent geometry connect to adaptation under changing dynamics?",
-      "connection": "Connects latent geometry to dynamics adaptation, using trajectory-derived context instead of a supplied symmetry or physical-parameter label."
+      "connection": "Connects representation geometry to dynamics adaptation through embeddings inferred from trajectories."
     },
     {
-      "id": "simpler",
-      "label": "SIMPLER",
-      "question": "When do model errors change real-world policy choices?",
-      "connection": "Changes the evaluation target from prediction or latent-space planning to agreement between simulated and real policy outcomes."
+      "id": "wombet",
+      "label": "WOMBET",
+      "connection": "Adds parameter-updating transfer through model-generated experience, alongside the preceding context-based adaptation mechanisms."
     },
     {
-      "id": "poke-strike",
-      "label": "Poke and Strike",
-      "question": "Which new experience is valuable for the task?",
-      "connection": "Closes the sequence with active information gathering: exploration is shaped by which property errors matter for the subsequent task."
+      "id": "dino-wm",
+      "label": "DINO-WM",
+      "connection": "Connects latent prediction to action optimization and goal-reaching, making downstream use of the representation explicit."
+    },
+    {
+      "id": "physical-law-perspective",
+      "label": "A Physical Law Perspective",
+      "connection": "Examines failures under physical extrapolation and composition, distinguishing successful prediction within a distribution from transfer beyond it."
     }
   ],
-  "source_date": "2026-10-20"
+  "route_sections": [
+    {
+      "start": 1,
+      "title": "01–03 · Interpreting learned world structure",
+      "intro": "Physical-variable probes, interventions on learned simulators, and behavioral tests of transferred structure."
+    },
+    {
+      "start": 4,
+      "title": "04–06 · Composition and symmetry",
+      "intro": "Object composition, causal components, and symmetry priors as ways to organize reusable dynamics."
+    },
+    {
+      "start": 7,
+      "title": "07–09 · Geometry and adaptation",
+      "intro": "Geometric regularization, learning from context, and representations of changing dynamics."
+    },
+    {
+      "start": 10,
+      "title": "10–12 · Transfer, planning, and evaluation",
+      "intro": "Model-generated experience, latent-space planning, and physical generalization tests."
+    }
+  ],
+  "legacy_pages": [
+    {
+      "path": "docs/modules/m1-structure.md",
+      "title": "Object-Centric & Relational Models",
+      "papers": [
+        "nri",
+        "cswm",
+        "spartan",
+        "causal-jepa"
+      ]
+    },
+    {
+      "path": "docs/modules/m2-geometry.md",
+      "title": "Representation Geometry & Analysis",
+      "papers": [
+        "interpreting-physics",
+        "smds",
+        "grwm",
+        "group-latents",
+        "origins-manifolds",
+        "geoworld"
+      ]
+    },
+    {
+      "path": "docs/modules/m3-generalization.md",
+      "title": "Generalization & Context-Based Adaptation",
+      "papers": [
+        "cadm",
+        "context-diversity",
+        "dreamweaver",
+        "dynamics-geometries"
+      ]
+    },
+    {
+      "path": "docs/modules/m4-knowledge-use.md",
+      "title": "Planning & Task-Relevant Representations",
+      "papers": [
+        "dino-wm",
+        "denoised-mdps",
+        "value-equivalence",
+        "what-found"
+      ]
+    },
+    {
+      "path": "docs/modules/m5-reliability.md",
+      "title": "Evaluation & Sim-to-Real Transfer",
+      "papers": [
+        "simpler",
+        "rethinking-sim2real",
+        "physical-law-perspective",
+        "world-in-world"
+      ]
+    },
+    {
+      "path": "docs/modules/m6-adaptation.md",
+      "title": "Exploration & Experience Replay",
+      "papers": [
+        "plan2explore",
+        "asid",
+        "poke-strike",
+        "curious-replay"
+      ]
+    },
+    {
+      "path": "docs/modules/m7-scaling.md",
+      "title": "Predictive Architectures & Pretraining",
+      "papers": [
+        "vjepa2",
+        "leworldmodel",
+        "jepa-wms",
+        "dreamerv3"
+      ]
+    }
+  ],
+  "original_paper_ids": [
+    "nri",
+    "cswm",
+    "spartan",
+    "causal-jepa",
+    "interpreting-physics",
+    "smds",
+    "grwm",
+    "group-latents",
+    "origins-manifolds",
+    "geoworld",
+    "cadm",
+    "context-diversity",
+    "dreamweaver",
+    "dynamics-geometries",
+    "dino-wm",
+    "denoised-mdps",
+    "value-equivalence",
+    "what-found",
+    "simpler",
+    "rethinking-sim2real",
+    "physical-law-perspective",
+    "world-in-world",
+    "plan2explore",
+    "asid",
+    "poke-strike",
+    "curious-replay",
+    "vjepa2",
+    "leworldmodel",
+    "jepa-wms",
+    "dreamerv3"
+  ]
 }
