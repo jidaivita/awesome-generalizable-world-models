@@ -9,7 +9,7 @@ The catalog uses Python 3.9 or later, JSON, and Markdown. No additional Python p
 | Content | File |
 | :--- | :--- |
 | Paper metadata, links, and descriptions | `data/papers.json` |
-| Topic guides and reading path | `data/map.json` |
+| Topic guides, reading path, candidates, and related resources | `data/map.json` |
 | Bibliographic export | `references.bib` |
 | Page generation | `scripts/build.py` |
 | Public note manifest | `publish-manifest.json` |
@@ -36,7 +36,7 @@ Use stable IDs even when titles change. Store earlier titles in `aliases` and ar
 
 The catalog retains all 30 original records alongside subsequent additions. Each paper has one primary topic or a supplementary assignment. Topic groups are validated against those assignments. Original IDs and previous topic-page anchors remain available after reclassification.
 
-The reading path contains 12 papers from the main topics. Update the route and section descriptions together. Supplementary records require a group and a relevance statement; they remain part of the bibliography and public export.
+The reading path contains 12 papers from the main topics, with short branches for additional comparisons. Update the route and section descriptions together. Supplementary records require a group and a relevance statement; they remain part of the bibliography and public export. Candidate papers have a separate page and are excluded from catalog counts and the bibliography. Candidate identities are checked against catalog titles, aliases, and arXiv identifiers.
 
 ## Notes and exports
 

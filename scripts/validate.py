@@ -77,6 +77,25 @@ def validate_data(root=ROOT):
     for m in cfg['modules']:
         require(set(m['start'])<=set(ids),'Invalid module starting paper')
         require(set(m['related'])<=mods,'Invalid related module')
+    candidates=cfg['candidates']
+    candidate_ids=[c['id'] for c in candidates]
+    require(len(candidate_ids)==len(set(candidate_ids)) and not set(candidate_ids)&set(ids), 'Candidate identity overlaps catalog')
+    for c in candidates:
+        require(c['module'] in mods, 'Invalid candidate topic')
+        require(bool(c['authors']) and all(c[k].strip() for k in ['title','publication','method','evaluation']), 'Incomplete candidate')
+        valid_url(c['url'])
+        require(c['arxiv_id'] not in seen_arxiv, 'Candidate arXiv identity overlaps catalog')
+        for title in [c['title']]+c['aliases']:
+            key=re.sub(r'\W','',title.casefold())
+            require(key not in seen_titles, 'Candidate title overlaps catalog')
+            seen_titles[key]=c['id']
+        seen_arxiv[c['arxiv_id']]=c['id']
+    for m in cfg['modules']:
+        require(all(cid in candidate_ids and next(c for c in candidates if c['id']==cid)['module']==m['id'] for cid in m.get('candidate_ids',[])), 'Invalid candidate reference')
+    for branch in cfg['route_extensions']:
+        require(len(branch['ids'])==len(set(branch['ids'])) and set(branch['ids'])<=set(ids) and not set(branch['ids'])&set(route), 'Invalid reading branch')
+    require(len({r['url'] for r in cfg['resources']})==len(cfg['resources']), 'Duplicate related resource')
+    for resource in cfg['resources']:valid_url(resource['url'])
     for legacy in cfg['legacy_pages']:
         require(set(legacy['papers'])<=set(ids), 'Invalid legacy paper reference')
         rel=Path(legacy['path'])

@@ -4,9 +4,9 @@
 
 # Reading Path
 
-Twelve papers connect evidence about learned world structure to composition, geometry, adaptation, and planning. The four sections can also be read independently; the guide assumes familiarity with representation learning and model-based reinforcement learning.
+Twelve papers connect evidence about learned world structure to composition, geometry, adaptation, planning, and explicit generalization tests. The four sections can also be read independently. Topic branches below the main path compare additional mechanisms and evaluation protocols.
 
-## 01–03 · Interpreting learned world structure
+## 01–03 · Evidence about learned world structure
 
 Physical-variable probes, interventions on learned simulators, and behavioral tests of transferred structure.
 
@@ -20,7 +20,7 @@ Sonia Joseph et al. · **ICML 2026**
 
 **Evaluation:** Probes and targeted steering characterize encoded physical variables and changes in decoded direction. These measurements concern representation geometry; they do not directly measure gains in closed-loop control.
 
-**Connection:** Introduces probes and interventions for physical information in representations; the next paper applies related tools to learned environment simulators.
+**Connection:** Introduces physical-variable probes and targeted interventions, establishing the kinds of evidence used to study a learned representation.
 
 [Topic: World Model Interpretability](modules/m8-interpretability.md#paper-interpreting-physics)
 
@@ -34,7 +34,7 @@ Xinyu Zhang · **ICLR 2026 World Models Workshop**
 
 **Evaluation:** Experiments cover IRIS and DIAMOND on Atari Breakout and Pong, measuring game-state decoding and changes in model predictions after hidden-state interventions and token ablations.
 
-**Connection:** Connects decodable state variables to generated predictions through interventions, complementing the video-representation analysis in the first paper.
+**Connection:** Applies probes and interventions to learned environment simulators, linking internal state to generated predictions.
 
 [Topic: World Model Interpretability](modules/m8-interpretability.md#paper-probing-rl-world-models)
 
@@ -48,13 +48,13 @@ Keyon Vafa et al. · **ICML 2025**
 
 **Evaluation:** Across several domains, strong training-task prediction can coexist with weak transfer of the proposed structure. Orbital-trajectory models provide a concrete test of transfer to new Newtonian-physics tasks.
 
-**Connection:** Tests learned structure through behavior on new tasks, providing a different form of evidence from inspecting internal activations.
+**Connection:** Tests proposed world structure through transfer behavior, complementing evidence from internal activations.
 
 [Topic: World Model Interpretability](modules/m8-interpretability.md#paper-what-found)
 
 ## 04–06 · Composition and symmetry
 
-Object composition, causal components, and symmetry priors as ways to organize reusable dynamics.
+Object composition, causal components, and known symmetries as ways to constrain reusable dynamics.
 
 ### 04 · HOWM
 
@@ -66,7 +66,7 @@ Linfeng Zhao et al. · **ICML 2022**
 
 **Evaluation:** Two instances of the Object Library environment compare methods with exact, approximate, or absent compositional guarantees under a common evaluation pipeline.
 
-**Connection:** Formalizes object composition as a generalization problem, giving an explicit target for reusable dynamics.
+**Connection:** Defines object composition as an explicit generalization problem for reusable transition models.
 
 [Topic: Generalization & Adaptation](modules/m3-generalization.md#paper-howm)
 
@@ -80,27 +80,27 @@ Xinyue Wang et al. · **ICLR 2025**
 
 **Evaluation:** Numerical simulations and robotic manipulation test latent-process identification, policy learning, and transfer to unseen tasks. Identifiability results depend on the stated modeling assumptions.
 
-**Connection:** Connects compositional modeling to language-guided causal factors and adaptation in unseen tasks.
+**Connection:** Connects compositional mechanisms to language-guided factors and adaptation in unseen environments.
 
 [Topic: Generalization & Adaptation](modules/m3-generalization.md#paper-wm3c)
 
-### 06 · Group-Structured Latent Space
+### 06 · Symmetric Embedding Networks
 
-**[Learning Abstract World Models with a Group-Structured Latent Space](https://arxiv.org/abs/2506.01529)**
+**[Learning Symmetric Embeddings for Equivariant World Models](https://proceedings.mlr.press/v162/park22a.html)**
 
-Thomas Delliaux et al. · **arXiv 2025**
+Jung Yeon Park et al. · **ICML 2022**
 
-**Method:** Known symmetries determine the latent manifold and the group actions used for transitions. Additional latent variables retain information that does not follow the prescribed symmetry.
+**Method:** A symmetric embedding network maps observations with a difficult-to-specify group action into features with a prescribed transformation rule. It is trained jointly with an equivariant transition network using a contrastive prediction objective.
 
-**Evaluation:** Transition prediction and downstream reinforcement learning are tested in environments with translation and rotation, including first-person 3D views. The symmetry is supplied as prior knowledge.
+**Evaluation:** Transition-prediction experiments compare learned embeddings with fully equivariant and non-equivariant baselines across three forms of symmetry. The latent group action is specified; the learned component connects complex observations to that representation.
 
-**Connection:** Introduces known symmetries as a structural prior, contrasting with factors inferred through object composition or language.
+**Connection:** Shows how observations can be mapped into features compatible with known symmetries, providing a different source of reusable structure.
 
-[Topic: Representation Geometry & Symmetry](modules/m2-geometry.md#paper-group-latents)
+[Topic: Representation Geometry & Symmetry](modules/m2-geometry.md#paper-sen)
 
 ## 07–09 · Geometry and adaptation
 
-Geometric regularization, learning from context, and representations of changing dynamics.
+Geometric regularization, inference from context, and representations of changing dynamics.
 
 ### 07 · GRWM
 
@@ -112,7 +112,7 @@ Zaishuo Xia et al. · **CVPR 2026**
 
 **Evaluation:** Long-horizon rollouts are evaluated in deterministic environments with fixed rules. The experiments distinguish geometric regularization from the contribution of temporal context.
 
-**Connection:** Examines geometric regularization and prediction error, complementing the explicit symmetry constraints in the preceding paper.
+**Connection:** Relates geometric regularization and temporal context to deterministic rollout accuracy, alongside the explicit symmetry constraints in SEN.
 
 [Topic: Representation Geometry & Symmetry](modules/m2-geometry.md#paper-grwm)
 
@@ -126,7 +126,7 @@ Fan Wang et al. · **ICLR 2026**
 
 **Evaluation:** World-model experiments vary context, data diversity, and architecture to test the theoretical predictions. The distinction concerns how prediction improves with experience while model weights remain fixed.
 
-**Connection:** Shifts the focus from representation design to the information supplied by experience in a new environment.
+**Connection:** Examines how interaction history and training diversity support inference in a new environment.
 
 [Topic: Generalization & Adaptation](modules/m3-generalization.md#paper-context-diversity)
 
@@ -140,29 +140,15 @@ Zhiming Xu et al. · **ICML 2026**
 
 **Evaluation:** MuJoCo experiments test severe dynamics shifts, including structural failures outside the explicit parameterization used by identification baselines, alongside in-distribution policy stability.
 
-**Connection:** Connects representation geometry to dynamics adaptation through embeddings inferred from trajectories.
+**Connection:** Uses trajectory-derived context geometry to adapt policies to changed dynamics.
 
 [Topic: Generalization & Adaptation](modules/m3-generalization.md#paper-dynamics-geometries)
 
-## 10–12 · Transfer, planning, and evaluation
+## 10–12 · Planning and generalization tests
 
-Model-generated experience, latent-space planning, and physical generalization tests.
+Latent-space planning, held-out factor combinations, and physical predictions requiring hidden-property inference.
 
-### 10 · WOMBET
-
-**[WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning](https://proceedings.mlr.press/v331/kim26a.html)**
-
-Mintae Kim et al. · **L4DC 2026**
-
-**Method:** A source-task world model generates trajectories through uncertainty-penalized planning. Return and epistemic-uncertainty filters select offline experience, which is mixed adaptively with online data during target-task fine-tuning.
-
-**Evaluation:** Continuous-control benchmarks measure sample efficiency and final performance. The analysis bounds return and decomposes distribution-mismatch and approximation errors; the transfer procedure includes online updates.
-
-**Connection:** Adds parameter-updating transfer through model-generated experience, alongside the preceding context-based adaptation mechanisms.
-
-[Topic: Generalization & Adaptation](modules/m3-generalization.md#paper-wombet)
-
-### 11 · DINO-WM
+### 10 · DINO-WM
 
 **[DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning](https://proceedings.mlr.press/v267/zhou25t.html)**
 
@@ -172,32 +158,51 @@ Gaoyue Zhou et al. · **ICML 2025**
 
 **Evaluation:** Six environments include varied maze layouts, pushing with different object shapes, and multi-particle settings. Goal-directed planning uses neither a learned reward model nor an inverse-dynamics model.
 
-**Connection:** Connects latent prediction to action optimization and goal-reaching, making downstream use of the representation explicit.
+**Connection:** Connects action-conditioned latent prediction to planning and goal-reaching.
 
 [Topic: Planning & Task-Relevant World Models](modules/m4-knowledge-use.md#paper-dino-wm)
 
-### 12 · A Physical Law Perspective
+### 11 · SVIB
 
-**[How Far Is Video Generation from World Model: A Physical Law Perspective](https://proceedings.mlr.press/v267/kang25g.html)**
+**[Imagine the Unseen World: A Benchmark for Systematic Generalization in Visual World Models](https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html)**
 
-Bingyi Kang et al. · **ICML 2025**
+Yeongbin Kim et al. · **NeurIPS 2023 Datasets & Benchmarks**
 
-**Method:** Diffusion video models are trained on a deterministic 2D testbed of motion and collisions. Separate splits test interpolation, extrapolation, and new combinations of familiar physical factors.
+**Method:** The Systematic Visual Imagination Benchmark formulates world modeling as one-step image-to-image prediction under latent dynamics. Training splits vary the fraction of factor combinations observed, while different rendering settings vary perceptual difficulty.
 
-**Evaluation:** Scaling improves in-distribution and some combinatorial predictions, while the tested models struggle with out-of-distribution physical scenarios. Additional experiments examine which appearance and motion factors drive case-based predictions.
+**Evaluation:** Held-out combinations test whether models compose familiar factors in new configurations. The protocol isolates systematic visual generalization in one-step predictions; it does not measure long-horizon physical rollouts or closed-loop control.
 
-**Connection:** Examines failures under physical extrapolation and composition, distinguishing successful prediction within a distribution from transfer beyond it.
+**Connection:** Makes the generalization split explicit by withholding combinations of familiar factors during training.
 
-[Topic: Evaluation & Benchmarks](modules/m5-reliability.md#paper-physical-law-perspective)
+[Topic: Evaluation & Benchmarks](modules/m5-reliability.md#paper-svib)
+
+### 12 · Physion++
+
+**[Physion++: Evaluating Physical Scene Understanding that Requires Online Inference of Different Physical Properties](https://proceedings.nips.cc/paper_files/paper/2023/hash/d3e8011c912e651ab2a76e7935a1e464-Abstract-Datasets_and_Benchmarks.html)**
+
+Hsiao-Yu Tung et al. · **NeurIPS 2023 Datasets & Benchmarks**
+
+**Method:** Physion++ constructs physical-event prediction problems whose outcomes depend on latent mass, friction, elasticity, or deformability. These properties must be inferred from observed motion and interactions before predicting the event.
+
+**Evaluation:** Physical prediction models with different representations and built-in knowledge are compared with human judgments. Relative to Physion, the added requirement is online inference of hidden physical properties, rather than prediction from visible scene configuration alone.
+
+**Connection:** Tests whether observed interactions support inference of hidden physical properties needed for future-event prediction.
+
+[Topic: Evaluation & Benchmarks](modules/m5-reliability.md#paper-physion-pp)
 
 ## Further reading
 
-- **Interpretable model design:** [Four Principles for Physically Interpretable World Models](modules/m8-interpretability.md#paper-physically-interpretable).
-- **Context and data shifts:** [Considering Context: When World Models Need Context Encoders](modules/m3-generalization.md#paper-considering-context); [Behavior-Invariant Task Representation Learning with Transformer-based World Models for Offline Meta-Reinforcement Learning](modules/m3-generalization.md#paper-behavior-invariant-wm).
-- **Planning components:** [What Drives Success in Physical Planning with Joint-Embedding Predictive World Models?](modules/m4-knowledge-use.md#paper-jepa-wms); [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](modules/m4-knowledge-use.md#paper-vjepa2).
-- **Foundations and analysis methods:** [LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels](supplementary.md#paper-leworldmodel); [Mastering diverse control tasks through world models](supplementary.md#paper-dreamerv3); [Hypothesis-Driven Feature Manifold Analysis in LLMs via Supervised Multi-Dimensional Scaling](supplementary.md#paper-smds); [The Origins of Representation Manifolds in Large Language Models](supplementary.md#paper-origins-manifolds).
-- **Simulation and active identification:** [Evaluating Real-World Robot Manipulation Policies in Simulation](supplementary.md#paper-simpler); [ASID: Active Exploration for System Identification in Robotic Manipulation](supplementary.md#paper-asid); [Poke and Strike: Learning Task-Informed Exploration Policies](supplementary.md#paper-poke-strike).
+- **Group structure and dynamic memory:** [Learning Disentangled Representations and Group Structure of Dynamical Environments](modules/m2-geometry.md#paper-group-structure); [Learning Abstract World Models with a Group-Structured Latent Space](modules/m2-geometry.md#paper-group-latents); [Flow Equivariant World Models: Structured Memory for Dynamic Environments](modules/m2-geometry.md#paper-flowm). Compare learned latent transformations, prescribed symmetry manifolds, and memory that follows object motion.
+- **Physical-event prediction:** [Physion: Evaluating Physical Prediction from Vision in Humans and Machines](modules/m5-reliability.md#paper-physion); [How Far Is Video Generation from World Model: A Physical Law Perspective](modules/m5-reliability.md#paper-physical-law-perspective). Compare event readout with physical prediction under controlled distribution shifts; Physion provides the context for Physion++.
+- **Closed-loop validity:** [World-In-World: World Models in a Closed-Loop World](modules/m5-reliability.md#paper-world-in-world); [WorldGym: World Model as An Environment for Policy Evaluation](modules/m5-reliability.md#paper-worldgym). Distinguish successful action selection with a world model from accurate evaluation of a policy inside a learned environment.
+- **Parameter-updating transfer:** [WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning](modules/m3-generalization.md#paper-wombet); [Curious Replay for Model-based Adaptation](modules/m3-generalization.md#paper-curious-replay). Compare model-generated experience and replay selection with adaptation through inferred context.
+- **Interpretable model design:** [Four Principles for Physically Interpretable World Models](modules/m8-interpretability.md#paper-physically-interpretable). Examine model and supervision choices that align latent variables with physical semantics.
+- **Context and data shifts:** [Considering Context: When World Models Need Context Encoders](modules/m3-generalization.md#paper-considering-context); [Behavior-Invariant Task Representation Learning with Transformer-based World Models for Offline Meta-Reinforcement Learning](modules/m3-generalization.md#paper-behavior-invariant-wm). Separate information from history and invariance to the behavior policy in context representations.
+- **Planning components:** [What Drives Success in Physical Planning with Joint-Embedding Predictive World Models?](modules/m4-knowledge-use.md#paper-jepa-wms); [V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning](modules/m4-knowledge-use.md#paper-vjepa2). Compare representation pretraining, predictive objectives, and planner choices.
+- **Predictive architectures:** [LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels](supplementary.md#paper-leworldmodel); [Mastering diverse control tasks through world models](supplementary.md#paper-dreamerv3). Background on representation learning and model-based control.
+- **Adjacent representation analysis:** [Hypothesis-Driven Feature Manifold Analysis in LLMs via Supervised Multi-Dimensional Scaling](supplementary.md#paper-smds); [The Origins of Representation Manifolds in Large Language Models](supplementary.md#paper-origins-manifolds). Analysis methods developed for language-model representations.
+- **Simulation and active identification:** [Evaluating Real-World Robot Manipulation Policies in Simulation](supplementary.md#paper-simpler); [ASID: Active Exploration for System Identification in Robotic Manipulation](supplementary.md#paper-asid); [Poke and Strike: Learning Task-Informed Exploration Policies](supplementary.md#paper-poke-strike). Background on policy evaluation, calibration, and task-informed interaction.
 
-[All six topics](../README.md#research-map) · [Supplementary reading](supplementary.md)
+[Candidate papers](candidates.md) · [All six topics](../README.md#research-map) · [Supplementary reading](supplementary.md)
 
 <!-- END GENERATED RESEARCH MAP -->

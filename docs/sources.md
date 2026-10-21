@@ -1,20 +1,25 @@
-# Sources and Acknowledgments
+<!-- BEGIN GENERATED RESEARCH MAP -->
 
 [← Overview](../README.md)
+
+# Sources and Acknowledgments
 
 ## Paper information
 
 Each record links to a formal publication page or author preprint. Where available, entries also include official code and project pages. Earlier titles are retained as aliases.
 
-Entries describe contributions, methods, and evaluation scope. Background papers and methods from adjacent fields are listed in [Supplementary Reading](supplementary.md), with their original evaluation domains and connection to the main topics stated explicitly.
+Entries describe contributions, methods, and evaluation scope. Background papers and methods from adjacent fields appear in [Supplementary Reading](supplementary.md). [Candidate papers](candidates.md) remain separate from the main catalog.
 
 ## Related resources
 
-- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models)
-- [Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers)
-- [Awesome Machine Learning](https://github.com/josephmisiti/awesome-machine-learning)
-- [Deep Learning for Object Detection](https://github.com/hoya012/deep_learning_object_detection)
+- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models) — World-model methods and applications across robotics, games, driving, and science.
+- [Awesome World Models for Robotic Policy Learning](https://github.com/NTUMARS/Awesome-World-Model-for-Robotics-Policy) — World models as policies, simulators, and video predictors for robot learning.
+- [Learning to Model the World](https://github.com/JiahuaDong/Awesome-World-Models) — A survey repository spanning world-model representations, applications, interpretability, and benchmarks.
+- [Awesome World Model Evaluation](https://github.com/gxchris95/awesome-world-model-eval) — Evaluation papers and metrics organized by modality and evaluation dimension.
+- [A Survey of World Model Benchmarks](https://github.com/World-Model-Benchmarks/World-Model-Benchmarks) — Benchmarks organized by physical, causal, control, and functional evaluation targets.
 
 ## Visual assets
 
-The [header illustration](../assets/research-map.svg) is an original vector composition for this repository. It represents three research themes, not an experimental finding or a specific model architecture. See the [asset notes](../assets/README.md).
+The [header illustration](../assets/research-map.svg) is an original vector composition for this repository. It depicts latent structure, transfer across environments, and planning. See the [asset notes](../assets/README.md).
+
+<!-- END GENERATED RESEARCH MAP -->

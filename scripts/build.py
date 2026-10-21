@@ -118,7 +118,7 @@ def render(root=ROOT):
 
 # Awesome Generalizable World Models
 
-Papers on how learned world models represent reusable structure, generalize across environments and tasks, and support prediction and planning. Topics include adaptation, interpretability, structured representations, latent geometry, and evaluation.
+A focused paper index on the mechanisms, generalization, and interpretability of learned world models. It connects representation structure and latent geometry to adaptation, physical prediction, and planning.
 
 <p align="center"><img src="assets/research-map.svg" width="620" alt="Latent representations, transfer across environments, and planning"></p>
 
@@ -134,7 +134,7 @@ Papers on how learned world models represent reusable structure, generalize acro
     for m in modules:
         intro += f"| [{m['title']}](#{m['id'].lower()}) | {m['summary']} | {len(selected(m['id']))} |\n"
     intro += f"\n{core_count} papers across six topics · {len(selected(supplement['id']))} supplementary papers · {len(papers)} papers in total.\n\n"
-    intro += 'The catalog includes methods, theory, and empirical analyses of generalization and its limits. Papers are listed alphabetically within each topic.\n\n<a id="papers"></a>\n## Papers\n\n'
+    intro += 'Entries describe the mechanism, evaluation setting, and evidence for each contribution. New papers extend these six topics through a distinct method, analysis, or test of generalization. Each paper has one primary topic and is listed alphabetically within it.\n\n<a id="papers"></a>\n## Papers\n\n'
     for m in modules:
         intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['title']}\n\n{m['summary']}\n\n"
         intro += ''.join(entry(p, 'README.md') for p in selected(m['id']))
@@ -157,13 +157,13 @@ Papers on how learned world models represent reusable structure, generalize acro
 <a id="reading-route"></a>
 ## Reading Guide
 
-The [12-paper reading path](docs/reading-guide.md) connects interpretability, composition, geometry, adaptation, planning, and evaluation. Each entry describes its method, evaluation setting, and connection to the surrounding papers.
+The [12-paper reading path](docs/reading-guide.md) connects evidence about learned structure to composition, geometry, adaptation, planning, and generalization tests. Short topic branches link related methods and evaluation protocols.
+
+[Candidate papers](docs/candidates.md) are listed separately from the main index and its paper counts.
 
 ## Related Resources
 
-- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models) — world-model research across application domains.
-- [Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) — a historical deep-learning paper list; no longer maintained.
-- [Awesome Machine Learning](https://github.com/josephmisiti/awesome-machine-learning) — machine-learning libraries and resources.
+RESOURCE_LINKS
 
 ## Contributing
 
@@ -173,6 +173,8 @@ Paper suggestions and corrections are welcome through issues or pull requests. S
 
 Original catalog text and illustrations: [CC BY 4.0](LICENSES/CC-BY-4.0.txt). Maintenance code: [MIT](LICENSES/MIT.txt). Linked papers and external resources retain their respective licenses. See [license scope](LICENSE.md).
 '''
+    resource_links = '\n'.join(f"- [{r['title']}]({r['url']}) — {r['description']}" for r in cfg['resources'])
+    intro = intro.replace('RESOURCE_LINKS', resource_links)
     if notes:
         intro += '\n## Community Notes\n\n' + ''.join(f'- [{title}]({path})\n' for title, path, _ in notes)
     out['README.md'] = intro
@@ -205,10 +207,24 @@ Zero-shot transfer, inference from interaction history, and parameter-updating a
 A probe's accuracy alone does not establish that the native predictor or planner uses the decoded variable. Intervention studies specify the output affected and the controls used.
 
 '''
+        if m.get('comparison_table'):
+            table = m['comparison_table']
+            body += f"## {table['title']}\n\n| " + ' | '.join(table['columns']) + ' |\n'
+            body += '| ' + ' | '.join(':---' for _ in table['columns']) + ' |\n'
+            body += ''.join('| ' + ' | '.join(row) + ' |\n' for row in table['rows']) + '\n'
         for group in m['groups']:
             body += f"## {group['title']}\n\n"
-            body += ''.join(entry(byid[pid], path, True) for pid in sorted(group['ids'], key=lambda pid: byid[pid]['canonical_title'].casefold()))
-        body += f"## Method comparisons\n\n{m['connections']}\n\n## Related topics\n\n"
+            group_ids = group['ids'] if group.get('order') == 'listed' else sorted(group['ids'], key=lambda pid: byid[pid]['canonical_title'].casefold())
+            body += ''.join(entry(byid[pid], path, True) for pid in group_ids)
+        body += f"## Method comparisons\n\n{m['connections']}\n\n"
+        if m.get('candidate_ids'):
+            candidate_byid = {c['id']: c for c in cfg['candidates']}
+            body += '## Candidate papers\n\n'
+            for cid in m['candidate_ids']:
+                c = candidate_byid[cid]
+                body += f"- [{c['title']}](../candidates.md#paper-{cid}) · {c['publication']}\n"
+            body += '\n'
+        body += '## Related topics\n\n'
         body += ''.join(f"- [{bymod[mid]['title']}]({relative(module_path(bymod[mid]), path)})\n" for mid in m['related'])
         body += '\n[Back to paper index](../../README.md)\n'
         out[path] = body
@@ -244,7 +260,7 @@ Background papers and methods from adjacent settings support the six main topics
 
 # Reading Path
 
-Twelve papers connect evidence about learned world structure to composition, geometry, adaptation, and planning. The four sections can also be read independently; the guide assumes familiarity with representation learning and model-based reinforcement learning.
+Twelve papers connect evidence about learned world structure to composition, geometry, adaptation, planning, and explicit generalization tests. The four sections can also be read independently. Topic branches below the main path compare additional mechanisms and evaluation protocols.
 
 '''
     sections = {s['start']: s for s in cfg['route_sections']}
@@ -258,10 +274,36 @@ Twelve papers connect evidence about learned world structure to composition, geo
     route += '''## Further reading
 
 '''
-    for label, ids in [('Interpretable model design', ['physically-interpretable']), ('Context and data shifts', ['considering-context', 'behavior-invariant-wm']), ('Planning components', ['jepa-wms', 'vjepa2']), ('Foundations and analysis methods', ['leworldmodel', 'dreamerv3', 'smds', 'origins-manifolds']), ('Simulation and active identification', ['simpler', 'asid', 'poke-strike'])]:
-        route += f"- **{label}:** " + '; '.join(linked_paper(pid, path) for pid in ids) + '.\n'
-    route += '\n[All six topics](../README.md#research-map) · [Supplementary reading](supplementary.md)\n'
+    for branch in cfg['route_extensions']:
+        route += f"- **{branch['label']}:** " + '; '.join(linked_paper(pid, path) for pid in branch['ids']) + '. ' + branch['connection'] + '\n'
+    route += '\n[Candidate papers](candidates.md) · [All six topics](../README.md#research-map) · [Supplementary reading](supplementary.md)\n'
     out[path] = route
+
+    candidates = '[← Paper index](../README.md#research-map) · [Reading guide](reading-guide.md)\n\n# Candidate Papers\n\nThese papers are listed separately from the main catalog and are excluded from its counts and bibliography.\n\n'
+    for c in cfg['candidates']:
+        candidates += f"<a id=\"paper-{c['id']}\"></a>\n## {c['title']}\n\n{author_label({'bibliography': {'authors': c['authors']}})} · **{c['publication']}** · [Paper]({c['url']})\n\n"
+        if c['aliases']:
+            candidates += 'Earlier titles: ' + '; '.join(c['aliases']) + '.\n\n'
+        candidates += f"- **Method:** {c['method']}\n- **Evaluation:** {c['evaluation']}\n- **Related topic:** [{bymod[c['module']]['title']}]({relative(module_path(bymod[c['module']]), 'docs/candidates.md')})\n\n"
+    out['docs/candidates.md'] = candidates
+    out['docs/sources.md'] = '''[← Overview](../README.md)
+
+# Sources and Acknowledgments
+
+## Paper information
+
+Each record links to a formal publication page or author preprint. Where available, entries also include official code and project pages. Earlier titles are retained as aliases.
+
+Entries describe contributions, methods, and evaluation scope. Background papers and methods from adjacent fields appear in [Supplementary Reading](supplementary.md). [Candidate papers](candidates.md) remain separate from the main catalog.
+
+## Related resources
+
+''' + resource_links + '''
+
+## Visual assets
+
+The [header illustration](../assets/research-map.svg) is an original vector composition for this repository. It depicts latent structure, transfer across environments, and planning. See the [asset notes](../assets/README.md).
+'''
     out['references.bib'] = bibliography(papers)
     return out
 

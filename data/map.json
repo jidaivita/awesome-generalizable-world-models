@@ -128,27 +128,39 @@
       "slug": "geometry",
       "title": "Representation Geometry & Symmetry",
       "english": "Representation Geometry & Symmetry",
-      "summary": "Latent geometry, symmetry priors, and predictive dynamics.",
-      "intro": "Geometric structure determines how states and transitions are represented in latent space. These papers study regularization for long-horizon prediction and symmetry-based constraints on learned dynamics.",
-      "scope": "Observed geometry, imposed symmetry, and improved rollout accuracy are distinct claims. Physical-variable probing is covered under World Model Interpretability; language-model geometry and procedural planning appear in Supplementary Reading.",
-      "connections": "GRWM regularizes an encoder using geometric information and temporal context to improve deterministic rollouts. Group-Structured Latent Space specifies a symmetry-based latent manifold and transition operations. Dynamics Are Learned, listed under Generalization & Adaptation, instead shapes an inferred context embedding to support policies under dynamics shifts.",
+      "summary": "Latent geometry, learned transformations, and symmetry-based dynamics.",
+      "intro": "Latent geometry and transformation structure determine which changes a world model can represent. These papers study geometric regularization, learned group actions, equivariant transitions, and dynamic memory under partial observability.",
+      "scope": "The comparisons distinguish supplied symmetry priors, learned observation mappings, and learned transformation parameters. Long-horizon prediction, equivariance probes, and downstream planning provide different tests of the resulting representations.",
+      "connections": "Group Structure learns latent transformations and disentangled subspaces from interaction sequences. Group-Structured Latent Space supplies the symmetry and latent manifold; SEN learns an observation mapping compatible with a prescribed latent group action. GRWM regularizes geometry and temporal context for deterministic rollouts. FloWM maintains moving spatial memory under partial observability, with long-horizon prediction, probes, and a planning experiment. These methods make different assumptions about known transformations and the information available in each observation.",
       "groups": [
         {
-          "title": "Geometric regularization and symmetry priors",
+          "title": "Learning group structure and equivariant transitions",
+          "ids": [
+            "group-structure",
+            "sen",
+            "group-latents"
+          ],
+          "order": "listed"
+        },
+        {
+          "title": "Geometric regularization and dynamic memory",
           "ids": [
             "grwm",
-            "group-latents"
+            "flowm"
           ]
         }
       ],
       "start": [
-        "grwm",
-        "group-latents"
+        "sen",
+        "grwm"
       ],
       "related": [
         "M8",
         "M3",
         "M4"
+      ],
+      "candidate_ids": [
+        "jepa-bisim"
       ]
     },
     {
@@ -198,28 +210,78 @@
       "slug": "reliability",
       "title": "Evaluation & Benchmarks",
       "english": "Evaluation & Benchmarks",
-      "summary": "Physical extrapolation, compositional tests, and closed-loop evaluation.",
-      "intro": "Evaluation protocols expose failures that average prediction scores can hide. These papers test physical-law extrapolation, combinations absent from training, and action-conditioned world models used in closed-loop tasks.",
-      "scope": "Results depend on the training distribution, the tested change, the information available at deployment, and the measured outcome. Simulation-based policy evaluation is linked separately in Supplementary Reading.",
-      "connections": "A Physical Law Perspective isolates interpolation, extrapolation, and compositional physical prediction. World-In-World evaluates action-conditioned models in closed-loop tasks while varying post-training data and test-time computation. The former diagnoses prediction under distribution shift; the latter measures consequences for interaction.",
+      "summary": "Compositional prediction, physical inference, and closed-loop validity.",
+      "intro": "Evaluation connects a world model's predictions to explicit tests of generalization and physical inference. The protocols here cover unseen combinations, extrapolation, future events, hidden physical properties, and closed-loop outcomes.",
+      "scope": "Each protocol specifies what the model observes, what changes at test time, and which outcome is measured. World-model-based policy evaluation is included when correspondence with real outcomes is tested; adjacent policy-only simulation studies appear in Supplementary Reading.",
+      "connections": "SVIB tests unseen combinations in one-step visual prediction; A Physical Law Perspective isolates interpolation, extrapolation, and compositional physical prediction. Physion measures future object-contact judgments. Physion++ extends that family with events requiring inference of hidden physical properties. World-In-World compares world models in closed-loop tasks, whereas WorldGym checks whether policy outcomes and rankings in a learned environment agree with real-robot evaluations.",
       "groups": [
         {
-          "title": "Physical prediction and closed-loop tasks",
+          "title": "Compositional prediction and physical extrapolation",
           "ids": [
-            "physical-law-perspective",
-            "world-in-world"
+            "svib",
+            "physical-law-perspective"
+          ]
+        },
+        {
+          "title": "Physical-event prediction: the Physion family",
+          "ids": [
+            "physion",
+            "physion-pp"
+          ],
+          "order": "listed"
+        },
+        {
+          "title": "Closed-loop tasks and policy-evaluation validity",
+          "ids": [
+            "world-in-world",
+            "worldgym"
           ]
         }
       ],
       "start": [
-        "physical-law-perspective",
-        "world-in-world"
+        "svib",
+        "physion-pp"
       ],
       "related": [
         "M3",
         "M4",
         "M8"
-      ]
+      ],
+      "comparison_table": {
+        "title": "Evaluation targets",
+        "columns": [
+          "Protocol",
+          "Measured outcome",
+          "Scope of evidence"
+        ],
+        "rows": [
+          [
+            "SVIB",
+            "One-step prediction on held-out factor combinations",
+            "Systematic visual composition"
+          ],
+          [
+            "A Physical Law Perspective",
+            "Prediction under interpolation, extrapolation, and composition",
+            "Physical generalization in a controlled 2D testbed"
+          ],
+          [
+            "Physion / Physion++",
+            "Future physical-event judgments",
+            "Event prediction; Physion++ additionally requires latent-property inference"
+          ],
+          [
+            "World-In-World",
+            "Task success using action-conditioned world models",
+            "Closed-loop usefulness under the tested interfaces and planners"
+          ],
+          [
+            "WorldGym",
+            "Agreement with real policy success rates and rankings",
+            "Validity of a learned policy-evaluation environment"
+          ]
+        ]
+      }
     }
   ],
   "supplement": {
@@ -248,84 +310,84 @@
     {
       "id": "interpreting-physics",
       "label": "Interpreting Physics",
-      "connection": "Introduces probes and interventions for physical information in representations; the next paper applies related tools to learned environment simulators."
+      "connection": "Introduces physical-variable probes and targeted interventions, establishing the kinds of evidence used to study a learned representation."
     },
     {
       "id": "probing-rl-world-models",
       "label": "Probing RL World Models",
-      "connection": "Connects decodable state variables to generated predictions through interventions, complementing the video-representation analysis in the first paper."
+      "connection": "Applies probes and interventions to learned environment simulators, linking internal state to generated predictions."
     },
     {
       "id": "what-found",
       "label": "What Has a Foundation Model Found?",
-      "connection": "Tests learned structure through behavior on new tasks, providing a different form of evidence from inspecting internal activations."
+      "connection": "Tests proposed world structure through transfer behavior, complementing evidence from internal activations."
     },
     {
       "id": "howm",
       "label": "HOWM",
-      "connection": "Formalizes object composition as a generalization problem, giving an explicit target for reusable dynamics."
+      "connection": "Defines object composition as an explicit generalization problem for reusable transition models."
     },
     {
       "id": "wm3c",
       "label": "WM3C",
-      "connection": "Connects compositional modeling to language-guided causal factors and adaptation in unseen tasks."
+      "connection": "Connects compositional mechanisms to language-guided factors and adaptation in unseen environments."
     },
     {
-      "id": "group-latents",
-      "label": "Group-Structured Latent Space",
-      "connection": "Introduces known symmetries as a structural prior, contrasting with factors inferred through object composition or language."
+      "id": "sen",
+      "label": "Symmetric Embedding Networks",
+      "connection": "Shows how observations can be mapped into features compatible with known symmetries, providing a different source of reusable structure."
     },
     {
       "id": "grwm",
       "label": "GRWM",
-      "connection": "Examines geometric regularization and prediction error, complementing the explicit symmetry constraints in the preceding paper."
+      "connection": "Relates geometric regularization and temporal context to deterministic rollout accuracy, alongside the explicit symmetry constraints in SEN."
     },
     {
       "id": "context-diversity",
       "label": "Context and Diversity Matter",
-      "connection": "Shifts the focus from representation design to the information supplied by experience in a new environment."
+      "connection": "Examines how interaction history and training diversity support inference in a new environment."
     },
     {
       "id": "dynamics-geometries",
       "label": "Dynamics Are Learned, Not Told",
-      "connection": "Connects representation geometry to dynamics adaptation through embeddings inferred from trajectories."
-    },
-    {
-      "id": "wombet",
-      "label": "WOMBET",
-      "connection": "Adds parameter-updating transfer through model-generated experience, alongside the preceding context-based adaptation mechanisms."
+      "connection": "Uses trajectory-derived context geometry to adapt policies to changed dynamics."
     },
     {
       "id": "dino-wm",
       "label": "DINO-WM",
-      "connection": "Connects latent prediction to action optimization and goal-reaching, making downstream use of the representation explicit."
+      "connection": "Connects action-conditioned latent prediction to planning and goal-reaching."
     },
     {
-      "id": "physical-law-perspective",
-      "label": "A Physical Law Perspective",
-      "connection": "Examines failures under physical extrapolation and composition, distinguishing successful prediction within a distribution from transfer beyond it."
+      "id": "svib",
+      "label": "SVIB",
+      "connection": "Makes the generalization split explicit by withholding combinations of familiar factors during training."
+    },
+    {
+      "id": "physion-pp",
+      "label": "Physion++",
+      "connection": "Tests whether observed interactions support inference of hidden physical properties needed for future-event prediction."
     }
   ],
   "route_sections": [
     {
       "start": 1,
-      "title": "01–03 · Interpreting learned world structure",
+      "title": "01–03 · Evidence about learned world structure",
       "intro": "Physical-variable probes, interventions on learned simulators, and behavioral tests of transferred structure."
     },
     {
       "start": 4,
       "title": "04–06 · Composition and symmetry",
-      "intro": "Object composition, causal components, and symmetry priors as ways to organize reusable dynamics."
+      "intro": "Object composition, causal components, and known symmetries as ways to constrain reusable dynamics."
     },
     {
       "start": 7,
       "title": "07–09 · Geometry and adaptation",
-      "intro": "Geometric regularization, learning from context, and representations of changing dynamics."
+      "intro": "Geometric regularization, inference from context, and representations of changing dynamics."
     },
     {
       "start": 10,
-      "title": "10–12 · Transfer, planning, and evaluation",
-      "intro": "Model-generated experience, latent-space planning, and physical generalization tests."
+      "title": "10–12 · Planning and generalization tests",
+      "intro": "Latent-space planning, held-out factor combinations, and physical predictions requiring hidden-property inference."
     }
   ],
   "legacy_pages": [
@@ -433,5 +495,144 @@
     "leworldmodel",
     "jepa-wms",
     "dreamerv3"
+  ],
+  "route_extensions": [
+    {
+      "label": "Group structure and dynamic memory",
+      "ids": [
+        "group-structure",
+        "group-latents",
+        "flowm"
+      ],
+      "connection": "Compare learned latent transformations, prescribed symmetry manifolds, and memory that follows object motion."
+    },
+    {
+      "label": "Physical-event prediction",
+      "ids": [
+        "physion",
+        "physical-law-perspective"
+      ],
+      "connection": "Compare event readout with physical prediction under controlled distribution shifts; Physion provides the context for Physion++."
+    },
+    {
+      "label": "Closed-loop validity",
+      "ids": [
+        "world-in-world",
+        "worldgym"
+      ],
+      "connection": "Distinguish successful action selection with a world model from accurate evaluation of a policy inside a learned environment."
+    },
+    {
+      "label": "Parameter-updating transfer",
+      "ids": [
+        "wombet",
+        "curious-replay"
+      ],
+      "connection": "Compare model-generated experience and replay selection with adaptation through inferred context."
+    },
+    {
+      "label": "Interpretable model design",
+      "ids": [
+        "physically-interpretable"
+      ],
+      "connection": "Examine model and supervision choices that align latent variables with physical semantics."
+    },
+    {
+      "label": "Context and data shifts",
+      "ids": [
+        "considering-context",
+        "behavior-invariant-wm"
+      ],
+      "connection": "Separate information from history and invariance to the behavior policy in context representations."
+    },
+    {
+      "label": "Planning components",
+      "ids": [
+        "jepa-wms",
+        "vjepa2"
+      ],
+      "connection": "Compare representation pretraining, predictive objectives, and planner choices."
+    },
+    {
+      "label": "Predictive architectures",
+      "ids": [
+        "leworldmodel",
+        "dreamerv3"
+      ],
+      "connection": "Background on representation learning and model-based control."
+    },
+    {
+      "label": "Adjacent representation analysis",
+      "ids": [
+        "smds",
+        "origins-manifolds"
+      ],
+      "connection": "Analysis methods developed for language-model representations."
+    },
+    {
+      "label": "Simulation and active identification",
+      "ids": [
+        "simpler",
+        "asid",
+        "poke-strike"
+      ],
+      "connection": "Background on policy evaluation, calibration, and task-informed interaction."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "jepa-bisim",
+      "title": "JEPA-Bisim: Learning Robust Visual Representations for Planning with Joint-Embedding Predictive World Models",
+      "aliases": [
+        "Learning Invariant Visual Representations for Planning with Joint-Embedding Predictive World Models"
+      ],
+      "authors": [
+        "Toso, Leonardo F.",
+        "Shadunts, Davit",
+        "Lu, Yunyang",
+        "Geng, Gloria",
+        "Sharma, Nihal",
+        "Zhan, Donglin",
+        "Nguyen, Nam H.",
+        "Anderson, James"
+      ],
+      "arxiv_id": "2602.18639",
+      "publication": "arXiv 2026",
+      "url": "https://arxiv.org/abs/2602.18639",
+      "module": "M2",
+      "method": "Adds a bisimulation encoder to a joint-embedding predictive world model, placing states with similar transition dynamics near one another while suppressing task-irrelevant visual features.",
+      "evaluation": "PointMaze and PushT experiments test planning under background changes and visual distractors with several frozen visual encoders. The reported robustness concerns these observation shifts.",
+      "source_review": {
+        "date": "2026-10-21",
+        "depth": "metadata_abstract"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "title": "Awesome World Models",
+      "url": "https://github.com/knightnemo/Awesome-World-Models",
+      "description": "World-model methods and applications across robotics, games, driving, and science."
+    },
+    {
+      "title": "Awesome World Models for Robotic Policy Learning",
+      "url": "https://github.com/NTUMARS/Awesome-World-Model-for-Robotics-Policy",
+      "description": "World models as policies, simulators, and video predictors for robot learning."
+    },
+    {
+      "title": "Learning to Model the World",
+      "url": "https://github.com/JiahuaDong/Awesome-World-Models",
+      "description": "A survey repository spanning world-model representations, applications, interpretability, and benchmarks."
+    },
+    {
+      "title": "Awesome World Model Evaluation",
+      "url": "https://github.com/gxchris95/awesome-world-model-eval",
+      "description": "Evaluation papers and metrics organized by modality and evaluation dimension."
+    },
+    {
+      "title": "A Survey of World Model Benchmarks",
+      "url": "https://github.com/World-Model-Benchmarks/World-Model-Benchmarks",
+      "description": "Benchmarks organized by physical, causal, control, and functional evaluation targets."
+    }
   ]
 }

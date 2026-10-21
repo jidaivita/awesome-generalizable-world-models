@@ -4,7 +4,7 @@ Suggestions, corrections, and pull requests are welcome.
 
 ## Scope
 
-The list covers learned world models and their generalization across object configurations, environments, dynamics, and tasks. Entries may contribute a modeling method, representation analysis, theoretical result, or evaluation protocol. Each paper should have a clear connection to at least one of the six topics.
+The list focuses on the mechanisms, generalization, and interpretability of learned world models. Its six topics connect representation structure and latent geometry to adaptation, physical prediction, and planning. Entries may contribute a modeling method, representation analysis, theoretical result, or evaluation protocol.
 
 Papers should identify a reusable representation, a transfer or adaptation mechanism, evidence about what a world model learns, a connection to task performance, or an evaluation of generalization. Negative results and formal limits are within scope.
 
@@ -21,7 +21,7 @@ Include:
 - A brief description of its contribution.
 - Code and project links, if available.
 
-Explain what the paper adds to the existing list. Corrections to titles, links, publication information, and descriptions are equally useful.
+Explain the distinct mechanism, analysis, or evaluation protocol the paper adds within the existing six topics. Publication recency, model size, and application coverage alone are insufficient reasons for inclusion. Corrections to titles, links, publication information, and descriptions are equally useful.
 
 ## Entry format
 
@@ -35,7 +35,7 @@ Use one primary topic per paper. Keep earlier titles as aliases, and merge prepr
 
 ## Editing the source
 
-Paper records are stored in `data/papers.json`; topic guides and the reading path are defined in `data/map.json`. Update these files and regenerate the Markdown pages:
+Paper records are stored in `data/papers.json`; topic guides, the reading path, candidate papers, and related resources are defined in `data/map.json`. Candidates remain separate from catalog counts and the bibliography. Update these files and regenerate the Markdown pages:
 
 ```bash
 python3 scripts/build.py

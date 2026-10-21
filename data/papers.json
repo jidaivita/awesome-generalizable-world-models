@@ -2143,5 +2143,412 @@
       "publisher": "PMLR",
       "pages": "66--89"
     }
+  },
+  {
+    "id": "group-structure",
+    "canonical_title": "Learning Disentangled Representations and Group Structure of Dynamical Environments",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": 2020,
+    "publication": {
+      "label": "NeurIPS 2020",
+      "source_url": "https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [
+      "M1",
+      "M8"
+    ],
+    "collection": "geometry_evaluation_2026_10",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html",
+      "project": null,
+      "full_text": "https://proceedings.neurips.cc/paper_files/paper/2020/file/e449b9317dad920c0dd5ad0a2a2d5e49-Paper.pdf"
+    },
+    "annotation": {
+      "why": "Learns latent group transformations and disentangled subspaces from interaction sequences for long-horizon prediction.",
+      "focus": "An encoder maps observations to a spherical latent space, and learned rotation matrices represent the effects of interactions. A regularizer encourages each transformation to act on a small subset of latent dimensions, separating factors of change.",
+      "boundary": "Experiments use explicitly symmetric environments and evaluate long-horizon prediction and latent disentanglement. The method learns the transformation parameters from interaction sequences under an orthogonal latent-transition parameterization."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": "https://github.com/IndustAI/learning-group-structure",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Quessard, Robin",
+        "Barrett, Thomas",
+        "Clements, William"
+      ],
+      "year": 2020,
+      "source_url": "https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "Advances in Neural Information Processing Systems",
+      "volume": "33",
+      "pages": "19727--19737"
+    }
+  },
+  {
+    "id": "sen",
+    "canonical_title": "Learning Symmetric Embeddings for Equivariant World Models",
+    "aliases": [],
+    "arxiv_id": "2204.11371",
+    "first_public_year": 2022,
+    "publication": {
+      "label": "ICML 2022",
+      "source_url": "https://proceedings.mlr.press/v162/park22a.html"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [
+      "M3"
+    ],
+    "collection": "geometry_evaluation_2026_10",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v162/park22a.html",
+      "project": null,
+      "full_text": "https://proceedings.mlr.press/v162/park22a/park22a.pdf"
+    },
+    "annotation": {
+      "why": "Learns an observation embedding compatible with known latent symmetries for equivariant transition prediction.",
+      "focus": "A symmetric embedding network maps observations with a difficult-to-specify group action into features with a prescribed transformation rule. It is trained jointly with an equivariant transition network using a contrastive prediction objective.",
+      "boundary": "Transition-prediction experiments compare learned embeddings with fully equivariant and non-equivariant baselines across three forms of symmetry. The latent group action is specified; the learned component connects complex observations to that representation."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Jung Yeon Park",
+        "Ondrej Biza",
+        "Linfeng Zhao",
+        "Jan-Willem Van De Meent",
+        "Robin Walters"
+      ],
+      "year": 2022,
+      "source_url": "https://proceedings.mlr.press/v162/park22a.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "International Conference on Machine Learning",
+      "publisher": "PMLR",
+      "pages": "17372--17389"
+    }
+  },
+  {
+    "id": "flowm",
+    "canonical_title": "Flow Equivariant World Models: Structured Memory for Dynamic Environments",
+    "aliases": [
+      "Flow Equivariant World Models: Memory for Partially Observed Dynamic Environments"
+    ],
+    "arxiv_id": null,
+    "first_public_year": 2026,
+    "publication": {
+      "label": "ICML 2026",
+      "source_url": "https://proceedings.mlr.press/v306/lillemark26a.html"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [
+      "M4",
+      "M8"
+    ],
+    "collection": "geometry_evaluation_2026_10",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v306/lillemark26a.html",
+      "project": "https://flowequivariantworldmodels.github.io/",
+      "full_text": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/lillemark26a/lillemark26a.pdf"
+    },
+    "annotation": {
+      "why": "Updates spatial latent memory with self-motion and object-motion flows for prediction under partial observability.",
+      "focus": "A spatial latent memory stores observations in velocity channels that move with inferred object dynamics. An action-dependent transformation aligns this memory with the agent's motion, maintaining information about regions outside the current view.",
+      "boundary": "Partially observed 2D and 3D environments test long-horizon prediction, with a goal-directed planning task and representation probes in 3D Block World. The 3D encoder is learned rather than analytically equivariant; experiments examine temporal extrapolation in these environments."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract_project"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Hansen Lillemark",
+        "Benhao Huang",
+        "Fangneng Zhan",
+        "Yilun Du",
+        "T. Anderson Keller"
+      ],
+      "year": 2026,
+      "source_url": "https://proceedings.mlr.press/v306/lillemark26a.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "International Conference on Machine Learning",
+      "publisher": "PMLR",
+      "pages": "73968--74002"
+    }
+  },
+  {
+    "id": "svib",
+    "canonical_title": "Imagine the Unseen World: A Benchmark for Systematic Generalization in Visual World Models",
+    "aliases": [],
+    "arxiv_id": "2311.09064",
+    "first_public_year": 2023,
+    "publication": {
+      "label": "NeurIPS 2023 Datasets & Benchmarks",
+      "source_url": "https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html"
+    },
+    "primary_module": "M5",
+    "secondary_modules": [
+      "M3",
+      "M1"
+    ],
+    "collection": "geometry_evaluation_2026_10",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html",
+      "project": "https://systematic-visual-imagination.github.io/",
+      "full_text": "https://proceedings.neurips.cc/paper_files/paper/2023/file/58af908d6293810f1a29e69bf723dc48-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    "annotation": {
+      "why": "Controls training-factor coverage to test visual prediction on unseen combinations.",
+      "focus": "The Systematic Visual Imagination Benchmark formulates world modeling as one-step image-to-image prediction under latent dynamics. Training splits vary the fraction of factor combinations observed, while different rendering settings vary perceptual difficulty.",
+      "boundary": "Held-out combinations test whether models compose familiar factors in new configurations. The protocol isolates systematic visual generalization in one-step predictions; it does not measure long-horizon physical rollouts or closed-loop control."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Kim, Yeongbin",
+        "Singh, Gautam",
+        "Park, Junyeong",
+        "Gulcehre, Caglar",
+        "Ahn, Sungjin"
+      ],
+      "year": 2023,
+      "source_url": "https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "Advances in Neural Information Processing Systems",
+      "volume": "36",
+      "doi": "10.52202/075280-1210",
+      "pages": "27880--27896"
+    }
+  },
+  {
+    "id": "physion",
+    "canonical_title": "Physion: Evaluating Physical Prediction from Vision in Humans and Machines",
+    "aliases": [],
+    "arxiv_id": "2106.08261",
+    "first_public_year": 2021,
+    "publication": {
+      "label": "NeurIPS 2021 Datasets & Benchmarks",
+      "source_url": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/d09bf41544a3365a46c9077ebb5e35c3-Abstract-round1.html"
+    },
+    "primary_module": "M5",
+    "secondary_modules": [
+      "M1",
+      "M8"
+    ],
+    "collection": "geometry_evaluation_2026_10",
+    "priority": "core",
+    "links": {
+      "paper": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/d09bf41544a3365a46c9077ebb5e35c3-Abstract-round1.html",
+      "project": "https://physion-benchmark.github.io/",
+      "full_text": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/file/d09bf41544a3365a46c9077ebb5e35c3-Paper-round1.pdf"
+    },
+    "annotation": {
+      "why": "Tests future object-contact prediction from video across eight simulated physical scenarios.",
+      "focus": "The Object Contact Prediction task presents a video prefix and asks whether two designated objects will contact later. A common readout protocol compares visual and physically structured models with human judgments across eight types of simulated physical events.",
+      "boundary": "The benchmark compares future-event accuracy and human prediction patterns across scenarios including collision, support, containment, and deformation. It evaluates predictive physical information through event readout rather than generated-video appearance."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract_project"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Bear, Daniel",
+        "Wang, Elias",
+        "Mrowca, Damian",
+        "Binder, Felix",
+        "Tung, Hsiao-Yu",
+        "RT, Pramod",
+        "Holdaway, Cameron",
+        "Tao, Sirui",
+        "Smith, Kevin",
+        "Sun, Fan-Yun",
+        "Li, Fei-Fei",
+        "Kanwisher, Nancy",
+        "Tenenbaum, Josh",
+        "Yamins, Dan",
+        "Fan, Judith"
+      ],
+      "year": 2021,
+      "source_url": "https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/d09bf41544a3365a46c9077ebb5e35c3-Abstract-round1.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks",
+      "volume": "1"
+    }
+  },
+  {
+    "id": "physion-pp",
+    "canonical_title": "Physion++: Evaluating Physical Scene Understanding that Requires Online Inference of Different Physical Properties",
+    "aliases": [],
+    "arxiv_id": "2306.15668",
+    "first_public_year": 2023,
+    "publication": {
+      "label": "NeurIPS 2023 Datasets & Benchmarks",
+      "source_url": "https://proceedings.nips.cc/paper_files/paper/2023/hash/d3e8011c912e651ab2a76e7935a1e464-Abstract-Datasets_and_Benchmarks.html"
+    },
+    "primary_module": "M5",
+    "secondary_modules": [
+      "M3",
+      "M8"
+    ],
+    "collection": "geometry_evaluation_2026_10",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.nips.cc/paper_files/paper/2023/hash/d3e8011c912e651ab2a76e7935a1e464-Abstract-Datasets_and_Benchmarks.html",
+      "project": "https://dingmyu.github.io/physion_v2/",
+      "full_text": "https://proceedings.neurips.cc/paper_files/paper/2023/file/d3e8011c912e651ab2a76e7935a1e464-Paper-Datasets_and_Benchmarks.pdf"
+    },
+    "annotation": {
+      "why": "Tests physical predictions that require inferring hidden object properties from observed interactions.",
+      "focus": "Physion++ constructs physical-event prediction problems whose outcomes depend on latent mass, friction, elasticity, or deformability. These properties must be inferred from observed motion and interactions before predicting the event.",
+      "boundary": "Physical prediction models with different representations and built-in knowledge are compared with human judgments. Relative to Physion, the added requirement is online inference of hidden physical properties, rather than prediction from visible scene configuration alone."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Tung, Hsiao-Yu",
+        "Ding, Mingyu",
+        "Chen, Zhenfang",
+        "Bear, Daniel",
+        "Gan, Chuang",
+        "Tenenbaum, Josh",
+        "Yamins, Dan",
+        "Fan, Judith",
+        "Smith, Kevin"
+      ],
+      "year": 2023,
+      "source_url": "https://proceedings.nips.cc/paper_files/paper/2023/hash/d3e8011c912e651ab2a76e7935a1e464-Abstract-Datasets_and_Benchmarks.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "Advances in Neural Information Processing Systems",
+      "volume": "36",
+      "doi": "10.52202/075280-2929",
+      "pages": "67048--67068"
+    }
+  },
+  {
+    "id": "worldgym",
+    "canonical_title": "WorldGym: World Model as An Environment for Policy Evaluation",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": 2026,
+    "publication": {
+      "label": "ICLR 2026",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html"
+    },
+    "primary_module": "M5",
+    "secondary_modules": [
+      "M4",
+      "M3"
+    ],
+    "collection": "geometry_evaluation_2026_10",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html",
+      "project": "https://world-model-eval.github.io/",
+      "full_text": "https://proceedings.iclr.cc/paper_files/paper/2026/file/7f5e909ac0324db03506b380c695ffaf-Paper-Conference.pdf"
+    },
+    "annotation": {
+      "why": "Tests whether policy success rates and rankings in a learned video environment track real-robot evaluations.",
+      "focus": "An autoregressive action-conditioned video model provides a learned environment for policy rollouts. Monte Carlo evaluations begin from real-robot images, and a vision-language model assigns rewards to the generated interactions.",
+      "boundary": "Experiments compare simulated and real-world success rates and relative rankings across VLA policy versions, sizes, and checkpoints, with additional novel-task and environment tests. The target is policy-evaluation validity in a learned environment; realistic object interaction remains a reported limitation."
+    },
+    "source_review": {
+      "date": "2026-10-21",
+      "depth": "metadata_abstract"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null,
+    "bibliography": {
+      "authors": [
+        "Quevedo, Julian",
+        "Sharma, Ansh Kumar",
+        "Sun, Yixiang",
+        "Suryavanshi, Varad",
+        "Liang, Percy",
+        "Yang, Sherry"
+      ],
+      "year": 2026,
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html",
+      "verified_on": "2026-10-21",
+      "entry_type": "inproceedings",
+      "booktitle": "International Conference on Learning Representations",
+      "volume": "2026",
+      "pages": "78932--78957"
+    }
   }
 ]

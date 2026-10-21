@@ -4,7 +4,7 @@
 
 # Awesome Generalizable World Models
 
-Papers on how learned world models represent reusable structure, generalize across environments and tasks, and support prediction and planning. Topics include adaptation, interpretability, structured representations, latent geometry, and evaluation.
+A focused paper index on the mechanisms, generalization, and interpretability of learned world models. It connects representation structure and latent geometry to adaptation, physical prediction, and planning.
 
 <p align="center"><img src="assets/research-map.svg" width="620" alt="Latent representations, transfer across environments, and planning"></p>
 
@@ -19,13 +19,13 @@ Papers on how learned world models represent reusable structure, generalize acro
 | [Generalization & Adaptation](#m3) | Unseen compositions, dynamics shifts, task transfer, and adaptation. | 11 |
 | [World Model Interpretability](#m8) | Physical variables, causal interventions, and interpretable model design. | 4 |
 | [Structured & Compositional Representations](#m1) | Objects, relations, and modular transition mechanisms. | 4 |
-| [Representation Geometry & Symmetry](#m2) | Latent geometry, symmetry priors, and predictive dynamics. | 2 |
+| [Representation Geometry & Symmetry](#m2) | Latent geometry, learned transformations, and symmetry-based dynamics. | 5 |
 | [Planning & Task-Relevant World Models](#m4) | Goal-directed prediction, task abstraction, and model-based action selection. | 6 |
-| [Evaluation & Benchmarks](#m5) | Physical extrapolation, compositional tests, and closed-loop evaluation. | 2 |
+| [Evaluation & Benchmarks](#m5) | Compositional prediction, physical inference, and closed-loop validity. | 6 |
 
-29 papers across six topics · 9 supplementary papers · 38 papers in total.
+36 papers across six topics · 9 supplementary papers · 45 papers in total.
 
-The catalog includes methods, theory, and empirical analyses of generalization and its limits. Papers are listed alphabetically within each topic.
+Entries describe the mechanism, evaluation setting, and evidence for each contribution. New papers extend these six topics through a distinct method, analysis, or test of generalization. Each paper has one primary topic and is listed alphabetically within it.
 
 <a id="papers"></a>
 ## Papers
@@ -149,17 +149,32 @@ Objects, relations, and modular transition mechanisms.
 <a id="m2"></a>
 ### Representation Geometry & Symmetry
 
-Latent geometry, symmetry priors, and predictive dynamics.
+Latent geometry, learned transformations, and symmetry-based dynamics.
 
 <a id="paper-grwm"></a>
 - **Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models**<br>
   Zaishuo Xia et al. · **CVPR 2026** · [Paper](https://arxiv.org/abs/2510.26782) · [Code](https://github.com/XiaFire/Clone_Deterministic_Environment) · [Project](https://xiafire.github.io/grwm-project-page/)<br>
   Regularizes latent geometry and uses temporal context for long-horizon prediction in deterministic environments.
 
+<a id="paper-flowm"></a>
+- **Flow Equivariant World Models: Structured Memory for Dynamic Environments**<br>
+  Hansen Lillemark et al. · **ICML 2026** · [Paper](https://proceedings.mlr.press/v306/lillemark26a.html) · [Project](https://flowequivariantworldmodels.github.io/)<br>
+  Updates spatial latent memory with self-motion and object-motion flows for prediction under partial observability.
+
 <a id="paper-group-latents"></a>
 - **Learning Abstract World Models with a Group-Structured Latent Space**<br>
   Thomas Delliaux et al. · **arXiv 2025** · [Paper](https://arxiv.org/abs/2506.01529) · [Code](https://github.com/khanhvu207/world-models-group-latents)<br>
   Encodes known symmetries, such as translation and rotation, as geometric inductive biases.
+
+<a id="paper-group-structure"></a>
+- **Learning Disentangled Representations and Group Structure of Dynamical Environments**<br>
+  Robin Quessard et al. · **NeurIPS 2020** · [Paper](https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html) · [Code](https://github.com/IndustAI/learning-group-structure)<br>
+  Learns latent group transformations and disentangled subspaces from interaction sequences for long-horizon prediction.
+
+<a id="paper-sen"></a>
+- **Learning Symmetric Embeddings for Equivariant World Models**<br>
+  Jung Yeon Park et al. · **ICML 2022** · [Paper](https://proceedings.mlr.press/v162/park22a.html)<br>
+  Learns an observation embedding compatible with known latent symmetries for equivariant transition prediction.
 
 [Topic overview and comparisons](docs/modules/m2-geometry.md) · [Contents](#research-map)
 
@@ -203,17 +218,37 @@ Goal-directed prediction, task abstraction, and model-based action selection.
 <a id="m5"></a>
 ### Evaluation & Benchmarks
 
-Physical extrapolation, compositional tests, and closed-loop evaluation.
+Compositional prediction, physical inference, and closed-loop validity.
 
 <a id="paper-physical-law-perspective"></a>
 - **How Far Is Video Generation from World Model: A Physical Law Perspective**<br>
   Bingyi Kang et al. · **ICML 2025** · [Paper](https://proceedings.mlr.press/v267/kang25g.html)<br>
   Tests physical prediction under extrapolation and compositional distribution shifts.
 
+<a id="paper-svib"></a>
+- **Imagine the Unseen World: A Benchmark for Systematic Generalization in Visual World Models**<br>
+  Yeongbin Kim et al. · **NeurIPS 2023 Datasets & Benchmarks** · [Paper](https://proceedings.nips.cc/paper_files/paper/2023/hash/58af908d6293810f1a29e69bf723dc48-Abstract-Datasets_and_Benchmarks.html) · [Project](https://systematic-visual-imagination.github.io/)<br>
+  Controls training-factor coverage to test visual prediction on unseen combinations.
+
+<a id="paper-physion-pp"></a>
+- **Physion++: Evaluating Physical Scene Understanding that Requires Online Inference of Different Physical Properties**<br>
+  Hsiao-Yu Tung et al. · **NeurIPS 2023 Datasets & Benchmarks** · [Paper](https://proceedings.nips.cc/paper_files/paper/2023/hash/d3e8011c912e651ab2a76e7935a1e464-Abstract-Datasets_and_Benchmarks.html) · [Project](https://dingmyu.github.io/physion_v2/)<br>
+  Tests physical predictions that require inferring hidden object properties from observed interactions.
+
+<a id="paper-physion"></a>
+- **Physion: Evaluating Physical Prediction from Vision in Humans and Machines**<br>
+  Daniel Bear et al. · **NeurIPS 2021 Datasets & Benchmarks** · [Paper](https://datasets-benchmarks-proceedings.neurips.cc/paper_files/paper/2021/hash/d09bf41544a3365a46c9077ebb5e35c3-Abstract-round1.html) · [Project](https://physion-benchmark.github.io/)<br>
+  Tests future object-contact prediction from video across eight simulated physical scenarios.
+
 <a id="paper-world-in-world"></a>
 - **World-In-World: World Models in a Closed-Loop World**<br>
   Jiahan Zhang et al. · **ICLR 2026** · [Paper](https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html)<br>
   Tests action-conditioned world models in closed-loop tasks, varying post-training data and test-time computation.
+
+<a id="paper-worldgym"></a>
+- **WorldGym: World Model as An Environment for Policy Evaluation**<br>
+  Julian Quevedo et al. · **ICLR 2026** · [Paper](https://proceedings.iclr.cc/paper_files/paper/2026/hash/7f5e909ac0324db03506b380c695ffaf-Abstract-Conference.html) · [Project](https://world-model-eval.github.io/)<br>
+  Tests whether policy success rates and rankings in a learned video environment track real-robot evaluations.
 
 [Topic overview and comparisons](docs/modules/m5-reliability.md) · [Contents](#research-map)
 
@@ -250,13 +285,17 @@ Physical extrapolation, compositional tests, and closed-loop evaluation.
 <a id="reading-route"></a>
 ## Reading Guide
 
-The [12-paper reading path](docs/reading-guide.md) connects interpretability, composition, geometry, adaptation, planning, and evaluation. Each entry describes its method, evaluation setting, and connection to the surrounding papers.
+The [12-paper reading path](docs/reading-guide.md) connects evidence about learned structure to composition, geometry, adaptation, planning, and generalization tests. Short topic branches link related methods and evaluation protocols.
+
+[Candidate papers](docs/candidates.md) are listed separately from the main index and its paper counts.
 
 ## Related Resources
 
-- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models) — world-model research across application domains.
-- [Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) — a historical deep-learning paper list; no longer maintained.
-- [Awesome Machine Learning](https://github.com/josephmisiti/awesome-machine-learning) — machine-learning libraries and resources.
+- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models) — World-model methods and applications across robotics, games, driving, and science.
+- [Awesome World Models for Robotic Policy Learning](https://github.com/NTUMARS/Awesome-World-Model-for-Robotics-Policy) — World models as policies, simulators, and video predictors for robot learning.
+- [Learning to Model the World](https://github.com/JiahuaDong/Awesome-World-Models) — A survey repository spanning world-model representations, applications, interpretability, and benchmarks.
+- [Awesome World Model Evaluation](https://github.com/gxchris95/awesome-world-model-eval) — Evaluation papers and metrics organized by modality and evaluation dimension.
+- [A Survey of World Model Benchmarks](https://github.com/World-Model-Benchmarks/World-Model-Benchmarks) — Benchmarks organized by physical, causal, control, and functional evaluation targets.
 
 ## Contributing
 

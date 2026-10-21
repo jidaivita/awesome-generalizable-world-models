@@ -19,7 +19,7 @@ class ResearchMapTests(unittest.TestCase):
     def edit(self,fn):
         path=self.root/'data/papers.json';papers=json.loads(path.read_text());fn(papers);path.write_text(json.dumps(papers))
     def test_counts_and_references(self):
-        self.assertEqual(validate_data(self.root),38)
+        self.assertEqual(validate_data(self.root),45)
         self.assertGreater(validate_links(self.root),100)
     def test_papers_survive_reclassification_and_links_remain(self):
         from build import module_path
@@ -92,7 +92,7 @@ class ResearchMapTests(unittest.TestCase):
         (self.root/'private').mkdir(exist_ok=True);(self.root/'private/idea.md').write_text(secret)
         (self.root/'public_notes').mkdir(exist_ok=True);(self.root/'public_notes/unlisted.md').write_text(secret)
         out=Path(self.tmp.name)/'public';files=export(self.root,out)
-        self.assertEqual(len(files),23)
+        self.assertEqual(len(files),24)
         self.assertNotIn(secret,'\n'.join(p.read_text() for p in out.rglob('*') if p.is_file()))
         self.assertFalse((out/'data').exists())
     def test_manifest_rejects_path_escape(self):
@@ -112,6 +112,24 @@ class ResearchMapTests(unittest.TestCase):
     def test_export_refuses_nonempty_destination(self):
         out=Path(self.tmp.name)/'public';out.mkdir();(out/'private.md').write_text('TEST_SECRET')
         with self.assertRaises(ValueError):export(self.root,out)
+
+    def test_candidate_excluded_from_main_counts_and_bibliography(self):
+        papers,cfg,_=read_sources(self.root)
+        pages=render(self.root)
+        self.assertEqual(len(cfg['candidates']),1)
+        self.assertNotIn('jepa-bisim',{p['id'] for p in papers})
+        self.assertNotIn('2602.18639',pages['references.bib'])
+        self.assertNotIn('2602.18639',pages['README.md'])
+        self.assertIn('2602.18639',pages['docs/candidates.md'])
+        self.assertIn('36 papers across six topics',pages['README.md'])
+
+    def test_candidate_version_cannot_duplicate_catalog(self):
+        path=self.root/'data/map.json'
+        cfg=json.loads(path.read_text())
+        papers,_,_=read_sources(self.root)
+        cfg['candidates'][0]['arxiv_id']=next(p['arxiv_id'] for p in papers if p['arxiv_id'])
+        path.write_text(json.dumps(cfg))
+        with self.assertRaisesRegex(ValueError,'Candidate arXiv identity overlaps'):validate_data(self.root)
 
 
 if __name__=='__main__':unittest.main()
