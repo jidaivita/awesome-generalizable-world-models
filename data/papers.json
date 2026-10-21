@@ -22,11 +22,11 @@
     },
     "annotation": {
       "why": "Infers latent interaction graphs from trajectories with a graph-based dynamics decoder.",
-      "focus": "The latent graph, the graph-based dynamics decoder, and whether relation recovery agrees with predictive performance.",
-      "boundary": "Recovering relations from observations does not establish causal identification under arbitrary conditions."
+      "focus": "A variational encoder infers a latent interaction graph from observed trajectories; a graph neural network decoder predicts how the interacting entities move. The graph and dynamics are learned jointly without relation labels.",
+      "boundary": "Tests recover known interactions in simulated physical systems and predict trajectories in motion-capture and sports-tracking data. Relation recovery is evaluated where a reference graph is available."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -77,11 +77,11 @@
     },
     "annotation": {
       "why": "Learns object-centric representations and relational dynamics with a contrastive objective.",
-      "focus": "The distinct roles of object representations, relational dynamics, and the contrastive objective.",
-      "boundary": "Success on structured benchmarks does not establish open-world compositional generalization."
+      "focus": "Each image is encoded as a set of object embeddings. A graph neural network predicts their transitions, trained with a contrastive loss that separates predicted future states from negative samples instead of reconstructing pixels.",
+      "boundary": "Evaluations cover independently manipulated objects, simple Atari games, and multi-object physics simulations, comparing structured latent predictions with reconstruction-based models."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -128,11 +128,11 @@
     },
     "annotation": {
       "why": "Uses sparse, context-dependent interactions to adapt to changes in mechanisms.",
-      "focus": "Sparse attention, intervention settings, few-shot adaptation, and the priors available to the model.",
-      "boundary": "Generalization is evaluated under sparse mechanism changes with object-centric modeling assumptions."
+      "focus": "Sparsity regularization on attention between object-factored tokens produces context-dependent interaction graphs. An adaptation procedure updates the model after sparse changes to environmental mechanisms with unknown intervention targets.",
+      "boundary": "Observation-based environments test interaction-graph recovery, few-shot adaptation to dynamics changes, and robustness to distractors under the object-centric modeling setup."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -182,11 +182,11 @@
     },
     "annotation": {
       "why": "Combines object-level latent masking with joint-embedding predictive learning.",
-      "focus": "How object-level latent masking creates structured partial observability and affects the use of relational information.",
-      "boundary": "Latent masking is not automatically an intervention on a real physical causal mechanism."
+      "focus": "The predictor reconstructs masked object embeddings from the remaining object context. This training objective limits direct access to the target object and makes relational information useful for prediction.",
+      "boundary": "Visual question answering tests counterfactual reasoning, while control experiments compare planning with object-level and patch-level latent inputs. The structured partial observability comes from training-time masking."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -237,8 +237,8 @@
     },
     "annotation": {
       "why": "Analyzes the organization of physical information through layer-wise probes, subspaces, and interventions.",
-      "focus": "Layer-wise differences in speed and direction; circular population codes; what probes, attention ablations, and directional steering each establish.",
-      "boundary": "Changing a decoded direction does not establish improved native prediction or planning. Linear subspace dimension and intrinsic manifold dimension are different quantities."
+      "focus": "Layer-wise linear probes, patch-level decoding, subspace analysis, and attention ablations locate physical information in video encoders. Motion direction forms a circular population code spread over many linear directions, while speed and acceleration become accessible earlier.",
+      "boundary": "Probes and targeted steering characterize encoded physical variables and changes in decoded direction. These measurements concern representation geometry; they do not directly measure gains in closed-loop control."
     },
     "source_review": {
       "date": "2026-10-20",
@@ -298,8 +298,8 @@
     },
     "annotation": {
       "why": "Compares geometric hypotheses and their functional effects in language-model representations.",
-      "focus": "How SMDS uses supervision to compare circular, linear, and clustered hypotheses; held-out evaluation and intervention evidence.",
-      "boundary": "This is supervised, hypothesis-driven analysis, not discovery without priors. Its LLM results are not established findings about world models."
+      "focus": "Supervised Multi-Dimensional Scaling fits and compares candidate feature geometries, including circles, lines, and clusters. Temporal reasoning supplies a case study for testing how these structures change with context and support model outputs.",
+      "boundary": "Experiments examine language-model families and sizes, held-out examples, and representation interventions. This is an analysis method from language modeling, included for its relevance to testing geometric hypotheses."
     },
     "source_review": {
       "date": "2026-10-20",
@@ -356,8 +356,8 @@
     },
     "annotation": {
       "why": "Regularizes latent geometry and uses temporal context for long-horizon prediction in deterministic environments.",
-      "focus": "Ground-truth state oracle comparisons, temporal-context encoders, slowness and uniformity regularization, and the corresponding ablations.",
-      "boundary": "Evaluated in deterministic environments with fixed rules, with separate ablations for geometric regularization and temporal context."
+      "focus": "A temporal-context encoder and geometric regularization based on slowness and uniformity reshape the latent space before dynamics prediction. State-oracle comparisons and component ablations isolate representation quality from predictor capacity.",
+      "boundary": "Long-horizon rollouts are evaluated in deterministic environments with fixed rules. The experiments distinguish geometric regularization from the contribution of temporal context."
     },
     "source_review": {
       "date": "2026-10-20",
@@ -409,8 +409,8 @@
     },
     "annotation": {
       "why": "Encodes known symmetries, such as translation and rotation, as geometric inductive biases.",
-      "focus": "How group actions correspond to latent transitions and how structured and unstructured information coexist.",
-      "boundary": "Using known symmetries is different from discovering physical laws from data."
+      "focus": "Known symmetries determine the latent manifold and the group actions used for transitions. Additional latent variables retain information that does not follow the prescribed symmetry.",
+      "boundary": "Transition prediction and downstream reinforcement learning are tested in environments with translation and rotation, including first-person 3D views. The symmetry is supplied as prior knowledge."
     },
     "source_review": {
       "date": "2026-10-20",
@@ -460,11 +460,11 @@
     },
     "annotation": {
       "why": "Relates similarities in learned representations to intrinsic conceptual geometry under a generative model.",
-      "focus": "The generative assumptions, the relation between cosine similarity and intrinsic geometry, and testable predictions.",
-      "boundary": "The results rely on explicit assumptions about text representations; they are not universal laws for arbitrary networks or world models."
+      "focus": "A theoretical model connects cosine similarity between representations to distances along an underlying feature manifold. It extends a binary feature-direction account to continuous, multidimensional features.",
+      "boundary": "The paper tests its assumptions and predictions on text embeddings and language-model token activations. Its conclusions depend on the stated generative assumptions for those representations."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -512,8 +512,8 @@
     },
     "annotation": {
       "why": "Uses hyperbolic latent representations and geometric optimization for procedural planning on CrossTask and COIN.",
-      "focus": "The separate contributions of Hyperbolic JEPA and geometric optimization, including matched Euclidean comparisons.",
-      "boundary": "The main tasks are multi-step procedural visual planning on CrossTask and COIN, rather than continuous physical dynamics or demonstrated real-robot transfer."
+      "focus": "Hyperbolic JEPA embeds states on a hyperbolic manifold to represent hierarchical relations. Geometric Reinforcement Learning optimizes plans on the resulting energy landscape.",
+      "boundary": "CrossTask and COIN evaluate three- and four-step procedural visual planning. This setting tests sequences of instructional actions rather than continuous physical dynamics."
     },
     "source_review": {
       "date": "2026-10-20",
@@ -565,11 +565,11 @@
     },
     "annotation": {
       "why": "Infers environment context from interaction history to model changing dynamics.",
-      "focus": "History encoding, forward and backward prediction objectives, and the training and test dynamics distributions.",
-      "boundary": "Environment context is inferred from interaction history. The evaluation concerns adaptation within the specified dynamics distributions."
+      "focus": "A history encoder estimates a context vector for local dynamics. Forward and backward prediction losses train the context to retain environment-specific information, and the next-state predictor conditions on this vector.",
+      "boundary": "Simulated robotics and control tasks test prediction and policy performance across different dynamics. Adaptation uses recent interaction history as evidence about the current environment."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -621,8 +621,8 @@
     },
     "annotation": {
       "why": "Distinguishes recognizing familiar environments from learning dynamics through current experience.",
-      "focus": "Definitions and assumptions behind environment recognition and environment learning; environment diversity, context length, and controls for familiar-environment matching.",
-      "boundary": "The framework is not an exhaustive classification of all neural algorithms. State estimation and memory may also explain improvements."
+      "focus": "The analysis separates environment recognition, which identifies a familiar environment, from environment learning, which estimates dynamics from the current context. Error bounds link these mechanisms to context length and training-environment diversity.",
+      "boundary": "World-model experiments vary context, data diversity, and architecture to test the theoretical predictions. The distinction concerns how prediction improves with experience while model weights remain fixed."
     },
     "source_review": {
       "date": "2026-10-20",
@@ -681,11 +681,11 @@
     },
     "annotation": {
       "why": "Learns object and attribute representations for combinations beyond training configurations.",
-      "focus": "Which factors are decomposed and how unseen combinations are defined in training and evaluation.",
-      "boundary": "Generating unseen combinations does not by itself establish closed-loop planning, adaptation to unknown physical mechanisms, or real-world transfer."
+      "focus": "A Recurrent Block-Slot Unit decomposes raw video into objects and their attributes. Predicting multiple future frames encourages the representation to retain dynamic as well as static factors.",
+      "boundary": "Disentanglement is measured with the DCI framework across video datasets. Recombining attributes of previously observed objects tests compositional video generation without auxiliary text, masks, or bounding boxes."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -735,11 +735,11 @@
     },
     "annotation": {
       "why": "Learns trajectory-based dynamics representations for zero-shot policy adaptation to changed dynamics.",
-      "focus": "Trajectory dynamics encoders, Lipschitz assumptions, multi-positive contrastive learning, and tests of unmodeled dynamics changes.",
-      "boundary": "This work studies reinforcement-learning policy adaptation; its theory is not automatically a theorem about general video world models."
+      "focus": "A trajectory encoder learns a dynamics context using a multi-positive InfoNCE objective. The analysis relates encoder smoothness to target-domain regret, motivating a latent geometry that supports adaptation without privileged physical-parameter labels.",
+      "boundary": "MuJoCo experiments test severe dynamics shifts, including structural failures outside the explicit parameterization used by identification baselines, alongside in-distribution policy stability."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -792,11 +792,11 @@
     },
     "annotation": {
       "why": "Combines frozen visual representations, action-conditioned latent prediction, and goal-directed planning.",
-      "focus": "The frozen visual encoder, action-conditioned patch prediction, and the planning objective in goal space.",
-      "boundary": "Zero-shot planning still relies on dynamics training with trajectories from the relevant domain."
+      "focus": "A dynamics predictor learns to forecast frozen DINOv2 spatial patch features from offline state-action trajectories. At test time, action sequences are optimized to bring predicted features close to the features of an image goal.",
+      "boundary": "Six environments include varied maze layouts, pushing with different object shapes, and multi-particle settings. Goal-directed planning uses neither a learned reward model nor an inverse-dynamics model."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -846,11 +846,11 @@
     },
     "annotation": {
       "why": "Separates controllable and reward-relevant information from other factors in observations.",
-      "focus": "The decomposition by controllability and reward relevance, and its effect on learning.",
-      "boundary": "Information irrelevant to the current task may matter for another task. The decomposition relies on structural assumptions."
+      "focus": "The latent state is factored according to controllability and reward relevance. The control model retains the controllable, reward-relevant component while modeling nuisance variation separately.",
+      "boundary": "DeepMind Control Suite variants and RoboDesk test policy learning under distractors; joint-position regression tests retained physical information. The abstraction is defined relative to the training reward."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -902,11 +902,11 @@
     },
     "annotation": {
       "why": "Formalizes models that preserve decision-relevant Bellman updates without reconstructing every world detail.",
-      "focus": "The policy and value-function classes over which Bellman updates remain equivalent.",
-      "boundary": "Equivalence is relative to specified function and policy classes; it does not guarantee suitability for arbitrary future tasks."
+      "focus": "Two models are value equivalent for a specified set of policies and functions when they produce the same Bellman updates. This defines model learning by the computations needed for value-based planning.",
+      "boundary": "Theoretical results characterize how the equivalent-model class shrinks as policy and function sets expand. Experiments compare value-equivalent learning with maximum-likelihood modeling; equivalence is relative to those sets."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -956,11 +956,11 @@
     },
     "annotation": {
       "why": "Probes learned world structure through inductive biases in new tasks.",
-      "focus": "How hypothesized world models generate diagnostic tasks and how learning behavior reveals inductive bias.",
-      "boundary": "The probe measures inductive bias, rather than ordinary linear decodability. Conclusions remain tied to the tested tasks and hypotheses."
+      "focus": "Inductive-bias probes adapt a foundation model to synthetic tasks generated by a proposed world model. The adaptation behavior tests whether pretraining favors the hypothesized underlying structure.",
+      "boundary": "Across several domains, strong training-task prediction can coexist with weak transfer of the proposed structure. Orbital-trajectory models provide a concrete test of transfer to new Newtonian-physics tasks."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1012,11 +1012,11 @@
     },
     "annotation": {
       "why": "Evaluates whether simulation reliably predicts the relative performance of real-world manipulation policies.",
-      "focus": "Paired real and simulated evaluations, policy rankings, visual matching, and variant aggregation.",
-      "boundary": "Perturbations within simulation alone do not demonstrate a reduced reality gap."
+      "focus": "The benchmark reduces visual and control differences between real and simulated manipulation setups, then evaluates the same policies in both. Its goal is to reproduce policy comparisons and responses to distribution shifts.",
+      "boundary": "More than 1,500 paired evaluations span two robot embodiments and eight task families. The reported evidence is agreement in real and simulated policy performance, rather than training a transferable dynamics model."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1078,11 +1078,11 @@
     },
     "annotation": {
       "why": "Examines how simulation fidelity affects transfer in visual navigation.",
-      "focus": "Which navigation simulation details are changed and how they affect transfer.",
-      "boundary": "The findings concern the navigation settings studied; they do not imply that lower fidelity is always preferable."
+      "focus": "A controlled comparison varies simulator fidelity for visual-navigation policy learning. Simple robot-motion models fitted to real data are compared with more detailed simulation physics.",
+      "boundary": "Habitat and iGibson experiments, followed by tests on A1, AlienGo, and Spot robots, examine learning speed, overfitting to simulator errors, and real-world navigation performance."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1134,11 +1134,11 @@
     },
     "annotation": {
       "why": "Tests physical prediction under extrapolation and compositional distribution shifts.",
-      "focus": "How distribution shifts are constructed and whether visual-quality metrics obscure physical successes or failures.",
-      "boundary": "The findings concern the tested models and datasets, rather than universal limitations of all video models."
+      "focus": "Diffusion video models are trained on a deterministic 2D testbed of motion and collisions. Separate splits test interpolation, extrapolation, and new combinations of familiar physical factors.",
+      "boundary": "Scaling improves in-distribution and some combinatorial predictions, while the tested models struggle with out-of-distribution physical scenarios. Additional experiments examine which appearance and motion factors drive case-based predictions."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1193,11 +1193,11 @@
     },
     "annotation": {
       "why": "Tests action-conditioned world models in closed-loop tasks, varying post-training data and test-time computation.",
-      "focus": "How action controllability, post-training data, and test-time computation affect closed-loop performance.",
-      "boundary": "The reported scaling results cover the tasks and computation ranges included in the evaluation."
+      "focus": "A shared action interface and online planning strategy connect heterogeneous world models to closed-loop environments. This makes task outcomes comparable across models with different generation interfaces.",
+      "boundary": "Four environments measure task success and examine action-conditioned post-training data and inference-time computation. The study contrasts these results with open-loop visual-quality measures."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1259,11 +1259,11 @@
     },
     "annotation": {
       "why": "Learns exploration behavior from model disagreement before downstream tasks are specified.",
-      "focus": "Model disagreement, predictive novelty, and subsequent task learning.",
-      "boundary": "General novelty does not necessarily identify the information most valuable for a particular task."
+      "focus": "An ensemble of latent predictors supplies a disagreement signal, and an exploration policy plans actions that seek expected future disagreement. Downstream task policies are then learned using the collected world model.",
+      "boundary": "Visual control tasks evaluate reward-free exploration followed by zero- or few-shot task adaptation. Tasks can be specified after the exploration phase."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1315,11 +1315,11 @@
     },
     "annotation": {
       "why": "Combines active interaction with system identification to improve simulation models.",
-      "focus": "How informative actions are chosen and how identified quantities enter the subsequent model.",
-      "boundary": "Estimating parameters within a given model class differs from discovering missing mechanisms."
+      "focus": "An initial simulator is used to design exploratory interactions. Real observations from those interactions refine simulator parameters, after which the refined model supports control planning.",
+      "boundary": "Robotic manipulation experiments identify properties including articulation and mass and evaluate the resulting sim-to-real controllers. Identification operates within the available simulator and asset model."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1369,11 +1369,11 @@
     },
     "annotation": {
       "why": "Selects exploratory interactions according to task-relevant information.",
-      "focus": "Task sensitivity, exploration rewards, stopping criteria, and privileged information available during training.",
-      "boundary": "The exploration policy uses privileged task information during training; this information is unavailable to the deployed policy."
+      "focus": "An exploration policy is rewarded according to how sensitive a privileged task policy is to errors in estimated object properties. An uncertainty criterion determines when to stop probing and execute the task.",
+      "boundary": "Puck striking and CartPole analyze the task relevance of physical properties; a KUKA iiwa setup tests property estimation and adjusted execution on physical objects."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1423,11 +1423,11 @@
     },
     "annotation": {
       "why": "Prioritizes stored experience using novelty and prediction error to support adaptation.",
-      "focus": "The roles of novelty, prediction error, and replay prioritization.",
-      "boundary": "Replaying stored experience differs from actively choosing new physical interactions."
+      "focus": "Curiosity-based replay priorities favor experience that is novel or poorly predicted when training a world model. The intervention changes which stored transitions are reused, complementing action-based exploration.",
+      "boundary": "An exploration-and-adaptation setting and Crafter test the replay rule, with DeepMind Control Suite used to check performance on established control tasks."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1477,11 +1477,11 @@
     },
     "annotation": {
       "why": "Combines video representation pretraining with action-conditioned post-training for robot planning.",
-      "focus": "What passive pretraining and action-conditioned post-training each learn, and the interfaces used in evaluation.",
-      "boundary": "Representation pretraining alone is not a complete planning system. The action interface requires relevant interaction data."
+      "focus": "Action-free joint-embedding prediction pretrains a video encoder on internet video. A subsequent action-conditioned model, V-JEPA 2-AC, is trained with robot trajectories and used to plan toward image goals.",
+      "boundary": "Evaluation spans motion understanding, action anticipation, video question answering, and pick-and-place planning on Franka robots in two labs. Robot planning uses action-conditioned post-training on DROID data."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1558,8 +1558,8 @@
     },
     "annotation": {
       "why": "Learns a compact world model end to end with joint-embedding predictive objectives.",
-      "focus": "The predictive loss, latent-distribution regularization, planning interface, and physical probes.",
-      "boundary": "The reported model has about 15M parameters. Training-time figures depend on the hardware, dataset, and optimization setup."
+      "focus": "The encoder and predictor train jointly from pixels with two losses: next-embedding prediction and a regularizer encouraging Gaussian-distributed embeddings. The resulting compact model supplies latent predictions for planning.",
+      "boundary": "Experiments cover 2D and 3D control tasks, probes of physical quantities, and surprise responses to implausible events. The reported model has approximately 15 million parameters."
     },
     "source_review": {
       "date": "2026-10-20",
@@ -1611,11 +1611,11 @@
     },
     "annotation": {
       "why": "Compares architecture, training objectives, and planners in JEPA world models.",
-      "focus": "Matched comparisons of architectures, training objectives, planning algorithms, and data scale.",
-      "boundary": "The findings concern the evaluated JEPA world-model family, not every type of world model."
+      "focus": "A component study varies world-model architecture, training objective, and planning algorithm within the joint-embedding predictive family. The resulting configuration combines the empirically favorable choices.",
+      "boundary": "Simulated environments and real robotic data support navigation and manipulation comparisons with DINO-WM and V-JEPA 2-AC. The study attributes planning performance to specific modeling and optimization choices."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {
@@ -1666,11 +1666,11 @@
     },
     "annotation": {
       "why": "Learns latent dynamics and actor-critic policies with a shared algorithm and hyperparameters across control tasks.",
-      "focus": "Which hyperparameters and algorithmic choices are shared, and which model parameters are trained per environment.",
-      "boundary": "A shared algorithm and hyperparameters do not imply a single pretrained checkpoint that generalizes everywhere without training."
+      "focus": "A recurrent latent world model generates imagined trajectories for actor-critic learning. Normalization, loss balancing, and value transformations stabilize optimization across domains.",
+      "boundary": "More than 150 tasks test a shared algorithm configuration, including Minecraft learning from scratch. Model and policy parameters are learned in each environment; the shared component is the algorithm and its hyperparameters."
     },
     "source_review": {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "depth": "metadata_abstract"
     },
     "code": {

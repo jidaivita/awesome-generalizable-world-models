@@ -110,7 +110,7 @@ Papers on learned world models and their generalization across object configurat
     intro += '''<a id="reading-route"></a>
 ## Reading Guide
 
-The [12-paper reading path](docs/reading-guide.md) connects representation analysis, predictive architectures, planning, and adaptation. Each entry links to a topic overview and identifies the research question it addresses.
+The [12-paper reading path](docs/reading-guide.md) connects representation analysis, predictive architectures, planning, and adaptation. Each entry summarizes the method, evaluation setting, and connections to the other papers.
 
 ## Related Resources
 
@@ -133,23 +133,22 @@ Original catalog text and illustrations: [CC BY 4.0](LICENSES/CC-BY-4.0.txt). Ma
         prefix=f"[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md)\n\n# {m['title']}\n\n{m['intro']}\n\n{m['scope']}\n"
         if m['id']=='M2':
             prefix+='''
-## Three lines of inquiry
+## Approaches to geometry
 
-| Line of inquiry | Papers | Key distinction |
+| Approach | Papers | Evidence |
 | :--- | :--- | :--- |
-| Emergent geometry and function | Interpreting Physics, SMDS, Origins | Observed structure, competing hypotheses, and functional evidence |
-| Geometric priors and dynamics learning | GRWM, Group-Structured Latent Space, GeoWorld | Where the prior comes from and what it independently contributes |
-| Geometry and adaptation | [Context and Diversity](m3-generalization.md#paper-context-diversity), [Dynamics Are Learned](m3-generalization.md#paper-dynamics-geometries) | Environment shifts, trajectory information, and transferable structure |
+| Analyze learned representations | Interpreting Physics; SMDS; Origins of Representation Manifolds | Physical-variable probes, tests of geometric hypotheses, and theory of feature similarity; the latter two study language models |
+| Regularize the representation | GRWM | State-oracle comparisons and ablations of geometric regularization in long-horizon prediction |
+| Specify the latent manifold | Group-Structured Latent Space; GeoWorld | Symmetry-based transitions for control, and hyperbolic representations for procedural planning |
 
-**Methods used in these studies:** PCA/SVD, linear probes, periodic-variable encodings, subspace comparisons, interventions, held-out evaluation, intrinsic-dimension estimation, and Riemannian optimization.
-
-For example, `z(θ) = (cos θ, sin θ, cos 2θ, sin 2θ, …)` has one underlying degree of freedom while spanning multiple linear directions. Physical degrees of freedom, vector dimension, linear span, intrinsic manifold dimension, and the number of intervention directions are different quantities. This is a mathematical illustration, not a measurement from a trained model.
+[Context and Diversity](m3-generalization.md#paper-context-diversity) and [Dynamics Are Learned](m3-generalization.md#paper-dynamics-geometries) connect representation structure to adaptation under environmental changes.
 '''
         prefix+='\n## Papers\n\n'
         for p in selected(m['id']):
-            prefix+=f"<a id=\"paper-{p['id']}\"></a>\n### {p['canonical_title']}\n\n{author_label(p)} · **{p['publication']['label']}** · {resources(p)}\n\n"
+            tag=f" · `{p['domain_label']}`" if p.get('domain_label') else ''
+            prefix+=f"<a id=\"paper-{p['id']}\"></a>\n### {p['canonical_title']}\n\n{author_label(p)} · **{p['publication']['label']}**{tag} · {resources(p)}\n\n"
             if p['aliases']:prefix+='Earlier titles / aliases: '+ '; '.join(p['aliases'])+'.\n\n'
-            prefix+=f"{p['annotation']['why']}\n\n- **Method and analysis:** {p['annotation']['focus']}\n- **Evaluation scope:** {p['annotation']['boundary']}\n"
+            prefix+=f"- **Method:** {p['annotation']['focus']}\n- **Evaluation:** {p['annotation']['boundary']}\n"
             if p['secondary_modules']:prefix+='- **Related topics:** '+' · '.join(f"[{bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in p['secondary_modules'])+'\n'
             prefix+='\n'
         prefix+=f"## Method comparisons\n\n{m['connections']}\n\n## Related topics\n\n"
@@ -172,16 +171,16 @@ These papers examine physical information in representations, learning from cont
         if i==6:route+='## 06–08 · World-model architectures and planning\n\nDINO-WM, LeWorldModel, and JEPA-WMs examine visual encoders, predictive objectives, and planning algorithms.\n\n'
         if i==9:route+='## 09–12 · Transfer and information gathering\n\nThese papers cover symmetry priors, changing dynamics, simulation-based policy evaluation, and task-informed exploration.\n\n'
         p=byid[r['id']]
-        route+=f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n- **Question:** {r['question']}\n- **Topic overview:** [{bymod[p['primary_module']]['title']}]({module_path(bymod[p['primary_module']]).removeprefix('docs/')}#paper-{p['id']})\n\n"
-    route+='''## Comparing papers
+        tag=f" · `{p['domain_label']}`" if p.get('domain_label') else ''
+        route+=f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n{author_label(p)} · **{p['publication']['label']}**{tag}\n\n{p['annotation']['focus']}\n\n{p['annotation']['boundary']}\n\n**Connection:** {r['connection']}\n\n[Topic overview: {bymod[p['primary_module']]['title']}]({module_path(bymod[p['primary_module']]).removeprefix('docs/')}#paper-{p['id']})\n\n"
+    route+='''## Cross-paper comparisons
 
-The comparisons address three questions:
-
-- **Representation:** What information or structure can be recovered from the model?
-- **Function:** What changes when that information is manipulated or removed?
-- **Transfer:** Which results hold under new tasks, environments, or dynamics?
-
-Comparisons depend on the supervision available to each model, whether the encoder and predictor are fixed or updated, and the evaluation conditions.
+| Comparison | Papers | What differs |
+| :--- | :--- | :--- |
+| Representation analysis and behavioral transfer | Interpreting Physics; SMDS; What Has a Foundation Model Found? | Decoding and intervention within a representation versus inductive bias on new tasks |
+| Learned and prescribed geometry | GRWM; Group-Structured Latent Space; Dynamics Are Learned | Regularizing an encoder, choosing a symmetry-based manifold, or shaping a trajectory embedding for adaptation |
+| Encoder, predictor, and planner | DINO-WM; LeWorldModel; JEPA-WMs | Frozen versus jointly trained visual features, predictive objectives, and action optimization |
+| Adaptation and evaluation | Context and Diversity; SIMPLER; Poke and Strike | Prediction from context, sim-real policy agreement, and task-sensitive information gathering |
 
 [Paper-note template](../templates/paper-note.md) · [Comparison template](../templates/comparison-note.md) · [Back to papers](../README.md#papers)
 '''

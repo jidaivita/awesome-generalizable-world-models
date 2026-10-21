@@ -4,9 +4,9 @@
 
 # Exploration & Experience Replay
 
-Exploration determines which experience to collect; replay determines which experience to reuse. The papers study information gain, system identification, task sensitivity, and replay selection.
+Agents can improve their models by choosing informative interactions and by selecting which stored transitions to revisit. These papers cover anticipated novelty, simulator-parameter identification, task-sensitive probing, and prioritized replay.
 
-Parameter identification within a model class, learning missing mechanisms, active collection, and experience replay have different assumptions and costs.
+The approaches value experience by different criteria: model disagreement, parameter information, sensitivity of task success, or prediction difficulty.
 
 ## Papers
 
@@ -15,10 +15,8 @@ Parameter identification within a model class, learning missing mechanisms, acti
 
 Marius Memmel et al. · **ICLR 2024** · [Paper](https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html)
 
-Combines active interaction with system identification to improve simulation models.
-
-- **Method and analysis:** How informative actions are chosen and how identified quantities enter the subsequent model.
-- **Evaluation scope:** Estimating parameters within a given model class differs from discovering missing mechanisms.
+- **Method:** An initial simulator is used to design exploratory interactions. Real observations from those interactions refine simulator parameters, after which the refined model supports control planning.
+- **Evaluation:** Robotic manipulation experiments identify properties including articulation and mass and evaluate the resulting sim-to-real controllers. Identification operates within the available simulator and asset model.
 - **Related topics:** [Evaluation & Sim-to-Real Transfer](m5-reliability.md)
 
 <a id="paper-curious-replay"></a>
@@ -26,10 +24,8 @@ Combines active interaction with system identification to improve simulation mod
 
 Isaac Kauvar et al. · **ICML 2023** · [Paper](https://proceedings.mlr.press/v202/kauvar23a.html)
 
-Prioritizes stored experience using novelty and prediction error to support adaptation.
-
-- **Method and analysis:** The roles of novelty, prediction error, and replay prioritization.
-- **Evaluation scope:** Replaying stored experience differs from actively choosing new physical interactions.
+- **Method:** Curiosity-based replay priorities favor experience that is novel or poorly predicted when training a world model. The intervention changes which stored transitions are reused, complementing action-based exploration.
+- **Evaluation:** An exploration-and-adaptation setting and Crafter test the replay rule, with DeepMind Control Suite used to check performance on established control tasks.
 - **Related topics:** [Generalization & Context-Based Adaptation](m3-generalization.md)
 
 <a id="paper-plan2explore"></a>
@@ -37,10 +33,8 @@ Prioritizes stored experience using novelty and prediction error to support adap
 
 Ramanan Sekar et al. · **ICML 2020** · [Paper](https://proceedings.mlr.press/v119/sekar20a.html)
 
-Learns exploration behavior from model disagreement before downstream tasks are specified.
-
-- **Method and analysis:** Model disagreement, predictive novelty, and subsequent task learning.
-- **Evaluation scope:** General novelty does not necessarily identify the information most valuable for a particular task.
+- **Method:** An ensemble of latent predictors supplies a disagreement signal, and an exploration policy plans actions that seek expected future disagreement. Downstream task policies are then learned using the collected world model.
+- **Evaluation:** Visual control tasks evaluate reward-free exploration followed by zero- or few-shot task adaptation. Tasks can be specified after the exploration phase.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-poke-strike"></a>
@@ -48,15 +42,13 @@ Learns exploration behavior from model disagreement before downstream tasks are 
 
 Marina Y. Aoyama et al. · **CoRL 2025** · [Paper](https://proceedings.mlr.press/v305/aoyama25a.html)
 
-Selects exploratory interactions according to task-relevant information.
-
-- **Method and analysis:** Task sensitivity, exploration rewards, stopping criteria, and privileged information available during training.
-- **Evaluation scope:** The exploration policy uses privileged task information during training; this information is unavailable to the deployed policy.
+- **Method:** An exploration policy is rewarded according to how sensitive a privileged task policy is to errors in estimated object properties. An uncertainty criterion determines when to stop probing and execute the task.
+- **Evaluation:** Puck striking and CartPole analyze the task relevance of physical properties; a KUKA iiwa setup tests property estimation and adjusted execution on physical objects.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 ## Method comparisons
 
-Plan2Explore studies exploration before tasks are known; ASID connects interaction to identification; Poke and Strike focuses on task-relevant information; Curious Replay studies reuse. They use different criteria to value information and measure its benefit to a task.
+Plan2Explore chooses actions before a downstream reward is specified. ASID chooses interactions to refine a simulator, while Poke and Strike weights identification errors by their consequences for a particular task. Curious Replay operates on already collected experience, changing the data used to update the model rather than the actions used to collect it.
 
 ## Related topics
 

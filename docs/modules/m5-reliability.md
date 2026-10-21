@@ -4,9 +4,9 @@
 
 # Evaluation & Sim-to-Real Transfer
 
-Visual quality, physical accuracy, and task performance measure different aspects of reliability. The papers study physical extrapolation, closed-loop evaluation, and paired real and simulated policy tests.
+Evaluation protocols determine whether a model supports reliable decisions beyond its training conditions. These papers test physical extrapolation, closed-loop task performance, and agreement between simulated and real policy outcomes.
 
-Performance within simulation, agreement in real-world policy rankings, and successful transfer are different forms of evidence.
+The unit of evaluation ranges from a predicted trajectory to a complete policy; the comparisons make those differences explicit.
 
 ## Papers
 
@@ -17,10 +17,8 @@ Xuanlin Li et al. · **CoRL 2024 (proceedings 2025)** · [Paper](https://proceed
 
 Earlier titles / aliases: SIMPLER.
 
-Evaluates whether simulation reliably predicts the relative performance of real-world manipulation policies.
-
-- **Method and analysis:** Paired real and simulated evaluations, policy rankings, visual matching, and variant aggregation.
-- **Evaluation scope:** Perturbations within simulation alone do not demonstrate a reduced reality gap.
+- **Method:** The benchmark reduces visual and control differences between real and simulated manipulation setups, then evaluates the same policies in both. Its goal is to reproduce policy comparisons and responses to distribution shifts.
+- **Evaluation:** More than 1,500 paired evaluations span two robot embodiments and eight task families. The reported evidence is agreement in real and simulated policy performance, rather than training a transferable dynamics model.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-physical-law-perspective"></a>
@@ -28,10 +26,8 @@ Evaluates whether simulation reliably predicts the relative performance of real-
 
 Bingyi Kang et al. · **ICML 2025** · [Paper](https://proceedings.mlr.press/v267/kang25g.html)
 
-Tests physical prediction under extrapolation and compositional distribution shifts.
-
-- **Method and analysis:** How distribution shifts are constructed and whether visual-quality metrics obscure physical successes or failures.
-- **Evaluation scope:** The findings concern the tested models and datasets, rather than universal limitations of all video models.
+- **Method:** Diffusion video models are trained on a deterministic 2D testbed of motion and collisions. Separate splits test interpolation, extrapolation, and new combinations of familiar physical factors.
+- **Evaluation:** Scaling improves in-distribution and some combinatorial predictions, while the tested models struggle with out-of-distribution physical scenarios. Additional experiments examine which appearance and motion factors drive case-based predictions.
 - **Related topics:** [Generalization & Context-Based Adaptation](m3-generalization.md)
 
 <a id="paper-rethinking-sim2real"></a>
@@ -39,10 +35,8 @@ Tests physical prediction under extrapolation and compositional distribution shi
 
 Joanne Truong et al. · **CoRL 2022 (proceedings 2023)** · [Paper](https://proceedings.mlr.press/v205/truong23a.html)
 
-Examines how simulation fidelity affects transfer in visual navigation.
-
-- **Method and analysis:** Which navigation simulation details are changed and how they affect transfer.
-- **Evaluation scope:** The findings concern the navigation settings studied; they do not imply that lower fidelity is always preferable.
+- **Method:** A controlled comparison varies simulator fidelity for visual-navigation policy learning. Simple robot-motion models fitted to real data are compared with more detailed simulation physics.
+- **Evaluation:** Habitat and iGibson experiments, followed by tests on A1, AlienGo, and Spot robots, examine learning speed, overfitting to simulator errors, and real-world navigation performance.
 - **Related topics:** [Generalization & Context-Based Adaptation](m3-generalization.md)
 
 <a id="paper-world-in-world"></a>
@@ -50,15 +44,13 @@ Examines how simulation fidelity affects transfer in visual navigation.
 
 Jiahan Zhang et al. · **ICLR 2026** · [Paper](https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html)
 
-Tests action-conditioned world models in closed-loop tasks, varying post-training data and test-time computation.
-
-- **Method and analysis:** How action controllability, post-training data, and test-time computation affect closed-loop performance.
-- **Evaluation scope:** The reported scaling results cover the tasks and computation ranges included in the evaluation.
+- **Method:** A shared action interface and online planning strategy connect heterogeneous world models to closed-loop environments. This makes task outcomes comparable across models with different generation interfaces.
+- **Evaluation:** Four environments measure task success and examine action-conditioned post-training data and inference-time computation. The study contrasts these results with open-loop visual-quality measures.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md) · [Predictive Architectures & Pretraining](m7-scaling.md)
 
 ## Method comparisons
 
-SIMPLER asks whether simulation can reliably compare real-world policies; Rethinking Sim2Real examines fidelity and transfer. Physical Law Perspective and World-In-World add physical testing and closed-loop evaluation.
+SIMPLER holds policies fixed and tests agreement between simulated and real evaluations; Rethinking Sim2Real changes the simulator used for policy training and measures transfer. Physical Law Perspective tests predicted motion on controlled distribution shifts. World-In-World evaluates the full model-and-planner loop through task success.
 
 ## Related topics
 

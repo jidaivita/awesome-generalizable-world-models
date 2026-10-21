@@ -4,9 +4,9 @@
 
 # Object-Centric & Relational Models
 
-Object-centric representations and interaction graphs encode structure for dynamics prediction. The papers examine how this structure is learned and which architectural or training assumptions support it.
+Objects and relations provide a structured state space for predicting interactions. This section covers latent interaction graphs, object-factorized visual representations, sparse attention, and object-level masking.
 
-Object decomposition, interaction graphs, and sparse attention provide different structural assumptions for dynamics prediction.
+The methods differ in whether object structure is supplied, inferred from observations, or imposed by the prediction objective.
 
 ## Papers
 
@@ -15,10 +15,8 @@ Object decomposition, interaction graphs, and sparse attention provide different
 
 Heejeong Nam et al. · **ICML 2026** · [Paper](https://proceedings.mlr.press/v306/nam26c.html) · [Code](https://github.com/galilai-group/cjepa)
 
-Combines object-level latent masking with joint-embedding predictive learning.
-
-- **Method and analysis:** How object-level latent masking creates structured partial observability and affects the use of relational information.
-- **Evaluation scope:** Latent masking is not automatically an intervention on a real physical causal mechanism.
+- **Method:** The predictor reconstructs masked object embeddings from the remaining object context. This training objective limits direct access to the target object and makes relational information useful for prediction.
+- **Evaluation:** Visual question answering tests counterfactual reasoning, while control experiments compare planning with object-level and patch-level latent inputs. The structured partial observability comes from training-time masking.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-cswm"></a>
@@ -26,10 +24,8 @@ Combines object-level latent masking with joint-embedding predictive learning.
 
 Thomas Kipf et al. · **ICLR 2020** · [Paper](https://arxiv.org/abs/1911.12247)
 
-Learns object-centric representations and relational dynamics with a contrastive objective.
-
-- **Method and analysis:** The distinct roles of object representations, relational dynamics, and the contrastive objective.
-- **Evaluation scope:** Success on structured benchmarks does not establish open-world compositional generalization.
+- **Method:** Each image is encoded as a set of object embeddings. A graph neural network predicts their transitions, trained with a contrastive loss that separates predicted future states from negative samples instead of reconstructing pixels.
+- **Evaluation:** Evaluations cover independently manipulated objects, simple Atari games, and multi-object physics simulations, comparing structured latent predictions with reconstruction-based models.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-nri"></a>
@@ -37,10 +33,8 @@ Learns object-centric representations and relational dynamics with a contrastive
 
 Thomas Kipf et al. · **ICML 2018** · [Paper](https://proceedings.mlr.press/v80/kipf18a.html)
 
-Infers latent interaction graphs from trajectories with a graph-based dynamics decoder.
-
-- **Method and analysis:** The latent graph, the graph-based dynamics decoder, and whether relation recovery agrees with predictive performance.
-- **Evaluation scope:** Recovering relations from observations does not establish causal identification under arbitrary conditions.
+- **Method:** A variational encoder infers a latent interaction graph from observed trajectories; a graph neural network decoder predicts how the interacting entities move. The graph and dynamics are learned jointly without relation labels.
+- **Evaluation:** Tests recover known interactions in simulated physical systems and predict trajectories in motion-capture and sports-tracking data. Relation recovery is evaluated where a reference graph is available.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-spartan"></a>
@@ -48,15 +42,13 @@ Infers latent interaction graphs from trajectories with a graph-based dynamics d
 
 Anson Lei et al. · **NeurIPS 2025** · [Paper](https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2c33c1753e1f1924f5560b11fc4444f-Abstract-Conference.html)
 
-Uses sparse, context-dependent interactions to adapt to changes in mechanisms.
-
-- **Method and analysis:** Sparse attention, intervention settings, few-shot adaptation, and the priors available to the model.
-- **Evaluation scope:** Generalization is evaluated under sparse mechanism changes with object-centric modeling assumptions.
+- **Method:** Sparsity regularization on attention between object-factored tokens produces context-dependent interaction graphs. An adaptation procedure updates the model after sparse changes to environmental mechanisms with unknown intervention targets.
+- **Evaluation:** Observation-based environments test interaction-graph recovery, few-shot adaptation to dynamics changes, and robustness to distractors under the object-centric modeling setup.
 - **Related topics:** [Generalization & Context-Based Adaptation](m3-generalization.md)
 
 ## Method comparisons
 
-NRI infers interaction graphs, while C-SWM learns object representations with a contrastive objective. SPARTAN uses sparse attention; Causal-JEPA masks object-level latents. These methods differ in how object information is obtained and how relations enter the predictor.
+NRI learns a graph over observed entities; C-SWM jointly learns object embeddings from pixels and graph-based transitions. SPARTAN makes interactions sparse and context-dependent, whereas C-JEPA makes missing object information the prediction target. Their evidence therefore ranges from relation recovery to adaptation after mechanism changes and counterfactual reasoning.
 
 ## Related topics
 

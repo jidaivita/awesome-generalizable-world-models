@@ -4,9 +4,9 @@
 
 # Predictive Architectures & Pretraining
 
-The papers examine video pretraining, joint-embedding predictive learning, and world-model-based control at different data and model scales. Their architectures separate representation learning, dynamics prediction, and planning in different ways.
+World-model architectures divide representation learning, dynamics prediction, and policy optimization in different ways. This section covers video pretraining, end-to-end joint-embedding prediction, component studies, and control learned through imagined trajectories.
 
-Large-scale representation pretraining and executable planning involve different stages. A shared algorithm does not imply one checkpoint that works in every environment.
+The comparisons separate transferable pretrained encoders from environment-specific predictors and policies.
 
 ## Papers
 
@@ -17,10 +17,8 @@ Lucas Maes et al. · **arXiv 2026** · [Paper](https://arxiv.org/abs/2603.19312)
 
 Earlier titles / aliases: LeWM.
 
-Learns a compact world model end to end with joint-embedding predictive objectives.
-
-- **Method and analysis:** The predictive loss, latent-distribution regularization, planning interface, and physical probes.
-- **Evaluation scope:** The reported model has about 15M parameters. Training-time figures depend on the hardware, dataset, and optimization setup.
+- **Method:** The encoder and predictor train jointly from pixels with two losses: next-embedding prediction and a regularizer encouraging Gaussian-distributed embeddings. The resulting compact model supplies latent predictions for planning.
+- **Evaluation:** Experiments cover 2D and 3D control tasks, probes of physical quantities, and surprise responses to implausible events. The reported model has approximately 15 million parameters.
 - **Related topics:** [Representation Geometry & Analysis](m2-geometry.md) · [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-dreamerv3"></a>
@@ -30,10 +28,8 @@ Danijar Hafner et al. · **Nature 2025** · [Paper](https://www.nature.com/artic
 
 Earlier titles / aliases: DreamerV3.
 
-Learns latent dynamics and actor-critic policies with a shared algorithm and hyperparameters across control tasks.
-
-- **Method and analysis:** Which hyperparameters and algorithmic choices are shared, and which model parameters are trained per environment.
-- **Evaluation scope:** A shared algorithm and hyperparameters do not imply a single pretrained checkpoint that generalizes everywhere without training.
+- **Method:** A recurrent latent world model generates imagined trajectories for actor-critic learning. Normalization, loss balancing, and value transformations stabilize optimization across domains.
+- **Evaluation:** More than 150 tasks test a shared algorithm configuration, including Minecraft learning from scratch. Model and policy parameters are learned in each environment; the shared component is the algorithm and its hyperparameters.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-vjepa2"></a>
@@ -41,10 +37,8 @@ Learns latent dynamics and actor-critic policies with a shared algorithm and hyp
 
 Mido Assran et al. · **arXiv technical report 2025** · [Paper](https://arxiv.org/abs/2506.09985)
 
-Combines video representation pretraining with action-conditioned post-training for robot planning.
-
-- **Method and analysis:** What passive pretraining and action-conditioned post-training each learn, and the interfaces used in evaluation.
-- **Evaluation scope:** Representation pretraining alone is not a complete planning system. The action interface requires relevant interaction data.
+- **Method:** Action-free joint-embedding prediction pretrains a video encoder on internet video. A subsequent action-conditioned model, V-JEPA 2-AC, is trained with robot trajectories and used to plan toward image goals.
+- **Evaluation:** Evaluation spans motion understanding, action anticipation, video question answering, and pick-and-place planning on Franka robots in two labs. Robot planning uses action-conditioned post-training on DROID data.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-jepa-wms"></a>
@@ -52,15 +46,13 @@ Combines video representation pretraining with action-conditioned post-training 
 
 Basile Terver et al. · **TMLR 2026** · [Paper](https://arxiv.org/abs/2512.24497) · [Code](https://github.com/facebookresearch/jepa-wms)
 
-Compares architecture, training objectives, and planners in JEPA world models.
-
-- **Method and analysis:** Matched comparisons of architectures, training objectives, planning algorithms, and data scale.
-- **Evaluation scope:** The findings concern the evaluated JEPA world-model family, not every type of world model.
+- **Method:** A component study varies world-model architecture, training objective, and planning algorithm within the joint-embedding predictive family. The resulting configuration combines the empirically favorable choices.
+- **Evaluation:** Simulated environments and real robotic data support navigation and manipulation comparisons with DINO-WM and V-JEPA 2-AC. The study attributes planning performance to specific modeling and optimization choices.
 - **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 ## Method comparisons
 
-LeWorldModel trains an encoder and predictor jointly. JEPA-WMs compares architectures, objectives, and planners. V-JEPA 2 separates video pretraining from action-conditioned post-training, while DreamerV3 learns world models and policies within each environment.
+V-JEPA 2 separates broad video pretraining from action-conditioned robot modeling; LeWorldModel jointly learns its encoder and predictor from pixels. JEPA-WMs compares choices within this predictive family. DreamerV3 instead couples an environment-specific world model to actor-critic learning, sharing its algorithm configuration across tasks.
 
 ## Related topics
 

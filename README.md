@@ -215,7 +215,7 @@ Papers on learned world models and their generalization across object configurat
 <a id="reading-route"></a>
 ## Reading Guide
 
-The [12-paper reading path](docs/reading-guide.md) connects representation analysis, predictive architectures, planning, and adaptation. Each entry links to a topic overview and identifies the research question it addresses.
+The [12-paper reading path](docs/reading-guide.md) connects representation analysis, predictive architectures, planning, and adaptation. Each entry summarizes the method, evaluation setting, and connections to the other papers.
 
 ## Related Resources
 
