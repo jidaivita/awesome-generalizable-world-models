@@ -1,32 +1,23 @@
-# 围绕实际问题的标题
+# Topic Title
 
-## 为什么值得讨论
+## The question
 
-用具体疑问引入。
+Introduce the research question and why it matters.
 
-## 论文做了什么
+## The approach
 
-保留理解核心思想必需的设置和方法。
+Explain the central idea and the setup needed to understand it.
 
-## 最有帮助的一条证据
+## The evidence
 
-说明比较了谁、改变了什么、观察了什么。引用图表时注明论文、图号及原始来源。
+Describe the comparison, the observation, and the conclusion it supports. Attribute figures to their original paper and figure number.
 
-## 我的解读
+## Discussion
 
-说明自己的理解，并与作者结论区分。
+Separate the authors' findings from interpretation. Include limitations that materially affect the conclusion and connections to related work.
 
-## 适用范围与开放问题
+## References
 
-只保留理解结论必需的限定。
+Paper titles and source links:
 
-## 来源
-
-论文标题与公开链接：<br>
-公开笔记链接（如有）：
-
----
-
-从已校对的笔记提取内容，公开前确认不含私人链接、未发表实验设计或导师沟通。
-
-[返回首页](../README.md#notes)
+[Reading guide](../docs/reading-guide.md) · [Overview](../README.md)

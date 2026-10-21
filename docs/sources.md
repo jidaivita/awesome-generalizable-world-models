@@ -1,22 +1,20 @@
-# 来源与编辑说明
+# Sources and Acknowledgments
 
-[← 首页](../README.md)
+[← Overview](../README.md)
 
-## 初始内容
+## Paper information
 
-本版的 30 篇精选论文、七模块框架与 12 篇阅读路线来自用户提供的《世界模型研究地图：调研结论与 Codex 实施说明》v0.2，原来源核验日期为 **2026-10-20**。
+Each record links to a formal publication page or author preprint. Where available, entries also include official code and project pages. Earlier titles are retained as aliases.
 
-配套 `papers.seed.json` 未随本次材料提供，因此结构化条目由规划附录逐项提取。保留其中的正式题名、别名、链接、编辑注释和来源阅读范围；交叉模块按照问题联系补充。未知的首次公开年份保持为空。
+The list includes descriptions of contributions and scope, rather than a ranking of paper quality. Geometric methods developed for language models are identified as such; their findings are not attributed to world models without evidence.
 
-规划中标明的关键正文阅读与元数据／摘要核验是原资料的记录，不代表本仓库维护者或读者已经精读，也不代表独立复现。资源可用性检查与论文内容核验分别进行。
+## Related resources
 
-用户确认从空仓库开始，本次没有导入旧版 40 篇资料，也不声称已完成旧资料迁移。后续如提供旧条目，可以保留为扩展资料并按稳定 ID、arXiv 和别名去重。
+- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models)
+- [Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers)
+- [Awesome Machine Learning](https://github.com/josephmisiti/awesome-machine-learning)
+- [Deep Learning for Object Detection](https://github.com/hoya012/deep_learning_object_detection)
 
-## 组织方式参考
+## Visual assets
 
-参考以下公开仓库的内容组织方式，正文与注释来自上述规划和本仓库的编辑整理：
-
-- [Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers)：明确的精选范围、分类目录和紧凑论文条目。
-- [Anomaly Detection Resources](https://github.com/yzhao062/anomaly-detection-resources)：按研究问题组织资源，区分论文与配套材料。
-
-本仓库采用 GitHub 原生 Markdown、简洁统计徽章、问题导向的入门卡片、页内目录与模块导航。主题分类不代表论文质量排名。
+The [header illustration](../assets/research-map.svg) is an original vector composition for this repository. It represents three research themes, not an experimental finding or a specific model architecture. See the [asset notes](../assets/README.md).

@@ -1,26 +1,26 @@
-# 主题问题
+# Research Question
 
-## 共同现象
+## Common setting
 
-这些论文的共同出发点是什么？
+What phenomenon or task connects the papers?
 
-## 各自的解释和证据
+## Comparison
 
-| 工作 | 核心解释 | 关键证据与定位 | 适用条件 |
+| Paper | Explanation or method | Key evidence | Assumptions and evaluation scope |
 | :--- | :--- | :--- | :--- |
-| 论文 A | | | |
-| 论文 B | | | |
+| Paper A | | | |
+| Paper B | | | |
 
-## 放在一起看
+## Differences that matter
 
-- 它们是否真的在回答同一个问题？
-- 实验设置有什么关键差异？
-- 分别支持了什么解释，又留下哪些问题？
+Compare supervision, data distributions, model components, interventions, and evaluation protocols.
 
-## 当前理解
+## Synthesis
 
-目前可以得到的结论：<br>
-不能据此推出的结论：<br>
-下一步需要核查的一件事：
+Which conclusions agree? Which apparent disagreements arise from different settings? What remains unresolved?
 
-[返回首页](../README.md#notes)
+## References
+
+Link the papers and identify the relevant sections or figures.
+
+[Reading guide](../docs/reading-guide.md) · [Overview](../README.md)

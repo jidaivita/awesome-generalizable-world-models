@@ -1,38 +1,35 @@
-# 论文标题
+# Paper Title
 
-原文：<br>
-阅读日期：<br>
-阅读范围：摘要 / 关键章节 / 全文（由本人填写）
+Paper link:
 
-## 一句话问题
+## Research question
 
-它试图区分或解决什么？为什么已有指标不能直接回答？
+What problem does the paper address? Which competing explanations or limitations motivate it?
 
-## 核心解释与方法
+## Method
 
-作者主张什么？有哪些合理替代解释？方法中哪个部分对应这个区别？
+Describe the central mechanism, the information available to the model, and the assumptions it relies on.
 
-## 最关键的证据
+## Evidence
 
-- 实验／图表定位：
-- 比较对象与受控变量：
-- 观察到什么：
-- 这个结果支持什么：
-- 还不能说明什么：
+| Figure or experiment | Comparison | Observation | Supported conclusion |
+| :--- | :--- | :--- | :--- |
+| | | | |
 
-## 我的理解
+## Scope
 
-- 可以独立复述的核心思想：
-- 仍不理解或需要核查的地方：
-- 与已有论文的联系：
+Which tasks, environments, model families, and distribution shifts were evaluated? Which conclusions require additional evidence?
 
-## 资源与下一步
+## Connections
 
-代码／数据／权重入口：<br>
-下一步只写一件具体事情：
+How does the work relate to other approaches to the same question?
 
----
+## Open questions
 
-个人新假设和未发表实验设计另存私人页；公开时保留原文结论、个人解读和未知项的区别。
+Record unresolved definitions, alternative explanations, or useful follow-up comparisons.
 
-[返回首页](../README.md#notes)
+## Resources
+
+Code, data, checkpoints, and project page:
+
+[Reading guide](../docs/reading-guide.md) · [Overview](../README.md)

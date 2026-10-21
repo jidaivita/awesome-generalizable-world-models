@@ -5,7 +5,8 @@ from pathlib import Path
 from build import ROOT, BEGIN, END, public_note_paths, read_sources, render
 
 STATIC = ('templates/paper-note.md', 'templates/comparison-note.md', 'templates/sharing-note.md',
-          'CONTRIBUTING.md', 'docs/maintenance.md', 'docs/sources.md')
+          'CONTRIBUTING.md', 'docs/maintenance.md', 'docs/sources.md',
+          'assets/research-map.svg', 'assets/README.md')
 
 
 def export(root, output):

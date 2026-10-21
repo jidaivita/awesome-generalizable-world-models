@@ -45,9 +45,8 @@ def render(root=ROOT):
     papers, cfg, manifest = read_sources(root)
     modules = cfg['modules']; byid = {p['id']: p for p in papers}; bymod = {m['id']: m for m in modules}
     notes = public_note_paths(root, manifest)
-    rank = {row['id']: i for i, row in enumerate(cfg['route'])}
     def selected(mid):
-        return sorted((p for p in papers if p['primary_module'] == mid and p['collection'] == 'seed_v0_2'), key=lambda p: (rank.get(p['id'], 100), p['canonical_title'].casefold()))
+        return sorted((p for p in papers if p['primary_module'] == mid and p['collection'] == 'seed_v0_2'), key=lambda p: p['canonical_title'].casefold())
     total = sum(p['collection'] == 'seed_v0_2' for p in papers)
     out = {}
     intro = '''<a id="top"></a>
@@ -55,146 +54,139 @@ def render(root=ROOT):
 
 # Awesome Generalizable World Models
 
-**世界模型研究地图 · 机理、表征几何、泛化与适应**
+**Representations · Dynamics · Generalization · Planning**
 
-*How is world knowledge learned, organized, used, and adapted?*
+![A research map connecting representation geometry, generalization, and knowledge use](assets/research-map.svg)
 
 '''
-    intro += f'![Curated papers](https://img.shields.io/badge/精选论文-{total}-2563eb?style=flat-square) ![Reading route](https://img.shields.io/badge/阅读路线-{len(cfg["route"])}-0f766e?style=flat-square) ![Research modules](https://img.shields.io/badge/研究模块-{len(modules)}-7c3aed?style=flat-square)\n'
+    intro += f'![Papers](https://img.shields.io/badge/Papers-{total}-2563eb?style=flat-square) ![Reading route](https://img.shields.io/badge/Reading_route-{len(cfg["route"])}-0f766e?style=flat-square) ![Research modules](https://img.shields.io/badge/Modules-{len(modules)}-7c3aed?style=flat-square)\n'
     intro += '''
-[开始阅读](#start-here) · [阅读路线](#reading-route) · [七个模块](#research-map) · [全部精选](#papers) · [参与维护](CONTRIBUTING.md)
+[Start Here](#start-here) · [Contents](#research-map) · [Reading Path](#reading-route) · [Paper List](#papers) · [Contribute](CONTRIBUTING.md)
 
 </div>
 
 ---
 
-模型如何从有限经验中形成可迁移的世界知识？这些知识如何组织、如何被使用，又如何在新环境中被修正？
+**How do models learn transferable world knowledge from limited experience—and how is that knowledge organized, used, and revised?**
 
-这里整理与这些问题直接相关的世界模型论文，覆盖表征、动态学习、预测、规划和适应。当前重点是 **表征几何 → 泛化与上下文学习 → 知识的实际使用**。每篇都附有收录理由，帮助从一个具体问题进入阅读。
+Papers on learned world representations, dynamics, generalization, and planning. The list covers how models organize physical information, adapt to unfamiliar environments, and use learned knowledge for prediction and decisions.
 
 <a id="start-here"></a>
-## Start Here · 从两个问题出发
+## Start Here
 
-| 01 · 知识怎样组织？ | 02 · 新经验怎样起作用？ |
+Two complementary entry points into the central questions:
+
+| 01 · How is knowledge organized? | 02 · What does new experience change? |
 | :--- | :--- |
 '''
     a,b=byid['interpreting-physics'],byid['context-diversity']
     intro += f"| **[{a['canonical_title']}]({a['links']['paper']})** | **[{b['canonical_title']}]({b['links']['paper']})** |\n"
-    intro += '''| 从物理量、子空间与干预理解表征的组织和功能。 | 区分识别熟悉环境与从当前经历学习动力学。 |
-| **带着问题读：** 可解码的信息，在模型行为中起了什么作用？ | **带着问题读：** 上下文带来的收益，究竟来自什么机制？ |
-
-两篇论文共同提供一个阅读起点：提出明确的解释，寻找能够区分它们的对照，再判断结论覆盖到哪里。
+    intro += '''| Physical variables, subspaces, and interventions reveal how information is represented. | Environment recognition and environment learning offer different explanations for adaptation. |
+| **Ask:** Does decodable information actually influence model behavior? | **Ask:** What mechanism explains the benefit of context? |
 
 <a id="research-map"></a>
-## Research Map · 七个模块
+## Contents
 
-| 模块 | 核心问题 | 精选 | 阅读指引 |
-| :--- | :--- | :---: | :---: |
+| Topic | Papers | Reading guide |
+| :--- | :---: | :--- |
 '''
     for m in modules:
-        focus=' ★' if m['id'] in ['M2','M3','M4'] else ''
-        intro += f"| [{m['id']} · {m['title']}{focus}](#{m['id'].lower()}) | {m['question']} | {len(selected(m['id']))} | [进入模块]({module_path(m)}) |\n"
-    intro += '\n★ 近期重点。模块用于组织问题，每篇仅计入一个主模块；关联标签连接其他方向。\n\n'
+        intro += f"| [{m['title']}](#{m['id'].lower()}) | {len(selected(m['id']))} | [Overview & connections]({module_path(m)}) |\n"
+    intro += '\nPapers are listed alphabetically within each topic. The guides link related work across topics.\n\n'
     intro += '''<a id="reading-route"></a>
-## Reading Route · 12 篇问题链
+## Reading Path
 
-从机制问题出发，经过分析方法，再连接预测、规划与适应。可以按当前疑问选读；这条路线不是开始实践前的必修清单。
+**Mechanisms → geometry → planning → adaptation.** The [reading guide](docs/reading-guide.md) connects 12 papers across these topics.
 
-| # | 论文 | 这一步关注什么 |
+<details>
+<summary>View the 12-paper reading path</summary>
+
+
+| # | Paper | Question to take away |
 | :---: | :--- | :--- |
 '''
     for i,r in enumerate(cfg['route'],1):intro += f"| {i:02d} | [{r['label']}](#paper-{r['id']}) | {r['question']} |\n"
-    intro += '\n[查看完整阅读指引与最小产物 →](docs/reading-guide.md)\n\n<a id="papers"></a>\n## Selected Papers · 精选论文\n\n**首读** 为两篇锚点，**路线** 为其余推荐阅读条目。发表状态与来源按条目记录，代码链接表示资源入口。\n\n'
+    intro += '\n</details>\n\n[Read the guide →](docs/reading-guide.md)\n\n<a id="papers"></a>\n## Papers\n\nEntries include a paper link, publication information, available code or project links, and a short description.\n\n'
     for m in modules:
-        intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['id']} · {m['title']}\n\n*{m['english']}*\n\n> {m['question']}\n\n"
+        intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['title']}\n\n> {m['question']}\n\n"
         for p in selected(m['id']):
-            tag={'anchor':' · **首读**','core':' · **路线**','reference':''}[p['priority']]
-            intro += f"<a id=\"paper-{p['id']}\"></a>\n- **[{p['canonical_title']}]({p['links']['paper']})**{tag}<br>\n  {p['publication']['label']} · {resources(p)}<br>\n  {p['annotation']['why']}\n\n"
-        intro += f"[阅读重点与论文联系 →]({module_path(m)}) · [返回目录 ↑](#research-map)\n\n"
-    intro += '''<a id="notes"></a>
-## Notes · 阅读与讨论
+            intro += f"<a id=\"paper-{p['id']}\"></a>\n- **[{p['canonical_title']}]({p['links']['paper']})**<br>\n  {p['publication']['label']} · {resources(p)}<br>\n  {p['annotation']['why']}\n\n"
+        intro += f"[Reading notes and connections →]({module_path(m)}) · [Back to map ↑](#research-map)\n\n"
+    intro += """## Related Lists
 
-完整笔记可以保留在自己的笔记工具中。这里仅链接明确选择公开的内容；私人想法和未发表实验设计保留在私人笔记里。
+- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models) — broader coverage of world-model applications.
+- [Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) — influential deep-learning papers organized by topic.
+- [Awesome Machine Learning](https://github.com/josephmisiti/awesome-machine-learning) — machine-learning libraries and resources.
 
-[精读模板](templates/paper-note.md) · [主题比较模板](templates/comparison-note.md) · [分享模板](templates/sharing-note.md)
-'''
+## Contributing
+
+To suggest a paper or correct an entry, open an issue or pull request. See the [contribution guide](CONTRIBUTING.md) for scope and entry format.
+"""
     if notes:
-        intro+='\n'+''.join(f'- [{title}]({path})\n' for title,path,_ in notes)
-    intro+='''
-## Contributing · 一起维护
-
-欢迎补充直接相关的论文、修正来源与发表状态，或提出更好的阅读联系。推荐时请说明：**它回答什么问题、最值得看的证据是什么、与哪个模块有关**。
-
-[收录与贡献指南](CONTRIBUTING.md) · [数据与生成说明](docs/maintenance.md) · [来源说明](docs/sources.md)
-
-<sub>关注问题的积累，也关注不同解释之间的联系。精选池会随阅读逐步调整。</sub>
-'''
+        intro += '\n## Community Notes\n\n' + ''.join(f'- [{title}]({path})\n' for title,path,_ in notes)
+    first = intro.index('<a id="start-here"></a>')
+    contents = intro.index('<a id="research-map"></a>')
+    route_start = intro.index('<a id="reading-route"></a>')
+    intro = intro[:first] + intro[contents:route_start] + intro[first:contents] + intro[route_start:]
     out['README.md'] = intro
     for m in modules:
-        prefix=f"[← 首页](../../README.md#research-map) · [阅读路线](../reading-guide.md)\n\n# {m['id']} · {m['title']}\n\n*{m['english']}*\n\n> {m['question']}\n\n{m['intro']}\n\n{m['scope']}\n\n## 从哪里开始\n\n"
+        prefix=f"[← Research map](../../README.md#research-map) · [Reading route](../reading-guide.md)\n\n# {m['id']} · {m['title']}\n\n> {m['question']}\n\n{m['intro']}\n\n{m['scope']}\n\n## Where to start\n\n"
         for i,id in enumerate(m['start'],1):
             p=byid[id];target=f"#paper-{id}" if p['primary_module']==m['id'] else f"../../README.md#paper-{id}"
             prefix+=f"{i}. **[{next((r['label'] for r in cfg['route'] if r['id']==id), p['canonical_title'])}]({target})** — {p['annotation']['why']}\n"
         if m['id']=='M2':
             prefix+='''
-## 三条阅读线索
+## Three lines of inquiry
 
-| 线索 | 论文 | 阅读时先区分什么 |
+| Line of inquiry | Papers | Key distinction |
 | :--- | :--- | :--- |
-| 自然形成的几何与功能 | Interpreting Physics、SMDS、Origins | 观察到的结构、竞争假设与功能证据 |
-| 几何先验与动态学习 | GRWM、Group-Structured Latent Space、GeoWorld | 先验来自哪里，以及它独立带来的收益 |
-| 几何与环境适应 | [Context and Diversity](m3-generalization.md#paper-context-diversity)、[Dynamics Are Learned](m3-generalization.md#paper-dynamics-geometries) | 环境变化、轨迹信息与可迁移结构 |
+| Emergent geometry and function | Interpreting Physics, SMDS, Origins | Observed structure, competing hypotheses, and functional evidence |
+| Geometric priors and dynamics learning | GRWM, Group-Structured Latent Space, GeoWorld | Where the prior comes from and what it independently contributes |
+| Geometry and adaptation | [Context and Diversity](m3-generalization.md#paper-context-diversity), [Dynamics Are Learned](m3-generalization.md#paper-dynamics-geometries) | Environment shifts, trajectory information, and transferable structure |
 
-**工具按问题补充。** 先掌握 PCA/SVD、线性探针、周期变量编码、子空间比较、基本干预和留出验证；需要时再进入内在维数、拓扑分析或黎曼优化。
+**Methods used in these studies:** PCA/SVD, linear probes, periodic-variable encodings, subspace comparisons, interventions, held-out evaluation, intrinsic-dimension estimation, and Riemannian optimization.
 
-例如 `z(θ) = (cos θ, sin θ, cos 2θ, sin 2θ, …)` 由一个自由度控制，却可以占据多个线性方向。环境自由度、向量维度、线性跨度、流形内在维数与干预方向数需要分别理解。这是数学示例，不是模型测量结果。
+For example, `z(θ) = (cos θ, sin θ, cos 2θ, sin 2θ, …)` has one underlying degree of freedom while spanning multiple linear directions. Physical degrees of freedom, vector dimension, linear span, intrinsic manifold dimension, and the number of intervention directions are different quantities. This is a mathematical illustration, not a measurement from a trained model.
 '''
-        prefix+='\n## 精选论文与阅读重点\n\n'
+        prefix+='\n## Papers and reading pointers\n\n'
         for p in selected(m['id']):
             prefix+=f"<a id=\"paper-{p['id']}\"></a>\n### {p['canonical_title']}\n\n**{p['publication']['label']}** · {resources(p)}\n\n"
-            if p['aliases']:prefix+='旧称／简称：'+ '；'.join(p['aliases'])+'。\n\n'
-            prefix+=f"{p['annotation']['why']}\n\n- **重点看：** {p['annotation']['focus']}\n- **适用范围：** {p['annotation']['boundary']}\n"
-            if p['secondary_modules']:prefix+='- **关联：** '+' · '.join(f"[{mid} · {bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in p['secondary_modules'])+'\n'
+            if p['aliases']:prefix+='Earlier titles / aliases: '+ '; '.join(p['aliases'])+'.\n\n'
+            prefix+=f"{p['annotation']['why']}\n\n- **Read for:** {p['annotation']['focus']}\n- **Scope:** {p['annotation']['boundary']}\n"
+            if p['secondary_modules']:prefix+='- **Connect to:** '+' · '.join(f"[{mid} · {bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in p['secondary_modules'])+'\n'
             prefix+='\n'
-        prefix+=f"## 放在一起读\n\n{m['connections']}\n\n## 继续连接\n\n"
+        prefix+=f"## Read together\n\n{m['connections']}\n\n## Continue exploring\n\n"
         prefix+='\n'.join(f"- [{mid} · {bymod[mid]['title']}]({Path(module_path(bymod[mid])).name}) — {bymod[mid]['question']}" for mid in m['related'])
-        prefix+='\n\n[精读模板](../../templates/paper-note.md) · [主题比较模板](../../templates/comparison-note.md) · [返回首页 ↑](../../README.md)\n'
+        prefix+='\n\n[Paper-note template](../../templates/paper-note.md) · [Comparison template](../../templates/comparison-note.md) · [Back to overview ↑](../../README.md)\n'
         out[module_path(m)] = prefix
-    route='''[← 首页](../README.md#reading-route)
+    route='''[← Overview](../README.md#reading-route)
 
-# 阅读路线 · 从机制问题到实际使用
+# Reading Path
 
-这条路线连接 12 篇论文。它提供一个建议顺序，也允许按当前问题选读。每一步留下一个足够小、能够说明理解的产物。
+This path connects studies of model mechanisms with geometric analysis, planning, and adaptation. Each stage introduces a question and points to papers that approach it from different angles.
 
-## 01—03 · 建立问题
+## 01–03 · Frame the questions
 
-先理解知识的组织、新环境中的学习，以及如何检验底层结构。
+Study how knowledge is organized, how new experience changes behavior, and how learned world structure can be tested.
 
 '''
     for i,r in enumerate(cfg['route'],1):
-        if i==4:route+='## 04—05 · 学习分析与建模方法\n\n从比较几何假设，走向几何诊断和长程预测。\n\n'
-        if i==6:route+='## 06—08 · 接到可运行的预测与规划系统\n\n明确表示、动态模型和规划器的接口，再学习控制组件间的混杂因素。\n\n'
-        if i==9:route+='## 09—12 · 连接先验、适应、可靠性与探索\n\n把已有理解扩展到环境变化和实际决策所需的信息。\n\n'
+        if i==4:route+='## 04–05 · Connect analysis to modeling\n\nCompare geometric hypotheses, then study how diagnosis informs long-horizon prediction.\n\n'
+        if i==6:route+='## 06–08 · Connect representations to prediction and planning\n\nUnderstand interfaces before separating the contributions of architecture, objectives, and planners.\n\n'
+        if i==9:route+='## 09–12 · Explore priors, adaptation, reliability, and information gathering\n\nExtend the questions to changing environments and the information decisions actually require.\n\n'
         p=byid[r['id']]
-        route+=f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n- **读完回答：** {r['question']}\n- **最小产物：** {r['output']}\n- **阅读重点：** [{bymod[p['primary_module']]['title']}]({module_path(bymod[p['primary_module']]).removeprefix('docs/')}#paper-{p['id']})\n\n"
-    route+='''## 怎样把阅读变成积累
+        route+=f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n- **Question:** {r['question']}\n- **Reading pointers:** [{bymod[p['primary_module']]['title']}]({module_path(bymod[p['primary_module']]).removeprefix('docs/')}#paper-{p['id']})\n\n"
+    route+='''## Comparing papers
 
-**索引浏览**只需知道论文在回答什么，以及为何相关。**精读**围绕疑问选择关键章节，留下 1—3 个核心图表或实验的精确定位。两三篇工作有具体联系时，再做一页**主题比较**：它们支持了什么解释，还有什么没有区分清楚。
+When reading across these topics, distinguish three questions:
 
-数学和工具学习由阅读中的障碍驱动。一次阅读结束，只确定一个具体下一步：核对一个实验、弄懂一个定义、查一个资源，或尝试一个小分析。
+- **Representation:** What information or structure can be recovered from the model?
+- **Function:** What changes when that information is manipulated or removed?
+- **Transfer:** Which results hold under new tasks, environments, or dynamics?
 
-## 一个可缩放的四周起步节奏
+Useful comparisons also track the supervision available to each model, whether the encoder and predictor are fixed or updated, and how evaluation conditions differ.
 
-| 阶段 | 阅读重点 | 建议产物 |
-| :--- | :--- | :--- |
-| 第一周 | 两篇锚点 | 两份主张、证据与适用范围笔记 |
-| 第二周 | SMDS 与 GRWM | 一页几何专题比较 |
-| 第三周 | What Has a Foundation Model Found 或 DINO-WM | 一个关于信息使用的具体检查标准 |
-| 第四周 | 按疑问选择 LeWM、Group-Latents 或 Dynamics-Geometries | 专题总结，或一个带对照的小分析 |
-
-可以以 4—6 篇形成理解的笔记为起步目标，按实际时间调整。实验从已经选定的问题出发；资源条件和代码可用性需要单独确认。
-
-[精读模板](../templates/paper-note.md) · [主题比较模板](../templates/comparison-note.md) · [返回精选列表](../README.md#papers)
+[Paper-note template](../templates/paper-note.md) · [Comparison template](../templates/comparison-note.md) · [Back to papers](../README.md#papers)
 '''
     out['docs/reading-guide.md']=route
     return out

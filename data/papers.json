@@ -21,17 +21,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "从轨迹推断交互关系，连接“学到什么结构”和“结构能否用于预测”。",
-      "focus": "潜在图、图神经网络动态解码器，以及关系恢复和预测结果是否一致。",
-      "boundary": "观察性关系恢复不等于任意条件下的真实因果图识别。"
+      "why": "Infers latent interaction graphs from trajectories with a graph-based dynamics decoder.",
+      "focus": "The latent graph, the graph-based dynamics decoder, and whether relation recovery agrees with predictive performance.",
+      "boundary": "Recovering relations from observations does not establish causal identification under arbitrary conditions."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -64,17 +60,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "对象分解与非像素重建式动态学习的基础入口。",
-      "focus": "对象表示、关系动态与对比目标各自承担什么功能。",
-      "boundary": "结构化基准中的成功不能直接推广为开放世界组合泛化。"
+      "why": "Learns object-centric representations and relational dynamics with a contrastive objective.",
+      "focus": "The distinct roles of object representations, relational dynamics, and the contrastive objective.",
+      "boundary": "Success on structured benchmarks does not establish open-world compositional generalization."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -107,17 +99,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "研究稀疏、随上下文变化的交互结构如何支持机制变化后的适应。",
-      "focus": "稀疏注意力、干预设置、少样本适应，以及模型借助了哪些先验。",
-      "boundary": "必须结合稀疏机制变化与对象化假设解释泛化结论。"
+      "why": "Uses sparse, context-dependent interactions to adapt to changes in mechanisms.",
+      "focus": "Sparse attention, intervention settings, few-shot adaptation, and the priors available to the model.",
+      "boundary": "Interpret generalization results in the context of sparse mechanism changes and object-centric assumptions."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -150,17 +138,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "把对象级结构与 JEPA 学习联系起来。",
-      "focus": "对象级潜在掩码如何制造结构化部分可观测性，是否促进关系信息的利用。",
-      "boundary": "潜在掩码不自动等于对真实物理因果机制实施干预。"
+      "why": "Combines object-level latent masking with joint-embedding predictive learning.",
+      "focus": "How object-level latent masking creates structured partial observability and affects the use of relational information.",
+      "boundary": "Latent masking is not automatically an intervention on a real physical causal mechanism."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": "https://github.com/galilai-group/cjepa",
@@ -193,17 +177,13 @@
       "full_text": "https://arxiv.org/html/2602.07050"
     },
     "annotation": {
-      "why": "研究审美锚点：用层级、子空间与干预区分物理信息的组织方式。",
-      "focus": "速度与方向的层级差异；圆周型群体编码；探针、注意力消融和方向 steering 分别能证明什么。",
-      "boundary": "改变解码方向不等于已经改善模型原生预测或规划；线性子空间维度不等于流形内在维数。"
+      "why": "Analyzes the organization of physical information through layer-wise probes, subspaces, and interventions.",
+      "focus": "Layer-wise differences in speed and direction; circular population codes; what probes, attention ablations, and directional steering each establish.",
+      "boundary": "Changing a decoded direction does not establish improved native prediction or planning. Linear subspace dimension and intrinsic manifold dimension are different quantities."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "key_sections",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "key_sections"
     },
     "code": {
       "url": null,
@@ -239,17 +219,13 @@
       "full_text": "https://arxiv.org/html/2510.01025v2"
     },
     "annotation": {
-      "why": "方法桥梁：从“画出形状”转向比较竞争几何假设并测试功能。",
-      "focus": "SMDS 如何利用监督信息比较圆、线、簇等假设；留出评估与干预证据。",
-      "boundary": "这是有监督、假设驱动分析，不是无先验自动发现；LLM 结果不是世界模型中的既有结论。"
+      "why": "Compares geometric hypotheses and their functional effects in language-model representations.",
+      "focus": "How SMDS uses supervision to compare circular, linear, and clustered hypotheses; held-out evaluation and intervention evidence.",
+      "boundary": "This is supervised, hypothesis-driven analysis, not discovery without priors. Its LLM results are not established findings about world models."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "key_sections",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "key_sections"
     },
     "code": {
       "url": "https://github.com/UKPLab/tmlr2026-manifold-analysis",
@@ -286,17 +262,13 @@
       "full_text": "https://arxiv.org/html/2510.26782v3"
     },
     "annotation": {
-      "why": "连接表征诊断与方法：改善潜在几何能否减少长程预测误差。",
-      "focus": "真实状态 oracle 对照；带时序上下文的编码器；slowness/uniformity 正则；对应消融。",
-      "boundary": "主要证据来自固定规则的确定性环境；不能据此宣称解决开放世界 OOD，且需区分几何正则与历史消歧的贡献。"
+      "why": "Connects representation geometry and temporal context to long-horizon prediction error.",
+      "focus": "Ground-truth state oracle comparisons, temporal-context encoders, slowness and uniformity regularization, and the corresponding ablations.",
+      "boundary": "The main evidence concerns deterministic environments with fixed rules. Separate geometric regularization from history-based disambiguation; neither establishes general open-world robustness."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "key_sections",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "key_sections"
     },
     "code": {
       "url": "https://github.com/XiaFire/Clone_Deterministic_Environment",
@@ -314,7 +286,7 @@
     "arxiv_id": "2506.01529",
     "first_public_year": null,
     "publication": {
-      "label": "arXiv 2025；正式主会/期刊归属未在本条确认",
+      "label": "arXiv 2025",
       "source_url": "https://arxiv.org/abs/2506.01529"
     },
     "primary_module": "M2",
@@ -329,17 +301,13 @@
       "full_text": "https://arxiv.org/html/2506.01529v2"
     },
     "annotation": {
-      "why": "用平移、旋转等已知结构建立可操作的几何归纳偏置。",
-      "focus": "群作用如何对应潜在转移，结构化与非结构化信息如何共存。",
-      "boundary": "使用已知对称性不等于从数据中自行发现规律；不把投稿记录当主会录用。"
+      "why": "Encodes known symmetries, such as translation and rotation, as geometric inductive biases.",
+      "focus": "How group actions correspond to latent transitions and how structured and unstructured information coexist.",
+      "boundary": "Using known symmetries is different from discovering physical laws from data."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "key_sections",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "key_sections"
     },
     "code": {
       "url": "https://github.com/khanhvu207/world-models-group-latents",
@@ -357,7 +325,7 @@
     "arxiv_id": "2505.18235",
     "first_public_year": null,
     "publication": {
-      "label": "arXiv 2025；正式主会/期刊归属未在本条确认",
+      "label": "arXiv 2025",
       "source_url": "https://arxiv.org/abs/2505.18235"
     },
     "primary_module": "M2",
@@ -370,17 +338,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "理论桥梁：理解表征距离为何可能反映概念空间的内在关系。",
-      "focus": "生成假设、余弦相似度与内在几何的联系，以及理论预测如何检验。",
-      "boundary": "定理有明确假设；文本表征结果不是任意网络或世界模型的普遍定律。本轮未确认正式发表状态。"
+      "why": "Relates similarities in learned representations to intrinsic conceptual geometry under a generative model.",
+      "focus": "The generative assumptions, the relation between cosine similarity and intrinsic geometry, and testable predictions.",
+      "boundary": "The results rely on explicit assumptions about text representations; they are not universal laws for arbitrary networks or world models."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -413,17 +377,13 @@
       "full_text": "https://arxiv.org/html/2602.23058v1"
     },
     "annotation": {
-      "why": "方法参照：研究选择非欧几何空间能带来哪些规划收益。",
-      "focus": "Hyperbolic JEPA 与几何优化的独立作用；和欧氏空间的公平对照。",
-      "boundary": "主要实验为 CrossTask/COIN 的多步视觉程序规划，不等于连续物理动力学或真机虚实迁移已被验证。"
+      "why": "Studies non-Euclidean latent spaces and geometric optimization for procedural visual planning.",
+      "focus": "The separate contributions of Hyperbolic JEPA and geometric optimization, including matched Euclidean comparisons.",
+      "boundary": "The main tasks are multi-step procedural visual planning on CrossTask and COIN, rather than continuous physical dynamics or demonstrated real-robot transfer."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "key_sections",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "key_sections"
     },
     "code": {
       "url": null,
@@ -456,17 +416,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "了解从历史推断环境上下文的经典做法，为理解环境识别提供基线。",
-      "focus": "历史编码、前向/后向预测目标、训练测试动力学分布。",
-      "boundary": "上下文表示有效不自动证明学到了新规律；区分隐藏参数推断与直接参数输入。"
+      "why": "Infers environment context from interaction history to model changing dynamics.",
+      "focus": "History encoding, forward and backward prediction objectives, and the training and test dynamics distributions.",
+      "boundary": "Useful context representations alone do not demonstrate learning new laws. Distinguish hidden-parameter inference from directly supplied parameters."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": "https://github.com/younggyoseo/CaDM",
@@ -500,17 +456,13 @@
       "full_text": "https://arxiv.org/html/2509.22353v2"
     },
     "annotation": {
-      "why": "研究审美锚点：把“新环境表现不错”拆成环境识别与从经验学习两类机制。",
-      "focus": "ER/EL 的定义和理论前提，环境多样性与上下文长度，以及实验能否排除旧环境匹配。",
-      "boundary": "理论并非对所有神经网络内部算法的穷尽分类；也须排除状态估计和记忆带来的改善。"
+      "why": "Distinguishes recognizing familiar environments from learning dynamics through current experience.",
+      "focus": "Definitions and assumptions behind environment recognition and environment learning; environment diversity, context length, and controls for familiar-environment matching.",
+      "boundary": "The framework is not an exhaustive classification of all neural algorithms. State estimation and memory may also explain improvements."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "key_sections",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "key_sections"
     },
     "code": {
       "url": "https://github.com/airs-cuhk/airsoul/tree/main/projects/MazeWorld",
@@ -543,17 +495,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "了解从像素学习可重新组合的对象与属性表征。",
-      "focus": "哪些因素被分解，训练和测试的未见组合怎样定义。",
-      "boundary": "生成未见组合不自动等于闭环规划、未知物理机制或真实迁移成功。"
+      "why": "Learns object and attribute representations for combinations beyond training configurations.",
+      "focus": "Which factors are decomposed and how unseen combinations are defined in training and evaluation.",
+      "boundary": "Generating unseen combinations does not by itself establish closed-loop planning, adaptation to unknown physical mechanisms, or real-world transfer."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -587,17 +535,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "连接潜在几何与适应：轨迹上下文的平滑性怎样影响动力学偏移下的策略。",
-      "focus": "轨迹动态编码器、Lipschitz 假设、多正样本对比目标，以及未建模动力学变化测试。",
-      "boundary": "这是强化学习策略适应工作；不能直接当作通用视频预测世界模型的几何定理。"
+      "why": "Connects trajectory geometry with policy adaptation under changing dynamics.",
+      "focus": "Trajectory dynamics encoders, Lipschitz assumptions, multi-positive contrastive learning, and tests of unmodeled dynamics changes.",
+      "boundary": "This work studies reinforcement-learning policy adaptation; its theory is not automatically a theorem about general video world models."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": "https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries",
@@ -630,17 +574,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "把“保留多少世界信息才够用”落到实际潜在空间规划。",
-      "focus": "冻结视觉表征、动作条件 patch 预测，以及目标空间的规划目标。",
-      "boundary": "zero-shot planning 不等于不需要相应领域的动力学轨迹训练。"
+      "why": "Combines frozen visual representations, action-conditioned latent prediction, and goal-directed planning.",
+      "focus": "The frozen visual encoder, action-conditioned patch prediction, and the planning objective in goal space.",
+      "boundary": "Zero-shot planning still relies on dynamics training with trajectories from the relevant domain."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -673,17 +613,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "直接研究决策型世界模型应当舍弃哪些信息。",
-      "focus": "可控性与奖励相关性两个分解维度，及其对学习的作用。",
-      "boundary": "当前任务无关的信息在新任务中可能变得重要；分解结论有结构前提。"
+      "why": "Separates controllable and reward-relevant information from other factors in observations.",
+      "focus": "The decomposition by controllability and reward relevance, and its effect on learning.",
+      "boundary": "Information irrelevant to the current task may matter for another task. The decomposition relies on structural assumptions."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -716,17 +652,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "给“模型不必完整还原世界也能支持决策”一个精确定义。",
-      "focus": "相对于哪些策略和价值函数保持 Bellman 更新等价。",
-      "boundary": "等价性依赖指定函数与策略集合，不保证任意未来任务。"
+      "why": "Formalizes models that preserve decision-relevant Bellman updates without reconstructing every world detail.",
+      "focus": "The policy and value-function classes over which Bellman updates remain equivalent.",
+      "boundary": "Equivalence is relative to specified function and policy classes; it does not guarantee suitability for arbitrary future tasks."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -759,17 +691,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "与两篇锚点同样匹配：用模型适应新任务的倾向检验是否学到了底层规律。",
-      "focus": "怎样从假设世界模型生成新任务，并通过学习行为测量归纳偏置。",
-      "boundary": "这里的 probe 是归纳偏置检验，不是普通线性解码器；结论仍限于被测任务和假设。"
+      "why": "Probes learned world structure through inductive biases in new tasks.",
+      "focus": "How hypothesized world models generate diagnostic tasks and how learning behavior reveals inductive bias.",
+      "boundary": "The probe measures inductive bias, rather than ordinary linear decodability. Conclusions remain tied to the tested tasks and hypotheses."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -789,7 +717,7 @@
     "arxiv_id": null,
     "first_public_year": null,
     "publication": {
-      "label": "CoRL 2024（论文集 2025）",
+      "label": "CoRL 2024 (proceedings 2025)",
       "source_url": "https://proceedings.mlr.press/v270/li25c.html"
     },
     "primary_module": "M5",
@@ -804,17 +732,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "把仿真价值落实为能否可靠比较真实策略表现，而不只是画面逼真。",
-      "focus": "真实/仿真配对、策略排序、视觉匹配与变体聚合。",
-      "boundary": "只做仿真内扰动不能证明虚实差距缩小；不把真机完整复现作为阅读前提。"
+      "why": "Evaluates whether simulation reliably predicts the relative performance of real-world manipulation policies.",
+      "focus": "Paired real and simulated evaluations, policy rankings, visual matching, and variant aggregation.",
+      "boundary": "Perturbations within simulation alone do not demonstrate a reduced reality gap."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -832,7 +756,7 @@
     "arxiv_id": null,
     "first_public_year": null,
     "publication": {
-      "label": "CoRL 2022（论文集 2023）",
+      "label": "CoRL 2022 (proceedings 2023)",
       "source_url": "https://proceedings.mlr.press/v205/truong23a.html"
     },
     "primary_module": "M5",
@@ -847,17 +771,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "检验“越真实越有用”的常见直觉。",
-      "focus": "哪些导航模拟细节被改变，为什么会影响迁移。",
-      "boundary": "结果限于论文中的导航设置，不是低保真总比高保真好。"
+      "why": "Examines how simulation fidelity affects transfer in visual navigation.",
+      "focus": "Which navigation simulation details are changed and how they affect transfer.",
+      "boundary": "The findings concern the navigation settings studied; they do not imply that lower fidelity is always preferable."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -890,17 +810,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "从物理测试区分分布内预测、外推与组合泛化。",
-      "focus": "各类分布变化怎样构造，成功与失败是否被视觉质量指标掩盖。",
-      "boundary": "所测模型和数据下的发现，不应上升为所有视频模型的普遍限制。"
+      "why": "Tests physical prediction under extrapolation and compositional distribution shifts.",
+      "focus": "How distribution shifts are constructed and whether visual-quality metrics obscure physical successes or failures.",
+      "boundary": "The findings concern the tested models and datasets, rather than universal limitations of all video models."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -934,17 +850,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "连接世界模型评估与闭环任务价值。",
-      "focus": "动作可控性、后训练数据和测试时计算如何影响闭环表现。",
-      "boundary": "闭环评估仍有任务覆盖边界；规模化结论须限定在其测试设置。"
+      "why": "Evaluates world models through closed-loop task performance.",
+      "focus": "How action controllability, post-training data, and test-time computation affect closed-loop performance.",
+      "boundary": "Closed-loop evaluations still have task-coverage limits. Scaling claims should remain tied to the evaluated settings."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -977,17 +889,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "探索如何在下游任务未知时主动积累有用经验。",
-      "focus": "模型分歧、预测新颖性与后续任务学习。",
-      "boundary": "通用新颖性不一定对应某个任务最值得辨识的信息。"
+      "why": "Learns exploration behavior from model disagreement before downstream tasks are specified.",
+      "focus": "Model disagreement, predictive novelty, and subsequent task learning.",
+      "boundary": "General novelty does not necessarily identify the information most valuable for a particular task."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -1020,17 +928,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "理解主动交互、参数辨识和模拟器改进的闭环。",
-      "focus": "如何选择有信息量的动作，辨识结果怎样进入后续模型。",
-      "boundary": "给定模型类内估参不同于发现缺失机制；真实机器人链路不属于初版实现任务。"
+      "why": "Combines active interaction with system identification to improve simulation models.",
+      "focus": "How informative actions are chosen and how identified quantities enter the subsequent model.",
+      "boundary": "Estimating parameters within a given model class differs from discovering missing mechanisms."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -1063,17 +967,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "把主动探索从“识别所有参数”转向“识别任务真正需要的信息”。",
-      "focus": "任务敏感性、探索奖励和探索停止条件；哪些信息是训练时特权信息。",
-      "boundary": "完整操作系统有资源与训练前提；先学习问题定义，不直接承诺轻量真机复现。"
+      "why": "Selects exploratory interactions according to task-relevant information.",
+      "focus": "Task sensitivity, exploration rewards, stopping criteria, and privileged information available during training.",
+      "boundary": "The method uses privileged information during training; evaluation should distinguish training access from information available to the deployed policy."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -1106,17 +1006,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "把经验利用纳入适应研究，不仅关注采集更多数据。",
-      "focus": "新颖性、预测误差和回放优先级的作用。",
-      "boundary": "回放已有经验不等于主动选择新的物理交互。"
+      "why": "Prioritizes stored experience using novelty and prediction error to support adaptation.",
+      "focus": "The roles of novelty, prediction error, and replay prioritization.",
+      "boundary": "Replaying stored experience differs from actively choosing new physical interactions."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -1149,17 +1045,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "了解大规模观察视频表征与动作条件预测、规划的连接。",
-      "focus": "被动预训练和动作条件后训练各学到什么，以及评估接口。",
-      "boundary": "表征预训练不是完整规划系统；动作接口仍依赖相应交互数据。"
+      "why": "Connects observational video pretraining with action-conditioned prediction and planning.",
+      "focus": "What passive pretraining and action-conditioned post-training each learn, and the interfaces used in evaluation.",
+      "boundary": "Representation pretraining alone is not a complete planning system. The action interface requires relevant interaction data."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,
@@ -1179,7 +1071,7 @@
     "arxiv_id": "2603.19312",
     "first_public_year": null,
     "publication": {
-      "label": "arXiv 2026；正式主会/期刊归属未在本条确认",
+      "label": "arXiv 2026",
       "source_url": "https://arxiv.org/abs/2603.19312"
     },
     "primary_module": "M7",
@@ -1195,17 +1087,13 @@
       "full_text": "https://arxiv.org/html/2603.19312v1"
     },
     "annotation": {
-      "why": "可选轻量实验载体：不依赖大型冻结编码器的端到端 JEPA。",
-      "focus": "预测损失、潜在分布正则、规划接口及物理探针；先看小模型能否支撑所需分析。",
-      "boundary": "作者报告约 15M 参数、单 GPU 数小时；本轮未独立运行，不能承诺用户机器的耗时和显存。"
+      "why": "Learns a compact world model end to end with joint-embedding predictive objectives.",
+      "focus": "The predictive loss, latent-distribution regularization, planning interface, and physical probes.",
+      "boundary": "The reported model has about 15M parameters. Training-time figures depend on the hardware, dataset, and optimization setup."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "key_sections",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "key_sections"
     },
     "code": {
       "url": "https://github.com/lucas-maes/le-wm",
@@ -1238,17 +1126,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "组件级受控比较范例，帮助区分几何之外的架构、损失和规划器因素。",
-      "focus": "架构、训练目标、规划算法与数据规模的对照是否匹配。",
-      "boundary": "实验结论针对被测 JEPA-WM 家族，不自动代表所有世界模型。"
+      "why": "Compares architecture, training objectives, and planners in JEPA world models.",
+      "focus": "Matched comparisons of architectures, training objectives, planning algorithms, and data scale.",
+      "boundary": "The findings concern the evaluated JEPA world-model family, not every type of world model."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": "https://github.com/facebookresearch/jepa-wms",
@@ -1283,17 +1167,13 @@
       "full_text": null
     },
     "annotation": {
-      "why": "理解世界模型学习算法在不同任务上的稳健性与可扩展性。",
-      "focus": "哪些超参数和算法设计共享，哪些参数仍按环境训练。",
-      "boundary": "统一算法及超参数不等于一个预训练检查点能处处零样本泛化。"
+      "why": "Studies a shared world-model learning algorithm and hyperparameters across diverse tasks.",
+      "focus": "Which hyperparameters and algorithmic choices are shared, and which model parameters are trained per environment.",
+      "boundary": "A shared algorithm and hyperparameters do not imply a single pretrained checkpoint that generalizes everywhere without training."
     },
     "source_review": {
       "date": "2026-10-20",
-      "depth": "metadata_abstract",
-      "provenance": "Imported from supplied research plan; not an independent full-paper review."
-    },
-    "user_reading": {
-      "status": "untracked"
+      "depth": "metadata_abstract"
     },
     "code": {
       "url": null,

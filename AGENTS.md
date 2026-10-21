@@ -1,12 +1,12 @@
-# Maintenance scope
+# Repository maintenance
 
-- This is an Awesome paper list, maintained in Chinese with original English paper titles.
+- Write public documentation and paper annotations in English.
+- Address researchers browsing a public paper list. Keep personal plans, editorial handoffs, and assistant-oriented commentary out of reader-facing pages.
 - Preserve existing entries and manual text. Generated content is confined to explicit markers.
-- Keep stable IDs and aliases; never count arXiv versions and proceedings versions twice.
-- Keep source review, user reading, and actual execution separate. Never infer user understanding or successful reproduction.
-- Source dates change only after content review, never during a build or URL check.
-- No private notes, private Feishu links, credentials, or unpublished research plans in public records.
-- Public export uses explicit field and path allowlists. Do not scan parent folders or local_state.json.
-- No training, model downloads, paid API calls, automatic literature expansion, or external note synchronization.
-- Publishing follows the user's current authorization; do not infer future push authorization from this file.
-- Run the offline validator, build check and unittest suite after data/generator changes.
+- Keep stable IDs and aliases; merge preprint and published versions of the same work.
+- Preserve the distinction between source review and reproduction evidence. Do not infer a result from a resource link.
+- Update source-review dates only after reviewing the relevant content, not during builds or URL checks.
+- Export through explicit field and path allowlists; do not collect arbitrary local files.
+- Keep the project focused on a paper catalog. Do not start training, download model weights, or add paid services as part of maintenance.
+- Follow the user's current publishing authorization.
+- After data or generator changes, run the validator, build consistency check, and unittest suite.

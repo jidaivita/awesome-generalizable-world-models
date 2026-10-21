@@ -29,8 +29,8 @@ def validate_data(root=ROOT):
     ids=[p['id'] for p in papers]
     require(len(ids)==len(set(ids)), 'Duplicate paper ID')
     selected=[p for p in papers if p['collection']=='seed_v0_2']
-    require(len(selected)==30, 'Expected 30 curated papers')
-    require(Counter(p['primary_module'] for p in selected)==dict(zip(sorted(mods),[4,6,4,4,4,4,4])), 'Curated module counts changed')
+    require(len(selected)==30, 'Expected 30 papers')
+    require(Counter(p['primary_module'] for p in selected)==dict(zip(sorted(mods),[4,6,4,4,4,4,4])), 'Module counts changed')
     route=[r['id'] for r in cfg['route']]
     require(len(route)==len(set(route))==12 and set(route)<=set(ids),'Invalid reading route')
     seen_titles={};seen_arxiv={}
@@ -50,7 +50,6 @@ def validate_data(root=ROOT):
             require(key==aid,'Store arXiv IDs without version suffix')
             seen_arxiv[key]=p['id']
         require(p['priority'] in {'anchor','core','reference'},'Invalid priority')
-        require(p['user_reading']['status'] in {'untracked','reading','read'},'Invalid reading status')
         require(p['reproduction']['status'] in {'not_run','attempted','verified'},'Invalid run status')
         if p['reproduction']['status']=='verified':
             require(all(p['reproduction'].get(k) for k in ['command','environment','log']),'Verified runs need evidence')
@@ -77,7 +76,8 @@ def validate_links(root=ROOT):
     docs={**{str(p.relative_to(root)):p.read_text() for p in root.glob('*.md')},**{str(p.relative_to(root)):p.read_text() for folder in ['docs','templates'] for p in (root/folder).rglob('*.md')},**generated}
     checked=0
     for rel,body in docs.items():
-        targets=re.findall(r'(?<!!)\[[^\]]+\]\(([^\s)]+)\)',body)
+        body=re.sub(r'^```[^\n]*\n.*?^```[ \t]*$', '', body, flags=re.M | re.S)
+        targets=re.findall(r'!?\[[^\]]+\]\(([^\s)]+)\)',body)
         for href in targets:
             if urlsplit(href).scheme:continue
             path,_,fragment=unquote(href).partition('#')
