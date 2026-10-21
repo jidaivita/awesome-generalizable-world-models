@@ -1,0 +1,213 @@
+{
+  "modules": [
+    {
+      "id": "M1",
+      "slug": "structure",
+      "title": "结构化表征、关系与不变性",
+      "english": "Structure & Invariance",
+      "question": "哪些对象、关系与稳定结构值得被表示？",
+      "intro": "从对象与关系出发，理解模型如何把复杂观测分解为可用于动态预测的结构。重点看结构来自模型先验、学习目标还是数据，以及这种结构在什么变化下保持有效。",
+      "scope": "M1 关注表示的内容和归纳偏置；M2 进一步研究这些内容在潜在空间里的组织；M4 检查它们是否被任务实际使用。",
+      "start": [
+        "nri",
+        "cswm"
+      ],
+      "connections": "NRI 与 C-SWM 分别从交互关系和对象表示进入；SPARTAN 与 Causal-JEPA 则把结构选择连接到适应或潜在预测。比较时关注对象信息如何获得、结构是否随上下文变化，以及关系恢复与预测表现是否一致。",
+      "related": [
+        "M2",
+        "M3",
+        "M4"
+      ]
+    },
+    {
+      "id": "M2",
+      "slug": "geometry",
+      "title": "表征几何与流形",
+      "english": "Representation Geometry & Manifolds",
+      "question": "知识在潜在空间中如何组织，这种组织怎样影响模型行为？",
+      "intro": "既研究模型自然形成的几何，也研究主动引入几何约束能否改善动态学习。阅读时先辨认论文在做哪一类工作，再看几何现象如何连接到模型功能。",
+      "scope": "自然形成的结构、预先施加的结构、结构带来的任务收益是三个不同问题。二维投影可以帮助提出假设，结论还需要其他证据。",
+      "start": [
+        "interpreting-physics",
+        "smds",
+        "grwm"
+      ],
+      "connections": "Interpreting Physics 提供物理信息组织的分析入口；SMDS 提供比较几何假设的方法；GRWM 把诊断连接到长程预测。三者适合连续阅读，但分析对象、监督信息和任务证据各不相同。",
+      "related": [
+        "M3",
+        "M4",
+        "M7"
+      ]
+    },
+    {
+      "id": "M3",
+      "slug": "generalization",
+      "title": "泛化、迁移与上下文学习",
+      "english": "Generalization & In-Context Learning",
+      "question": "新环境表现来自复用旧知识，还是从新经验学习？",
+      "intro": "围绕环境变化理解知识复用和适应。先明确变化发生在哪里：对象组合、隐藏环境参数、动力学规则，还是可观测性；再看上下文究竟提供了什么信息。",
+      "scope": "环境识别、动力学学习和状态估计可能共同影响表现。上下文带来收益本身不足以判断是哪一种机制。",
+      "start": [
+        "context-diversity",
+        "dynamics-geometries"
+      ],
+      "connections": "CaDM 是理解历史上下文编码的基础参照；Context and Diversity 提供环境识别与环境学习的区分；Dynamics Are Learned 把轨迹表征的几何接到策略适应。Dreamweaver 补充对象和属性组合的视角。",
+      "related": [
+        "M1",
+        "M2",
+        "M6"
+      ]
+    },
+    {
+      "id": "M4",
+      "slug": "knowledge-use",
+      "title": "知识的实际使用与任务相关抽象",
+      "english": "Knowledge Use & Task Abstraction",
+      "question": "什么信息不仅存在，而且真正支持预测、规划与决策？",
+      "intro": "把内部表征连接到模型行为。既考察任务需要保留哪些信息，也考察如何通过模型的预测、规划或学习倾向，判断知识是否发挥作用。",
+      "scope": "可读出、被使用、具有任务价值需要分别讨论。某个任务中的有效抽象能否迁移到新任务，还取决于它保留了什么。",
+      "start": [
+        "what-found",
+        "dino-wm"
+      ],
+      "connections": "What Has a Foundation Model Found 从新任务中的归纳偏置检验底层结构；DINO-WM 给出表征到规划的具体接口。Denoised MDPs 与 Value Equivalence 则帮助精确定义哪些世界细节值得保留。",
+      "related": [
+        "M2",
+        "M3",
+        "M5"
+      ]
+    },
+    {
+      "id": "M5",
+      "slug": "reliability",
+      "title": "虚实差距与模型可靠性",
+      "english": "Reliability & Sim2Real",
+      "question": "哪些模型误差会真正影响决策，模型在什么范围内可信？",
+      "intro": "把视觉质量、物理预测和任务表现分开检查。通过物理外推、闭环使用和真实／仿真配对评估，理解一个模型何时能够支持可靠选择。",
+      "scope": "仿真内表现、真实策略排序和实际虚实迁移是不同证据。阅读时明确评估对象与配对方式。",
+      "start": [
+        "simpler",
+        "physical-law-perspective"
+      ],
+      "connections": "SIMPLER 关注仿真是否能可靠比较真实策略；Rethinking Sim2Real 检验逼真度与迁移的关系。Physical Law Perspective 与 World-In-World 分别补充物理测试和闭环任务视角。",
+      "related": [
+        "M3",
+        "M4",
+        "M7"
+      ]
+    },
+    {
+      "id": "M6",
+      "slug": "adaptation",
+      "title": "主动探索、辨识与高效适应",
+      "english": "Exploration & Efficient Adaptation",
+      "question": "面对未知环境，应该采集、复用什么经验？",
+      "intro": "研究经验的选择和利用：什么动作能揭示有用信息，何时已有经验值得重放，以及这些信息如何帮助后续任务。",
+      "scope": "给定模型类内的参数辨识、缺失机制的学习、主动采集和已有经验回放各有不同假设与成本。",
+      "start": [
+        "poke-strike",
+        "plan2explore"
+      ],
+      "connections": "Plan2Explore 从任务未知时的探索出发，ASID 将主动交互接到辨识，Poke and Strike 强调任务所需的信息，Curious Replay 关注已有经验的再次利用。比较它们优化的信息价值和使用条件。",
+      "related": [
+        "M3",
+        "M4",
+        "M5"
+      ]
+    },
+    {
+      "id": "M7",
+      "slug": "scaling",
+      "title": "预训练、规模化与基模连接",
+      "english": "Pretraining & Scaling",
+      "question": "可控实验中的认识如何连接更强模型和更大数据？",
+      "intro": "通过预训练视频模型、端到端 JEPA 和通用世界模型学习算法，理解表示、动态模型、动作接口和规划器之间的关系。也为小规模机制分析寻找合适载体。",
+      "scope": "大规模表征预训练与可执行的规划系统有不同训练阶段；统一算法不等于一个检查点跨所有环境直接使用。",
+      "start": [
+        "leworldmodel",
+        "jepa-wms"
+      ],
+      "connections": "LeWorldModel 提供端到端小模型路线，JEPA-WMs 组件研究帮助拆分架构、目标和规划算法的影响。V-JEPA 2 与 DreamerV3 则提供扩大数据和任务范围后的参照。",
+      "related": [
+        "M2",
+        "M4",
+        "M5"
+      ]
+    }
+  ],
+  "route": [
+    {
+      "id": "interpreting-physics",
+      "label": "Interpreting Physics",
+      "question": "把“独立物理变量”与“分布式编码”的可检验区别写清楚。",
+      "output": "一张主张—证据—边界表。"
+    },
+    {
+      "id": "context-diversity",
+      "label": "Context and Diversity Matter",
+      "question": "区分认出旧环境、上下文中学习动力学、单纯状态估计。",
+      "output": "一张 ER/EL 对照表。"
+    },
+    {
+      "id": "what-found",
+      "label": "What Has a Foundation Model Found?",
+      "question": "理解为何既有任务高分不足以说明学会底层规律。",
+      "output": "给前两篇补一个替代解释与区分测试。"
+    },
+    {
+      "id": "smds",
+      "label": "SMDS / Shape Happens",
+      "question": "学会比较几何假设，而不是从降维图直接下结论。",
+      "output": "列出假设、监督信息、留出评估和干预各自的位置。"
+    },
+    {
+      "id": "grwm",
+      "label": "GRWM",
+      "question": "考察几何诊断如何变成改善长程预测的方法。",
+      "output": "拆出表征、时序上下文、损失和动态预测器四类因素。"
+    },
+    {
+      "id": "dino-wm",
+      "label": "DINO-WM",
+      "question": "把潜在表征接到实际规划用途。",
+      "output": "画清编码器—动态模型—规划器接口。"
+    },
+    {
+      "id": "leworldmodel",
+      "label": "LeWorldModel",
+      "question": "评估一个小模型能否承载后续表征分析。",
+      "output": "记录可用数据、代码入口、依赖与待测资源；不直接全量训练。"
+    },
+    {
+      "id": "jepa-wms",
+      "label": "What Drives Success in JEPA-WMs?",
+      "question": "学习如何控制架构、目标和规划器等混杂因素。",
+      "output": "形成一张公平对照检查表。"
+    },
+    {
+      "id": "group-latents",
+      "label": "Group-Structured Latent Space",
+      "question": "区分预先给定的对称性和从数据涌现的几何。",
+      "output": "写清已知信息、模型先验和未知因素。"
+    },
+    {
+      "id": "dynamics-geometries",
+      "label": "Dynamics Are Learned, Not Told",
+      "question": "将几何视角接到新动力学下的适应。",
+      "output": "分别记录理论假设和经验评估覆盖范围。"
+    },
+    {
+      "id": "simpler",
+      "label": "SIMPLER",
+      "question": "理解模型误差何时影响真实选择。",
+      "output": "区分视觉相似、预测准确与策略排序可靠。"
+    },
+    {
+      "id": "poke-strike",
+      "label": "Poke and Strike",
+      "question": "理解如何选择任务真正需要的新经验。",
+      "output": "写出探索成本与任务信息价值的关系。"
+    }
+  ],
+  "source_date": "2026-10-20"
+}

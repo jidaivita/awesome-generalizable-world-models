@@ -1,0 +1,1307 @@
+[
+  {
+    "id": "nri",
+    "canonical_title": "Neural Relational Inference for Interacting Systems",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2018",
+      "source_url": "https://proceedings.mlr.press/v80/kipf18a.html"
+    },
+    "primary_module": "M1",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v80/kipf18a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "从轨迹推断交互关系，连接“学到什么结构”和“结构能否用于预测”。",
+      "focus": "潜在图、图神经网络动态解码器，以及关系恢复和预测结果是否一致。",
+      "boundary": "观察性关系恢复不等于任意条件下的真实因果图识别。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "cswm",
+    "canonical_title": "Contrastive Learning of Structured World Models",
+    "aliases": [],
+    "arxiv_id": "1911.12247",
+    "first_public_year": null,
+    "publication": {
+      "label": "ICLR 2020",
+      "source_url": "https://arxiv.org/abs/1911.12247"
+    },
+    "primary_module": "M1",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://arxiv.org/abs/1911.12247",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "对象分解与非像素重建式动态学习的基础入口。",
+      "focus": "对象表示、关系动态与对比目标各自承担什么功能。",
+      "boundary": "结构化基准中的成功不能直接推广为开放世界组合泛化。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "spartan",
+    "canonical_title": "SPARTAN: A Sparse Transformer World Model Attending to What Matters",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "NeurIPS 2025",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2c33c1753e1f1924f5560b11fc4444f-Abstract-Conference.html"
+    },
+    "primary_module": "M1",
+    "secondary_modules": [
+      "M3"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2c33c1753e1f1924f5560b11fc4444f-Abstract-Conference.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "研究稀疏、随上下文变化的交互结构如何支持机制变化后的适应。",
+      "focus": "稀疏注意力、干预设置、少样本适应，以及模型借助了哪些先验。",
+      "boundary": "必须结合稀疏机制变化与对象化假设解释泛化结论。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "causal-jepa",
+    "canonical_title": "Causal-JEPA: Learning World Models through Object-Level Latent Masking",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2026",
+      "source_url": "https://proceedings.mlr.press/v306/nam26c.html"
+    },
+    "primary_module": "M1",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v306/nam26c.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "把对象级结构与 JEPA 学习联系起来。",
+      "focus": "对象级潜在掩码如何制造结构化部分可观测性，是否促进关系信息的利用。",
+      "boundary": "潜在掩码不自动等于对真实物理因果机制实施干预。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/galilai-group/cjepa",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "interpreting-physics",
+    "canonical_title": "Interpreting Physics in Video World Models",
+    "aliases": [],
+    "arxiv_id": "2602.07050",
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2026",
+      "source_url": "https://proceedings.mlr.press/v306/joseph26a.html"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "anchor",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v306/joseph26a.html",
+      "project": null,
+      "full_text": "https://arxiv.org/html/2602.07050"
+    },
+    "annotation": {
+      "why": "研究审美锚点：用层级、子空间与干预区分物理信息的组织方式。",
+      "focus": "速度与方向的层级差异；圆周型群体编码；探针、注意力消融和方向 steering 分别能证明什么。",
+      "boundary": "改变解码方向不等于已经改善模型原生预测或规划；线性子空间维度不等于流形内在维数。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "key_sections",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "smds",
+    "canonical_title": "Hypothesis-Driven Feature Manifold Analysis in LLMs via Supervised Multi-Dimensional Scaling",
+    "aliases": [
+      "Shape Happens: Automatic Feature Manifold Discovery in LLMs via Supervised Multi-Dimensional Scaling",
+      "Shape Happens"
+    ],
+    "arxiv_id": "2510.01025",
+    "first_public_year": null,
+    "publication": {
+      "label": "TMLR 2026",
+      "source_url": "https://arxiv.org/abs/2510.01025"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.01025",
+      "project": null,
+      "full_text": "https://arxiv.org/html/2510.01025v2"
+    },
+    "annotation": {
+      "why": "方法桥梁：从“画出形状”转向比较竞争几何假设并测试功能。",
+      "focus": "SMDS 如何利用监督信息比较圆、线、簇等假设；留出评估与干预证据。",
+      "boundary": "这是有监督、假设驱动分析，不是无先验自动发现；LLM 结果不是世界模型中的既有结论。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "key_sections",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/UKPLab/tmlr2026-manifold-analysis",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "grwm",
+    "canonical_title": "Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models",
+    "aliases": [
+      "Clone Deterministic 3D Worlds with Geometrically-Regularized World Models",
+      "Clone Deterministic 3D Worlds"
+    ],
+    "arxiv_id": "2510.26782",
+    "first_public_year": null,
+    "publication": {
+      "label": "CVPR 2026",
+      "source_url": "https://arxiv.org/abs/2510.26782"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [
+      "M4",
+      "M5"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://arxiv.org/abs/2510.26782",
+      "project": "https://xiafire.github.io/grwm-project-page/",
+      "full_text": "https://arxiv.org/html/2510.26782v3"
+    },
+    "annotation": {
+      "why": "连接表征诊断与方法：改善潜在几何能否减少长程预测误差。",
+      "focus": "真实状态 oracle 对照；带时序上下文的编码器；slowness/uniformity 正则；对应消融。",
+      "boundary": "主要证据来自固定规则的确定性环境；不能据此宣称解决开放世界 OOD，且需区分几何正则与历史消歧的贡献。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "key_sections",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/XiaFire/Clone_Deterministic_Environment",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "group-latents",
+    "canonical_title": "Learning Abstract World Models with a Group-Structured Latent Space",
+    "aliases": [],
+    "arxiv_id": "2506.01529",
+    "first_public_year": null,
+    "publication": {
+      "label": "arXiv 2025；正式主会/期刊归属未在本条确认",
+      "source_url": "https://arxiv.org/abs/2506.01529"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [
+      "M1"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://arxiv.org/abs/2506.01529",
+      "project": null,
+      "full_text": "https://arxiv.org/html/2506.01529v2"
+    },
+    "annotation": {
+      "why": "用平移、旋转等已知结构建立可操作的几何归纳偏置。",
+      "focus": "群作用如何对应潜在转移，结构化与非结构化信息如何共存。",
+      "boundary": "使用已知对称性不等于从数据中自行发现规律；不把投稿记录当主会录用。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "key_sections",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/khanhvu207/world-models-group-latents",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "origins-manifolds",
+    "canonical_title": "The Origins of Representation Manifolds in Large Language Models",
+    "aliases": [],
+    "arxiv_id": "2505.18235",
+    "first_public_year": null,
+    "publication": {
+      "label": "arXiv 2025；正式主会/期刊归属未在本条确认",
+      "source_url": "https://arxiv.org/abs/2505.18235"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://arxiv.org/abs/2505.18235",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "理论桥梁：理解表征距离为何可能反映概念空间的内在关系。",
+      "focus": "生成假设、余弦相似度与内在几何的联系，以及理论预测如何检验。",
+      "boundary": "定理有明确假设；文本表征结果不是任意网络或世界模型的普遍定律。本轮未确认正式发表状态。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "geoworld",
+    "canonical_title": "GeoWorld: Geometric World Models",
+    "aliases": [],
+    "arxiv_id": "2602.23058",
+    "first_public_year": null,
+    "publication": {
+      "label": "CVPR 2026",
+      "source_url": "https://arxiv.org/abs/2602.23058"
+    },
+    "primary_module": "M2",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://arxiv.org/abs/2602.23058",
+      "project": "https://steve-zeyu-zhang.github.io/GeoWorld/",
+      "full_text": "https://arxiv.org/html/2602.23058v1"
+    },
+    "annotation": {
+      "why": "方法参照：研究选择非欧几何空间能带来哪些规划收益。",
+      "focus": "Hyperbolic JEPA 与几何优化的独立作用；和欧氏空间的公平对照。",
+      "boundary": "主要实验为 CrossTask/COIN 的多步视觉程序规划，不等于连续物理动力学或真机虚实迁移已被验证。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "key_sections",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "cadm",
+    "canonical_title": "Context-aware Dynamics Model for Generalization in Model-Based Reinforcement Learning",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2020",
+      "source_url": "https://proceedings.mlr.press/v119/lee20g.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M6"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v119/lee20g.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "了解从历史推断环境上下文的经典做法，为理解环境识别提供基线。",
+      "focus": "历史编码、前向/后向预测目标、训练测试动力学分布。",
+      "boundary": "上下文表示有效不自动证明学到了新规律；区分隐藏参数推断与直接参数输入。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/younggyoseo/CaDM",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "context-diversity",
+    "canonical_title": "Context and Diversity Matter: The Emergence of In-Context Learning in World Models",
+    "aliases": [],
+    "arxiv_id": "2509.22353",
+    "first_public_year": null,
+    "publication": {
+      "label": "ICLR 2026",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a46b9dcef23e9160f46d800a49a931d0-Abstract-Conference.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M2",
+      "M6"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "anchor",
+    "links": {
+      "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/a46b9dcef23e9160f46d800a49a931d0-Abstract-Conference.html",
+      "project": null,
+      "full_text": "https://arxiv.org/html/2509.22353v2"
+    },
+    "annotation": {
+      "why": "研究审美锚点：把“新环境表现不错”拆成环境识别与从经验学习两类机制。",
+      "focus": "ER/EL 的定义和理论前提，环境多样性与上下文长度，以及实验能否排除旧环境匹配。",
+      "boundary": "理论并非对所有神经网络内部算法的穷尽分类；也须排除状态估计和记忆带来的改善。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "key_sections",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/airs-cuhk/airsoul/tree/main/projects/MazeWorld",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "dreamweaver",
+    "canonical_title": "Dreamweaver: Learning Compositional World Models from Pixels",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICLR 2025",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M1"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "了解从像素学习可重新组合的对象与属性表征。",
+      "focus": "哪些因素被分解，训练和测试的未见组合怎样定义。",
+      "boundary": "生成未见组合不自动等于闭环规划、未知物理机制或真实迁移成功。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "dynamics-geometries",
+    "canonical_title": "Dynamics Are Learned, Not Told: Semi-Supervised Discovery of Latent Dynamics Geometries For Zero-Shot Policy Adaptation",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2026",
+      "source_url": "https://proceedings.mlr.press/v306/xu26cq.html"
+    },
+    "primary_module": "M3",
+    "secondary_modules": [
+      "M2",
+      "M6"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v306/xu26cq.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "连接潜在几何与适应：轨迹上下文的平滑性怎样影响动力学偏移下的策略。",
+      "focus": "轨迹动态编码器、Lipschitz 假设、多正样本对比目标，以及未建模动力学变化测试。",
+      "boundary": "这是强化学习策略适应工作；不能直接当作通用视频预测世界模型的几何定理。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "dino-wm",
+    "canonical_title": "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2025",
+      "source_url": "https://proceedings.mlr.press/v267/zhou25t.html"
+    },
+    "primary_module": "M4",
+    "secondary_modules": [
+      "M7"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v267/zhou25t.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "把“保留多少世界信息才够用”落到实际潜在空间规划。",
+      "focus": "冻结视觉表征、动作条件 patch 预测，以及目标空间的规划目标。",
+      "boundary": "zero-shot planning 不等于不需要相应领域的动力学轨迹训练。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "denoised-mdps",
+    "canonical_title": "Denoised MDPs: Learning World Models Better Than the World Itself",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2022",
+      "source_url": "https://proceedings.mlr.press/v162/wang22c.html"
+    },
+    "primary_module": "M4",
+    "secondary_modules": [
+      "M1"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v162/wang22c.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "直接研究决策型世界模型应当舍弃哪些信息。",
+      "focus": "可控性与奖励相关性两个分解维度，及其对学习的作用。",
+      "boundary": "当前任务无关的信息在新任务中可能变得重要；分解结论有结构前提。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "value-equivalence",
+    "canonical_title": "The Value Equivalence Principle for Model-Based Reinforcement Learning",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "NeurIPS 2020",
+      "source_url": "https://proceedings.neurips.cc/paper/2020/hash/3bb585ea00014b0e3ebe4c6dd165a358-Abstract.html"
+    },
+    "primary_module": "M4",
+    "secondary_modules": [
+      "M5"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.neurips.cc/paper/2020/hash/3bb585ea00014b0e3ebe4c6dd165a358-Abstract.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "给“模型不必完整还原世界也能支持决策”一个精确定义。",
+      "focus": "相对于哪些策略和价值函数保持 Bellman 更新等价。",
+      "boundary": "等价性依赖指定函数与策略集合，不保证任意未来任务。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "what-found",
+    "canonical_title": "What Has a Foundation Model Found? Using Inductive Bias to Probe for World Models",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2025",
+      "source_url": "https://proceedings.mlr.press/v267/vafa25a.html"
+    },
+    "primary_module": "M4",
+    "secondary_modules": [
+      "M3"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v267/vafa25a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "与两篇锚点同样匹配：用模型适应新任务的倾向检验是否学到了底层规律。",
+      "focus": "怎样从假设世界模型生成新任务，并通过学习行为测量归纳偏置。",
+      "boundary": "这里的 probe 是归纳偏置检验，不是普通线性解码器；结论仍限于被测任务和假设。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "simpler",
+    "canonical_title": "Evaluating Real-World Robot Manipulation Policies in Simulation",
+    "aliases": [
+      "SIMPLER"
+    ],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "CoRL 2024（论文集 2025）",
+      "source_url": "https://proceedings.mlr.press/v270/li25c.html"
+    },
+    "primary_module": "M5",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v270/li25c.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "把仿真价值落实为能否可靠比较真实策略表现，而不只是画面逼真。",
+      "focus": "真实/仿真配对、策略排序、视觉匹配与变体聚合。",
+      "boundary": "只做仿真内扰动不能证明虚实差距缩小；不把真机完整复现作为阅读前提。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "rethinking-sim2real",
+    "canonical_title": "Rethinking Sim2Real: Lower Fidelity Simulation Leads to Higher Sim2Real Transfer in Navigation",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "CoRL 2022（论文集 2023）",
+      "source_url": "https://proceedings.mlr.press/v205/truong23a.html"
+    },
+    "primary_module": "M5",
+    "secondary_modules": [
+      "M3"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v205/truong23a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "检验“越真实越有用”的常见直觉。",
+      "focus": "哪些导航模拟细节被改变，为什么会影响迁移。",
+      "boundary": "结果限于论文中的导航设置，不是低保真总比高保真好。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "physical-law-perspective",
+    "canonical_title": "How Far Is Video Generation from World Model: A Physical Law Perspective",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2025",
+      "source_url": "https://proceedings.mlr.press/v267/kang25g.html"
+    },
+    "primary_module": "M5",
+    "secondary_modules": [
+      "M3"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v267/kang25g.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "从物理测试区分分布内预测、外推与组合泛化。",
+      "focus": "各类分布变化怎样构造，成功与失败是否被视觉质量指标掩盖。",
+      "boundary": "所测模型和数据下的发现，不应上升为所有视频模型的普遍限制。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "world-in-world",
+    "canonical_title": "World-In-World: World Models in a Closed-Loop World",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICLR 2026",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html"
+    },
+    "primary_module": "M5",
+    "secondary_modules": [
+      "M4",
+      "M7"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5b4263be85820683d78675cc18d2efc7-Abstract-Conference.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "连接世界模型评估与闭环任务价值。",
+      "focus": "动作可控性、后训练数据和测试时计算如何影响闭环表现。",
+      "boundary": "闭环评估仍有任务覆盖边界；规模化结论须限定在其测试设置。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "plan2explore",
+    "canonical_title": "Planning to Explore via Self-Supervised World Models",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2020",
+      "source_url": "https://proceedings.mlr.press/v119/sekar20a.html"
+    },
+    "primary_module": "M6",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v119/sekar20a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "探索如何在下游任务未知时主动积累有用经验。",
+      "focus": "模型分歧、预测新颖性与后续任务学习。",
+      "boundary": "通用新颖性不一定对应某个任务最值得辨识的信息。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "asid",
+    "canonical_title": "ASID: Active Exploration for System Identification in Robotic Manipulation",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICLR 2024",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html"
+    },
+    "primary_module": "M6",
+    "secondary_modules": [
+      "M5"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "理解主动交互、参数辨识和模拟器改进的闭环。",
+      "focus": "如何选择有信息量的动作，辨识结果怎样进入后续模型。",
+      "boundary": "给定模型类内估参不同于发现缺失机制；真实机器人链路不属于初版实现任务。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "poke-strike",
+    "canonical_title": "Poke and Strike: Learning Task-Informed Exploration Policies",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "CoRL 2025",
+      "source_url": "https://proceedings.mlr.press/v305/aoyama25a.html"
+    },
+    "primary_module": "M6",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v305/aoyama25a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "把主动探索从“识别所有参数”转向“识别任务真正需要的信息”。",
+      "focus": "任务敏感性、探索奖励和探索停止条件；哪些信息是训练时特权信息。",
+      "boundary": "完整操作系统有资源与训练前提；先学习问题定义，不直接承诺轻量真机复现。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "curious-replay",
+    "canonical_title": "Curious Replay for Model-based Adaptation",
+    "aliases": [],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "ICML 2023",
+      "source_url": "https://proceedings.mlr.press/v202/kauvar23a.html"
+    },
+    "primary_module": "M6",
+    "secondary_modules": [
+      "M3"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://proceedings.mlr.press/v202/kauvar23a.html",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "把经验利用纳入适应研究，不仅关注采集更多数据。",
+      "focus": "新颖性、预测误差和回放优先级的作用。",
+      "boundary": "回放已有经验不等于主动选择新的物理交互。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "vjepa2",
+    "canonical_title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+    "aliases": [],
+    "arxiv_id": "2506.09985",
+    "first_public_year": null,
+    "publication": {
+      "label": "arXiv technical report 2025",
+      "source_url": "https://arxiv.org/abs/2506.09985"
+    },
+    "primary_module": "M7",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://arxiv.org/abs/2506.09985",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "了解大规模观察视频表征与动作条件预测、规划的连接。",
+      "focus": "被动预训练和动作条件后训练各学到什么，以及评估接口。",
+      "boundary": "表征预训练不是完整规划系统；动作接口仍依赖相应交互数据。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "leworldmodel",
+    "canonical_title": "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels",
+    "aliases": [
+      "LeWM"
+    ],
+    "arxiv_id": "2603.19312",
+    "first_public_year": null,
+    "publication": {
+      "label": "arXiv 2026；正式主会/期刊归属未在本条确认",
+      "source_url": "https://arxiv.org/abs/2603.19312"
+    },
+    "primary_module": "M7",
+    "secondary_modules": [
+      "M2",
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://arxiv.org/abs/2603.19312",
+      "project": "https://le-wm.github.io/",
+      "full_text": "https://arxiv.org/html/2603.19312v1"
+    },
+    "annotation": {
+      "why": "可选轻量实验载体：不依赖大型冻结编码器的端到端 JEPA。",
+      "focus": "预测损失、潜在分布正则、规划接口及物理探针；先看小模型能否支撑所需分析。",
+      "boundary": "作者报告约 15M 参数、单 GPU 数小时；本轮未独立运行，不能承诺用户机器的耗时和显存。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "key_sections",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/lucas-maes/le-wm",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "jepa-wms",
+    "canonical_title": "What Drives Success in Physical Planning with Joint-Embedding Predictive World Models?",
+    "aliases": [],
+    "arxiv_id": "2512.24497",
+    "first_public_year": null,
+    "publication": {
+      "label": "TMLR 2026",
+      "source_url": "https://arxiv.org/abs/2512.24497"
+    },
+    "primary_module": "M7",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "core",
+    "links": {
+      "paper": "https://arxiv.org/abs/2512.24497",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "组件级受控比较范例，帮助区分几何之外的架构、损失和规划器因素。",
+      "focus": "架构、训练目标、规划算法与数据规模的对照是否匹配。",
+      "boundary": "实验结论针对被测 JEPA-WM 家族，不自动代表所有世界模型。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": "https://github.com/facebookresearch/jepa-wms",
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  },
+  {
+    "id": "dreamerv3",
+    "canonical_title": "Mastering diverse control tasks through world models",
+    "aliases": [
+      "DreamerV3"
+    ],
+    "arxiv_id": null,
+    "first_public_year": null,
+    "publication": {
+      "label": "Nature 2025",
+      "source_url": "https://www.nature.com/articles/s41586-025-08744-2"
+    },
+    "primary_module": "M7",
+    "secondary_modules": [
+      "M4"
+    ],
+    "collection": "seed_v0_2",
+    "priority": "reference",
+    "links": {
+      "paper": "https://www.nature.com/articles/s41586-025-08744-2",
+      "project": null,
+      "full_text": null
+    },
+    "annotation": {
+      "why": "理解世界模型学习算法在不同任务上的稳健性与可扩展性。",
+      "focus": "哪些超参数和算法设计共享，哪些参数仍按环境训练。",
+      "boundary": "统一算法及超参数不等于一个预训练检查点能处处零样本泛化。"
+    },
+    "source_review": {
+      "date": "2026-10-20",
+      "depth": "metadata_abstract",
+      "provenance": "Imported from supplied research plan; not an independent full-paper review."
+    },
+    "user_reading": {
+      "status": "untracked"
+    },
+    "code": {
+      "url": null,
+      "status": "not_run"
+    },
+    "reproduction": {
+      "status": "not_run"
+    },
+    "public_note": null
+  }
+]
