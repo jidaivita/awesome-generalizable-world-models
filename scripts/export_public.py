@@ -6,7 +6,8 @@ from build import ROOT, BEGIN, END, public_note_paths, read_sources, render
 
 STATIC = ('templates/paper-note.md', 'templates/comparison-note.md', 'templates/sharing-note.md',
           'CONTRIBUTING.md', 'docs/maintenance.md', 'docs/sources.md',
-          'assets/research-map.svg', 'assets/README.md')
+          'assets/research-map.svg', 'assets/README.md',
+          'LICENSE.md', 'LICENSES/CC-BY-4.0.txt', 'LICENSES/MIT.txt')
 
 
 def export(root, output):

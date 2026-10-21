@@ -1,20 +1,12 @@
 <!-- BEGIN GENERATED RESEARCH MAP -->
 
-[← Research map](../../README.md#research-map) · [Reading path](../reading-guide.md)
+[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md)
 
-# M2 · Representation Geometry & Manifolds
-
-> How is knowledge organized in latent space, and what does that organization do?
+# Representation Geometry & Analysis
 
 The papers examine geometry that emerges during training and geometry imposed through model design. They relate latent structure to physical variables, prediction error, and planning performance.
 
 Emergent geometry, imposed geometry, and task benefits are distinct claims. A projection can suggest a hypothesis; additional evidence is needed to establish its role.
-
-## Where to start
-
-1. **[Interpreting Physics](#paper-interpreting-physics)** — Analyzes the organization of physical information through layer-wise probes, subspaces, and interventions.
-2. **[SMDS / Shape Happens](#paper-smds)** — Compares geometric hypotheses and their functional effects in language-model representations.
-3. **[GRWM](#paper-grwm)** — Connects representation geometry and temporal context to long-horizon prediction error.
 
 ## Three lines of inquiry
 
@@ -28,86 +20,86 @@ Emergent geometry, imposed geometry, and task benefits are distinct claims. A pr
 
 For example, `z(θ) = (cos θ, sin θ, cos 2θ, sin 2θ, …)` has one underlying degree of freedom while spanning multiple linear directions. Physical degrees of freedom, vector dimension, linear span, intrinsic manifold dimension, and the number of intervention directions are different quantities. This is a mathematical illustration, not a measurement from a trained model.
 
-## Papers and reading pointers
+## Papers
 
 <a id="paper-grwm"></a>
 ### Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models
 
-**CVPR 2026** · [Paper](https://arxiv.org/abs/2510.26782) · [Code](https://github.com/XiaFire/Clone_Deterministic_Environment) · [Project](https://xiafire.github.io/grwm-project-page/)
+Zaishuo Xia et al. · **CVPR 2026** · [Paper](https://arxiv.org/abs/2510.26782) · [Code](https://github.com/XiaFire/Clone_Deterministic_Environment) · [Project](https://xiafire.github.io/grwm-project-page/)
 
 Earlier titles / aliases: Clone Deterministic 3D Worlds with Geometrically-Regularized World Models; Clone Deterministic 3D Worlds.
 
-Connects representation geometry and temporal context to long-horizon prediction error.
+Regularizes latent geometry and uses temporal context for long-horizon prediction in deterministic environments.
 
-- **Read for:** Ground-truth state oracle comparisons, temporal-context encoders, slowness and uniformity regularization, and the corresponding ablations.
-- **Scope:** The main evidence concerns deterministic environments with fixed rules. Separate geometric regularization from history-based disambiguation; neither establishes general open-world robustness.
-- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md) · [M5 · Reliability & Sim2Real](m5-reliability.md)
+- **Method and analysis:** Ground-truth state oracle comparisons, temporal-context encoders, slowness and uniformity regularization, and the corresponding ablations.
+- **Evaluation scope:** Evaluated in deterministic environments with fixed rules, with separate ablations for geometric regularization and temporal context.
+- **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md) · [Evaluation & Sim-to-Real Transfer](m5-reliability.md)
 
 <a id="paper-geoworld"></a>
 ### GeoWorld: Geometric World Models
 
-**CVPR 2026** · [Paper](https://arxiv.org/abs/2602.23058) · [Project](https://steve-zeyu-zhang.github.io/GeoWorld/)
+Zeyu Zhang et al. · **CVPR 2026** · [Paper](https://arxiv.org/abs/2602.23058) · [Project](https://steve-zeyu-zhang.github.io/GeoWorld/)
 
-Studies non-Euclidean latent spaces and geometric optimization for procedural visual planning.
+Uses hyperbolic latent representations and geometric optimization for procedural planning on CrossTask and COIN.
 
-- **Read for:** The separate contributions of Hyperbolic JEPA and geometric optimization, including matched Euclidean comparisons.
-- **Scope:** The main tasks are multi-step procedural visual planning on CrossTask and COIN, rather than continuous physical dynamics or demonstrated real-robot transfer.
-- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Method and analysis:** The separate contributions of Hyperbolic JEPA and geometric optimization, including matched Euclidean comparisons.
+- **Evaluation scope:** The main tasks are multi-step procedural visual planning on CrossTask and COIN, rather than continuous physical dynamics or demonstrated real-robot transfer.
+- **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-smds"></a>
 ### Hypothesis-Driven Feature Manifold Analysis in LLMs via Supervised Multi-Dimensional Scaling
 
-**TMLR 2026** · [Paper](https://arxiv.org/abs/2510.01025) · [Code](https://github.com/UKPLab/tmlr2026-manifold-analysis)
+Federico Tiblias et al. · **TMLR 2026** · [Paper](https://arxiv.org/abs/2510.01025) · [Code](https://github.com/UKPLab/tmlr2026-manifold-analysis)
 
 Earlier titles / aliases: Shape Happens: Automatic Feature Manifold Discovery in LLMs via Supervised Multi-Dimensional Scaling; Shape Happens.
 
 Compares geometric hypotheses and their functional effects in language-model representations.
 
-- **Read for:** How SMDS uses supervision to compare circular, linear, and clustered hypotheses; held-out evaluation and intervention evidence.
-- **Scope:** This is supervised, hypothesis-driven analysis, not discovery without priors. Its LLM results are not established findings about world models.
-- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Method and analysis:** How SMDS uses supervision to compare circular, linear, and clustered hypotheses; held-out evaluation and intervention evidence.
+- **Evaluation scope:** This is supervised, hypothesis-driven analysis, not discovery without priors. Its LLM results are not established findings about world models.
+- **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-interpreting-physics"></a>
 ### Interpreting Physics in Video World Models
 
-**ICML 2026** · [Paper](https://proceedings.mlr.press/v306/joseph26a.html)
+Sonia Joseph et al. · **ICML 2026** · [Paper](https://proceedings.mlr.press/v306/joseph26a.html)
 
 Analyzes the organization of physical information through layer-wise probes, subspaces, and interventions.
 
-- **Read for:** Layer-wise differences in speed and direction; circular population codes; what probes, attention ablations, and directional steering each establish.
-- **Scope:** Changing a decoded direction does not establish improved native prediction or planning. Linear subspace dimension and intrinsic manifold dimension are different quantities.
-- **Related topics:** [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md)
+- **Method and analysis:** Layer-wise differences in speed and direction; circular population codes; what probes, attention ablations, and directional steering each establish.
+- **Evaluation scope:** Changing a decoded direction does not establish improved native prediction or planning. Linear subspace dimension and intrinsic manifold dimension are different quantities.
+- **Related topics:** [Planning & Task-Relevant Representations](m4-knowledge-use.md)
 
 <a id="paper-group-latents"></a>
 ### Learning Abstract World Models with a Group-Structured Latent Space
 
-**arXiv 2025** · [Paper](https://arxiv.org/abs/2506.01529) · [Code](https://github.com/khanhvu207/world-models-group-latents)
+Thomas Delliaux et al. · **arXiv 2025** · [Paper](https://arxiv.org/abs/2506.01529) · [Code](https://github.com/khanhvu207/world-models-group-latents)
 
 Encodes known symmetries, such as translation and rotation, as geometric inductive biases.
 
-- **Read for:** How group actions correspond to latent transitions and how structured and unstructured information coexist.
-- **Scope:** Using known symmetries is different from discovering physical laws from data.
-- **Related topics:** [M1 · Structure & Invariance](m1-structure.md)
+- **Method and analysis:** How group actions correspond to latent transitions and how structured and unstructured information coexist.
+- **Evaluation scope:** Using known symmetries is different from discovering physical laws from data.
+- **Related topics:** [Object-Centric & Relational Models](m1-structure.md)
 
 <a id="paper-origins-manifolds"></a>
 ### The Origins of Representation Manifolds in Large Language Models
 
-**arXiv 2025** · [Paper](https://arxiv.org/abs/2505.18235)
+Alexander Modell et al. · **arXiv 2025** · [Paper](https://arxiv.org/abs/2505.18235)
 
 Relates similarities in learned representations to intrinsic conceptual geometry under a generative model.
 
-- **Read for:** The generative assumptions, the relation between cosine similarity and intrinsic geometry, and testable predictions.
-- **Scope:** The results rely on explicit assumptions about text representations; they are not universal laws for arbitrary networks or world models.
+- **Method and analysis:** The generative assumptions, the relation between cosine similarity and intrinsic geometry, and testable predictions.
+- **Evaluation scope:** The results rely on explicit assumptions about text representations; they are not universal laws for arbitrary networks or world models.
 
-## Read together
+## Method comparisons
 
-Interpreting Physics provides an entry point into physical information in representations; SMDS offers a method for comparing geometric hypotheses; GRWM connects diagnosis to long-horizon prediction. Their model families, supervision, and functional tests differ.
+Interpreting Physics analyzes physical information in video-model representations. SMDS compares supervised geometric hypotheses in language models; GRWM regularizes latent geometry for prediction. The Origins of Representation Manifolds supplies a theoretical account of geometry in text representations.
 
 ## Related topics
 
-- [M3 · Generalization & In-Context Learning](m3-generalization.md) — Does success in a new environment come from knowledge reuse or learning new dynamics?
-- [M4 · Knowledge Use & Task Abstraction](m4-knowledge-use.md) — Which information actually supports prediction, planning, and decisions?
-- [M7 · Pretraining & Scaling](m7-scaling.md) — How do controlled insights connect to stronger models and larger datasets?
+- [Generalization & Context-Based Adaptation](m3-generalization.md)
+- [Planning & Task-Relevant Representations](m4-knowledge-use.md)
+- [Predictive Architectures & Pretraining](m7-scaling.md)
 
 [Paper-note template](../../templates/paper-note.md) · [Comparison template](../../templates/comparison-note.md) · [Back to overview ↑](../../README.md)
 

@@ -29,6 +29,20 @@ class ResearchMapTests(unittest.TestCase):
         (self.root/'assets/research-map.svg').unlink()
         with self.assertRaisesRegex(ValueError, 'Missing local link'):
             validate_links(self.root)
+    def test_bibliography_identity_and_author_validation(self):
+        from build import bibliography
+        papers,_,_=read_sources(self.root)
+        text=bibliography(papers)
+        import re
+        self.assertEqual(set(re.findall(r'^@\w+\{([^,]+),',text,re.M)),{p['id'] for p in papers})
+        self.assertIn('Thomas Kipf and Ethan Fetaya',text)
+        self.assertIn('@inproceedings{context-diversity,',text)
+        self.edit(lambda p:p[0]['bibliography'].update(authors=[]))
+        with self.assertRaisesRegex(ValueError,'Missing verified authors'):validate_data(self.root)
+    def test_unmarked_bibliography_not_overwritten(self):
+        path=self.root/'references.bib';path.write_text('Manual bibliography')
+        with self.assertRaisesRegex(ValueError,'Refusing to overwrite unmarked bibliography'):write_outputs(self.root)
+        self.assertEqual(path.read_text(),'Manual bibliography')
     def test_duplicate_alias_rejected(self):
         self.edit(lambda p:p[0]['aliases'].append(p[1]['canonical_title']))
         with self.assertRaisesRegex(ValueError,'Duplicate title'):validate_data(self.root)
@@ -54,7 +68,7 @@ class ResearchMapTests(unittest.TestCase):
         (self.root/'private').mkdir(exist_ok=True);(self.root/'private/idea.md').write_text(secret)
         (self.root/'public_notes').mkdir(exist_ok=True);(self.root/'public_notes/unlisted.md').write_text(secret)
         out=Path(self.tmp.name)/'public';files=export(self.root,out)
-        self.assertEqual(len(files),17)
+        self.assertEqual(len(files),21)
         self.assertNotIn(secret,'\n'.join(p.read_text() for p in out.rglob('*') if p.is_file()))
         self.assertFalse((out/'data').exists())
     def test_manifest_rejects_path_escape(self):

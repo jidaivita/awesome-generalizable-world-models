@@ -49,6 +49,14 @@ def validate_data(root=ROOT):
             require(key not in seen_arxiv,'Duplicate arXiv identity')
             require(key==aid,'Store arXiv IDs without version suffix')
             seen_arxiv[key]=p['id']
+        bib=p['bibliography']
+        require(isinstance(bib['authors'],list) and bool(bib['authors']) and all(isinstance(a,str) and a.strip() for a in bib['authors']), 'Missing verified authors')
+        require(isinstance(bib['year'],int) and 1900<=bib['year']<=2100, 'Invalid bibliographic year')
+        require(bib['entry_type'] in {'misc','article','inproceedings'}, 'Invalid bibliography entry type')
+        require(re.fullmatch(r'\d{4}-\d{2}-\d{2}',bib['verified_on']), 'Invalid bibliography review date')
+        if bib['entry_type']=='article': require(bool(bib.get('journal')), 'Missing journal')
+        if bib['entry_type']=='inproceedings': require(bool(bib.get('booktitle')), 'Missing proceedings title')
+        valid_url(bib['source_url'])
         require(p['priority'] in {'anchor','core','reference'},'Invalid priority')
         require(p['reproduction']['status'] in {'not_run','attempted','verified'},'Invalid run status')
         if p['reproduction']['status']=='verified':
@@ -78,6 +86,7 @@ def validate_links(root=ROOT):
     for rel,body in docs.items():
         body=re.sub(r'^```[^\n]*\n.*?^```[ \t]*$', '', body, flags=re.M | re.S)
         targets=re.findall(r'!?\[[^\]]+\]\(([^\s)]+)\)',body)
+        targets += re.findall(r'<img\b[^>]*\bsrc=[\"\']([^\"\']+)[\"\']',body)
         for href in targets:
             if urlsplit(href).scheme:continue
             path,_,fragment=unquote(href).partition('#')

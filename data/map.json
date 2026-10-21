@@ -3,16 +3,16 @@
     {
       "id": "M1",
       "slug": "structure",
-      "title": "Structure & Invariance",
-      "english": "Structure & Invariance",
+      "title": "Object-Centric & Relational Models",
+      "english": "Object-Centric & Relational Models",
       "question": "Which objects, relations, and stable structures should a model represent?",
       "intro": "Object-centric representations and interaction graphs encode structure for dynamics prediction. The papers examine how this structure is learned and which architectural or training assumptions support it.",
-      "scope": "This module studies representational content and inductive biases. M2 examines its latent organization; M4 examines its actual use.",
+      "scope": "Object decomposition, interaction graphs, and sparse attention provide different structural assumptions for dynamics prediction.",
       "start": [
         "nri",
         "cswm"
       ],
-      "connections": "NRI and C-SWM offer entry points through interaction graphs and object representations. SPARTAN and Causal-JEPA connect structural choices to adaptation or latent prediction. They differ in how object information is obtained, how structure changes with context, and how relations support prediction.",
+      "connections": "NRI infers interaction graphs, while C-SWM learns object representations with a contrastive objective. SPARTAN uses sparse attention; Causal-JEPA masks object-level latents. These methods differ in how object information is obtained and how relations enter the predictor.",
       "related": [
         "M2",
         "M3",
@@ -22,8 +22,8 @@
     {
       "id": "M2",
       "slug": "geometry",
-      "title": "Representation Geometry & Manifolds",
-      "english": "Representation Geometry & Manifolds",
+      "title": "Representation Geometry & Analysis",
+      "english": "Representation Geometry & Analysis",
       "question": "How is knowledge organized in latent space, and what does that organization do?",
       "intro": "The papers examine geometry that emerges during training and geometry imposed through model design. They relate latent structure to physical variables, prediction error, and planning performance.",
       "scope": "Emergent geometry, imposed geometry, and task benefits are distinct claims. A projection can suggest a hypothesis; additional evidence is needed to establish its role.",
@@ -32,7 +32,7 @@
         "smds",
         "grwm"
       ],
-      "connections": "Interpreting Physics provides an entry point into physical information in representations; SMDS offers a method for comparing geometric hypotheses; GRWM connects diagnosis to long-horizon prediction. Their model families, supervision, and functional tests differ.",
+      "connections": "Interpreting Physics analyzes physical information in video-model representations. SMDS compares supervised geometric hypotheses in language models; GRWM regularizes latent geometry for prediction. The Origins of Representation Manifolds supplies a theoretical account of geometry in text representations.",
       "related": [
         "M3",
         "M4",
@@ -42,8 +42,8 @@
     {
       "id": "M3",
       "slug": "generalization",
-      "title": "Generalization & In-Context Learning",
-      "english": "Generalization & In-Context Learning",
+      "title": "Generalization & Context-Based Adaptation",
+      "english": "Generalization & Context-Based Adaptation",
       "question": "Does success in a new environment come from knowledge reuse or learning new dynamics?",
       "intro": "Generalization can involve new object combinations, hidden environment parameters, or changes in dynamics. The papers examine what information context provides and how models use it to adapt.",
       "scope": "Environment recognition, dynamics learning, and state estimation can all affect performance. Benefits from a longer context do not alone identify the mechanism.",
@@ -61,8 +61,8 @@
     {
       "id": "M4",
       "slug": "knowledge-use",
-      "title": "Knowledge Use & Task Abstraction",
-      "english": "Knowledge Use & Task Abstraction",
+      "title": "Planning & Task-Relevant Representations",
+      "english": "Planning & Task-Relevant Representations",
       "question": "Which information actually supports prediction, planning, and decisions?",
       "intro": "The papers relate internal representations to prediction, planning, and task performance. They examine which information a task requires and how model behavior reveals its use.",
       "scope": "Decodability, use, and task value require separate evidence. Whether an abstraction transfers to a new task depends on what it preserves.",
@@ -70,7 +70,7 @@
         "what-found",
         "dino-wm"
       ],
-      "connections": "What Has a Foundation Model Found probes world structure through inductive bias on new tasks. DINO-WM makes the representation-to-planning interface concrete. Denoised MDPs and Value Equivalence help specify which details of the world need to be retained.",
+      "connections": "What Has a Foundation Model Found tests world structure through inductive bias on new tasks. DINO-WM uses latent predictions for goal-directed planning. Denoised MDPs decomposes observations by controllability and reward relevance; Value Equivalence characterizes models through their Bellman updates.",
       "related": [
         "M2",
         "M3",
@@ -80,8 +80,8 @@
     {
       "id": "M5",
       "slug": "reliability",
-      "title": "Reliability & Sim2Real",
-      "english": "Reliability & Sim2Real",
+      "title": "Evaluation & Sim-to-Real Transfer",
+      "english": "Evaluation & Sim-to-Real Transfer",
       "question": "Which model errors matter for decisions, and when is a model trustworthy?",
       "intro": "Visual quality, physical accuracy, and task performance measure different aspects of reliability. The papers study physical extrapolation, closed-loop evaluation, and paired real and simulated policy tests.",
       "scope": "Performance within simulation, agreement in real-world policy rankings, and successful transfer are different forms of evidence.",
@@ -99,8 +99,8 @@
     {
       "id": "M6",
       "slug": "adaptation",
-      "title": "Exploration & Efficient Adaptation",
-      "english": "Exploration & Efficient Adaptation",
+      "title": "Exploration & Experience Replay",
+      "english": "Exploration & Experience Replay",
       "question": "What experience should an agent acquire or reuse in an unfamiliar environment?",
       "intro": "Exploration determines which experience to collect; replay determines which experience to reuse. The papers study information gain, system identification, task sensitivity, and replay selection.",
       "scope": "Parameter identification within a model class, learning missing mechanisms, active collection, and experience replay have different assumptions and costs.",
@@ -118,8 +118,8 @@
     {
       "id": "M7",
       "slug": "scaling",
-      "title": "Pretraining & Scaling",
-      "english": "Pretraining & Scaling",
+      "title": "Predictive Architectures & Pretraining",
+      "english": "Predictive Architectures & Pretraining",
       "question": "How do controlled insights connect to stronger models and larger datasets?",
       "intro": "The papers examine video pretraining, joint-embedding predictive learning, and world-model-based control at different data and model scales. Their architectures separate representation learning, dynamics prediction, and planning in different ways.",
       "scope": "Large-scale representation pretraining and executable planning involve different stages. A shared algorithm does not imply one checkpoint that works in every environment.",
@@ -127,7 +127,7 @@
         "leworldmodel",
         "jepa-wms"
       ],
-      "connections": "LeWorldModel provides a small end-to-end route. JEPA-WMs component studies separate architecture, objective, and planning effects. V-JEPA 2 and DreamerV3 offer broader references for data and task scaling.",
+      "connections": "LeWorldModel trains an encoder and predictor jointly. JEPA-WMs compares architectures, objectives, and planners. V-JEPA 2 separates video pretraining from action-conditioned post-training, while DreamerV3 learns world models and policies within each environment.",
       "related": [
         "M2",
         "M4",

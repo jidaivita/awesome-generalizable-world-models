@@ -25,6 +25,40 @@ def resources(p):
     return ' · '.join(f'[{label}]({url})' for label, url in pairs if url)
 
 
+def author_label(p):
+    authors = p['bibliography']['authors']
+    first = authors[0]
+    if ', ' in first:
+        family, given = first.split(', ', 1)
+        first = given + ' ' + family
+    return first + (' et al.' if len(authors) > 1 else '')
+
+
+def bib_escape(text):
+    replacements = {'&': r'\&', '%': r'\%', '_': r'\_', '#': r'\#', '$': r'\$'}
+    return ''.join(replacements.get(char, char) for char in str(text))
+
+
+def bibliography(papers):
+    result = '% Generated from verified bibliographic fields in data/papers.json.\n% UTF-8; years refer to the cited edition.\n\n'
+    for p in sorted(papers, key=lambda p: p['id']):
+        b = p['bibliography']
+        fields = {'title': '{' + bib_escape(p['canonical_title']) + '}',
+                  'author': ' and '.join(bib_escape(a) for a in b['authors']),
+                  'year': str(b['year'])}
+        for key in ('booktitle', 'journal', 'volume', 'pages', 'publisher', 'doi'):
+            if b.get(key): fields[key] = bib_escape(b[key])
+        if b.get('eprint'):
+            fields['eprint'] = b['eprint']; fields['archivePrefix'] = 'arXiv'
+        if b['entry_type'] == 'misc' and not p['publication']['label'].startswith('arXiv'):
+            fields['note'] = bib_escape(p['publication']['label'])
+        fields['url'] = b['source_url']
+        result += '@' + b['entry_type'] + '{' + p['id'] + ',\n'
+        result += ',\n'.join('  ' + key + ' = {' + value + '}' for key, value in fields.items())
+        result += '\n}\n\n'
+    return result
+
+
 def public_note_paths(root, manifest):
     """No directory scanning: only manifest-listed Markdown under public_notes/."""
     result = []
@@ -50,88 +84,53 @@ def render(root=ROOT):
     total = sum(p['collection'] == 'seed_v0_2' for p in papers)
     out = {}
     intro = '''<a id="top"></a>
-<div align="center">
 
 # Awesome Generalizable World Models
 
-**Representations · Dynamics · Generalization · Planning**
+Papers on learned world models and their generalization across object configurations, environments, dynamics, and tasks. The list covers structured representations, latent geometry, context-based adaptation, planning, and evaluation, with related analysis methods from language models labeled separately.
 
-![A research map connecting representation geometry, generalization, and knowledge use](assets/research-map.svg)
+<p align="center"><img src="assets/research-map.svg" width="620" alt="Representation geometry, transfer across environments, and planning"></p>
 
-'''
-    intro += f'![Papers](https://img.shields.io/badge/Papers-{total}-2563eb?style=flat-square) ![Reading path](https://img.shields.io/badge/Reading_path-{len(cfg["route"])}-0f766e?style=flat-square) ![Research modules](https://img.shields.io/badge/Modules-{len(modules)}-7c3aed?style=flat-square)\n'
-    intro += '''
-[Start Here](#start-here) · [Contents](#research-map) · [Reading Path](#reading-route) · [Paper List](#papers) · [Contribute](CONTRIBUTING.md)
-
-</div>
-
----
-
-Papers and reading guides on world-model representations, generalization, adaptation, and planning.
+[Topics](#research-map) · [Reading Guide](docs/reading-guide.md) · [BibTeX](references.bib) · [Contributing](CONTRIBUTING.md)
 
 <a id="start-here"></a>
-## Start Here
-
-Two papers on representation and adaptation:
-
-| 01 · How is knowledge organized? | 02 · What does new experience change? |
-| :--- | :--- |
-'''
-    a,b=byid['interpreting-physics'],byid['context-diversity']
-    intro += f"| **[{a['canonical_title']}]({a['links']['paper']})** | **[{b['canonical_title']}]({b['links']['paper']})** |\n"
-    intro += '''| Physical variables, subspaces, and interventions reveal how information is represented. | Environment recognition and environment learning offer different explanations for adaptation. |
-| **Ask:** Does decodable information actually influence model behavior? | **Ask:** What mechanism explains the benefit of context? |
-
 <a id="research-map"></a>
 ## Contents
 
-| Topic | Papers | Reading guide |
-| :--- | :---: | :--- |
 '''
     for m in modules:
-        intro += f"| [{m['title']}](#{m['id'].lower()}) | {len(selected(m['id']))} | [Overview & connections]({module_path(m)}) |\n"
-    intro += '\nPapers are listed alphabetically within each topic. The guides link related work across topics.\n\n'
-    intro += '''<a id="reading-route"></a>
-## Reading Path
-
-The [12-paper reading path](docs/reading-guide.md) covers model mechanisms, representation geometry, planning, and adaptation.
-
-<details>
-<summary>View the 12-paper reading path</summary>
-
-
-| # | Paper | Research question |
-| :---: | :--- | :--- |
-'''
-    for i,r in enumerate(cfg['route'],1):intro += f"| {i:02d} | [{r['label']}](#paper-{r['id']}) | {r['question']} |\n"
-    intro += '\n</details>\n\n[Read the guide →](docs/reading-guide.md)\n\n<a id="papers"></a>\n## Papers\n\nEntries include a paper link, publication information, available code or project links, and a short description.\n\n'
+        intro += f"- [{m['title']}](#{m['id'].lower()})\n"
+    intro += f"\n{total} papers · {len(modules)} topics · Listed alphabetically within each topic.\n\n<a id=\"papers\"></a>\n## Papers\n\n"
     for m in modules:
-        intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['title']}\n\n> {m['question']}\n\n"
+        intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['title']}\n\n"
         for p in selected(m['id']):
-            intro += f"<a id=\"paper-{p['id']}\"></a>\n- **[{p['canonical_title']}]({p['links']['paper']})**<br>\n  {p['publication']['label']} · {resources(p)}<br>\n  {p['annotation']['why']}\n\n"
-        intro += f"[Reading notes and connections →]({module_path(m)}) · [Back to map ↑](#research-map)\n\n"
-    intro += """## Related Lists
+            tag=f" · `{p['domain_label']}`" if p.get('domain_label') else ''
+            intro += f"<a id=\"paper-{p['id']}\"></a>\n- **{p['canonical_title']}**<br>\n  {author_label(p)} · **{p['publication']['label']}**{tag} · {resources(p)}<br>\n  {p['annotation']['why']}\n\n"
+        intro += f"[Topic overview and comparisons]({module_path(m)}) · [Contents](#research-map)\n\n"
+    intro += '''<a id="reading-route"></a>
+## Reading Guide
 
-- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models) — broader coverage of world-model applications.
-- [Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) — influential deep-learning papers organized by topic.
+The [12-paper reading path](docs/reading-guide.md) connects representation analysis, predictive architectures, planning, and adaptation. Each entry links to a topic overview and identifies the research question it addresses.
+
+## Related Resources
+
+- [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models) — world-model research across application domains.
+- [Awesome Deep Learning Papers](https://github.com/terryum/awesome-deep-learning-papers) — a historical deep-learning paper list; no longer maintained.
 - [Awesome Machine Learning](https://github.com/josephmisiti/awesome-machine-learning) — machine-learning libraries and resources.
 
 ## Contributing
 
-To suggest a paper or correct an entry, open an issue or pull request. See the [contribution guide](CONTRIBUTING.md) for scope and entry format.
-"""
+Paper suggestions and corrections are welcome through issues or pull requests. See [Contributing](CONTRIBUTING.md) for inclusion criteria and the entry format. Bibliographic records are available in [BibTeX](references.bib).
+
+## License
+
+Original catalog text and illustrations: [CC BY 4.0](LICENSES/CC-BY-4.0.txt). Maintenance code: [MIT](LICENSES/MIT.txt). Linked papers and external resources retain their respective licenses. See [license scope](LICENSE.md).
+'''
     if notes:
         intro += '\n## Community Notes\n\n' + ''.join(f'- [{title}]({path})\n' for title,path,_ in notes)
-    first = intro.index('<a id="start-here"></a>')
-    contents = intro.index('<a id="research-map"></a>')
-    route_start = intro.index('<a id="reading-route"></a>')
-    intro = intro[:first] + intro[contents:route_start] + intro[first:contents] + intro[route_start:]
     out['README.md'] = intro
     for m in modules:
-        prefix=f"[← Research map](../../README.md#research-map) · [Reading path](../reading-guide.md)\n\n# {m['id']} · {m['title']}\n\n> {m['question']}\n\n{m['intro']}\n\n{m['scope']}\n\n## Where to start\n\n"
-        for i,id in enumerate(m['start'],1):
-            p=byid[id];target=f"#paper-{id}" if p['primary_module']==m['id'] else f"../../README.md#paper-{id}"
-            prefix+=f"{i}. **[{next((r['label'] for r in cfg['route'] if r['id']==id), p['canonical_title'])}]({target})** — {p['annotation']['why']}\n"
+        prefix=f"[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md)\n\n# {m['title']}\n\n{m['intro']}\n\n{m['scope']}\n"
         if m['id']=='M2':
             prefix+='''
 ## Three lines of inquiry
@@ -146,22 +145,22 @@ To suggest a paper or correct an entry, open an issue or pull request. See the [
 
 For example, `z(θ) = (cos θ, sin θ, cos 2θ, sin 2θ, …)` has one underlying degree of freedom while spanning multiple linear directions. Physical degrees of freedom, vector dimension, linear span, intrinsic manifold dimension, and the number of intervention directions are different quantities. This is a mathematical illustration, not a measurement from a trained model.
 '''
-        prefix+='\n## Papers and reading pointers\n\n'
+        prefix+='\n## Papers\n\n'
         for p in selected(m['id']):
-            prefix+=f"<a id=\"paper-{p['id']}\"></a>\n### {p['canonical_title']}\n\n**{p['publication']['label']}** · {resources(p)}\n\n"
+            prefix+=f"<a id=\"paper-{p['id']}\"></a>\n### {p['canonical_title']}\n\n{author_label(p)} · **{p['publication']['label']}** · {resources(p)}\n\n"
             if p['aliases']:prefix+='Earlier titles / aliases: '+ '; '.join(p['aliases'])+'.\n\n'
-            prefix+=f"{p['annotation']['why']}\n\n- **Read for:** {p['annotation']['focus']}\n- **Scope:** {p['annotation']['boundary']}\n"
-            if p['secondary_modules']:prefix+='- **Related topics:** '+' · '.join(f"[{mid} · {bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in p['secondary_modules'])+'\n'
+            prefix+=f"{p['annotation']['why']}\n\n- **Method and analysis:** {p['annotation']['focus']}\n- **Evaluation scope:** {p['annotation']['boundary']}\n"
+            if p['secondary_modules']:prefix+='- **Related topics:** '+' · '.join(f"[{bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in p['secondary_modules'])+'\n'
             prefix+='\n'
-        prefix+=f"## Read together\n\n{m['connections']}\n\n## Related topics\n\n"
-        prefix+='\n'.join(f"- [{mid} · {bymod[mid]['title']}]({Path(module_path(bymod[mid])).name}) — {bymod[mid]['question']}" for mid in m['related'])
+        prefix+=f"## Method comparisons\n\n{m['connections']}\n\n## Related topics\n\n"
+        prefix+='\n'.join(f"- [{bymod[mid]['title']}]({Path(module_path(bymod[mid])).name})" for mid in m['related'])
         prefix+='\n\n[Paper-note template](../../templates/paper-note.md) · [Comparison template](../../templates/comparison-note.md) · [Back to overview ↑](../../README.md)\n'
         out[module_path(m)] = prefix
-    route='''[← Overview](../README.md#reading-route)
+    route='''[← Paper index](../README.md#papers)
 
 # Reading Path
 
-Twelve papers on model mechanisms, representation geometry, planning, and adaptation, grouped by research question.
+A sequence of twelve papers connecting representation analysis, prediction, planning, and adaptation. The guide assumes familiarity with representation learning and model-based reinforcement learning; its four sections can also be read independently.
 
 ## 01–03 · Representations and adaptation
 
@@ -173,10 +172,10 @@ These papers examine physical information in representations, learning from cont
         if i==6:route+='## 06–08 · World-model architectures and planning\n\nDINO-WM, LeWorldModel, and JEPA-WMs examine visual encoders, predictive objectives, and planning algorithms.\n\n'
         if i==9:route+='## 09–12 · Transfer and information gathering\n\nThese papers cover symmetry priors, changing dynamics, simulation-based policy evaluation, and task-informed exploration.\n\n'
         p=byid[r['id']]
-        route+=f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n- **Question:** {r['question']}\n- **Reading pointers:** [{bymod[p['primary_module']]['title']}]({module_path(bymod[p['primary_module']]).removeprefix('docs/')}#paper-{p['id']})\n\n"
+        route+=f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n- **Question:** {r['question']}\n- **Topic overview:** [{bymod[p['primary_module']]['title']}]({module_path(bymod[p['primary_module']]).removeprefix('docs/')}#paper-{p['id']})\n\n"
     route+='''## Comparing papers
 
-When reading across these topics, distinguish three questions:
+The comparisons address three questions:
 
 - **Representation:** What information or structure can be recovered from the model?
 - **Function:** What changes when that information is manipulated or removed?
@@ -187,6 +186,7 @@ Comparisons depend on the supervision available to each model, whether the encod
 [Paper-note template](../templates/paper-note.md) · [Comparison template](../templates/comparison-note.md) · [Back to papers](../README.md#papers)
 '''
     out['docs/reading-guide.md']=route
+    out['references.bib']=bibliography(papers)
     return out
 
 
@@ -194,6 +194,13 @@ def write_outputs(root=ROOT, check=False):
     changed=[]
     for rel, body in render(root).items():
         path=root/rel
+        if rel.endswith('.bib'):
+            if path.exists() and not path.read_text().startswith('% Generated from verified bibliographic fields'):
+                raise ValueError(f'Refusing to overwrite unmarked bibliography: {rel}')
+            if not path.exists() or path.read_text()!=body:
+                changed.append(rel)
+                if not check: path.write_text(body)
+            continue
         block=BEGIN+'\n\n'+body.rstrip()+'\n\n'+END+'\n'
         if path.exists():
             old=path.read_text()
