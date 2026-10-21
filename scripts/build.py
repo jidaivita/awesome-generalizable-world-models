@@ -3,6 +3,8 @@
 import argparse
 import json
 from pathlib import Path
+import re
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 BEGIN = '<!-- BEGIN GENERATED RESEARCH MAP -->'
@@ -20,9 +22,41 @@ def module_path(m):
     return m["path"] if "path" in m else f"docs/modules/{m['id'].lower()}-{m['slug']}.md"
 
 
+def badge(label, message, color, target):
+    # Shields path components have their own escaping rules before URL encoding.
+    def component(value):
+        return quote(str(value).replace('_', '__').replace('-', '--'), safe='')
+    image = f'https://img.shields.io/badge/{component(label)}-{component(message)}-{color}?style=flat-square'
+    return f'[![{label}: {message}]({image})]({target})'
+
+
+def publication_badge(label, target, arxiv_id=None):
+    if label.startswith('arXiv'):
+        return badge('arXiv', arxiv_id or label.removeprefix('arXiv').strip(), 'b31b1b', target)
+    year = re.search(r'\b(?:19|20)\d{2}\b', label)
+    if not year:
+        return badge('Paper', label, '526d82', target)
+    venue = label[:year.start()].strip()
+    edition = label[year.start():].strip()
+    color = '7657a3' if 'Workshop' in edition else '526d82'
+    return badge(venue, edition, color, target)
+
+
 def resources(p):
-    pairs = [('Paper', p['links']['paper']), ('Code', p['code']['url']), ('Project', p['links']['project']), ('Note', p['public_note'])]
-    return ' · '.join(f'[{label}]({url})' for label, url in pairs if url)
+    result = [publication_badge(p['publication']['label'], p['publication']['source_url'], p['arxiv_id'])]
+    paper_url = p['links']['paper']
+    if p['arxiv_id'] and not p['publication']['label'].startswith('arXiv'):
+        result.append(badge('arXiv', p['arxiv_id'], 'b31b1b', 'https://arxiv.org/abs/' + p['arxiv_id']))
+    elif paper_url != p['publication']['source_url']:
+        result.append(badge('Paper', 'Read', '526d82', paper_url))
+    for label, message, color, url in [
+        ('Code', 'GitHub' if (p['code']['url'] or '').startswith('https://github.com/') else 'Source', '2e8b57', p['code']['url']),
+        ('Project', 'Website', '2679b5', p['links']['project']),
+        ('Note', 'Read', 'b87936', p['public_note']),
+    ]:
+        if url:
+            result.append(badge(label, message, color, url))
+    return ' '.join(result)
 
 
 def author_label(p):
@@ -101,7 +135,7 @@ def render(root=ROOT):
         tag = f" · `{p['domain_label']}`" if p.get('domain_label') else ''
         text = f'<a id="paper-{p["id"]}"></a>\n'
         if detailed:
-            text += f"### {p['canonical_title']}\n\n{author_label(p)} · **{p['publication']['label']}**{tag} · {resources(p)}\n\n"
+            text += f"### {p['canonical_title']}\n\n{resources(p)}\n\n{author_label(p)}{tag}\n\n"
             if p['aliases']:
                 text += 'Earlier titles / aliases: ' + '; '.join(p['aliases']) + '.\n\n'
             text += f"- **Method:** {p['annotation']['focus']}\n- **Evaluation:** {p['annotation']['boundary']}\n"
@@ -110,19 +144,35 @@ def render(root=ROOT):
             if p['secondary_modules']:
                 text += '- **Related topics:** ' + ' · '.join(f"[{bymod[mid]['title']}]({relative(module_path(bymod[mid]), source)})" for mid in p['secondary_modules']) + '\n'
         else:
-            text += f"- **{p['canonical_title']}**<br>\n  {author_label(p)} · **{p['publication']['label']}**{tag} · {resources(p)}<br>\n  {p['annotation']['why']}\n"
+            label = cfg['paper_labels'][p['id']]
+            title = p['canonical_title']
+            if title.casefold().startswith(label.casefold() + ':'):
+                title = title[len(label)+1:].strip()
+            headline = f"**{label}** — [{title}]({p['links']['paper']})" if label.casefold() != title.casefold() else f"**[{title}]({p['links']['paper']})**"
+            text += f"- {headline}<br>\n  {resources(p)}<br>\n  {author_label(p)}{tag} · {p['annotation']['why']}\n"
         return text + '\n'
 
     core_count = sum(p['primary_module'] != supplement['id'] for p in papers)
     intro = '''<a id="top"></a>
+<a id="awesome-generalizable-world-models"></a>
 
-# Awesome Generalizable World Models
+<div align="center">
 
-A focused paper index on the mechanisms, generalization, and interpretability of learned world models. It connects representation structure and latent geometry to adaptation, physical prediction, and planning.
+# 🌐 Awesome Generalizable World Models
 
-<p align="center"><img src="assets/research-map.svg" width="620" alt="Latent representations, transfer across environments, and planning"></p>
+[![Awesome](https://awesome.re/badge.svg)](https://github.com/sindresorhus/awesome) [![GitHub stars](https://img.shields.io/github/stars/jidaivita/awesome-generalizable-world-models?style=flat-square&color=526d82&label=Stars)](https://github.com/jidaivita/awesome-generalizable-world-models) [![Text: CC BY 4.0](https://img.shields.io/badge/Text-CC_BY_4.0-2679b5?style=flat-square)](LICENSES/CC-BY-4.0.txt) [![Code: MIT](https://img.shields.io/badge/Code-MIT-526d82?style=flat-square)](LICENSES/MIT.txt) [![PRs: welcome](https://img.shields.io/badge/PRs-welcome-2e8b57?style=flat-square)](CONTRIBUTING.md)
 
-[Topics](#research-map) · [Reading Guide](docs/reading-guide.md) · [Supplementary Reading](docs/supplementary.md) · [BibTeX](references.bib) · [Contributing](CONTRIBUTING.md)
+**Mechanisms, generalization, and interpretability of learned world models.**
+
+Representation structure, latent dynamics, physical inference, and planning.
+
+<img src="assets/world-models-cover.png" width="100%" alt="Conceptual illustration of shared latent dynamics across physical environments, with probes and interventions into the representation">
+
+[Research Map](#research-map) · [Reading Guide](docs/reading-guide.md) · [BibTeX](references.bib) · [Related Resources](#related-resources) · [Contributing](CONTRIBUTING.md)
+
+</div>
+
+---
 
 <a id="start-here"></a>
 <a id="research-map"></a>
@@ -132,11 +182,11 @@ A focused paper index on the mechanisms, generalization, and interpretability of
 | :--- | :--- | ---: |
 '''
     for m in modules:
-        intro += f"| [{m['title']}](#{m['id'].lower()}) | {m['summary']} | {len(selected(m['id']))} |\n"
+        intro += f"| {m['icon']} [{m['title']}](#{m['id'].lower()}) | {m['summary']} | {len(selected(m['id']))} |\n"
     intro += f"\n{core_count} papers across six topics · {len(selected(supplement['id']))} supplementary papers · {len(papers)} papers in total.\n\n"
     intro += 'Entries describe the mechanism, evaluation setting, and evidence for each contribution. New papers extend these six topics through a distinct method, analysis, or test of generalization. Each paper has one primary topic and is listed alphabetically within it.\n\n<a id="papers"></a>\n## Papers\n\n'
     for m in modules:
-        intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['title']}\n\n{m['summary']}\n\n"
+        intro += f"<a id=\"{m['id'].lower()}\"></a>\n### {m['icon']} {m['title']}\n\n{m['summary']}\n\n"
         intro += ''.join(entry(p, 'README.md') for p in selected(m['id']))
         intro += f"[Topic overview and comparisons]({module_path(m)}) · [Contents](#research-map)\n\n"
     intro += '''<a id="m6"></a>
@@ -149,8 +199,7 @@ A focused paper index on the mechanisms, generalization, and interpretability of
 <summary>Browse supplementary papers</summary>
 
 '''
-    for p in selected(supplement['id']):
-        intro += f'<a id="paper-{p["id"]}"></a>\n- {linked_paper(p["id"], "README.md")} · {p["publication"]["label"]}\n'
+    intro += ''.join(entry(p, 'README.md') for p in selected(supplement['id']))
     intro += '''
 </details>
 
@@ -180,7 +229,7 @@ Original catalog text and illustrations: [CC BY 4.0](LICENSES/CC-BY-4.0.txt). Ma
     out['README.md'] = intro
     for m in modules:
         path = module_path(m)
-        body = f"[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md) · [Supplementary reading](../supplementary.md)\n\n# {m['title']}\n\n{m['intro']}\n\n{m['scope']}\n\n"
+        body = f"[← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md) · [Supplementary reading](../supplementary.md)\n\n# {m['icon']} {m['title']}\n\n{m['intro']}\n\n{m['scope']}\n\n"
         if m['id'] == 'M3':
             body += '''## Evaluation settings
 
@@ -268,7 +317,7 @@ Twelve papers connect evidence about learned world structure to composition, geo
         if i in sections:
             s = sections[i]; route += f"## {s['title']}\n\n{s['intro']}\n\n"
         p = byid[r['id']]
-        route += f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n{author_label(p)} · **{p['publication']['label']}**\n\n"
+        route += f"### {i:02d} · {r['label']}\n\n**[{p['canonical_title']}]({p['links']['paper']})**\n\n{resources(p)}\n\n{author_label(p)}\n\n"
         route += f"**Method:** {p['annotation']['focus']}\n\n**Evaluation:** {p['annotation']['boundary']}\n\n**Connection:** {r['connection']}\n\n"
         route += f"[Topic: {bymod[p['primary_module']]['title']}]({relative(paper_location(p), path)})\n\n"
     route += '''## Further reading
@@ -281,7 +330,7 @@ Twelve papers connect evidence about learned world structure to composition, geo
 
     candidates = '[← Paper index](../README.md#research-map) · [Reading guide](reading-guide.md)\n\n# Candidate Papers\n\nThese papers are listed separately from the main catalog and are excluded from its counts and bibliography.\n\n'
     for c in cfg['candidates']:
-        candidates += f"<a id=\"paper-{c['id']}\"></a>\n## {c['title']}\n\n{author_label({'bibliography': {'authors': c['authors']}})} · **{c['publication']}** · [Paper]({c['url']})\n\n"
+        candidates += f"<a id=\"paper-{c['id']}\"></a>\n## {c['title']}\n\n{publication_badge(c['publication'], c['url'], c['arxiv_id'])}\n\n{author_label({'bibliography': {'authors': c['authors']}})}\n\n"
         if c['aliases']:
             candidates += 'Earlier titles: ' + '; '.join(c['aliases']) + '.\n\n'
         candidates += f"- **Method:** {c['method']}\n- **Evaluation:** {c['evaluation']}\n- **Related topic:** [{bymod[c['module']]['title']}]({relative(module_path(bymod[c['module']]), 'docs/candidates.md')})\n\n"
@@ -302,7 +351,7 @@ Entries describe contributions, methods, and evaluation scope. Background papers
 
 ## Visual assets
 
-The [header illustration](../assets/research-map.svg) is an original vector composition for this repository. It depicts latent structure, transfer across environments, and planning. See the [asset notes](../assets/README.md).
+The [cover illustration](../assets/world-models-cover.png) depicts physical environments, shared latent dynamics, and representation analysis. The README layout and resource badges were informed by [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models). See the [asset notes](../assets/README.md) for image provenance and the earlier vector illustration.
 '''
     out['references.bib'] = bibliography(papers)
     return out

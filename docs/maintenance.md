@@ -13,7 +13,8 @@ The catalog uses Python 3.9 or later, JSON, and Markdown. No additional Python p
 | Bibliographic export | `references.bib` |
 | Page generation | `scripts/build.py` |
 | Public note manifest | `publish-manifest.json` |
-| Header illustration | `assets/research-map.svg` |
+| Header illustration | `assets/world-models-cover.png` |
+| Earlier editable illustration | `assets/research-map.svg` |
 
 The README, six topic overviews, supplementary page, reading path, and BibTeX export share the same data source. Bibliographic records include the ordered author list, cited-edition year, source URL, and metadata verification date. The bibliography uses a generated-file header; unmarked files are not overwritten. The generator replaces only the region between its `BEGIN GENERATED RESEARCH MAP` and `END GENERATED RESEARCH MAP` markers. It preserves text outside the markers and refuses to overwrite an existing unmarked file.
 
@@ -26,7 +27,7 @@ python3 -m unittest discover -s tests
 python3 scripts/build.py --check
 ```
 
-Validation covers stable IDs, duplicate titles and aliases, arXiv identity, topic assignments, reading-path references, local links, and anchors. Repeated builds are deterministic.
+Validation covers stable IDs, duplicate titles and aliases, arXiv identity, topic assignments, reading-path references, local links, and anchors. Repeated builds are deterministic. Resource badges retain the publication label, including workshop and preprint status; the header displays the text and code licenses separately.
 
 ## Metadata
 

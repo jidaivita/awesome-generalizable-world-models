@@ -2,7 +2,7 @@
 
 [← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md) · [Supplementary reading](../supplementary.md)
 
-# Representation Geometry & Symmetry
+# 📐 Representation Geometry & Symmetry
 
 Latent geometry and transformation structure determine which changes a world model can represent. These papers study geometric regularization, learned group actions, equivariant transitions, and dynamic memory under partial observability.
 
@@ -13,7 +13,9 @@ The comparisons distinguish supplied symmetry priors, learned observation mappin
 <a id="paper-group-structure"></a>
 ### Learning Disentangled Representations and Group Structure of Dynamical Environments
 
-Robin Quessard et al. · **NeurIPS 2020** · [Paper](https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html) · [Code](https://github.com/IndustAI/learning-group-structure)
+[![NeurIPS: 2020](https://img.shields.io/badge/NeurIPS-2020-526d82?style=flat-square)](https://proceedings.neurips.cc/paper/2020/hash/e449b9317dad920c0dd5ad0a2a2d5e49-Abstract.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/IndustAI/learning-group-structure)
+
+Robin Quessard et al.
 
 - **Method:** An encoder maps observations to a spherical latent space, and learned rotation matrices represent the effects of interactions. A regularizer encourages each transformation to act on a small subset of latent dimensions, separating factors of change.
 - **Evaluation:** Experiments use explicitly symmetric environments and evaluate long-horizon prediction and latent disentanglement. The method learns the transformation parameters from interaction sequences under an orthogonal latent-transition parameterization.
@@ -22,7 +24,9 @@ Robin Quessard et al. · **NeurIPS 2020** · [Paper](https://proceedings.neurips
 <a id="paper-sen"></a>
 ### Learning Symmetric Embeddings for Equivariant World Models
 
-Jung Yeon Park et al. · **ICML 2022** · [Paper](https://proceedings.mlr.press/v162/park22a.html)
+[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/park22a.html) [![arXiv: 2204.11371](https://img.shields.io/badge/arXiv-2204.11371-b31b1b?style=flat-square)](https://arxiv.org/abs/2204.11371)
+
+Jung Yeon Park et al.
 
 - **Method:** A symmetric embedding network maps observations with a difficult-to-specify group action into features with a prescribed transformation rule. It is trained jointly with an equivariant transition network using a contrastive prediction objective.
 - **Evaluation:** Transition-prediction experiments compare learned embeddings with fully equivariant and non-equivariant baselines across three forms of symmetry. The latent group action is specified; the learned component connects complex observations to that representation.
@@ -31,7 +35,9 @@ Jung Yeon Park et al. · **ICML 2022** · [Paper](https://proceedings.mlr.press/
 <a id="paper-group-latents"></a>
 ### Learning Abstract World Models with a Group-Structured Latent Space
 
-Thomas Delliaux et al. · **arXiv 2025** · [Paper](https://arxiv.org/abs/2506.01529) · [Code](https://github.com/khanhvu207/world-models-group-latents)
+[![arXiv: 2506.01529](https://img.shields.io/badge/arXiv-2506.01529-b31b1b?style=flat-square)](https://arxiv.org/abs/2506.01529) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/khanhvu207/world-models-group-latents)
+
+Thomas Delliaux et al.
 
 - **Method:** Known symmetries determine the latent manifold and the group actions used for transitions. Additional latent variables retain information that does not follow the prescribed symmetry.
 - **Evaluation:** Transition prediction and downstream reinforcement learning are tested in environments with translation and rotation, including first-person 3D views. The symmetry is supplied as prior knowledge.
@@ -42,7 +48,9 @@ Thomas Delliaux et al. · **arXiv 2025** · [Paper](https://arxiv.org/abs/2506.0
 <a id="paper-grwm"></a>
 ### Cloning Deterministic Worlds: The Critical Role of Latent Geometry in Long-Horizon World Models
 
-Zaishuo Xia et al. · **CVPR 2026** · [Paper](https://arxiv.org/abs/2510.26782) · [Code](https://github.com/XiaFire/Clone_Deterministic_Environment) · [Project](https://xiafire.github.io/grwm-project-page/)
+[![CVPR: 2026](https://img.shields.io/badge/CVPR-2026-526d82?style=flat-square)](https://arxiv.org/abs/2510.26782) [![arXiv: 2510.26782](https://img.shields.io/badge/arXiv-2510.26782-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.26782) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/XiaFire/Clone_Deterministic_Environment) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://xiafire.github.io/grwm-project-page/)
+
+Zaishuo Xia et al.
 
 Earlier titles / aliases: Clone Deterministic 3D Worlds with Geometrically-Regularized World Models; Clone Deterministic 3D Worlds.
 
@@ -53,7 +61,9 @@ Earlier titles / aliases: Clone Deterministic 3D Worlds with Geometrically-Regul
 <a id="paper-flowm"></a>
 ### Flow Equivariant World Models: Structured Memory for Dynamic Environments
 
-Hansen Lillemark et al. · **ICML 2026** · [Paper](https://proceedings.mlr.press/v306/lillemark26a.html) · [Project](https://flowequivariantworldmodels.github.io/)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/lillemark26a.html) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://flowequivariantworldmodels.github.io/)
+
+Hansen Lillemark et al.
 
 Earlier titles / aliases: Flow Equivariant World Models: Memory for Partially Observed Dynamic Environments.
 

@@ -26,16 +26,16 @@ Explain the distinct mechanism, analysis, or evaluation protocol the paper adds 
 ## Entry format
 
 ```markdown
-- **Paper title**<br>
-  First Author et al. · **Venue Year** · [Paper](paper-url) · [Code](code-url) · [Project](project-url)<br>
-  One sentence describing the method, analysis, or evaluation.
+- **Short name** — [Paper title](paper-url)<br>
+  [![Venue: Year](badge-image-url)](publication-url) [![Code: GitHub](code-badge-url)](code-url)<br>
+  First Author et al. · One sentence describing the mechanism, analysis, or evaluation.
 ```
 
 Use one primary topic per paper. Keep earlier titles as aliases, and merge preprint and published versions rather than creating duplicate entries. Use formal proceedings, journal pages, author preprints, and official project repositories as sources. Leave unknown optional metadata unset. Verify author order and the year of the cited edition from the source. The full author list is used in `references.bib`; the index displays the first author.
 
 ## Editing the source
 
-Paper records are stored in `data/papers.json`; topic guides, the reading path, candidate papers, and related resources are defined in `data/map.json`. Candidates remain separate from catalog counts and the bibliography. Update these files and regenerate the Markdown pages:
+Paper records are stored in `data/papers.json`; topic guides, the reading path, display labels, candidate papers, and related resources are defined in `data/map.json`. Publication and resource badges are generated from the verified metadata. Preserve workshop and preprint status, and use the repository's actual text and code licenses in header badges. Candidates remain separate from catalog counts and the bibliography. Update these files and regenerate the Markdown pages:
 
 ```bash
 python3 scripts/build.py

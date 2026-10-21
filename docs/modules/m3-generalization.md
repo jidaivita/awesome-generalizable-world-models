@@ -2,7 +2,7 @@
 
 [← Paper index](../../README.md#research-map) · [Reading guide](../reading-guide.md) · [Supplementary reading](../supplementary.md)
 
-# Generalization & Adaptation
+# 🧭 Generalization & Adaptation
 
 World models encounter changes in object configurations, transition dynamics, observations, and goals. These papers study how learned structure transfers and how interaction history or parameter updates support adaptation.
 
@@ -24,7 +24,9 @@ Zero-shot transfer, inference from interaction history, and parameter-updating a
 <a id="paper-dreamweaver"></a>
 ### Dreamweaver: Learning Compositional World Models from Pixels
 
-Junyeob Baek et al. · **ICLR 2025** · [Paper](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html)
+[![ICLR: 2025](https://img.shields.io/badge/ICLR-2025-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ae82a60c5ce50b5c4d18cfe3214eb684-Abstract-Conference.html)
+
+Junyeob Baek et al.
 
 - **Method:** A Recurrent Block-Slot Unit decomposes raw video into objects and their attributes. Predicting multiple future frames encourages the representation to retain dynamic as well as static factors.
 - **Evaluation:** Disentanglement is measured with the DCI framework across video datasets. Recombining attributes of previously observed objects tests compositional video generation without auxiliary text, masks, or bounding boxes.
@@ -33,7 +35,9 @@ Junyeob Baek et al. · **ICLR 2025** · [Paper](https://proceedings.iclr.cc/pape
 <a id="paper-wm3c"></a>
 ### Modeling Unseen Environments with Language-guided Composable Causal Components in Reinforcement Learning
 
-Xinyue Wang et al. · **ICLR 2025** · [Paper](https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html)
+[![ICLR: 2025](https://img.shields.io/badge/ICLR-2025-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2025/hash/79d86433c2acd12b6fa98553435d226e-Abstract-Conference.html)
+
+Xinyue Wang et al.
 
 Earlier titles / aliases: WM3C.
 
@@ -44,7 +48,9 @@ Earlier titles / aliases: WM3C.
 <a id="paper-howm"></a>
 ### Toward Compositional Generalization in Object-Oriented World Modeling
 
-Linfeng Zhao et al. · **ICML 2022** · [Paper](https://proceedings.mlr.press/v162/zhao22b.html)
+[![ICML: 2022](https://img.shields.io/badge/ICML-2022-526d82?style=flat-square)](https://proceedings.mlr.press/v162/zhao22b.html)
+
+Linfeng Zhao et al.
 
 Earlier titles / aliases: HOWM.
 
@@ -57,7 +63,9 @@ Earlier titles / aliases: HOWM.
 <a id="paper-considering-context"></a>
 ### Considering Context: When World Models Need Context Encoders
 
-Oleg Smirnov et al. · **arXiv 2026** · [Paper](https://arxiv.org/abs/2610.06651)
+[![arXiv: 2610.06651](https://img.shields.io/badge/arXiv-2610.06651-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.06651)
+
+Oleg Smirnov et al.
 
 - **Method:** Predictive sufficiency separates context-dependent prediction gains into information recoverable from history, residual information requiring true context, and error attributable to a finite model.
 - **Evaluation:** Experiments vary identification difficulty and priors over environments. The same task can leave different prediction headroom depending on whether the agent's behavior already identifies its context.
@@ -66,7 +74,9 @@ Oleg Smirnov et al. · **arXiv 2026** · [Paper](https://arxiv.org/abs/2610.0665
 <a id="paper-context-diversity"></a>
 ### Context and Diversity Matter: The Emergence of In-Context Learning in World Models
 
-Fan Wang et al. · **ICLR 2026** · [Paper](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a46b9dcef23e9160f46d800a49a931d0-Abstract-Conference.html) · [Code](https://github.com/airs-cuhk/airsoul/tree/main/projects/MazeWorld)
+[![ICLR: 2026](https://img.shields.io/badge/ICLR-2026-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2026/hash/a46b9dcef23e9160f46d800a49a931d0-Abstract-Conference.html) [![arXiv: 2509.22353](https://img.shields.io/badge/arXiv-2509.22353-b31b1b?style=flat-square)](https://arxiv.org/abs/2509.22353) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/airs-cuhk/airsoul/tree/main/projects/MazeWorld)
+
+Fan Wang et al.
 
 - **Method:** The analysis separates environment recognition, which identifies a familiar environment, from environment learning, which estimates dynamics from the current context. Error bounds link these mechanisms to context length and training-environment diversity.
 - **Evaluation:** World-model experiments vary context, data diversity, and architecture to test the theoretical predictions. The distinction concerns how prediction improves with experience while model weights remain fixed.
@@ -75,7 +85,9 @@ Fan Wang et al. · **ICLR 2026** · [Paper](https://proceedings.iclr.cc/paper_fi
 <a id="paper-cadm"></a>
 ### Context-aware Dynamics Model for Generalization in Model-Based Reinforcement Learning
 
-Kimin Lee et al. · **ICML 2020** · [Paper](https://proceedings.mlr.press/v119/lee20g.html) · [Code](https://github.com/younggyoseo/CaDM)
+[![ICML: 2020](https://img.shields.io/badge/ICML-2020-526d82?style=flat-square)](https://proceedings.mlr.press/v119/lee20g.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/younggyoseo/CaDM)
+
+Kimin Lee et al.
 
 - **Method:** A history encoder estimates a context vector for local dynamics. Forward and backward prediction losses train the context to retain environment-specific information, and the next-state predictor conditions on this vector.
 - **Evaluation:** Simulated robotics and control tasks test prediction and policy performance across different dynamics. Adaptation uses recent interaction history as evidence about the current environment.
@@ -83,7 +95,9 @@ Kimin Lee et al. · **ICML 2020** · [Paper](https://proceedings.mlr.press/v119/
 <a id="paper-curious-replay"></a>
 ### Curious Replay for Model-based Adaptation
 
-Isaac Kauvar et al. · **ICML 2023** · [Paper](https://proceedings.mlr.press/v202/kauvar23a.html)
+[![ICML: 2023](https://img.shields.io/badge/ICML-2023-526d82?style=flat-square)](https://proceedings.mlr.press/v202/kauvar23a.html)
+
+Isaac Kauvar et al.
 
 - **Method:** Curiosity-based replay priorities favor experience that is novel or poorly predicted when training a world model. The intervention changes which stored transitions are reused, complementing action-based exploration.
 - **Evaluation:** An exploration-and-adaptation setting and Crafter test the replay rule, with DeepMind Control Suite used to check performance on established control tasks.
@@ -92,7 +106,9 @@ Isaac Kauvar et al. · **ICML 2023** · [Paper](https://proceedings.mlr.press/v2
 <a id="paper-dynamics-geometries"></a>
 ### Dynamics Are Learned, Not Told: Semi-Supervised Discovery of Latent Dynamics Geometries For Zero-Shot Policy Adaptation
 
-Zhiming Xu et al. · **ICML 2026** · [Paper](https://proceedings.mlr.press/v306/xu26cq.html) · [Code](https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/xu26cq.html) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/Mr-Wonderfool/Latent-Dynamics-Geometries)
+
+Zhiming Xu et al.
 
 - **Method:** A trajectory encoder learns a dynamics context using a multi-positive InfoNCE objective. The analysis relates encoder smoothness to target-domain regret, motivating a latent geometry that supports adaptation without privileged physical-parameter labels.
 - **Evaluation:** MuJoCo experiments test severe dynamics shifts, including structural failures outside the explicit parameterization used by identification baselines, alongside in-distribution policy stability.
@@ -103,7 +119,9 @@ Zhiming Xu et al. · **ICML 2026** · [Paper](https://proceedings.mlr.press/v306
 <a id="paper-behavior-invariant-wm"></a>
 ### Behavior-Invariant Task Representation Learning with Transformer-based World Models for Offline Meta-Reinforcement Learning
 
-Fuyuan Qian et al. · **ICML 2026** · [Paper](https://proceedings.mlr.press/v306/qian26o.html)
+[![ICML: 2026](https://img.shields.io/badge/ICML-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v306/qian26o.html)
+
+Fuyuan Qian et al.
 
 - **Method:** Information-theoretic task representation learning extracts latent variables that are invariant to behavior policy. A Transformer-based stochastic world model supplies imagined rollouts with conservative value penalties to limit exploitation of model errors.
 - **Evaluation:** Offline meta-RL experiments evaluate adaptation under context and policy distribution shifts, including out-of-distribution and sparse-reward settings.
@@ -112,7 +130,9 @@ Fuyuan Qian et al. · **ICML 2026** · [Paper](https://proceedings.mlr.press/v30
 <a id="paper-wombet"></a>
 ### WOMBET: World Model-based Experience Transfer for Robust and Sample-efficient Reinforcement Learning
 
-Mintae Kim et al. · **L4DC 2026** · [Paper](https://proceedings.mlr.press/v331/kim26a.html)
+[![L4DC: 2026](https://img.shields.io/badge/L4DC-2026-526d82?style=flat-square)](https://proceedings.mlr.press/v331/kim26a.html)
+
+Mintae Kim et al.
 
 - **Method:** A source-task world model generates trajectories through uncertainty-penalized planning. Return and epistemic-uncertainty filters select offline experience, which is mixed adaptively with online data during target-task fine-tuning.
 - **Evaluation:** Continuous-control benchmarks measure sample efficiency and final performance. The analysis bounds return and decomposes distribution-mismatch and approximation errors; the transfer procedure includes online updates.
@@ -123,7 +143,9 @@ Mintae Kim et al. · **L4DC 2026** · [Paper](https://proceedings.mlr.press/v331
 <a id="paper-general-agents"></a>
 ### General agents need world models
 
-Jonathan Richens et al. · **ICML 2025** · `Theory` · [Paper](https://proceedings.mlr.press/v267/richens25a.html)
+[![ICML: 2025](https://img.shields.io/badge/ICML-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v267/richens25a.html)
+
+Jonathan Richens et al. · `Theory`
 
 - **Method:** A formal construction extracts an environment predictor from a policy capable of solving a specified class of multi-step goals. The required prediction accuracy increases with performance and goal complexity.
 - **Evaluation:** The theoretical result connects goal generalization to extractable predictive information under the paper's formal task assumptions.

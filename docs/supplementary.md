@@ -13,7 +13,9 @@ Predictive architectures and model-based RL baselines for implementing represent
 <a id="paper-leworldmodel"></a>
 ### LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels
 
-Lucas Maes et al. · **arXiv 2026** · [Paper](https://arxiv.org/abs/2603.19312) · [Code](https://github.com/lucas-maes/le-wm) · [Project](https://le-wm.github.io/)
+[![arXiv: 2603.19312](https://img.shields.io/badge/arXiv-2603.19312-b31b1b?style=flat-square)](https://arxiv.org/abs/2603.19312) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/lucas-maes/le-wm) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://le-wm.github.io/)
+
+Lucas Maes et al.
 
 Earlier titles / aliases: LeWM.
 
@@ -25,7 +27,9 @@ Earlier titles / aliases: LeWM.
 <a id="paper-dreamerv3"></a>
 ### Mastering diverse control tasks through world models
 
-Danijar Hafner et al. · **Nature 2025** · [Paper](https://www.nature.com/articles/s41586-025-08744-2)
+[![Nature: 2025](https://img.shields.io/badge/Nature-2025-526d82?style=flat-square)](https://www.nature.com/articles/s41586-025-08744-2)
+
+Danijar Hafner et al.
 
 Earlier titles / aliases: DreamerV3.
 
@@ -41,7 +45,9 @@ Geometry and analysis methods from language modeling and procedural planning, wi
 <a id="paper-geoworld"></a>
 ### GeoWorld: Geometric World Models
 
-Zeyu Zhang et al. · **CVPR 2026** · `Procedural planning` · [Paper](https://arxiv.org/abs/2602.23058) · [Project](https://steve-zeyu-zhang.github.io/GeoWorld/)
+[![CVPR: 2026](https://img.shields.io/badge/CVPR-2026-526d82?style=flat-square)](https://arxiv.org/abs/2602.23058) [![arXiv: 2602.23058](https://img.shields.io/badge/arXiv-2602.23058-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.23058) [![Project: Website](https://img.shields.io/badge/Project-Website-2679b5?style=flat-square)](https://steve-zeyu-zhang.github.io/GeoWorld/)
+
+Zeyu Zhang et al. · `Procedural planning`
 
 - **Method:** Hyperbolic JEPA embeds states on a hyperbolic manifold to represent hierarchical relations. Geometric Reinforcement Learning optimizes plans on the resulting energy landscape.
 - **Evaluation:** CrossTask and COIN evaluate three- and four-step procedural visual planning. This setting tests sequences of instructional actions rather than continuous physical dynamics.
@@ -51,7 +57,9 @@ Zeyu Zhang et al. · **CVPR 2026** · `Procedural planning` · [Paper](https://a
 <a id="paper-smds"></a>
 ### Hypothesis-Driven Feature Manifold Analysis in LLMs via Supervised Multi-Dimensional Scaling
 
-Federico Tiblias et al. · **TMLR 2026** · `LLM analysis` · [Paper](https://arxiv.org/abs/2510.01025) · [Code](https://github.com/UKPLab/tmlr2026-manifold-analysis)
+[![TMLR: 2026](https://img.shields.io/badge/TMLR-2026-526d82?style=flat-square)](https://arxiv.org/abs/2510.01025) [![arXiv: 2510.01025](https://img.shields.io/badge/arXiv-2510.01025-b31b1b?style=flat-square)](https://arxiv.org/abs/2510.01025) [![Code: GitHub](https://img.shields.io/badge/Code-GitHub-2e8b57?style=flat-square)](https://github.com/UKPLab/tmlr2026-manifold-analysis)
+
+Federico Tiblias et al. · `LLM analysis`
 
 Earlier titles / aliases: Shape Happens: Automatic Feature Manifold Discovery in LLMs via Supervised Multi-Dimensional Scaling; Shape Happens.
 
@@ -63,7 +71,9 @@ Earlier titles / aliases: Shape Happens: Automatic Feature Manifold Discovery in
 <a id="paper-origins-manifolds"></a>
 ### The Origins of Representation Manifolds in Large Language Models
 
-Alexander Modell et al. · **arXiv 2025** · `LLM analysis` · [Paper](https://arxiv.org/abs/2505.18235)
+[![arXiv: 2505.18235](https://img.shields.io/badge/arXiv-2505.18235-b31b1b?style=flat-square)](https://arxiv.org/abs/2505.18235)
+
+Alexander Modell et al. · `LLM analysis`
 
 - **Method:** A theoretical model connects cosine similarity between representations to distances along an underlying feature manifold. It extends a binary feature-direction account to continuous, multidimensional features.
 - **Evaluation:** The paper tests its assumptions and predictions on text embeddings and language-model token activations. Its conclusions depend on the stated generative assumptions for those representations.
@@ -77,7 +87,9 @@ Adjacent studies of policy evaluation, simulator calibration, and task-informed 
 <a id="paper-asid"></a>
 ### ASID: Active Exploration for System Identification in Robotic Manipulation
 
-Marius Memmel et al. · **ICLR 2024** · [Paper](https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html)
+[![ICLR: 2024](https://img.shields.io/badge/ICLR-2024-526d82?style=flat-square)](https://proceedings.iclr.cc/paper_files/paper/2024/hash/ae8afec5dabb07091d8f85128250f2ff-Abstract-Conference.html)
+
+Marius Memmel et al.
 
 - **Method:** An initial simulator is used to design exploratory interactions. Real observations from those interactions refine simulator parameters, after which the refined model supports control planning.
 - **Evaluation:** Robotic manipulation experiments identify properties including articulation and mass and evaluate the resulting sim-to-real controllers. Identification operates within the available simulator and asset model.
@@ -87,7 +99,9 @@ Marius Memmel et al. · **ICLR 2024** · [Paper](https://proceedings.iclr.cc/pap
 <a id="paper-simpler"></a>
 ### Evaluating Real-World Robot Manipulation Policies in Simulation
 
-Xuanlin Li et al. · **CoRL 2024 (proceedings 2025)** · [Paper](https://proceedings.mlr.press/v270/li25c.html)
+[![CoRL: 2024 (proceedings 2025)](https://img.shields.io/badge/CoRL-2024%20%28proceedings%202025%29-526d82?style=flat-square)](https://proceedings.mlr.press/v270/li25c.html)
+
+Xuanlin Li et al.
 
 Earlier titles / aliases: SIMPLER.
 
@@ -99,7 +113,9 @@ Earlier titles / aliases: SIMPLER.
 <a id="paper-poke-strike"></a>
 ### Poke and Strike: Learning Task-Informed Exploration Policies
 
-Marina Y. Aoyama et al. · **CoRL 2025** · [Paper](https://proceedings.mlr.press/v305/aoyama25a.html)
+[![CoRL: 2025](https://img.shields.io/badge/CoRL-2025-526d82?style=flat-square)](https://proceedings.mlr.press/v305/aoyama25a.html)
+
+Marina Y. Aoyama et al.
 
 - **Method:** An exploration policy is rewarded according to how sensitive a privileged task policy is to errors in estimated object properties. An uncertainty criterion determines when to stop probing and execute the task.
 - **Evaluation:** Puck striking and CartPole analyze the task relevance of physical properties; a KUKA iiwa setup tests property estimation and adjusted execution on physical objects.
@@ -109,7 +125,9 @@ Marina Y. Aoyama et al. · **CoRL 2025** · [Paper](https://proceedings.mlr.pres
 <a id="paper-rethinking-sim2real"></a>
 ### Rethinking Sim2Real: Lower Fidelity Simulation Leads to Higher Sim2Real Transfer in Navigation
 
-Joanne Truong et al. · **CoRL 2022 (proceedings 2023)** · [Paper](https://proceedings.mlr.press/v205/truong23a.html)
+[![CoRL: 2022 (proceedings 2023)](https://img.shields.io/badge/CoRL-2022%20%28proceedings%202023%29-526d82?style=flat-square)](https://proceedings.mlr.press/v205/truong23a.html)
+
+Joanne Truong et al.
 
 - **Method:** A controlled comparison varies simulator fidelity for visual-navigation policy learning. Simple robot-motion models fitted to real data are compared with more detailed simulation physics.
 - **Evaluation:** Habitat and iGibson experiments, followed by tests on A1, AlienGo, and Spot robots, examine learning speed, overfitting to simulator errors, and real-world navigation performance.

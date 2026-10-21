@@ -50,7 +50,7 @@ class ResearchMapTests(unittest.TestCase):
             self.assertNotRegex(text, r'[\u3400-\u9fff]', path)
         self.assertNotIn('user_reading', (self.root/'data/papers.json').read_text())
     def test_missing_illustration_rejected(self):
-        (self.root/'assets/research-map.svg').unlink()
+        (self.root/'assets/world-models-cover.png').unlink()
         with self.assertRaisesRegex(ValueError, 'Missing local link'):
             validate_links(self.root)
     def test_bibliography_identity_and_author_validation(self):
@@ -92,9 +92,10 @@ class ResearchMapTests(unittest.TestCase):
         (self.root/'private').mkdir(exist_ok=True);(self.root/'private/idea.md').write_text(secret)
         (self.root/'public_notes').mkdir(exist_ok=True);(self.root/'public_notes/unlisted.md').write_text(secret)
         out=Path(self.tmp.name)/'public';files=export(self.root,out)
-        self.assertEqual(len(files),24)
-        self.assertNotIn(secret,'\n'.join(p.read_text() for p in out.rglob('*') if p.is_file()))
+        self.assertEqual(len(files),25)
+        self.assertNotIn(secret.encode(),b'\n'.join(p.read_bytes() for p in out.rglob('*') if p.is_file()))
         self.assertFalse((out/'data').exists())
+        self.assertEqual((out/'assets/world-models-cover.png').read_bytes(),(self.root/'assets/world-models-cover.png').read_bytes())
     def test_manifest_rejects_path_escape(self):
         (self.root/'publish-manifest.json').write_text(json.dumps({'notes':[{'title':'x','path':'public_notes/../local_state.json'}]}))
         with self.assertRaises(ValueError):render(self.root)
@@ -130,6 +131,25 @@ class ResearchMapTests(unittest.TestCase):
         cfg['candidates'][0]['arxiv_id']=next(p['arxiv_id'] for p in papers if p['arxiv_id'])
         path.write_text(json.dumps(cfg))
         with self.assertRaisesRegex(ValueError,'Candidate arXiv identity overlaps'):validate_data(self.root)
+
+    def test_badges_preserve_publication_status_and_license(self):
+        from build import resources, badge
+        papers,_,_=read_sources(self.root)
+        byid={p['id']:p for p in papers}
+        self.assertIn('ICML: 2022',resources(byid['sen']))
+        self.assertIn('arXiv: 2204.11371',resources(byid['sen']))
+        self.assertIn('ICLR: 2026 World Models Workshop',resources(byid['probing-rl-world-models']))
+        self.assertIn('arXiv: 2506.01529',resources(byid['group-latents']))
+        self.assertIn('a--b__c',badge('Code','a-b_c','green','https://example.org'))
+        readme=render(self.root)['README.md']
+        self.assertIn('Text: CC BY 4.0',readme)
+        self.assertIn('Code: MIT',readme)
+        self.assertNotIn('CC0',readme)
+
+    def test_badge_destination_is_checked(self):
+        path=self.root/'CONTRIBUTING.md'
+        path.write_text(path.read_text()+'\n[![badge](https://img.shields.io/badge/test-ok-green)](missing-page.md)\n')
+        with self.assertRaisesRegex(ValueError,'Missing local link'):validate_links(self.root)
 
 
 if __name__=='__main__':unittest.main()

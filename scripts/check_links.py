@@ -3,10 +3,11 @@
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 import json
+import re
 from pathlib import Path
 from urllib.request import Request,urlopen
 from urllib.error import HTTPError
-from build import ROOT, read_sources
+from build import ROOT, read_sources, render
 
 
 def check(url):
@@ -29,6 +30,8 @@ if __name__=='__main__':
     urls={u for p in papers for u in [*p['links'].values(),p['publication']['source_url'],p['code']['url'],p['public_note']] if u}
     urls.update(r['url'] for r in cfg['resources'])
     urls.update(c['url'] for c in cfg['candidates'])
+    for body in render().values():
+        urls.update(u for u in re.findall(r'\]\(([^\s)]+)\)',body) if u.startswith(('https://','http://')))
     urls=sorted(urls)
     with ThreadPoolExecutor(max_workers=6) as pool:results=list(pool.map(check,urls))
     args.output.parent.mkdir(parents=True,exist_ok=True)

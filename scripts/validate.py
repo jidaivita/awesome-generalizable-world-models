@@ -35,6 +35,7 @@ def validate_data(root=ROOT):
     core={p['id'] for p in papers if p['primary_module'] in mods}
     require(len(assigned)==len(set(assigned)) and set(assigned)==core, 'Incomplete or duplicated topic grouping')
     byid={p['id']:p for p in papers}
+    require(set(cfg['paper_labels'])==set(ids) and all(label.strip() for label in cfg['paper_labels'].values()), 'Incomplete display labels')
     for m in cfg['modules']:
         require(all(byid[pid]['primary_module']==m['id'] for g in m['groups'] for pid in g['ids']), 'Topic grouping disagrees with paper assignment')
     supplement_groups={g['id'] for g in cfg['supplement']['groups']}
@@ -120,7 +121,8 @@ def validate_links(root=ROOT):
     checked=0
     for rel,body in docs.items():
         body=re.sub(r'^```[^\n]*\n.*?^```[ \t]*$', '', body, flags=re.M | re.S)
-        targets=re.findall(r'!?\[[^\]]+\]\(([^\s)]+)\)',body)
+        # Include both the image URL and destination in linked badge images.
+        targets=re.findall(r'\]\(([^\s)]+)\)',body)
         targets += re.findall(r'<img\b[^>]*\bsrc=[\"\']([^\"\']+)[\"\']',body)
         for href in targets:
             if urlsplit(href).scheme:continue

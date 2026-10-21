@@ -51,7 +51,8 @@
         "M8",
         "M4",
         "M5"
-      ]
+      ],
+      "icon": "🧭"
     },
     {
       "id": "M8",
@@ -91,7 +92,8 @@
         "M2",
         "M1",
         "M3"
-      ]
+      ],
+      "icon": "🔬"
     },
     {
       "id": "M1",
@@ -121,7 +123,8 @@
         "M3",
         "M8",
         "M2"
-      ]
+      ],
+      "icon": "🧩"
     },
     {
       "id": "M2",
@@ -161,7 +164,8 @@
       ],
       "candidate_ids": [
         "jepa-bisim"
-      ]
+      ],
+      "icon": "📐"
     },
     {
       "id": "M4",
@@ -203,7 +207,8 @@
         "M3",
         "M2",
         "M5"
-      ]
+      ],
+      "icon": "🎯"
     },
     {
       "id": "M5",
@@ -281,7 +286,8 @@
             "Validity of a learned policy-evaluation environment"
           ]
         ]
-      }
+      },
+      "icon": "📊"
     }
   ],
   "supplement": {
@@ -634,5 +640,52 @@
       "url": "https://github.com/World-Model-Benchmarks/World-Model-Benchmarks",
       "description": "Benchmarks organized by physical, causal, control, and functional evaluation targets."
     }
-  ]
+  ],
+  "paper_labels": {
+    "nri": "NRI",
+    "cswm": "C-SWM",
+    "spartan": "SPARTAN",
+    "causal-jepa": "Causal-JEPA",
+    "interpreting-physics": "Interpreting Physics",
+    "smds": "SMDS",
+    "grwm": "GRWM",
+    "group-latents": "Group-Structured Latents",
+    "origins-manifolds": "Representation Manifolds",
+    "geoworld": "GeoWorld",
+    "cadm": "CaDM",
+    "context-diversity": "Context and Diversity Matter",
+    "dreamweaver": "Dreamweaver",
+    "dynamics-geometries": "Latent Dynamics Geometries",
+    "dino-wm": "DINO-WM",
+    "denoised-mdps": "Denoised MDPs",
+    "value-equivalence": "Value Equivalence",
+    "what-found": "What Has a Foundation Model Found?",
+    "simpler": "SIMPLER",
+    "rethinking-sim2real": "Rethinking Sim2Real",
+    "physical-law-perspective": "A Physical Law Perspective",
+    "world-in-world": "World-In-World",
+    "plan2explore": "Plan2Explore",
+    "asid": "ASID",
+    "poke-strike": "Poke and Strike",
+    "curious-replay": "Curious Replay",
+    "vjepa2": "V-JEPA 2",
+    "leworldmodel": "LeWorldModel",
+    "jepa-wms": "JEPA-WMs",
+    "dreamerv3": "DreamerV3",
+    "wombet": "WOMBET",
+    "physically-interpretable": "Physically Interpretable World Models",
+    "considering-context": "Considering Context",
+    "behavior-invariant-wm": "Behavior-Invariant Task Representations",
+    "probing-rl-world-models": "Probing RL World Models",
+    "general-agents": "General Agents Need World Models",
+    "wm3c": "WM3C",
+    "group-structure": "Learning Group Structure",
+    "sen": "SEN",
+    "flowm": "FloWM",
+    "svib": "SVIB",
+    "physion": "Physion",
+    "physion-pp": "Physion++",
+    "worldgym": "WorldGym",
+    "howm": "HOWM"
+  }
 }

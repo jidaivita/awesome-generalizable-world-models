@@ -20,6 +20,6 @@ Entries describe contributions, methods, and evaluation scope. Background papers
 
 ## Visual assets
 
-The [header illustration](../assets/research-map.svg) is an original vector composition for this repository. It depicts latent structure, transfer across environments, and planning. See the [asset notes](../assets/README.md).
+The [cover illustration](../assets/world-models-cover.png) depicts physical environments, shared latent dynamics, and representation analysis. The README layout and resource badges were informed by [Awesome World Models](https://github.com/knightnemo/Awesome-World-Models). See the [asset notes](../assets/README.md) for image provenance and the earlier vector illustration.
 
 <!-- END GENERATED RESEARCH MAP -->
